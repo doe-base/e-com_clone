@@ -1,0 +1,563 @@
+.header-nav__content {
+  align-items: center;
+  background: #fff;
+  border-bottom: 2px solid #dadada;
+  display: flex;
+  height: max-content;
+  justify-content: space-between;
+  padding: 0.5rem;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__content {
+    align-items: center;
+    padding: 1.5em 1em 0.5em;
+  }
+}
+
+.header-control-hamburger {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__content li {
+    height: 45px;
+  }
+}
+
+.header-nav__links-desktop {
+  margin-left: 2.5em;
+}
+
+.header-nav__links {
+  align-items: center;
+  display: flex;
+}
+.header-nav__links-modile{
+  display: none !important;
+}
+
+.header-nav__links-desktop > ul > li {
+  height: 45px;
+  margin-right: 1rem;
+}
+.header-nav__links-desktop > ul > li.active,
+.header-nav__links-desktop > ul > li:hover {
+  border-bottom: 2px solid #000;
+}
+.hyperlink.menu-item {
+  color: #333;
+  font-weight: 400;
+}
+.header-nav__links-desktop > ul > li a {
+  font-size: 1.10rem;
+}
+.header-nav__links-desktop > ul > li a:hover{
+  color: #000;
+  opacity: 1;
+}
+.hyperlink {
+  background: 0 0;
+  border: 0;
+  color: #ff9100;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Search bar header desktop */
+#searchbar-header-desktop {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  place-content: end;
+  transform: translateY(-11px);
+}
+.desktop-searchbar-module__wrapper--kB8Qr {
+  width: 100%;
+  box-sizing: border-box;
+  margin-left: 20px;
+  max-width: 600px;
+}
+.style-module__wrapper--7jJ94 {
+  margin: 0 auto;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+.style-module__content--UlhVY {
+  border: 1px solid rgba(0, 0, 0, 0.4509803922);
+  flex-basis: 100%;
+
+  position: relative;
+  border-radius: 4px;
+  padding: 7px;
+  display: flex;
+  justify-content: flex-end;
+  transition: flex-basis 0.5s;
+}
+.style-module__reducerWrapper--UVMF- {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.style-module__reducer--higDU {
+  position: absolute;
+  top: -5px;
+  left: -7px;
+  right: 0;
+  bottom: -5px;
+}
+.style-module__controlWrapper--Cak4k {
+  width: 100%;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+}
+.style-module__input--8Dj0T {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  padding: 5px 7px;
+
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #fff;
+}
+.style-module__wrapper--7jJ94 .style-module__button--uk1Kx {
+  background-color: #219653;
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  cursor: pointer;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1490196078);
+}
+.style-module__wrapper--7jJ94 .style-module__button--uk1Kx:hover{
+  background-color: #6dc436;
+}
+.style-module__wrapper--7jJ94 .style-module__searchIcon--De0gi {
+  background-image: url(/public/img/search-icon.svg);
+  border: 0;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 14px;
+  height: 14px;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+.style-module__wrapper--7jJ94 input::placeholder {
+  color: rgba(0, 0, 0, 0.3764705882);
+}
+
+/* Navbar links main */
+@media screen and (min-width: 1024px) {
+  .header-nav__links-main {
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+
+.header-nav__links {
+  align-items: center;
+  display: flex;
+}
+
+@media screen and (min-width: 375px) {
+  .header-nav__links-main li {
+    height: auto;
+    padding-left: 1rem;
+  }
+}
+
+.header-nav__links-main li.control a,
+.header-nav__links-main li.phone a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bold,
+.hyperlink {
+  font-weight: 700;
+}
+.hyperlink:hover {
+  cursor: pointer;
+  opacity: .5;
+  transition: .3s;
+}
+
+.header-nav__links-main li.auth .hyperlink {
+  color: #219653 !important;
+  font-family: Nunito, sans-serif;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__links-main li.control {
+    display: none;
+  }
+}
+.header-nav__links-main li {
+  padding-left: 1rem;
+}
+.header-nav__links-main li.control a,
+.header-nav__links-main li.phone a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-nav__links-main li.control .mobile-close svg {
+  margin-right: 10px;
+}
+
+/* Toplist */
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies {
+    display: flex;
+    flex-direction: row;
+    padding: 1em 0 3em;
+    width: max-content;
+  }
+}
+.header-nav__submenu {
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  margin-top: 1.87em;
+  position: absolute;
+  text-align: left;
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.breeds {
+    grid-column: 1;
+    padding-left: 1em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section {
+    width: 15em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies .puppies-menu-footer {
+    background-color: #219653;
+    border-radius: 0 0 8px 8px;
+    bottom: 0;
+    padding: 0.25em 0.25em 0.25em 1em;
+    position: absolute;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies .puppies-menu-footer a {
+    color: #fff;
+    font-family: Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.breeds {
+    grid-column: 1;
+    padding-left: 1em;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section {
+    width: 15em;
+  }
+}
+
+.header-nav__submenu--puppies .header-nav__submenu-subheader h5 {
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 130%;
+  margin: 0 0 0.5em;
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section ul li {
+    height: 34px;
+  }
+}
+.header-nav__submenu-section ul li {
+  padding-bottom: 1em;
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__content li {
+    height: 45px;
+  }
+}
+
+.header-nav__menu-item {
+  font-family: Inter, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+.header-nav__menu-item:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.featured-puppy .featured-puppy__image {
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 8px;
+    display: block;
+    height: 90px;
+    overflow: hidden;
+    width: 90px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.collections {
+    border-right: 1px solid #e0e0e0;
+    border-left: 1px solid #e0e0e0;
+    grid-column: 2;
+    padding: 0 1rem;
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.featured-puppy {
+    font-size: 13px;
+    grid-column: 3;
+    line-height: 20px;
+    padding-left: 18px;
+    padding-right: 2em;
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.featured-puppy .featured-puppy__name {
+    font-weight: 700;
+  }
+}
+.header-nav__submenu--puppies section.featured-puppy .featured-puppy__age,
+.header-nav__submenu--puppies section.featured-puppy .featured-puppy__gender {
+  padding-left: 4px;
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.featured-puppy .featured-puppy__gender,
+  .header-nav__submenu--puppies section.featured-puppy .featured-puppy__name {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies section.featured-puppy .featured-puppy div {
+    display: flex;
+  }
+}
+
+/* submenu */
+@media screen and (min-width: 1090px) {
+  .header-nav__submenu--puppies.purebred {
+    left: 2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies.purebred {
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    position: absolute;
+  }
+}
+.header-nav__submenu.purebred {
+  margin-top: 1.25em;
+}
+
+@media screen and (min-width: 1024px) {
+  .gtag-top_nav_view_all {
+    grid-column: 1 / span 4;
+  }
+}
+.inter-font {
+  font-family: Inter, sans-serif !important;
+}
+
+.gtag-top_nav_view_all h3 {
+  font-family: Nunito, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 130%;
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies h3 {
+    margin: 0 0 1em;
+    padding-left: 1em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies.purebred > ul.header-nav__submenu-section {
+    width: max-content;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies.purebred > ul {
+    border-right: 1px solid #e0e0e0;
+    padding: 0 1.5em;
+  }
+}
+
+.inter-font {
+  font-family: Inter, sans-serif !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .header-nav__submenu--puppies .puppies-menu-footer {
+    background-color: #219653;
+    border-radius: 0 0 8px 8px;
+    bottom: 0;
+    padding: 0.25em 0.25em 0.25em 1em;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.arrow{
+  width: 100%;
+  display: inline-block;
+}
+.arrow.white::after {
+  border-color: #fff;
+}
+.arrow::after {
+  border: 3px solid #ff9100;
+  border-bottom: none;
+  border-right: none;
+  content: "";
+  display: inline-block;
+  height: 9px;
+  margin-left: 4px;
+  transform: rotate(135deg);
+  width: 9px;
+}
+
+
+.puppyspot-promise > .header-nav__submenu {
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  margin-top: 1.87em;
+  padding: 1em 1em 0;
+  position: absolute;
+  text-align: left;
+  width: 14.5em;
+}
+.header-nav__submenu-section > li > a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.about-us > .header-nav__submenu{
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,.2);
+  margin-top: 1.87em;
+  padding: 1em 1em 0;
+  position: absolute;
+  text-align: left;
+  width: 14.5em;
+}
+
+
+
+.style-module__menu--Xf2XU {
+  position: absolute;
+  max-height: 300px;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+  transform: translateY(100%);
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.4509803922);
+  border-radius: 4px;
+  box-shadow: rgba(0,0,0,.1) 0px 0px 0px 1px,rgba(0,0,0,.1) 0px 4px 11px;
+  z-index: 1;
+  padding: 0 10px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.style-module__menu--Xf2XU > .style-module__item--tuTKJ:not(:last-child) {
+  border-bottom: 1px solid #d8d8d8;
+}
+.style-module__menu--Xf2XU > .style-module__item--tuTKJ {
+  font-family: Inter,sans-serif;
+  font-size: 17.5px;
+  padding: .875rem 0;
+  cursor: pointer;
+  text-align: left;
+}
+.style-module__menu--Xf2XU .style-module__item--tuTKJ:hover {
+  font-weight: bold;
+}
+
+
+
+/* REPONSIVENESS */
+@media (max-width: 1024px) {
+  .header-nav__content {
+    padding: 1rem 1.5rem 0.95rem 0.5rem;
+  }
+  .header-control-hamburger {
+    display: flex !important;
+    align-items:start;
+    justify-content: center;
+  }
+  .header-control-hamburger .mobile-open svg {
+    height: 16px;
+    margin: 3px 20px 0 10px;
+    width: 18px;
+  }
+  .header-nav__links-desktop {
+    display: none !important;
+  }
+  #searchbar-header-desktop {
+    display: none;
+  }
+  .header-nav__logo{
+    display: none;
+  }
+
+}
+
+@media (max-width: 834px) {
+
+  .header-nav__links{
+    display: none !important;
+  }
+  .header-nav__links-modile{
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-nav__content {
+    padding: 1rem 1rem 0.95rem 0.5rem;
+  }
+
+  .header-nav__links-main li {
+    padding-left: 0.5rem;
+  }
+}

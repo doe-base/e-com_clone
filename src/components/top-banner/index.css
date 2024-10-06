@@ -1,0 +1,40 @@
+.sales-banner {
+    align-items: center;
+    background-color: #219653;
+    background-image: url(/public/img/header-banner/banner-circles-desktop.svg);
+    display: flex;
+    font-family: Inter,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    height: max-content;
+    justify-content: center;
+    letter-spacing: 0;
+    line-height: 24px;
+    min-height: 40px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+  .green{
+    color: #219653;
+  }
+  @media screen and (max-width: 767px) {
+    .sales-banner {
+      background-image: url(/public/img/header-banner/banner-circles-tablet.svg);
+    }
+  }
+  @media screen and (max-width: 479px) {
+    .sales-banner {
+      background-image: url(/public/img/header-banner/banner-circles-mobile.svg);
+    }
+  }
+
+
+  .sales-banner .phone {
+    color: #fff;
+    font-family: Inter,sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: underline;
+    width: 100%;
+  }

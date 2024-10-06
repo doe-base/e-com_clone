@@ -1,0 +1,401 @@
+{
+  "breedList": [
+    {
+      "id": 334,
+      "name": "Goldendoodle",
+      "slug": "goldendoodle"
+    },
+    {
+      "id": 390,
+      "name": "Cavapoo",
+      "slug": "cavapoo"
+    },
+    {
+      "id": 444,
+      "name": "Bernedoodle",
+      "slug": "bernedoodle"
+    },
+    {
+      "id": 228,
+      "name": "Golden Retriever",
+      "slug": "golden-retriever"
+    },
+    {
+      "id": 322,
+      "name": "Poodle",
+      "slug": "poodle"
+    },
+    {
+      "id": 222,
+      "name": "Dachshund",
+      "slug": "dachshund"
+    },
+    {
+      "id": 345,
+      "name": "Maltipoo",
+      "slug": "maltipoo"
+    },
+    {
+      "id": 276,
+      "name": "Cavalier King Charles Spaniel",
+      "slug": "cavalier-king-charles-spaniel"
+    },
+    {
+      "id": 231,
+      "name": "Labrador Retriever",
+      "slug": "labrador-retriever"
+    },
+    {
+      "id": 225,
+      "name": "French Bulldog",
+      "slug": "french-bulldog"
+    },
+    {
+      "id": 302,
+      "name": "Havanese",
+      "slug": "havanese"
+    },
+    {
+      "id": 226,
+      "name": "German Shepherd Dog",
+      "slug": "german-shepherd-dog"
+    },
+    {
+      "id": 249,
+      "name": "Yorkshire Terrier",
+      "slug": "yorkshire-terrier"
+    },
+    {
+      "id": 244,
+      "name": "Shih Tzu",
+      "slug": "shih-tzu"
+    },
+    {
+      "id": 238,
+      "name": "Pomeranian",
+      "slug": "pomeranian"
+    },
+    {
+      "id": 320,
+      "name": "Miniature Schnauzer",
+      "slug": "miniature-schnauzer"
+    },
+    {
+      "id": 232,
+      "name": "Maltese",
+      "slug": "maltese"
+    },
+    {
+      "id": 220,
+      "name": "Cocker Spaniel",
+      "slug": "cocker-spaniel"
+    },
+    {
+      "id": 327,
+      "name": "Labradoodle",
+      "slug": "labradoodle"
+    },
+    {
+      "id": 219,
+      "name": "Chihuahua",
+      "slug": "chihuahua"
+    },
+    {
+      "id": 347,
+      "name": "Cockapoo",
+      "slug": "cockapoo"
+    },
+    {
+      "id": 324,
+      "name": "Pembroke Welsh Corgi",
+      "slug": "pembroke-welsh-corgi"
+    },
+    {
+      "id": 212,
+      "name": "Beagle",
+      "slug": "beagle"
+    },
+    {
+      "id": 437,
+      "name": "Pomsky",
+      "slug": "pomsky"
+    },
+    {
+      "id": 258,
+      "name": "Australian Shepherd",
+      "slug": "australian-shepherd"
+    },
+    {
+      "id": 245,
+      "name": "Siberian Husky",
+      "slug": "siberian-husky"
+    },
+    {
+      "id": 264,
+      "name": "Bernese Mountain Dog",
+      "slug": "bernese-mountain-dog"
+    },
+    {
+      "id": 217,
+      "name": "Boston Terrier",
+      "slug": "boston-terrier"
+    },
+    {
+      "id": 218,
+      "name": "Bichon Frise",
+      "slug": "bichon-frise"
+    },
+    {
+      "id": 434,
+      "name": "Bichonpoo",
+      "slug": "bichonpoo"
+    },
+    {
+      "id": 447,
+      "name": "Havapoo",
+      "slug": "havapoo"
+    },
+    {
+      "id": 404,
+      "name": "Aussiedoodle",
+      "slug": "aussiedoodle"
+    },
+    {
+      "id": 299,
+      "name": "Great Dane",
+      "slug": "great-dane"
+    },
+    {
+      "id": 344,
+      "name": "Yorkiepoo",
+      "slug": "yorkiepoo"
+    },
+    {
+      "id": 285,
+      "name": "Coton de Tulear",
+      "slug": "coton-de-tulear"
+    },
+    {
+      "id": 367,
+      "name": "Morkie",
+      "slug": "morkie"
+    },
+    {
+      "id": 378,
+      "name": "Shihpoo",
+      "slug": "shihpoo"
+    },
+    {
+      "id": 241,
+      "name": "Rottweiler",
+      "slug": "rottweiler"
+    },
+    {
+      "id": 415,
+      "name": "Sheepadoodle",
+      "slug": "sheepadoodle"
+    },
+    {
+      "id": 253,
+      "name": "West Highland White Terrier",
+      "slug": "west-highland-white-terrier"
+    },
+    {
+      "id": 216,
+      "name": "Boxer",
+      "slug": "boxer"
+    },
+    {
+      "id": 263,
+      "name": "Shiba Inu",
+      "slug": "shiba-inu"
+    },
+    {
+      "id": 385,
+      "name": "Cavachon",
+      "slug": "cavachon"
+    },
+    {
+      "id": 240,
+      "name": "Pug",
+      "slug": "pug"
+    },
+    {
+      "id": 214,
+      "name": "Bulldog",
+      "slug": "bulldog"
+    },
+    {
+      "id": 233,
+      "name": "Miniature Pinscher",
+      "slug": "miniature-pinscher"
+    },
+    {
+      "id": 236,
+      "name": "Pekingese",
+      "slug": "pekingese"
+    },
+    {
+      "id": 243,
+      "name": "Shetland Sheepdog",
+      "slug": "shetland-sheepdog"
+    },
+    {
+      "id": 381,
+      "name": "Shichon",
+      "slug": "shichon"
+    },
+    {
+      "id": 275,
+      "name": "Portuguese Water Dog",
+      "slug": "portuguese-water-dog"
+    },
+    {
+      "id": 383,
+      "name": "Mal-Shi",
+      "slug": "mal-shi"
+    },
+    {
+      "id": 230,
+      "name": "Jack Russell Terrier",
+      "slug": "russell-terrier"
+    },
+    {
+      "id": 476,
+      "name": "Saint Berdoodle",
+      "slug": "saint-berdoodle"
+    },
+    {
+      "id": 346,
+      "name": "Pomapoo",
+      "slug": "pomapoo"
+    },
+    {
+      "id": 211,
+      "name": "Basset Hound",
+      "slug": "basset-hound"
+    },
+    {
+      "id": 425,
+      "name": "Frenchton",
+      "slug": "frenchton"
+    },
+    {
+      "id": 341,
+      "name": "Puggle",
+      "slug": "puggle"
+    },
+    {
+      "id": 246,
+      "name": "Soft Coated Wheaten Terrier",
+      "slug": "soft-coated-wheaten-terrier"
+    },
+    {
+      "id": 268,
+      "name": "Samoyed",
+      "slug": "samoyed"
+    },
+    {
+      "id": 522,
+      "name": "American Corgi",
+      "slug": "american-corgi"
+    },
+    {
+      "id": 518,
+      "name": "Corgipoo",
+      "slug": "corgipoo"
+    },
+    {
+      "id": 209,
+      "name": "Akita",
+      "slug": "akita"
+    },
+    {
+      "id": 382,
+      "name": "Shorkie",
+      "slug": "shorkie"
+    },
+    {
+      "id": 278,
+      "name": "Old English Sheepdog",
+      "slug": "old-english-sheepdog"
+    },
+    {
+      "id": 227,
+      "name": "German Shorthaired Pointer",
+      "slug": "german-shorthaired-pointer"
+    },
+    {
+      "id": 387,
+      "name": "Schnoodle",
+      "slug": "schnoodle"
+    },
+    {
+      "id": 221,
+      "name": "Collie",
+      "slug": "collie"
+    },
+    {
+      "id": 517,
+      "name": "Yoranian",
+      "slug": "yoranian"
+    },
+    {
+      "id": 267,
+      "name": "Schipperke",
+      "slug": "schipperke"
+    },
+    {
+      "id": 576,
+      "name": "Golden Mountain Doodle",
+      "slug": "golden-mountain-doodle"
+    },
+    {
+      "id": 290,
+      "name": "Dogue de Bordeaux",
+      "slug": "dogue-de-bordeaux"
+    },
+    {
+      "id": 274,
+      "name": "Cairn Terrier",
+      "slug": "cairn-terrier"
+    },
+    {
+      "id": 572,
+      "name": "Frenchie Pug",
+      "slug": "frenchie-pug"
+    },
+    {
+      "id": 247,
+      "name": "Vizsla",
+      "slug": "vizsla"
+    },
+    {
+      "id": 559,
+      "name": "Yo-Chon",
+      "slug": "yo-chon"
+    },
+    {
+      "id": 580,
+      "name": "Golden Cavadoodle",
+      "slug": "golden-cavadoodle"
+    },
+    {
+      "id": 511,
+      "name": "Springerdoodle",
+      "slug": "springerdoodles"
+    },
+    {
+      "id": 330,
+      "name": "Chinese Shar-Pei",
+      "slug": "chinese-shar-pei"
+    },
+    {
+      "id": 343,
+      "name": "Cane Corso",
+      "slug": "cane-corso"
+    }
+  ],
+  "buttonLink": "https://www.puppyspot.com/puppies-for-sale",
+  "hide": false
+}

@@ -1,0 +1,186 @@
+element {
+  --bg-desktop: url(/public/img/hero-imgs/Rectangle\ 10.webp);
+  --bg-tablet: url(/public/img/hero-imgs/tablet-image.webp);
+  --bg-mobile: url(/public/img/hero-imgs/mobile-homepage.webp);
+}
+
+.heroBg {
+  background-image: url(/public/img/hero-imgs/Rectangle\ 10.webp);
+}
+@media (max-width: 800px) {
+  .heroBg {
+    background-image: url(/public/img/hero-imgs/tablet-image.webp);
+  }
+}
+.heroBg {
+  height: 670px;
+}
+.heroBg {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  /* background-size: 118%; */
+  background-size: cover;
+  height: 650px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.hero-module__hero--fxGmC {
+  height: 670px;
+}
+@media (max-width: 480px) {
+  .heroBg {
+    background-image: url(/public/img/hero-imgs/mobile-homepage.webp);
+  }
+  .hero-module__hero--fxGmC {
+    height: 520px !important;
+  }
+  .heroBg {
+    height: 520px !important;
+  }
+}
+.hero-module__hero--fxGmC {
+  line-height: initial;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 650px;
+}
+.hero-module__hero--fxGmC .hero-module__heroContent--x5Q7B {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-module__hero--fxGmC .hero-module__heroTitle--pRQaT {
+  font-family: "Nunito";
+  font-weight: 700;
+  font-size: 46px;
+  margin: 0;
+  color: #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.hero-module__hero--fxGmC h1,
+.hero-module__hero--fxGmC h2 {
+  line-height: initial;
+}
+.order-1 {
+  order: 1 !important;
+}
+.hero-module__hero--fxGmC .hero-module__heroSubtitle--i-cGv {
+  font-family: "Nunito";
+  font-weight: 400;
+  color: #fff;
+  font-size: 36px;
+  margin: 0;
+  margin-top: 23px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@media (max-width: 800px) {
+  .hero-module__hero--fxGmC .hero-module__heroTitle--pRQaT {
+    font-size: 36px;
+  }
+  .hero-module__hero--fxGmC .hero-module__heroSubtitle--i-cGv {
+    font-size: 24px;
+  }
+}
+.hero-module__hero--fxGmC h2 {
+  line-height: initial;
+}
+.order-2 {
+  order: 2 !important;
+}
+.mt-\[20px\] {
+  margin-top: 20px !important;
+}
+.mr-\[10px\] {
+  margin-right: 10px !important;
+}
+.ml-\[10px\] {
+  margin-left: 10px !important;
+}
+.order-3 {
+  order: 3 !important;
+}
+
+.style-module__wrapper--7jJ94.style-module__open--k2jZl
+  .style-module__content--UlhVY.style-module__noBorder--b9CgM {
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.button-module__wrapper--jJ7g9 {
+  font-size: 16px;
+  font-family: Inter;
+  font-weight: bold;
+  line-height: 32px;
+  color: unset;
+  text-decoration: unset;
+  border: 0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 20px;
+  padding: 10px 24px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.hero-module__hero--fxGmC .hero-module__heroCta--8TpOf {
+  height: 52px;
+  width: 285px;
+  font-size: 16px !important;
+  font-family: "Noto Sans" !important;
+  border-radius: 25px;
+  font-weight: 700;
+}
+.button-module__wrapper--jJ7g9.button-module__contained--zXwYo {
+  color: #fff;
+  background-color: #ff9100;
+}
+.button-module__wrapper--jJ7g9.button-module__contained--zXwYo:hover {
+  background-color: #ffa836;
+}
+.hero-module__hero--fxGmC .hero-module__searchbarWrapper--Z0IvD {
+  width: 100%;
+}
+
+.hero-module__hero--fxGmC .hero-module__searchbarWrapper--Z0IvD {
+  margin-top: 40px;
+  background-color: #219653;
+  padding: 5px !important;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+}
+
+.max-w-\[clamp\(0px\,calc\(100vw_-_20px\)\,1070px\)\] {
+  max-width: clamp(0px, calc(100vw - 20px), 1070px) !important;
+}
+.order-4 {
+  order: 4 !important;
+}
+
+
+/* Small screen order */
+.button-order{
+  order: 3 !important;
+}
+.search-order{
+  order: 4 !important;
+}
+@media (max-width: 640px) {
+  .button-order{
+    order: 4 !important;
+  }
+  .search-order{
+    order: 3 !important;
+  }
+
+  .hero-module__hero--fxGmC .hero-module__searchbarWrapper--Z0IvD {
+    margin-top: 10px;
+  }
+}

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import "./index.css"
-import TopBanner from '../../top-banner';
 import navbarData from '../../../data/navbar-data.json'
 import allBreed from '../../../data/all-breeds.json'
 import Fuse from 'fuse.js';
@@ -437,15 +436,15 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         </li>
 
         <li className="header-nav__links-main">
-            <ul className="header-nav__links" style={{marginTop: '-3.3px'}}>
+            <ul className="header-nav__links">
                 
-                <li className="phone">
+                <li className="phone" style={{marginBottom: '-13px'}}>
                     <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={`https://wa.me/${us_number}`}>
                         (502) 382-0019
                     </a>
                 </li>
 
-                <li className="auth">
+                <li className="auth" style={{marginBottom: '-13px'}}>
                     <a className="hyperlink" href="https://www.puppyspot.com/log-in">Log In</a>
                 </li>
                 {/* <li className="control">

@@ -550,11 +550,15 @@
   .header-nav__links-modile{
     display: flex !important;
   }
+
+  .header-nav__content {
+    padding: 2rem 1rem 1.8rem 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .header-nav__content {
-    padding: 1rem 1rem 0.95rem 0.5rem;
+    padding: 1.2rem 1rem 1rem 0.5rem;
   }
 
   .header-nav__links-main li {

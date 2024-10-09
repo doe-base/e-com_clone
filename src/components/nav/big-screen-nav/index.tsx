@@ -22,7 +22,6 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
     const [designerBreed, setDesignerBreed] = useState<any>([])
 
     const [isFocused, setIsFocused] = useState(false);
-
     const [searchBreed, setSearchBreed] = useState('');
     
 
@@ -39,6 +38,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             setIsActive('')
             setPureBreedActive(false)
             setDesignerBreedActive(false)
+            setIsAboutUsHover(false)
         }
 
     }, [ isNavbarHover, isAvailblepuppliesHover, isOurPromiseHover, isAboutUsHover ])
@@ -89,6 +89,15 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
     const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019'
 
+
+    const onInputFocus =()=>{
+        setIsFocused(true)
+
+        setIsActive('')
+        setPureBreedActive(false)
+        setDesignerBreedActive(false)
+        setIsAboutUsHover(false)
+    }
   return (
     <ul id="nav-bar" className={`header-nav__content noauth puppy-site`} style={{ display: `${smallNavOpen ? 'none' : 'flex'}`}} onMouseEnter={() => setIsNavbarHover(true)} onMouseLeave={() => setIsNavbarHover(false)}>
         <li className="header-control-hamburger" onClick={()=> setSmallNavOpen(true)}>
@@ -407,7 +416,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                                         placeholder="Search for Breeds" 
                                         autoComplete="off" 
                                         onChange={(e)=> handleSearch(e)} 
-                                        onFocus={() => setIsFocused(true)}
+                                        onFocus={() => onInputFocus()}
                                         onBlur={() => setIsFocused(false)} 
                                     />
                                 </form>
@@ -459,7 +468,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
             <ul className="header-nav__links-modile" style={{marginTop: '-3px'}}>
                 
-                <li className="phone">
+                <li className="phone" style={{paddingRight: '0.5rem'}}>
                     <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={`https://wa.me/${us_number}`}>
                         <div>
                             <picture className="">

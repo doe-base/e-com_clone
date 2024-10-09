@@ -542,7 +542,7 @@
 
 }
 
-@media (max-width: 834px) {
+@media (max-width: 1024px) {
 
   .header-nav__links{
     display: none !important;
@@ -552,7 +552,7 @@
   }
 
   .header-nav__content {
-    padding: 2rem 1rem 1.8rem 1rem;
+    padding: 1.3rem 1.5rem 1rem 0.5rem;
   }
 }
 
@@ -563,5 +563,6 @@
 
   .header-nav__links-main li {
     padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }

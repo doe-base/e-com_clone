@@ -197,6 +197,17 @@
 
 
 /* Second part */
+.drawer-header-nav__mobile.banner-visible {
+  padding-top: 1rem;
+}
+.drawer-header-nav__mobile {
+  background-color: #fff;
+  height: 100vh;
+  position: absolute;
+  text-align: center;
+  top: 52px;
+  width: 100vw;
+}
 .drawer-mobile-menu-container {
   margin: auto;
   max-width: 400px;

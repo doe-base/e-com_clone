@@ -315,6 +315,53 @@ const HomeContainer: React.FC<Props> = ({}) => {
             </div>
         </div>
 
+        <div id="root-trusted-by-community">
+            <div className="trusted-by-community-module__wrapper--0Kxj-">
+
+                <div className="trusted-by-community-module__sectionLeft--Jg8fx">
+                    <img
+                        className="trusted-by-community-module__titleImage--148v6"
+                        src="https://www.puppyspot.com/preact/./img/trusted-by-community-icon.svg"
+                        loading="lazy"
+                    />
+                    <h3 className="trusted-by-community-module__title--b4Rre">
+                        Loved by the Community
+                    </h3>
+                    <p className="trusted-by-community-module__text--t6baY">
+                        PuppySpot serves you best by putting the health and well-being of your
+                        puppy first. Don't take our word for it,
+                        <strong> here's what real customers have to say about PuppySpot.</strong>
+                    </p>
+                    <div className="trusted-by-community-module__boxGreen--hTMmj">
+                        <img src="https://www.puppyspot.com/preact/./img/trusted-by-community-check-mark.svg" loading="lazy"/>
+                        <span className="trusted-by-community-module__label--GvukA">We’ve been placing healthy puppies in happy homes for nearly
+                        <strong className="trusted-by-community-module__highlight--Sjvw8">20</strong>years.</span>
+                    </div>
+                    <div className="trusted-by-community-module__wrapperButtons--ItUX- first">
+                        <div className="trusted-by-community-module__flexRow--EOUTG">
+                            <div className="trusted-by-community-module__flexItem--InltY">
+                                <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo" href="/reviews">
+                                Read more reviews
+                                </a>
+                            </div>
+                            <div className="trusted-by-community-module__flexItem--InltY">
+                                <a
+                                className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw"
+                                href="/puppies-for-sale">
+                                Browse all puppies
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="trusted-by-community-module__middleSection--kXg9e">
+                    <div className="trusted-by-community-module__middleSectionMask--ao9Kc"></div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
   );
 }

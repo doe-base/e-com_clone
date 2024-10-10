@@ -6,6 +6,7 @@ import FavouritePuppySlider from '../components/home-page-components/favorite-pu
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TrustedSlider from '../components/home-page-components/trusted-by-community-slider/TrustedSlider';
 
 interface Props{
 }
@@ -335,7 +336,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     <div className="trusted-by-community-module__boxGreen--hTMmj">
                         <img src="https://www.puppyspot.com/preact/./img/trusted-by-community-check-mark.svg" loading="lazy"/>
                         <span className="trusted-by-community-module__label--GvukA">We’ve been placing healthy puppies in happy homes for nearly
-                        <strong className="trusted-by-community-module__highlight--Sjvw8">20</strong>years.</span>
+                        <strong className="trusted-by-community-module__highlight--Sjvw8"> 20 </strong>years.</span>
                     </div>
                     <div className="trusted-by-community-module__wrapperButtons--ItUX- first">
                         <div className="trusted-by-community-module__flexRow--EOUTG">
@@ -354,10 +355,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         </div>
                     </div>
                 </div>
+
                 
                 <div className="trusted-by-community-module__middleSection--kXg9e">
                     <div className="trusted-by-community-module__middleSectionMask--ao9Kc"></div>
                 </div>
+
+                <TrustedSlider />
 
             </div>
         </div>

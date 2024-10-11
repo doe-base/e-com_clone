@@ -79,3 +79,11 @@ picture {
 .relative {
   position: relative !important;
 }
+
+p {
+  color: #000;
+  font-family: Inter,sans-serif;
+  font-size: 16px;
+  letter-spacing: .1px;
+  line-height: 26px;
+}

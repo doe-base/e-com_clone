@@ -316,7 +316,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
             </div>
         </div>
 
-        <div id="root-trusted-by-community" style={{paddingBottom: '4rem'}}>
+        <div id="root-trusted-by-community">
             <div className="trusted-by-community-module__wrapper--0Kxj-">
 
                 <div className="trusted-by-community-module__sectionLeft--Jg8fx">
@@ -375,6 +375,22 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
 
             </div>
+        </div>
+
+        <section className="long-module">
+            <div className="long-module__container">
+                <picture className="">
+                    <img id="" alt="" className="long-module__dog ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/components/contact-us/dog-medium.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/components/contact-us/dog-medium.svg" />
+                </picture>
+                <div className="long-module__copy">
+                    <p>Need help finding you new best friend? Start with our&nbsp;<strong>Breed Match Quiz</strong></p>
+                </div>
+                <a href="https://www.puppyspot.com/breed-selector-quiz" className="button main long-module__button">Take Quiz</a>
+            </div>
+        </section>
+
+        <div className="featured-puppies-module__wrapper--c1np1">
+            <h3 className="featured-puppies-module__title--3vIaM">Puppy Spotlight</h3>
         </div>
 
     </div>

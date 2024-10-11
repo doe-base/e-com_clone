@@ -7,6 +7,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import TrustedSlider from '../components/home-page-components/trusted-by-community-slider/TrustedSlider';
+import PuppySpotLight from '../components/home-page-components/puppy-spotlight-slide/PuppySpotLight';
+import PuppyCharacterSlide from '../components/home-page-components/puppy-character-slide/PuppyCharacterSlide';
 
 interface Props{
 }
@@ -103,6 +105,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                             className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo track_browse_all_home hero-module__heroCta--8TpOf"
                             href="https://www.puppyspot.com/puppies-for-sale"
                             >Browse All Puppies</a>
+                
                         </div>
 
                         <div className="hero-module__searchbarWrapper--Z0IvD search-order max-w-[clamp(0px,calc(100vw_-_20px),1070px)]">
@@ -344,6 +347,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                 <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo" href="/reviews">
                                 Read more reviews
                                 </a>
+                
                             </div>
                             <div className="trusted-by-community-module__flexItem--InltY">
                                 <a
@@ -351,6 +355,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                 href="/puppies-for-sale">
                                 Browse all puppies
                                 </a>
+                
                             </div>
                         </div>
                     </div>
@@ -367,9 +372,11 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     <div className="trusted-by-community-module__flexRow--EOUTG">
                         <div className="trusted-by-community-module__flexItem--InltY">
                             <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo  " href="/reviews">Read more reviews </a>
+                
                         </div>
                         <div className="trusted-by-community-module__flexItem--InltY">
                             <a className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw  " href="/puppies-for-sale">Browse all puppies </a>
+                
                         </div>
                     </div>
                 </div>
@@ -387,10 +394,26 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
                 <a href="https://www.puppyspot.com/breed-selector-quiz" className="button main long-module__button">Take Quiz</a>
             </div>
+
         </section>
 
         <div className="featured-puppies-module__wrapper--c1np1">
             <h3 className="featured-puppies-module__title--3vIaM">Puppy Spotlight</h3>
+
+            {/* <div className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU"></div> */}
+            <PuppySpotLight />
+        </div>
+
+        <div id="root-puppy-collections">
+            <div className="puppy-collections-module__wrapper--XBjZ7">
+                <img className="puppy-collections-module__icon--ct+Hp" src="https://www.puppyspot.com/preact/./img/star.svg" />
+                <h3 className="puppy-collections-module__title--bQyDZ">Puppy Characteristics</h3>
+                <span className="puppy-collections-module__subtitle--gvRzT">We’ve curated a list of our most popular characteristics of breeds for you.</span>
+                <PuppyCharacterSlide />
+                <div className="root-puppy-colletion-puppy-collections-module__buttonWrapper--yfGD0">
+                    <a className="root-puppy-colletion-button-module__wrapper--jJ7g9 root-puppy-colletion-button-module__outlined--dnOJw  " href="/puppies-for-sale">Browse All Puppies </a>
+                </div>
+            </div>
         </div>
 
     </div>

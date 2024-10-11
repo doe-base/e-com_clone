@@ -4,51 +4,136 @@ interface Props{
 }
 const TrustedSlider: React.FC<Props> = ({}) => {
 
+    // let movementCount = 0; // Keep track of the movement
+    // const handleRightBtnClick = () => {
+    //     const parentElement = document.getElementById('parent-carousel-module__wrapper');
+    //     const sliderElement = document.getElementById('child-carousel-module__wrapper');
+    //     const rightArrow = document.getElementById('carouselArrowCircleRight-trusted_slider');
+    //     const leftArrow = document.getElementById('carouselArrowCircleLeft-trusted_slider');
+    //     const trackerBar = document.getElementById('trusted-slider-tracker-bar'); // Tracking bar
+    //     const trackerBarParent = document.getElementById('trusted-slider-tracker-bar-parent'); // Parent of tracker bar
+    
+    //     if (parentElement && sliderElement && trackerBar && trackerBarParent) {
+    //         const sliderWidth = parentElement.clientWidth; // Width of the parent container
+    //         const maxMovement = sliderElement.scrollWidth - sliderWidth; // Calculate maximum scrollable width
+    //         const trackerMaxWidth = trackerBarParent.clientWidth; // Width of the tracker bar's parent container
+    
+    //         if (movementCount < maxMovement) {
+    //             movementCount += sliderWidth; // Increment movement by the width of the parent
+    //             if (movementCount >= maxMovement) {
+    //                 movementCount = maxMovement; // Cap at maxMovement
+    //                 rightArrow!.style.display = 'none'; // Hide right arrow when at the end
+    //             }
+    //             leftArrow!.style.display = 'flex'; // Show left arrow since we're no longer at the start
+    
+    //             // Update the slider position
+    //             sliderElement.style.transform = `translateX(-${movementCount}px)`; 
+    
+    //             // Calculate and update the tracker bar's width (within the bounds of the parent)
+    //             const percentageMoved = (movementCount / maxMovement); // Range: 0 to 1
+    //             const newWidth = percentageMoved * trackerMaxWidth; // New width of the tracker bar
+    //             trackerBar.style.width = `${newWidth}px`; // Adjust the width of the tracker bar to match the movement
+    //         }
+    //     }
+    // };
+    // const handleLeftBtnClick = () => {
+    //     const parentElement = document.getElementById('parent-carousel-module__wrapper');
+    //     const sliderElement = document.getElementById('child-carousel-module__wrapper');
+    //     const rightArrow = document.getElementById('carouselArrowCircleRight-trusted_slider');
+    //     const leftArrow = document.getElementById('carouselArrowCircleLeft-trusted_slider');
+    //     const trackerBar = document.getElementById('trusted-slider-tracker-bar'); // Tracking bar
+    //     const trackerBarParent = document.getElementById('trusted-slider-tracker-bar-parent'); // Parent of tracker bar
+    
+    //     if (parentElement && sliderElement && trackerBar && trackerBarParent) {
+    //         const sliderWidth = parentElement.clientWidth; // Width of the parent container
+    //         const maxMovement = sliderElement.scrollWidth - sliderWidth; // Calculate maximum scrollable width
+    //         const trackerMaxWidth = trackerBarParent.clientWidth; // Width of the tracker bar's parent container
+    
+    //         if (movementCount > 0) {
+    //             movementCount -= sliderWidth; // Decrease by the parent width
+    //             if (movementCount <= 0) {
+    //                 movementCount = 0; // Ensure it doesn't go below 0 (i.e., the start)
+    //                 leftArrow!.style.display = 'none'; // Hide left arrow when at the start
+    //             }
+    //             rightArrow!.style.display = 'flex'; // Show right arrow since we're no longer at the end
+    
+    //             // Update the slider position
+    //             sliderElement.style.transform = `translateX(-${movementCount}px)`;
+    
+    //             // Calculate and update the tracker bar's width (within the bounds of the parent)
+    //             const percentageMoved = (movementCount / maxMovement); // Range: 0 to 1
+    //             const newWidth = percentageMoved * trackerMaxWidth; // New width of the tracker bar
+    //             trackerBar.style.width = `${newWidth}px`; // Adjust the width of the tracker bar to match the movement
+    //         }
+    //     }
+    // };
+
+
     let movementCount = 0; // Keep track of the movement
     const handleRightBtnClick = () => {
         const parentElement = document.getElementById('parent-carousel-module__wrapper');
         const sliderElement = document.getElementById('child-carousel-module__wrapper');
         const rightArrow = document.getElementById('carouselArrowCircleRight-trusted_slider');
         const leftArrow = document.getElementById('carouselArrowCircleLeft-trusted_slider');
-        
-        if (parentElement && sliderElement) {
+        const trackerBar = document.getElementById('trusted-slider-tracker-bar'); // Tracking bar
+        const trackerBarParent = document.getElementById('trusted-slider-tracker-bar-parent'); // Parent of tracker bar
+    
+        if (parentElement && sliderElement && trackerBar && trackerBarParent) {
             const sliderWidth = parentElement.clientWidth; // Width of the parent container
-            const maxMovement = sliderElement.scrollWidth - sliderWidth; // Calculate maximum scrollable width
-
+            const maxMovement = sliderElement.scrollWidth - sliderWidth; // Maximum scrollable width of slider
+            const trackerMaxWidth = trackerBarParent.clientWidth - trackerBar.clientWidth; // Parent width minus bar width
+    
             if (movementCount < maxMovement) {
                 movementCount += sliderWidth; // Increment movement by the width of the parent
                 if (movementCount >= maxMovement) {
                     movementCount = maxMovement; // Cap at maxMovement
-                    rightArrow!.style.display = 'none'; // Hide right arrow when at the end
+                    rightArrow!.style.display = 'none'; // Hide right arrow at the end
                 }
-                leftArrow!.style.display = 'flex'; // Show left arrow since we're no longer at the start
-                console.log(movementCount)
-                sliderElement.style.transform = `translateX(-${movementCount}px)`; // Use negative movement for sliding
+                leftArrow!.style.display = 'flex'; // Show left arrow
+    
+                // Update slider position
+                sliderElement.style.transform = `translateX(-${movementCount}px)`;
+    
+                // Calculate the tracker bar's new position based on movement
+                const percentageMoved = movementCount / maxMovement; // Percentage moved across the slider
+                const newLeft = percentageMoved * trackerMaxWidth; // Left position proportional to parent width
+                trackerBar.style.left = `${newLeft}px`; // Set new left position of tracker bar
             }
         }
     };
-
+    
     const handleLeftBtnClick = () => {
         const parentElement = document.getElementById('parent-carousel-module__wrapper');
         const sliderElement = document.getElementById('child-carousel-module__wrapper');
         const rightArrow = document.getElementById('carouselArrowCircleRight-trusted_slider');
         const leftArrow = document.getElementById('carouselArrowCircleLeft-trusted_slider');
-
-        if (parentElement && sliderElement) {
+        const trackerBar = document.getElementById('trusted-slider-tracker-bar'); // Tracking bar
+        const trackerBarParent = document.getElementById('trusted-slider-tracker-bar-parent'); // Parent of tracker bar
+    
+        if (parentElement && sliderElement && trackerBar && trackerBarParent) {
             const sliderWidth = parentElement.clientWidth; // Width of the parent container
-
-            // Only slide left if we are not already at the beginning
+            const maxMovement = sliderElement.scrollWidth - sliderWidth; // Maximum scrollable width of slider
+            const trackerMaxWidth = trackerBarParent.clientWidth - trackerBar.clientWidth; // Parent width minus bar width
+    
             if (movementCount > 0) {
                 movementCount -= sliderWidth; // Decrease by the parent width
                 if (movementCount <= 0) {
-                    movementCount = 0; // Ensure it doesn't go below 0 (i.e., the start)
-                    leftArrow!.style.display = 'none'; // Hide left arrow when at the start
+                    movementCount = 0; // Ensure it doesn't go below 0 (start)
+                    leftArrow!.style.display = 'none'; // Hide left arrow at the start
                 }
-                rightArrow!.style.display = 'flex'; // Show right arrow since we're no longer at the end
-                sliderElement.style.transform = `translateX(-${movementCount}px)`; // Slide to the left by `movementCount`
+                rightArrow!.style.display = 'flex'; // Show right arrow
+    
+                // Update slider position
+                sliderElement.style.transform = `translateX(-${movementCount}px)`;
+    
+                // Calculate the tracker bar's new position based on movement
+                const percentageMoved = movementCount / maxMovement; // Percentage moved across the slider
+                const newLeft = percentageMoved * trackerMaxWidth; // Left position proportional to parent width
+                trackerBar.style.left = `${newLeft}px`; // Set new left position of tracker bar
             }
         }
     };
+
     return(
         <div className="trusted-by-community-module__sectionRight--zkUIU">
             <div id="parent-carousel-module__wrapper" className="carousel-module__wrapper--O59lP">
@@ -802,9 +887,9 @@ const TrustedSlider: React.FC<Props> = ({}) => {
 
             </div>
 
-            <div className="trusted-by-community-module__barWrapper--Y7GkC">
-                <div className="trusted-by-community-module__outsideBar--nBbBm">
-                <div className="trusted-by-community-module__insideBar--i8y1X" style={{width: 'calc(16.6503% + 2px)', left: "calc(0%)"}}></div>
+            <div id="trusted-slider-tracker-bar-parent" className="trusted-by-community-module__barWrapper--Y7GkC">
+                <div  className="trusted-by-community-module__outsideBar--nBbBm">
+                    <div id="trusted-slider-tracker-bar" className="trusted-by-community-module__insideBar--i8y1X" style={{width: 'calc(16.6503% + 2px)', left: "calc(0%)"}}></div>
                 </div>
             </div>
             

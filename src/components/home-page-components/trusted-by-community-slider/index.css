@@ -9,13 +9,48 @@
   overflow: hidden;
 }
 
+
 .trusted-by-community-module__carouselArrowCircleLeft--S7twT {
   transform: rotateZ(180deg);
   left: 120px;
 }
-@media not all and (min-width: 1536px) {
+@media (max-width: 1536px) {
   .trusted-by-community-module__carouselArrowCircleLeft--S7twT {
-    left: 100px;
+    left: 100px !important;
+  }
+}
+@media (max-width: 1280px) {
+  .trusted-by-community-module__carouselArrowCircleLeft--S7twT {
+    left: 80px !important;
+  }
+}
+@media (max-width: 640px) {
+  .trusted-by-community-module__carouselArrowCircleLeft--S7twT {
+    left: 20px !important;
+  }
+}
+
+.trusted-by-community-module__carouselArrowCircleRight--c8e5w {
+  right: 120px;
+}
+@media (max-width: 1536px) {
+  .trusted-by-community-module__carouselArrowCircleRight--c8e5w {
+    right: 100px !important;
+  }
+}
+@media (max-width: 1280px) {
+  .trusted-by-community-module__carouselArrowCircleRight--c8e5w {
+    right: 80px !important;
+  }
+}
+@media (max-width: 640px) {
+  .trusted-by-community-module__carouselArrowCircleRight--c8e5w {
+    right: 20px !important;
+  }
+}
+@media (max-width: 768px) {
+  .trusted-by-community-module__carouselArrowCircleLeft--S7twT, .trusted-by-community-module__carouselArrowCircleRight--c8e5w {
+    top: calc(50% + 10px);
   }
 }
 @media (min-width: 768px) {
@@ -37,11 +72,11 @@
   align-items: center;
   z-index: 2;
 }
-@media not all and (min-width: 1536px) {
+/* @media not all and (min-width: 1536px) {
   .trusted-by-community-module__carouselArrowCircleRight--c8e5w {
     right: 100px;
   }
-}
+} */
 .trusted-by-community-module__carouselArrowCircleRight--c8e5w {
   right: 120px;
 }
@@ -122,6 +157,7 @@
   border-top: 2px solid #66af37;
   top: -2px;
   height: 0;
+  transition: all 0.3s linear;
 }
 
 .trusted-by-community-module__sectionRight--zkUIU

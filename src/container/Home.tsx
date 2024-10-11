@@ -316,7 +316,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
             </div>
         </div>
 
-        <div id="root-trusted-by-community">
+        <div id="root-trusted-by-community" style={{paddingBottom: '4rem'}}>
             <div className="trusted-by-community-module__wrapper--0Kxj-">
 
                 <div className="trusted-by-community-module__sectionLeft--Jg8fx">
@@ -362,6 +362,17 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
 
                 <TrustedSlider />
+
+                <div className="trusted-by-community-module__wrapperButtons--ItUX- second">
+                    <div className="trusted-by-community-module__flexRow--EOUTG">
+                        <div className="trusted-by-community-module__flexItem--InltY">
+                            <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo  " href="/reviews">Read more reviews </a>
+                        </div>
+                        <div className="trusted-by-community-module__flexItem--InltY">
+                            <a className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw  " href="/puppies-for-sale">Browse all puppies </a>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

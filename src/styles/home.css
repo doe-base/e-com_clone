@@ -665,3 +665,84 @@ element {
   width: 100%;
   height: 100%;
 }
+
+
+/* Breed Quiz */
+.long-module {
+  background-color: #e6fffd;
+  height: max-content;
+  margin-top: 60px;
+  padding: 4em 1em;
+  width: 100%;
+}
+.long-module__container {
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #66af37;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .long-module__container {
+    flex-direction: row;
+    height: 5em;
+    justify-content: space-evenly;
+  }
+}
+
+.long-module__dog {
+  transform: scaleX(-1);
+  width: 10em;
+}
+
+.long-module__copy {
+  margin: 1em 0;
+}
+@media screen and (min-width: 1070px) {
+  .long-module__copy {
+    display: flex;
+  }
+}
+
+.long-module__copy p {
+  font-size: 21px;
+  line-height: 35.2px;
+  margin: 0;
+}
+@media screen and (min-width: 1070px) {
+  .long-module__copy p:first-of-type {
+    margin-right: 5px;
+  }
+}
+
+.button.main {
+  background-color: #ff9100;
+  border: none;
+  color: #fff;
+}
+
+.long-module__button {
+  font-family: Inter,sans-serif;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .long-module__button {
+    font-size: 1.25rem;
+    padding: .3em 1.5em;
+    width: auto;
+  }
+}
+
+
+/* Puppy spotlight section */
+.featured-puppies-module__wrapper--c1np1 {
+  position: relative;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}

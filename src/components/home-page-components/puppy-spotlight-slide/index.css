@@ -36,11 +36,11 @@
   }
 }
 @media not all and (min-width: 640px) {
-    .featured-puppies-module__carouselWrapper--bYSHH
-      .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
-      left: 15px;
-    }
+  .featured-puppies-module__carouselWrapper--bYSHH
+    .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
+    left: 15px;
   }
+}
 
 .featured-puppies-module__carouselWrapper--bYSHH
   .featured-puppies-module__carouselArrowCircleRight--3M3TT {
@@ -213,4 +213,25 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   margin: 0;
+}
+
+.featured-puppies-module__itemWrapper--O0u\+N
+  .featured-puppies-module__heartIcon--jWh5x {
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+  height: 32px;
+  width: 32px;
+  min-width: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  padding: 6px;
+  margin-left: auto;
+}
+.featured-puppies-module__itemWrapper--O0u\+N
+  .featured-puppies-module__heartIcon--jWh5x:hover,
+.featured-puppies-module__itemWrapper--O0u\+N
+  .featured-puppies-module__heartIcon--jWh5x.favorited {
+  fill: #219653;
 }

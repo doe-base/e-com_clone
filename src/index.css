@@ -87,3 +87,9 @@ p {
   letter-spacing: .1px;
   line-height: 26px;
 }
+
+
+.special-scroll-slider-prop{
+  user-select: none;
+}
+

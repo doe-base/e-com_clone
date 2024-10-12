@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "../styles/home.css";
 import Fuse from 'fuse.js';
 import allBreed from '../data/all-breeds.json';
@@ -9,6 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 import TrustedSlider from '../components/home-page-components/trusted-by-community-slider/TrustedSlider';
 import PuppySpotLight from '../components/home-page-components/puppy-spotlight-slide/PuppySpotLight';
 import PuppyCharacterSlide from '../components/home-page-components/puppy-character-slide/PuppyCharacterSlide';
+import RecentlyViewed from '../components/home-page-components/puppy-spotlight-slide/RecentlyViewed';
+
 
 interface Props{
 }
@@ -35,6 +37,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
         }
     };
 
+    const [currentSlide, setCurrentSlide] = useState(0);
     const settings = {
         dots: true,
         infinite: true,
@@ -46,18 +49,6 @@ const HomeContainer: React.FC<Props> = ({}) => {
         cssEase: "linear",
         centerMode: true, // This centers the active item
         centerPadding: '0px', // Remove extra padding to fully center
-
-        customPaging: (i: any) => (
-            <div
-                style={{
-                    width: "10px",
-                    height: "10px",
-                    backgroundColor: i === 0 ? "#333" : "#bbb", // Example color
-                    borderRadius: "50%",
-                    display: "inline-block",
-                }}
-            />
-        ),
       };
 
       const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -267,7 +258,21 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
 
                 <div id="small-screen-why-us">
-                    <Slider {...settings}>
+                    <Slider {...settings} 
+                     beforeChange={(oldIndex, newIndex) => setCurrentSlide(newIndex)}
+                     customPaging={(i) => (
+                         <div
+                             style={{
+                                 width: "10px",
+                                 height: "10px",
+                                 backgroundColor: i === currentSlide ? "#333" : "#bbb",
+                                 borderRadius: "50%",
+                                 display: "inline-block",
+                             }}
+                         />
+                     )}
+                 >
+
                         <div>
                             <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
                                 <div className="styles-module__cardInfo--r+Wfi">
@@ -414,6 +419,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     <a className="root-puppy-colletion-button-module__wrapper--jJ7g9 root-puppy-colletion-button-module__outlined--dnOJw  " href="/puppies-for-sale">Browse All Puppies </a>
                 </div>
             </div>
+        </div>
+
+        <div className="featured-puppies-module__wrapper--c1np1">
+            <h3 className="featured-puppies-module__title--3vIaM">Recently Viewed</h3>
+
+            {/* <div className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU"></div> */}
+            <RecentlyViewed />
         </div>
 
     </div>

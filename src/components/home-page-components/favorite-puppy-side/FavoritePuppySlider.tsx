@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import "./index.css";
 
 
@@ -25,6 +25,39 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
     //     }
     // }, []);
         
+
+
+
+
+
+
+
+
+
+
+
+//Slide button click errors
+//Slider scroll accidently click card
+//Slider button appare and disappear feature
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 let movementCount = 0; // Keep track of the movement
 const handleRightBtnClick = () => {
@@ -71,14 +104,48 @@ const handleLeftBtnClick = () => {
     }
 };
 
+
+const scrollContainerRef = useRef<HTMLDivElement>(null);
+let isDown = false;
+let startX: number;
+let scrollLeft: number;
+
+const onMouseDown = (e: React.MouseEvent) => {
+    if (!scrollContainerRef.current) return;
+    isDown = true;
+    startX = e.pageX - scrollContainerRef.current.offsetLeft;
+    scrollLeft = scrollContainerRef.current.scrollLeft;
+};
+
+const onMouseLeave = () => {
+    isDown = false;
+};
+
+const onMouseUp = () => {
+    isDown = false;
+};
+
+const onMouseMove = (e: React.MouseEvent) => {
+    if (!isDown || !scrollContainerRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 1; // Multiply by 2 for faster scroll
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+};
+
   
   return (
 
-    <div id='parent-slider-carousel-holder' className="carousel-module__wrapper--O59lP favorite-breeds-module__wrapperCarousel--EqX9F" style={{width: 'fit-content'}}>
+    <div 
+        ref={scrollContainerRef}
+        onMouseDown={onMouseDown}
+        onMouseLeave={onMouseLeave}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove} id='parent-slider-carousel-holder' className="carousel-module__wrapper--O59lP favorite-breeds-module__wrapperCarousel--EqX9F" style={{width: 'fit-content'}}>
         <div id='carouselArrowCircleLeft' className="favorite-breeds-module__carouselArrowCircleLeft--u68nI" style={{display: "none", zIndex: '5'}} onClick={handleLeftBtnClick}><img src="/img/carousel-arrow.svg"/></div>
         <div id='carouselArrowCircleRight' className="favorite-breeds-module__carouselArrowCircleRight--s3r4f" style={{display: "flex", zIndex: '5'}} onClick={handleRightBtnClick}><img src="/img/carousel-arrow.svg"/></div>
         
-        <div id='slider-carousel-holder' className="carousel-module__content--qDPHs  false favorite-breeds-module__contentCarousel--5rbX1">
+        <div id='slider-carousel-holder' className="carousel-module__content--qDPHs  false favorite-breeds-module__contentCarousel--5rbX1 special-scroll-slider-prop">
             <div className="favorite-breeds-module__paddingDiv--mD7Bq"></div>
             
             <a href="/puppies-for-sale/breed/goldendoodle" className="favorite-breeds-module__pointer--cun1c" draggable="false">

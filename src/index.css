@@ -93,3 +93,6 @@ p {
   user-select: none;
 }
 
+.disable-links a {
+  pointer-events: none !important;
+}

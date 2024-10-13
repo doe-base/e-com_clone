@@ -1,0 +1,183 @@
+.breed-states {
+  align-items: center;
+  background-color: #eaf9ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 1rem;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.breed-states__title {
+  font-family: Nunito, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.36em;
+  margin: 0;
+}
+
+.breed-states img {
+  margin: 1rem auto;
+  max-width: 264px;
+  min-width: 184px;
+}
+.breed-states p {
+  font-size: 1.25rem;
+  line-height: 1.6em;
+  margin: 0 0 1rem;
+}
+
+.breed-states__items {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .breed-states__items {
+    flex-direction: row;
+  }
+}
+
+.breed-states .collapsible-panel__container {
+  border: 1px solid #71d0ff;
+  border-radius: 4px;
+  margin: 1rem;
+  min-width: 260px;
+  padding: 0 1rem;
+}
+@media screen and (min-width: 768px) {
+  .breed-states .collapsible-panel__container {
+    min-width: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .breed-states .collapsible-panel__container {
+    margin: 0.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.collapsible-panel__container {
+  border-bottom-color: #dcdcdc !important;
+  border-top: 1px solid #dcdcdc !important;
+}
+
+.collapsible-panel__content {
+  padding: 5px 10px 20px;
+}
+
+.breed-states__items ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.collapsible-panel__content ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: disc;
+}
+
+.breed-states__items ul li {
+  display: block;
+  list-style: none;
+}
+.breed-states__items ul li a {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6em;
+}
+
+.breed-states .collapsible-panel__handle {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .breed-states .collapsible-panel__handle,
+  .breed-states .collapsible-panel__handle::before {
+    pointer-events: none;
+  }
+}
+.collapsible-panel__container h2,
+.collapsible-panel__container h3 {
+  margin: 0;
+  padding: 15px 0 10px;
+  position: relative;
+  text-align: left;
+}
+.collapsible-panel__container h2.open span,
+.collapsible-panel__container h3.open span {
+  color: #000;
+}
+.breed-states .collapsible-panel__handle span {
+  margin-right: 0.5rem;
+}
+.breed-states .collapsible-panel__handle span,
+.breed-states .collapsible-panel__handle::before {
+  border-color: #000 !important;
+  color: #000 !important;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.collapsible-panel__handle span {
+  pointer-events: none;
+}
+
+.breed-states .collapsible-panel__handle span,
+.breed-states .collapsible-panel__handle::before {
+  border-color: #000 !important;
+  color: #000 !important;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.collapsible-panel__container h2::before,
+.collapsible-panel__container h3::before {
+  background-image: url(/public/img/chevron-rounded.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  border-top-color: currentcolor;
+  border-right-color: currentcolor;
+  border-bottom-color: currentcolor;
+  border-left-color: currentcolor;
+  height: 12px !important;
+  transform: rotate(0);
+  width: 12px !important;
+}
+.collapsible-panel__handle::before {
+  border: 2px solid #000;
+  border-bottom: none;
+  border-left: none;
+  content: "";
+  float: right;
+  height: 0.55em;
+  margin-left: 0.35em;
+  margin-top: 3px;
+  transform: rotate(135deg);
+  transition: transform 0.3s;
+  width: 0.55em;
+}
+@media screen and (min-width: 768px) {
+  .breed-states .collapsible-panel__handle,
+  .breed-states .collapsible-panel__handle::before {
+    pointer-events: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .breed-states .collapsible-panel__handle::before {
+    display: none;
+  }
+}
+.collapsible-panel__container h2.open::before, .collapsible-panel__container h3.open::before {
+    border-color: #000;
+    transform: rotate(180deg);
+  }
+
+  @media screen and (max-width: 768px) {
+    .hidden-at-768{
+        display: none !important;
+    }
+  }

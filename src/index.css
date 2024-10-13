@@ -45,6 +45,15 @@ h5 {
   color: #000;
   font-family: Inter, sans-serif;
 }
+h3 {
+  font-size: 20px;
+  letter-spacing: .1px;
+  line-height: 22px;
+}
+h2, h3 {
+  color: #000;
+  font-family: Nunito,sans-serif;
+}
 
 img,
 picture {

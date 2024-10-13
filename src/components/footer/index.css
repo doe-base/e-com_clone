@@ -1,0 +1,220 @@
+.footer-nav {
+  background: url(/public/img/footer/footer-graphic.svg) 0 100% no-repeat;
+  background-color: #e6fffd;
+  padding: 2em 2em 12em;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav {
+    background-size: contain;
+    padding-bottom: 8em;
+    text-align: left;
+  }
+}
+.footer-nav__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__container {
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+}
+.footer-nav__top {
+  padding-bottom: 1em;
+}
+.footer-nav__top ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.footer-nav__top li {
+  font-weight: 700;
+}
+.footer-nav__logo {
+  padding-bottom: 1em;
+  width: 8em;
+}
+.footer-nav__top li {
+  font-weight: 700;
+}
+
+.footer-nav__content {
+  margin-bottom: 2em;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+.footer-nav__header {
+  font-weight: 700;
+  margin: 1em 0 0;
+  /* text-align: left; */
+}
+.footer-nav__list li {
+  padding: 0.5em;
+  /* text-align: left; */
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__list li {
+    padding-left: 0;
+  }
+}
+.footer-nav__list li a {
+  font-weight: 400;
+}
+.footer-nav__payment {
+  border-top: 1px solid #d8d8d8;
+  padding-top: 2.75rem;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__payment {
+    border-bottom: 1px solid #d8d8d8;
+    border-top: 0;
+    margin-bottom: 2rem;
+    padding-bottom: 1.125rem;
+  }
+}
+.footer-nav__payment ul {
+  /* align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__payment ul {
+    justify-content: flex-start;
+  }
+}
+
+.footer-nav__payment ul li:first-child {
+  margin-left: 0;
+}
+.footer-nav__payment ul li {
+  display: flex;
+  flex-shrink: 0;
+  margin: 0 0 2.75rem 2.75rem;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__payment ul li {
+    margin: 0 0 0 1.25rem;
+  }
+}
+
+.footer-nav__list-terms {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__list-terms,
+  .footer-nav__list-terms ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__list-terms ul {
+    align-items: flex-start;
+    min-width: max-content;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__list-terms,
+  .footer-nav__list-terms ul {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footer-nav__bbb {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__bbb {
+    margin-top: 0;
+  }
+}
+a#bbblink.sehzbam,
+a#bbblink.rbhzbam,
+a#bbblink.sehzbum,
+a#bbblink.rbhzbum {
+  width: 150px;
+  height: 57px;
+}
+.footer-nav__bbb #bbblink {
+  height: 57px;
+  max-width: 150px;
+  overflow: hidden;
+  position: relative;
+}
+a#bbblink {
+  display: block;
+  position: relative;
+  text-align: center;
+  color: rgb(0, 90, 120);
+  text-decoration: none;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-nav__bbb #bbblink img {
+  border: 0;
+  left: 0;
+  margin-left: 0;
+  max-width: 200%;
+  position: absolute;
+  top: 0;
+}
+a#bbblink img {
+  border: 0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 0px;
+  max-width: 200%;
+}
+a#bbblink.sehzbam:hover img,
+a#bbblink.rbhzbam:hover img,
+a#bbblink.ruhzbam:hover img,
+a#bbblink.sehzbum:hover img,
+a#bbblink.rbhzbum:hover img,
+a#bbblink.ruhzbum:hover img {
+  margin-left: -150px;
+}
+
+.footer-nav__list-social {
+  grid-column-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__list-social {
+    justify-content: left;
+  }
+}
+
+.footer-nav__list li {
+  padding: 0.5em;
+}
+@media screen and (min-width: 768px) {
+  .footer-nav__list li {
+    padding-left: 0;
+  }
+}
+.footer-nav__list li a {
+  font-weight: 400;
+}
+.footer-nav__list-social li svg {
+  height: 2em;
+  width: 2em;
+}

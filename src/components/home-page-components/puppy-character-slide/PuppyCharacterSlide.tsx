@@ -39,7 +39,6 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                     rightArrow!.style.display = 'none'; // Hide right arrow at the end
                 }
                 leftArrow!.style.display = 'flex'; // Show left arrow
-                console.log(leftArrow)
     
                 // Update slider position
                 sliderElement.style.transform = `translateX(-${movementCount}px)`;

@@ -5,6 +5,7 @@
   }
   .carousel-module__wrapper--O59lP {
     touch-action: pan-y;
+    scroll-behavior: smooth;
   }
   .favorite-breeds-module__wrapper--7M\+J3 .favorite-breeds-module__wrapperCarousel--EqX9F .favorite-breeds-module__carouselArrowCircleLeft--u68nI{
     display: flex;
@@ -115,7 +116,6 @@
     width: max-content;
     align-items: stretch;
     margin: -7.5px;
-    transition: all 0.3s linear;
   }
   @media (max-width: 600px) {
     .carousel-module__wrapper--O59lP .carousel-module__content--qDPHs {

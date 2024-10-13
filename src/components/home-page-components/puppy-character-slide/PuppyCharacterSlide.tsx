@@ -1,91 +1,149 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props{
 }
 const PuppyCharacterSlide: React.FC<Props> = ({}) => {
-    useEffect(() => {
-        // Get the parent container and tracker bar elements by their IDs
-        const parentContainer = document.getElementById("puppy-character-trusted-slider-tracker-bar-parent");
-        const trackerBar = document.getElementById("puppy-character-trusted-slider-tracker-bar");
-    
-        if (parentContainer && trackerBar) {
-          // Get the width of the parent container
-          const parentWidth = parentContainer.offsetWidth;
-    
-          // Set the width of the tracker bar as a percentage of the parent's width
-          const trackerWidth = parentWidth * 0.5; // For example, 20% of the parent width
-          trackerBar.style.width = `${trackerWidth}px`;
-        }
-      }, []);
+    const [movementCount, setMovementCount] = useState(0); // Use state for movementCount
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [isScrolling, setIsScrolling] = useState(false);
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const sliderElementRef = useRef<HTMLDivElement>(null);
 
-    let movementCount = 0; // Keep track of the movement
-    const handleRightBtnClick = () => {
-        const parentElement = document.getElementById('puppy-character-parent-carousel-module__wrapper');
-        const sliderElement = document.getElementById('puppy-character-child-carousel-module__wrapper');
-        const rightArrow = document.getElementById('puppy-character-carouselArrowCircleRight-trusted_slider');
-        const leftArrow = document.getElementById('puppy-character-carouselArrowCircleLeft-trusted_slider');
-        const trackerBar = document.getElementById('puppy-character-trusted-slider-tracker-bar'); // Tracking bar
-        const trackerBarParent = document.getElementById('puppy-character-trusted-slider-tracker-bar-parent'); // Parent of tracker bar
+    const handleTrackBarMovment =(newMovementCount: number)=>{
+        if (!scrollContainerRef.current || !sliderElementRef.current) {
+            return;
+        }
     
-        if (parentElement && sliderElement && trackerBar && trackerBarParent) {
-            const sliderWidth = parentElement.clientWidth; // Width of the parent container
-            const maxMovement = sliderElement.scrollWidth - sliderWidth; // Maximum scrollable width of slider
-            const trackerMaxWidth = trackerBarParent.clientWidth - trackerBar.clientWidth; // Parent width minus bar width
+        const sliderWidth = scrollContainerRef.current.clientWidth;
+        const maxMovement = sliderElementRef.current.scrollWidth - sliderWidth;
+        const trackerBar = document.getElementById('puppy-character-trusted-slider-tracker-bar');
+        const trackerBarParent = document.getElementById('puppy-character-trusted-slider-tracker-bar-parent');
+    
+        if (!trackerBar || !trackerBarParent) {
+            return;
+        }
+    
+        const trackerMaxWidth = trackerBarParent.clientWidth - trackerBar.clientWidth; // Parent width minus bar width
+        const percentageMoved = newMovementCount / maxMovement; // Percentage moved across the slider
+        
+        // Ensure the tracker bar stays within bounds
+        const newLeft = Math.max(0, Math.min(percentageMoved * trackerMaxWidth, trackerMaxWidth));
+    
+        trackerBar.style.left = `${newLeft}px`; // Set new left position of tracker bar
+    }
+
+    const handleRightBtnClick = () => {
+
+        if (scrollContainerRef.current && sliderElementRef.current) {
+            const sliderWidth = scrollContainerRef.current.clientWidth; // Width of the parent container
+            const maxMovement = sliderElementRef.current.scrollWidth  - sliderWidth;
     
             if (movementCount < maxMovement) {
-                movementCount += sliderWidth; // Increment movement by the width of the parent
-                if (movementCount >= maxMovement) {
-                    movementCount = maxMovement; // Cap at maxMovement
-                    rightArrow!.style.display = 'none'; // Hide right arrow at the end
-                }
-                leftArrow!.style.display = 'flex'; // Show left arrow
-    
-                // Update slider position
-                sliderElement.style.transform = `translateX(-${movementCount}px)`;
-    
-                // Calculate the tracker bar's new position based on movement
-                const percentageMoved = movementCount / maxMovement; // Percentage moved across the slider
-                const newLeft = percentageMoved * trackerMaxWidth; // Left position proportional to parent width
-                trackerBar.style.left = `${newLeft}px`; // Set new left position of tracker bar
+                const newMovementCount = Math.min(movementCount + sliderWidth, maxMovement); // Cap at maxMovement
+                setMovementCount(newMovementCount);
+                scrollContainerRef.current.scrollLeft = newMovementCount
+
+                handleTrackBarMovment(newMovementCount)
             }
         }
     };
     const handleLeftBtnClick = () => {
-        const parentElement = document.getElementById('puppy-character-parent-carousel-module__wrapper');
-        const sliderElement = document.getElementById('puppy-character-child-carousel-module__wrapper');
-        const rightArrow = document.getElementById('puppy-character-carouselArrowCircleRight-trusted_slider');
-        const leftArrow = document.getElementById('puppy-character-carouselArrowCircleLeft-trusted_slider');
-        const trackerBar = document.getElementById('puppy-character-trusted-slider-tracker-bar'); // Tracking bar
-        const trackerBarParent = document.getElementById('puppy-character-trusted-slider-tracker-bar-parent'); // Parent of tracker bar
-    
-        if (parentElement && sliderElement && trackerBar && trackerBarParent) {
-            const sliderWidth = parentElement.clientWidth; // Width of the parent container
-            const maxMovement = sliderElement.scrollWidth - sliderWidth; // Maximum scrollable width of slider
-            const trackerMaxWidth = trackerBarParent.clientWidth - trackerBar.clientWidth; // Parent width minus bar width
-    
+      
+        if (scrollContainerRef.current && sliderElementRef.current) {
+            const sliderWidth = scrollContainerRef.current.clientWidth; // Width of the parent container
+            
+            // Only slide left if we are not already at the beginning
             if (movementCount > 0) {
-                movementCount -= sliderWidth; // Decrease by the parent width
-                if (movementCount <= 0) {
-                    movementCount = 0; // Ensure it doesn't go below 0 (start)
-                    leftArrow!.style.display = 'none'; // Hide left arrow at the start
-                }
-                rightArrow!.style.display = 'flex'; // Show right arrow
-    
-                // Update slider position
-                sliderElement.style.transform = `translateX(-${movementCount}px)`;
-    
-                // Calculate the tracker bar's new position based on movement
-                const percentageMoved = movementCount / maxMovement; // Percentage moved across the slider
-                const newLeft = percentageMoved * trackerMaxWidth; // Left position proportional to parent width
-                trackerBar.style.left = `${newLeft}px`; // Set new left position of tracker bar
+                const newMovementCount = Math.max(movementCount - sliderWidth, 0); // Ensure it doesn't go below 0
+                setMovementCount(newMovementCount);
+                scrollContainerRef.current.scrollLeft = newMovementCount
+
+                handleTrackBarMovment(newMovementCount)
             }
+
         }
     };
+    
+    
+
+    const onMouseDown = (e: React.MouseEvent) => {
+        if (!scrollContainerRef.current) return;
+        setIsDown(true);
+        setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+        setScrollLeft(scrollContainerRef.current.scrollLeft);
+        setIsScrolling(false); // Reset scroll flag when mouse is pressed down
+    };
+    const onMouseLeave = () => {
+        setIsDown(false);
+    };
+    const onMouseUp = (e: React.MouseEvent) => {
+        setIsDown(false);
+        if (isScrolling) {
+            e.preventDefault(); // Prevent click if the user scrolled
+        }
+    };
+    const onMouseMove = (e: React.MouseEvent) => {
+        if (!isDown || !scrollContainerRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainerRef.current.offsetLeft;
+        const walk = (x - startX) * 1; // Multiply by 1 for normal speed
+        const newScrollLeft = scrollLeft - walk; // Calculate new scroll position
+        scrollContainerRef.current.scrollLeft = newScrollLeft;
+        setIsScrolling(true); // Set the scroll flag to true once movement is detected
+    
+        // Update movementCount based on new scrollLeft
+        setMovementCount(newScrollLeft);
+
+        handleTrackBarMovment(newScrollLeft)
+    };
+    
+
+    useEffect(()=>{
+        const rightArrow = document.getElementById('puppy-character-carouselArrowCircleRight-trusted_slider');
+        const leftArrow = document.getElementById('puppy-character-carouselArrowCircleLeft-trusted_slider');
+    
+        if (scrollContainerRef.current){
+            const maxScrollLeft = scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
+        
+            if (movementCount <= 0) {
+                // We're at the start of the slider
+                leftArrow!.style.display = 'none';
+            } else {
+                leftArrow!.style.display = 'flex';
+            }
+        
+            if (movementCount >= maxScrollLeft) {
+                // We're at the end of the slider
+                rightArrow!.style.display = 'none';
+            } else {
+                rightArrow!.style.display = 'flex';
+            }
+        }
+    }, [movementCount])
+
+    // Attach these handlers to your anchors:
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (isScrolling) {
+            e.preventDefault(); // If user has scrolled, prevent anchor click
+        }
+    };
+
+
     return (
         <>
             <div className="puppy-collections-module__carouselOutsideWrapper--sP7PV">
 
-                <div id="puppy-character-parent-carousel-module__wrapper" className="carousel-module__wrapper--O59lP puppy-collections-module__carouselWrapper--9nBE1">
+                <div                 
+                    ref={scrollContainerRef}
+                    onMouseDown={onMouseDown}
+                    onMouseLeave={onMouseLeave}
+                    onMouseUp={onMouseUp}
+                    onMouseMove={onMouseMove}  
+                    id="puppy-character-parent-carousel-module__wrapper" 
+                    className="carousel-module__wrapper--O59lP puppy-collections-module__carouselWrapper--9nBE1"
+                >
                     <div id="puppy-character-carouselArrowCircleLeft-trusted_slider" className="puppy-collections-module__carouselArrowCircleLeft--bmUIM" style={{display: "none", zIndex: '4'}} onClick={handleLeftBtnClick}>
                         <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
                     </div>
@@ -94,8 +152,10 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                         <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
                     </div>
 
-                    <div id="puppy-character-child-carousel-module__wrapper" className="carousel-module__content--qDPHs false puppy-collections-module__carouselContent--phAfk">
+                    <div ref={sliderElementRef} id="puppy-character-child-carousel-module__wrapper" className="carousel-module__content--qDPHs false puppy-collections-module__carouselContent--phAfk">
                         <a
+                            onClick={handleAnchorClick}
+                            style={{userSelect: 'none'}}
                             href="/breed/collections/active-dogs"
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
@@ -114,6 +174,8 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                             </div></div>
                         </a>
                         <a
+                            onClick={handleAnchorClick}
+                            style={{userSelect: 'none'}}
                             href="/breed/collections/best-apartment-dogs"
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
@@ -132,6 +194,8 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                             </div></div>
                         </a>
                         <a
+                            onClick={handleAnchorClick}
+                            style={{userSelect: 'none'}}
                             href="/breed/collections/doodle-puppies"
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
@@ -150,6 +214,8 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                             </div></div>
                         </a>
                         <a
+                            onClick={handleAnchorClick}
+                            style={{userSelect: 'none'}}
                             href="/breed/collections/best-family-dogs"
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
@@ -168,6 +234,8 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                             </div></div>
                         </a>
                         <a
+                            onClick={handleAnchorClick}
+                            style={{userSelect: 'none'}}
                             href="/breed/collections/allergy-friendly-dogs"
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
@@ -186,6 +254,8 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                             </div></div>
                         </a>
                         <a
+                            onClick={handleAnchorClick}
+                            style={{userSelect: 'none'}}
                             href="/breed/collections/teacup-puppies"
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
@@ -211,7 +281,7 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
 
             <div id="puppy-character-trusted-slider-tracker-bar-parent" className="puppy-collections-module__barWrapper---b23T">
                 <div className="puppy-collections-module__outsideBar--tiwtO">
-                    <div id="puppy-character-trusted-slider-tracker-bar" className="puppy-collections-module__insideBar--yPSGF" style={{width: "calc(16.6503% + 2px)", left: "calc(0%)"}}></div>
+                    <div id="puppy-character-trusted-slider-tracker-bar" className="responsive-puppy-character-slider-trackbar puppy-collections-module__insideBar--yPSGF" style={{width: "55.5vw", left: "calc(0%)"}}></div>
                 </div>
             </div>
         </>

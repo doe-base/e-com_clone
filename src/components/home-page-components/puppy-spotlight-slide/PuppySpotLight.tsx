@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import "./index.css";
 
 interface Props{
@@ -5,66 +6,131 @@ interface Props{
 const PuppySpotLight: React.FC<Props> = ({}) => {
 
 
-    let movementCount = 0; // Keep track of the movement
+    const [movementCount, setMovementCount] = useState(0); // Use state for movementCount
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const sliderElementRef = useRef<HTMLDivElement>(null);
+
     const handleRightBtnClick = () => {
-        const parentElement = document.getElementById('puppy-spotlight-parent-slider-carousel-holder');
-        const sliderElement = document.getElementById('puppy-spotlight-slider-carousel-holder');
-        const rightArrow = document.getElementById('puppy-spotlight-carouselArrowCircleRight');
-        const leftArrow = document.getElementById('puppy-spotlight-carouselArrowCircleLeft');
-        
-        if (parentElement && sliderElement) {
-            const sliderWidth = parentElement.clientWidth; // Width of the parent container
-            const maxMovement = sliderElement.scrollWidth - sliderWidth; // Calculate maximum scrollable width
+
+        if (scrollContainerRef.current && sliderElementRef.current) {
+            const sliderWidth = scrollContainerRef.current.clientWidth; // Width of the parent container
+            const maxMovement = sliderElementRef.current.scrollWidth;
 
             if (movementCount < maxMovement) {
-                movementCount += sliderWidth; // Increment movement by the width of the parent
-                if (movementCount >= maxMovement) {
-                    movementCount = maxMovement; // Cap at maxMovement
-                    rightArrow!.style.display = 'none'; // Hide right arrow when at the end
-                }
-                leftArrow!.style.display = 'flex'; // Show left arrow since we're no longer at the start
-                sliderElement.style.transform = `translateX(-${movementCount}px)`; // Use negative movement for sliding
+                const newMovementCount = Math.min(movementCount + sliderWidth, maxMovement); // Cap at maxMovement
+                setMovementCount(newMovementCount);
+                scrollContainerRef.current.scrollLeft = newMovementCount
             }
         }
     };
 
     const handleLeftBtnClick = () => {
-        const parentElement = document.getElementById('puppy-spotlight-parent-slider-carousel-holder');
-        const sliderElement = document.getElementById('puppy-spotlight-slider-carousel-holder');
-        const rightArrow = document.getElementById('puppy-spotlight-carouselArrowCircleRight');
-        const leftArrow = document.getElementById('puppy-spotlight-carouselArrowCircleLeft');
 
-        if (parentElement && sliderElement) {
-            const sliderWidth = parentElement.clientWidth; // Width of the parent container
+        if (scrollContainerRef.current && sliderElementRef.current) {
+            const sliderWidth = scrollContainerRef.current.clientWidth; // Width of the parent container
 
             // Only slide left if we are not already at the beginning
             if (movementCount > 0) {
-                movementCount -= sliderWidth; // Decrease by the parent width
-                if (movementCount <= 0) {
-                    movementCount = 0; // Ensure it doesn't go below 0 (i.e., the start)
-                    leftArrow!.style.display = 'none'; // Hide left arrow when at the start
-                }
-                rightArrow!.style.display = 'flex'; // Show right arrow since we're no longer at the end
-                sliderElement.style.transform = `translateX(-${movementCount}px)`; // Slide to the left by `movementCount`
+                const newMovementCount = Math.max(movementCount - sliderWidth, 0); // Ensure it doesn't go below 0
+                setMovementCount(newMovementCount);
+                scrollContainerRef.current.scrollLeft = newMovementCount
             }
         }
     };
 
+
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [isScrolling, setIsScrolling] = useState(false); // Flag to track if the user has scrolled
+
+    const onMouseDown = (e: React.MouseEvent) => {
+        if (!scrollContainerRef.current) return;
+        setIsDown(true);
+        setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+        setScrollLeft(scrollContainerRef.current.scrollLeft);
+        setIsScrolling(false); // Reset scroll flag when mouse is pressed down
+    };
+
+    const onMouseLeave = () => {
+        setIsDown(false);
+    };
+
+    const onMouseUp = (e: React.MouseEvent) => {
+        setIsDown(false);
+        if (isScrolling) {
+            e.preventDefault(); // Prevent click if the user scrolled
+        }
+    };
+
+    const onMouseMove = (e: React.MouseEvent) => {
+        if (!isDown || !scrollContainerRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainerRef.current.offsetLeft;
+        const walk = (x - startX) * 1; // Multiply by 1 for normal speed
+        const newScrollLeft = scrollLeft - walk; // Calculate new scroll position
+        scrollContainerRef.current.scrollLeft = newScrollLeft;
+        setIsScrolling(true); // Set the scroll flag to true once movement is detected
+
+        // Update movementCount based on new scrollLeft
+        setMovementCount(newScrollLeft);
+    };
+
+    // Attach these handlers to your anchors:
+    const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (isScrolling) {
+            e.preventDefault(); // If user has scrolled, prevent anchor click
+        }
+    };
+
+    useEffect(()=>{
+        const rightArrow = document.getElementById('puppy-spotlight-carouselArrowCircleRight');
+        const leftArrow = document.getElementById('puppy-spotlight-carouselArrowCircleLeft');
+
+        if (scrollContainerRef.current){
+            const maxScrollLeft = scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
+        
+            if (movementCount <= 0) {
+                // We're at the start of the slider
+                leftArrow!.style.display = 'none';
+            } else {
+                leftArrow!.style.display = 'flex';
+            }
+        
+            if (movementCount >= maxScrollLeft) {
+                // We're at the end of the slider
+                rightArrow!.style.display = 'none';
+            } else {
+                rightArrow!.style.display = 'flex';
+            }
+        }
+    }, [movementCount])
+
     return (
-        <div id="puppy-spotlight-parent-slider-carousel-holder" className="carousel-module__wrapper--O59lP featured-puppies-module__carouselWrapper--bYSHH">
+        <div 
+            ref={scrollContainerRef}
+            onMouseDown={onMouseDown}
+            onMouseLeave={onMouseLeave}
+            onMouseUp={onMouseUp}
+            onMouseMove={onMouseMove} 
+            id="puppy-spotlight-parent-slider-carousel-holder" 
+            className="carousel-module__wrapper--O59lP featured-puppies-module__carouselWrapper--bYSHH"
+        >
             <div id="puppy-spotlight-carouselArrowCircleLeft" className="featured-puppies-module__carouselArrowCircleLeft--qWBNd" style={{display: "none"}} onClick={handleLeftBtnClick}>
                 <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
             </div>
             <div id="puppy-spotlight-carouselArrowCircleRight" className="featured-puppies-module__carouselArrowCircleRight--3M3TT" style={{display: "flex"}} onClick={handleRightBtnClick}>
                 <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
             </div>
-            <div id="puppy-spotlight-slider-carousel-holder" className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU">
+            <div ref={sliderElementRef} id="puppy-spotlight-slider-carousel-holder" className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU">
 
                 
-                <a
-                href="/puppies-for-sale/breed/doberman-pinscher/puppy/775233"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/doberman-pinscher/puppy/775233"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -105,10 +171,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/shih-tzu/puppy/775223"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/shih-tzu/puppy/775223"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -149,10 +217,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775221"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775221"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -193,10 +263,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/bichon-frise/puppy/775216"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/bichon-frise/puppy/775216"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -237,10 +309,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775214"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775214"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -281,10 +355,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/maltipoo/puppy/775211"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/maltipoo/puppy/775211"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -325,10 +401,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/dachshund/puppy/775209"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/dachshund/puppy/775209"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -369,10 +447,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/miniature-schnauzer/puppy/775205"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/miniature-schnauzer/puppy/775205"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -413,10 +493,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775204"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775204"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -457,10 +539,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/dachshund/puppy/775199"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/dachshund/puppy/775199"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -501,10 +585,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775195"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/775195"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -545,10 +631,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/pekingese/puppy/775191"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/pekingese/puppy/775191"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -589,10 +677,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/maltipoo/puppy/775189"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/maltipoo/puppy/775189"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -633,10 +723,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/yorkshire-terrier/puppy/775187"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/yorkshire-terrier/puppy/775187"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img
@@ -677,10 +769,12 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
                     </svg>
                 </div>
                 </a>
-                <a
-                href="/puppies-for-sale/breed/schnoodle/puppy/775182"
-                className="featured-puppies-module__itemWrapper--O0u+N"
-                draggable="false"
+                <a 
+                    onClick={handleAnchorClick}
+                    style={{userSelect: 'none'}}
+                    href="/puppies-for-sale/breed/schnoodle/puppy/775182"
+                    className="featured-puppies-module__itemWrapper--O0u+N"
+                    draggable="false"
                 >
                 <div className="featured-puppies-module__img--U7ezR">
                     <img

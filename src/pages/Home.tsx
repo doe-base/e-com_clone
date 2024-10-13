@@ -1,12 +1,16 @@
 import React from 'react';
 import HomeContainer from '../container/Home';
+import Footer from '../components/footer';
 
 interface Props{
 }
 const HomePage: React.FC<Props> = ({}) => {
 
   return (
-    <HomeContainer />
+    <div>
+      <HomeContainer />
+      <Footer />
+    </div>
   );
 }
 

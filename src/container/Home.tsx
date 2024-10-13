@@ -10,6 +10,7 @@ import TrustedSlider from '../components/home-page-components/trusted-by-communi
 import PuppySpotLight from '../components/home-page-components/puppy-spotlight-slide/PuppySpotLight';
 import PuppyCharacterSlide from '../components/home-page-components/puppy-character-slide/PuppyCharacterSlide';
 import RecentlyViewed from '../components/home-page-components/puppy-spotlight-slide/RecentlyViewed';
+import BreedStateSection from '../components/breed-state';
 
 
 interface Props{
@@ -427,6 +428,8 @@ const HomeContainer: React.FC<Props> = ({}) => {
             {/* <div className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU"></div> */}
             <RecentlyViewed />
         </div>
+
+        <BreedStateSection />
 
     </div>
   );

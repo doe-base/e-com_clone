@@ -96,3 +96,34 @@ p {
 .disable-links a {
   pointer-events: none !important;
 }
+
+/* puppy character slider responsive bar tracker */
+responsive-puppy-character-slider-trackbar
+
+.responsive-puppy-character-slider-trackbar {
+  width: 55.5vw !important;
+}
+
+@media (max-width: 1200px) {
+  .responsive-puppy-character-slider-trackbar {
+    width: 45vw !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .responsive-puppy-character-slider-trackbar {
+    width: 35vw !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-puppy-character-slider-trackbar {
+    width: 30vw !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .responsive-puppy-character-slider-trackbar {
+    width: 28vw !important;
+  }
+}

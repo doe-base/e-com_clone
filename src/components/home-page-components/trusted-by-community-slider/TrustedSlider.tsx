@@ -125,6 +125,8 @@ const TrustedSlider: React.FC<Props> = ({}) => {
     }, [movementCount])
 
 
+
+
     return(
         <div className="trusted-by-community-module__sectionRight--zkUIU">
             <div 

@@ -146,10 +146,10 @@ const RecentlyViewed: React.FC<Props> = ({}) => {
             className="carousel-module__wrapper--O59lP featured-puppies-module__carouselWrapper--bYSHH"
         >
             <div id="recently-viewed-puppy-spotlight-carouselArrowCircleLeft" className="featured-puppies-module__carouselArrowCircleLeft--qWBNd" style={{display: "none"}} onClick={handleLeftBtnClick}>
-                <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
+                <img src="/img/carousel-arrow.svg" />
             </div>
             <div id="recently-viewed-puppy-spotlight-carouselArrowCircleRight" className="featured-puppies-module__carouselArrowCircleRight--3M3TT" style={{display: "flex"}} onClick={handleRightBtnClick}>
-                <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
+                <img src="/img/carousel-arrow.svg" />
             </div>
             <div ref={sliderElementRef} id="recently-viewed-puppy-spotlight-slider-carousel-holder" className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU">
 

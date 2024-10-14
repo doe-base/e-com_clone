@@ -1,11 +1,12 @@
 import React from 'react';
 import "./index.css"
+import { navbar } from '../../contants/routes'
 
 function TopBanner() {
-    const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019'
+    
   return (
     <div className="sales-banner green">
-        <a href={`https://wa.me/${us_number}`} className="phone">
+        <a href={navbar.PHONE_WHATSAPP} className="phone">
             Call our Puppy Concierges: 8AM-Midnight
         </a>
     </div>

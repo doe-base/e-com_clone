@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import "./index.css";
 import allBreed from '../../../data/all-breeds.json';
 import Fuse from 'fuse.js';
+import { navbar, pages } from "../../../contants/routes";
 
 interface Props{
     smallNavOpen: boolean;
@@ -120,7 +121,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             <div style={{width: '16px'}}></div>
 
             <li className="drawer-header-nav__logo" style={{padding: '0.8rem 0'}}>
-              <a href="https://www.puppyspot.com">
+              <a href={pages.HOME}>
               <svg className="drawer-header-nav__logo-large" width="130" height="25" viewBox="0 0 130 25" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_5772_493)">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1534 1.30069C20.9832 0.108196 17.7594 0.128787 15.4653 2.2261C15.4419 2.21021 15.4209 2.19786 15.4033 2.18668C15.3747 2.16903 15.3543 2.15609 15.3414 2.14373C13.1706 0.23174 9.92573 -0.0359391 7.48727 1.46542C5.35852 2.78146 4.38735 5.31117 5.68926 7.73735C6.43312 9.15634 7.36339 10.4106 8.47948 11.5419C10.1332 13.1868 11.9931 14.5235 14.0184 15.696C14.1634 15.7989 14.3492 15.963 14.3696 16.1072C14.4111 16.6008 14.4316 17.0944 14.3492 17.5674C13.8741 20.0353 12.4273 21.742 10.0297 22.5027C7.5907 23.2633 5.46195 22.6262 3.66393 20.8372C2.92007 20.0971 2.46545 19.1717 2.13471 18.1845C1.92786 17.5674 1.36981 17.3003 0.791314 17.4444C0.233269 17.5885 -0.097468 18.1433 0.0264122 18.7604C0.0427737 18.8587 0.0725751 18.9434 0.104714 19.0364C0.112895 19.0605 0.12166 19.0846 0.12984 19.1099C1.34936 22.4415 3.68497 24.477 7.23951 24.8882C10.5878 25.2789 13.2331 23.9422 15.176 21.2278C15.2093 21.1778 15.2467 21.1278 15.2853 21.0748C15.3426 20.9978 15.4039 20.9142 15.4653 20.8166C15.4986 20.863 15.5296 20.9048 15.5588 20.9442C15.6195 21.0266 15.6715 21.0966 15.7136 21.166C18.8965 25.8754 25.4482 26.2866 29.1891 21.9885C29.9949 21.0631 30.553 20.0141 30.8837 18.8422C31.132 17.958 30.4495 17.1973 29.5818 17.4232C29.0857 17.5468 28.8788 17.9374 28.7345 18.3898C27.7014 21.5155 24.5389 23.3251 21.377 22.6056C18.1737 21.8861 16.3757 18.8422 16.541 16.6008C16.5825 16.066 16.7269 15.7989 17.1815 15.5106C18.6073 14.5852 20.0132 13.6392 21.3151 12.5903C22.9892 11.2537 24.3326 9.60816 25.3038 7.67558C26.5438 5.20763 25.5516 2.59614 23.1546 1.30069H23.1534Z" fill="black"></path>
@@ -146,7 +147,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
 
             <li className="drawer-control-cancel-mobile" onClick={()=> setSmallNavOpen(false)}>
-              <a href="#" className="drawer-mobile-close js-header-close">
+              <a className="drawer-mobile-close js-header-close">
               <svg className="drawer-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6.53414 7.99996L0.30405 1.76969C-0.101393 1.36443 -0.101393 0.709193 0.30405 0.30394C0.709305 -0.101313 1.36454 -0.101313 1.7698 0.30394L8.00008 6.53421L14.2302 0.30394C14.6356 -0.101313 15.2907 -0.101313 15.6959 0.30394C16.1014 0.709193 16.1014 1.36443 15.6959 1.76969L9.46583 7.99996L15.6959 14.2302C16.1014 14.6355 16.1014 15.2907 15.6959 15.696C15.494 15.8981 15.2284 15.9997 14.963 15.9997C14.6977 15.9997 14.4323 15.8981 14.2302 15.696L8.00008 9.4657L1.7698 15.696C1.56765 15.8981 1.30229 15.9997 1.03692 15.9997C0.771564 15.9997 0.506203 15.8981 0.30405 15.696C-0.101393 15.2907 -0.101393 14.6355 0.30405 14.2302L6.53414 7.99996Z" fill="currentColor"></path>
               </svg>
@@ -157,7 +158,6 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         <li id="drawer-searchbar-header-modile" className="drawer-search">
             <div className="drawer-desktop-searchbar-module__wrapper--kB8Qr">
                 <div className="drawer-style-module__wrapper--7jJ94 drawer-style-module__open--k2jZl">
-                    <link rel="preload" as="image" type="image/svg+xml" href="https://www.puppyspot.com/preact/./img/dots-loader.svg" />
                     <div className="drawer-style-module__content--UlhVY ">
                         <div className="drawer-style-module__reducerWrapper--UVMF-">
                             <div className="drawer-style-module__reducer--higDU">
@@ -200,7 +200,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         <li className="drawer-header-nav__links-main">
             <ul className="drawer-header-nav__links-modile">
                 <li className="drawer-phone">
-                    <a className="drawer-" href={`https://wa.me/${us_number}`}>
+                    <a className="drawer-" href={navbar.PHONE_WHATSAPP}>
                         <div>
                             <picture className="drawer-">
                                 <img id="" alt="" className="drawer-icon ls-is-cached lazyloaded" width="14" height="14" src="/img/phone-icon.svg" style={{marginBottom: '-2px'}} />
@@ -210,7 +210,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                 </li>
 
                 <li className="drawer-phone">
-                    <a className="drawer-hyperlink-small" href={`https://wa.me/${us_number}`}>
+                    <a className="drawer-hyperlink-small" href={navbar.PHONE_WHATSAPP}>
                         (502) 382-0019
                     </a>
                 </li>
@@ -222,7 +222,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         <div className="drawer-header-nav__mobile banner-visible" style={{marginTop: `185px`}}>
 
             <div id="main-navigation-options" className="drawer-mobile-menu-container">
-                <a href="https://www.puppyspot.com/puppies-for-sale" className="drawer-searchbar-menu-module__circularButtonContainer--Xgw0D"><button type="button" className="drawer-button drawer-searchbar-menu-module__circularButton--rEiKP" tabIndex={11}>Browse All Puppies</button></a>
+                <a href={pages.PUPPIES_FOR_SELL} className="drawer-searchbar-menu-module__circularButtonContainer--Xgw0D"><button type="button" className="drawer-button drawer-searchbar-menu-module__circularButton--rEiKP" tabIndex={11}>Browse All Puppies</button></a>
                     
                 <div className="drawer-browse-puppies-container"><span>Available Puppies</span></div>
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
@@ -243,9 +243,9 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                     </li>
                     <li>
                         <div className="drawer-links-auth-container">
-                            <a className="drawer-hyperlink-small" href="https://www.puppyspot.com/log-in">Log In</a>
+                            <a className="drawer-hyperlink-small" href={pages.LOGIN}>Log In</a>
                             <div className="drawer-divider"></div>
-                            <a className="drawer-hyperlink-small" href="https://www.puppyspot.com/sign-up">Sign Up</a>
+                            <a className="drawer-hyperlink-small" href={pages.SIGNUP}>Sign Up</a>
                         </div>
                     </li>
                 </ul>
@@ -275,7 +275,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <a href="/breed" className="drawer-searchbar-menu-module__viewAllLink--RPaOW">Explore All Breeds →</a>
+                        <a href={pages.BREED} className="drawer-searchbar-menu-module__viewAllLink--RPaOW">Explore All Breeds →</a>
                     </li>
                 </ul>
             </div>

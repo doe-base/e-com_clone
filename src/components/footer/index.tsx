@@ -5,6 +5,7 @@ import { FaTwitter } from "react-icons/fa";
 import { FaPinterest } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { navbar, pages, socials, sub_domain } from "../../contants/routes";
 
 interface Props {}
 const Footer: React.FC<Props> = ({}) => {
@@ -20,18 +21,18 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className="footer-nav__logo ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/svg/logo-stacked.svg"
+                  data-src="/svg/logo-stacked.svg"
                   loading="lazy"
                   width="128"
                   height="92.3"
-                  src="https://www.puppyspot.com/assets/svg/logo-stacked.svg"
+                  src="/svg/logo-stacked.svg"
                 />
               </picture>
             </li>
             <li>
               <span>Call Us: </span>
-              <a href="tel:+18886710518" className="hyperlink">
-                (888) 671-0518
+              <a href={navbar.PHONE_WHATSAPP} className="hyperlink">
+                (502) 382-0019
               </a>
             </li>
           </ul>
@@ -41,19 +42,19 @@ const Footer: React.FC<Props> = ({}) => {
             <p className="footer-nav__header">Find A Puppy</p>
             <ul className="footer-nav__list footer-nav__list-main">
               <li>
-                <a href="https://www.puppyspot.com/puppies-for-sale">
+                <a href={pages.PUPPIES_FOR_SELL}>
                   View All Puppies
                 </a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/collections">
+                <a href={pages.COLLECTIONS}>
                   View All Characteristics
                 </a>
               </li>
               <li>
                 <a
                   className="button main footer_breed_match_quiz"
-                  href="https://www.puppyspot.com/breed-selector-quiz"
+                  href={pages.BREED_QUIZ}
                 >
                   Breed Match Quiz
                 </a>
@@ -64,24 +65,24 @@ const Footer: React.FC<Props> = ({}) => {
             <p className="footer-nav__header">Customers</p>
             <ul className="footer-nav__list footer-nav__list-customers">
               <li>
-                <a href="https://www.puppyspot.com/log-in">Log In</a>
+                <a href={pages.LOGIN}>Log In</a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/sign-up">Sign Up</a>
+                <a href={pages.SIGNUP}>Sign Up</a>
               </li>
               <li>
-                <a href="https://help.puppyspot.com/" target="_blank">
+                <a href={sub_domain.HELP} target="_blank">
                   Support
                 </a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/special-offers">
+                <a href={pages.SPECIAL_OFFERS}>
                   Special Offers
                 </a>
               </li>
               <li>
                 <a
-                  href="https://hub.puppyspot.com/login"
+                  href={sub_domain.BREEDER_LOGIN}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -94,23 +95,23 @@ const Footer: React.FC<Props> = ({}) => {
             <p className="footer-nav__header">About PuppySpot</p>
             <ul className="footer-nav__list footer-nav__list-about">
               <li>
-                <a href="https://www.puppyspot.com/about-us">About Us</a>
+                <a href={pages.ABOUT_US}>About Us</a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/promise">
+                <a href={pages.PROMISE}>
                   The PuppySpot Promise
                 </a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/careers">Careers</a>
+                <a href={pages.CAREERS}>Careers</a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/dog-registration">
+                <a href={pages.DOG_REGISTRATION}>
                   Dog Registration
                 </a>
               </li>
               <li>
-                <a href="https://www.puppyspot.com/akc">AKC Reunite</a>
+                <a href={pages.AKC}>AKC Reunite</a>
               </li>
             </ul>
           </div>
@@ -118,30 +119,32 @@ const Footer: React.FC<Props> = ({}) => {
             <p className="footer-nav__header">Social Media</p>
             <ul className="footer-nav__list footer-nav__list-social">
                 <li>
-                    <a target="_blank" href="https://instagram.com/puppy_spot" rel="noopener noreferrer" className="footer_social_media_instagram">
+                    <a target="_blank" href={socials.INSTAGRAM} rel="noopener noreferrer" className="footer_social_media_instagram">
                         <PiInstagramLogoBold />
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://www.facebook.com/puppyspot" rel="noopener noreferrer" className="footer_social_media_facebook">
+                    <a target="_blank" href={socials.FACEBOOK} rel="noopener noreferrer" className="footer_social_media_facebook">
                         <FaFacebookSquare />
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://twitter.com/puppyspot" rel="noopener noreferrer" className="footer_social_media_twitter">
+                    <a target="_blank" href={socials.TWITTER} rel="noopener noreferrer" className="footer_social_media_twitter">
                         <FaTwitter />
                     </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://www.pinterest.com/puppyspot/" rel="noopener noreferrer" className="footer_social_media_pinterest">
+                    <a target="_blank" href={socials.PINTREST} rel="noopener noreferrer" className="footer_social_media_pinterest">
                         <FaPinterest />
                     </a>
                 </li>
                 <li>
+                  <a target="_blank" href={socials.YOUTUBE} rel="noopener noreferrer" className="footer_social_media_youtube">
                     <FaYoutube />
+                  </a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://www.linkedin.com/company/puppyspot" rel="noopener noreferrer" className="footer_social_media_linkedin">
+                    <a target="_blank" href={socials.LINKEDIN} rel="noopener noreferrer" className="footer_social_media_linkedin">
                         <FaLinkedin />
                     </a>
                 </li>
@@ -153,15 +156,15 @@ const Footer: React.FC<Props> = ({}) => {
             <li>
               <picture className="">
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/amex.webp"
+                  srcSet="/img/payment/amex.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/amex.avif"
+                  srcSet="/img/payment/amex.avif"
                   type="image/avif"
                 />
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/amex.png"
+                  srcSet="/img/payment/amex.png"
                   type="image/png"
                 />
                 <img
@@ -169,26 +172,26 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/img/payment/amex.png"
+                  data-src="/img/payment/amex.png"
                   loading="lazy"
                   width="19"
                   height="20"
-                  src="https://www.puppyspot.com/assets/img/payment/amex.png"
+                  src="/img/payment/amex.png"
                 />
               </picture>
             </li>
             <li>
               <picture className="">
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/discover.webp"
+                  srcSet="/img/payment/discover.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/discover.avif"
+                  srcSet="/img/payment/discover.avif"
                   type="image/avif"
                 />
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/discover.png"
+                  srcSet="/img/payment/discover.png"
                   type="image/png"
                 />
                 <img
@@ -196,11 +199,11 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/img/payment/discover.png"
+                  data-src="/img/payment/discover.png"
                   loading="lazy"
                   width="48"
                   height="8"
-                  src="https://www.puppyspot.com/assets/img/payment/discover.png"
+                  src="/img/payment/discover.png"
                 />
               </picture>
             </li>
@@ -211,26 +214,26 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/img/payment/mastercard.svg"
+                  data-src="/img/payment/mastercard.svg"
                   loading="lazy"
                   width="30"
                   height="22"
-                  src="https://www.puppyspot.com/assets/img/payment/mastercard.svg"
+                  src="/img/payment/mastercard.svg"
                 />
               </picture>
             </li>
             <li>
               <picture className="">
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/visa.webp"
+                  srcSet="/img/payment/visa.webp"
                   type="image/webp"
                 />
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/visa.avif"
+                  srcSet="/img/payment/visa.avif"
                   type="image/avif"
                 />
                 <source
-                  srcSet="https://www.puppyspot.com/assets/img/payment/visa.png"
+                  srcSet="/img/payment/visa.png"
                   type="image/png"
                 />
                 <img
@@ -238,11 +241,11 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/img/payment/visa.png"
+                  data-src="/img/payment/visa.png"
                   loading="lazy"
                   width="31"
                   height="10"
-                  src="https://www.puppyspot.com/assets/img/payment/visa.png"
+                  src="/img/payment/visa.png"
                 />
               </picture>
             </li>
@@ -253,11 +256,11 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/img/payment/paypal.svg"
+                  data-src="/img/payment/paypal.svg"
                   loading="lazy"
                   width="61"
                   height="16"
-                  src="https://www.puppyspot.com/assets/img/payment/paypal.svg"
+                  src="/img/payment/paypal.svg"
                 />
               </picture>
             </li>
@@ -268,11 +271,11 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://www.puppyspot.com/assets/img/payment/paypal-credit.svg"
+                  data-src="/img/payment/paypal-credit.svg"
                   loading="lazy"
                   width="52"
                   height="18"
-                  src="https://www.puppyspot.com/assets/img/payment/paypal-credit.svg"
+                  src="/img/payment/paypal-credit.svg"
                 />
               </picture>
             </li>
@@ -281,13 +284,13 @@ const Footer: React.FC<Props> = ({}) => {
         <div className="footer-nav__list footer-nav__list-terms">
           <ul>
             <li>
-              <a href="https://www.puppyspot.com/privacy">Privacy</a>
+              <a href={pages.PRIVACY_POLICY}>Privacy</a>
             </li>
             <li>
-              <a href="https://www.puppyspot.com/terms-of-use">Terms of Use</a>
+              <a href={pages.TERMS_OR_SERVICE}>Terms of Use</a>
             </li>
             <li>
-              <a href="https://www.puppyspot.com/sitemap">Sitemap</a>
+              <a href={pages.SITE_MAP}>Sitemap</a>
             </li>
             <li>© 2024 PuppySpot</li>
           </ul>
@@ -295,7 +298,7 @@ const Footer: React.FC<Props> = ({}) => {
             <a
               id="bbblink"
               className="sehzbum"
-              href="https://www.bbb.org/us/fl/fort-lauderdale/profile/pet-services/puppyspot-group-llc-0633-22003405"
+              href={pages.BBB}
               title="PuppySpot Group, LLC is a BBB Accredited Pet Service in Hollywood, FL"
               style={{ padding: "0px", margin: "0px" }}
             >
@@ -305,10 +308,10 @@ const Footer: React.FC<Props> = ({}) => {
                   alt=""
                   className=" ls-is-cached lazyloaded"
                   data-cy=""
-                  data-src="https://seal-seflorida.bbb.org/logo/sehzbum/puppyspot-group-22003405.png"
+                  data-src="/img/puppyspot-group-22003405.png"
                   style={{ padding: "0px", border: "medium" }}
                   loading="lazy"
-                  src="https://seal-seflorida.bbb.org/logo/sehzbum/puppyspot-group-22003405.png"
+                  src="/img/puppyspot-group-22003405.png"
                 />
               </picture>
             </a>

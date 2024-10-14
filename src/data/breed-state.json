@@ -1,0 +1,60 @@
+{
+  "west": [
+    { "state": "California", "slug": "california" },
+    { "state": "Colorado", "slug": "colorado" },
+    { "state": "Idaho", "slug": "idaho" },
+    { "state": "Montana", "slug": "montana" },
+    { "state": "Wyoming", "slug": "wyoming" },
+    { "state": "Nevada", "slug": "nevada" },
+    { "state": "Oregon", "slug": "oregon" },
+    { "state": "Utah", "slug": "utah" },
+    { "state": "Washington", "slug": "washington" }
+  ],
+  "southwest": [
+    { "state": "Arizona", "slug": "arizona" },
+    { "state": "Oklahoma", "slug": "oklahoma" },
+    { "state": "New Mexico", "slug": "new-mexico" },
+    { "state": "Texas", "slug": "texas" }
+  ],
+  "midwest": [
+    { "state": "Illinois", "slug": "illinois" },
+    { "state": "Indiana", "slug": "indiana" },
+    { "state": "Iowa", "slug": "iowa" },
+    { "state": "Kansas", "slug": "kansas" },
+    { "state": "Michigan", "slug": "michigan" },
+    { "state": "Minnesota", "slug": "minnesota" },
+    { "state": "Missouri", "slug": "missouri" },
+    { "state": "Nebraska", "slug": "nebraska" },
+    { "state": "North Dakota", "slug": "north-dakota" },
+    { "state": "Ohio", "slug": "ohio" },
+    { "state": "Wisconsin", "slug": "wisconsin" },
+    { "state": "South Dakota", "slug": "south-dakota" }
+  ],
+  "northeast": [
+    { "state": "Connecticut", "slug": "connecticut" },
+    { "state": "Delaware", "slug": "delaware" },
+    { "state": "Maine", "slug": "maine" },
+    { "state": "Maryland", "slug": "maryland" },
+    { "state": "Massachusetts", "slug": "massachusetts" },
+    { "state": "New Hampshire", "slug": "new-hampshire" },
+    { "state": "New Jersey", "slug": "new-jersey" },
+    { "state": "New York", "slug": "new-york" },
+    { "state": "Pennsylvania", "slug": "pennsylvania" },
+    { "state": "Rhode Island", "slug": "rhode-island" },
+    { "state": "Vermont", "slug": "vermont" }
+  ],
+  "southeast": [
+    { "state": "Alabama", "slug": "alabama" },
+    { "state": "Arkansas", "slug": "arkansas" },
+    { "state": "Florida", "slug": "florida" },
+    { "state": "Georgia", "slug": "georgia" },
+    { "state": "Kentucky", "slug": "kentucky" },
+    { "state": "Louisiana", "slug": "louisiana" },
+    { "state": "Mississippi", "slug": "mississippi" },
+    { "state": "North Carolina", "slug": "north-carolina" },
+    { "state": "South Carolina", "slug": "south-carolina" },
+    { "state": "Tennessee", "slug": "tennessee" },
+    { "state": "Virginia", "slug": "virginia" },
+    { "state": "West Virginia", "slug": "west-virginia" }
+  ]
+}

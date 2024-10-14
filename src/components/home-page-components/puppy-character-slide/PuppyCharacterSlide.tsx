@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { breeds_pages, pages } from "../../../contants/routes";
 
 interface Props{
 }
@@ -145,131 +146,141 @@ const PuppyCharacterSlide: React.FC<Props> = ({}) => {
                     className="carousel-module__wrapper--O59lP puppy-collections-module__carouselWrapper--9nBE1"
                 >
                     <div id="puppy-character-carouselArrowCircleLeft-trusted_slider" className="puppy-collections-module__carouselArrowCircleLeft--bmUIM" style={{display: "none", zIndex: '4'}} onClick={handleLeftBtnClick}>
-                        <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
+                        <img src="/img/carousel-arrow.svg" />
                     </div>
 
                     <div id="puppy-character-carouselArrowCircleRight-trusted_slider" className="puppy-collections-module__carouselArrowCircleRight--KpvQM" style={{display: "flex", zIndex: '4'}} onClick={handleRightBtnClick}>
-                        <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
+                        <img src="/img/carousel-arrow.svg" />
                     </div>
 
                     <div ref={sliderElementRef} id="puppy-character-child-carousel-module__wrapper" className="carousel-module__content--qDPHs false puppy-collections-module__carouselContent--phAfk">
                         <a
                             onClick={handleAnchorClick}
                             style={{userSelect: 'none'}}
-                            href="/breed/collections/active-dogs"
+                            href={breeds_pages.ACTIVE_DOGS}
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
                             ><div className="puppy-collections-module__carouselItemContent--I4OXN">
                             <img
                                 className="puppy-collections-module__carouselItemImage--Mfq83"
-                                src="https://www.puppyspot.com/preact/./img/active-dog-breeds.svg"
+                                src="/img/active-dog-breeds.svg"
                                 draggable="false"
                                 loading="lazy"
                             />
                             <div className="puppy-collections-module__itemLabel--sZrSo">
                                 Active Dog Breeds<img
                                 className="puppy-collections-module__itemCaret--dOkfu"
-                                src="https://www.puppyspot.com/preact/./img/puppy-collections-caret.svg"
+                                src="/img/puppy-collections-caret.svg"
                                 />
                             </div></div>
                         </a>
+
+
                         <a
                             onClick={handleAnchorClick}
                             style={{userSelect: 'none'}}
-                            href="/breed/collections/best-apartment-dogs"
+                            href={breeds_pages.BEST_APARTMENT_DOGS}
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
                             ><div className="puppy-collections-module__carouselItemContent--I4OXN">
                             <img
                                 className="puppy-collections-module__carouselItemImage--Mfq83"
-                                src="https://www.puppyspot.com/preact/./img/apartment-breeds.svg"
+                                src="/img/apartment-breeds.svg"
                                 draggable="false"
                                 loading="lazy"
                             />
                             <div className="puppy-collections-module__itemLabel--sZrSo">
                                 Apartment Breeds<img
                                 className="puppy-collections-module__itemCaret--dOkfu"
-                                src="https://www.puppyspot.com/preact/./img/puppy-collections-caret.svg"
+                                src="/img/puppy-collections-caret.svg"
                                 />
                             </div></div>
                         </a>
+
+
                         <a
                             onClick={handleAnchorClick}
                             style={{userSelect: 'none'}}
-                            href="/breed/collections/doodle-puppies"
+                            href={breeds_pages.DOODLE_PUPPIES}
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
                             ><div className="puppy-collections-module__carouselItemContent--I4OXN">
                             <img
                                 className="puppy-collections-module__carouselItemImage--Mfq83 puppy-collections-module__bordered--j7Vry"
-                                src="https://www.puppyspot.com/preact/./img/doodle-breeds.svg"
+                                src="/img/doodle-breeds.svg"
                                 draggable="false"
                                 loading="lazy"
                             />
                             <div className="puppy-collections-module__itemLabel--sZrSo">
                                 Doodle Breeds<img
                                 className="puppy-collections-module__itemCaret--dOkfu"
-                                src="https://www.puppyspot.com/preact/./img/puppy-collections-caret.svg"
+                                src="/img/puppy-collections-caret.svg"
                                 />
                             </div></div>
                         </a>
+
+
                         <a
                             onClick={handleAnchorClick}
                             style={{userSelect: 'none'}}
-                            href="/breed/collections/best-family-dogs"
+                            href={breeds_pages.BEST_FAMILY_DOGS}
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
                             ><div className="puppy-collections-module__carouselItemContent--I4OXN">
                             <img
                                 className="puppy-collections-module__carouselItemImage--Mfq83"
-                                src="https://www.puppyspot.com/preact/./img/family-breeds.svg"
+                                src="/img/family-breeds.svg"
                                 draggable="false"
                                 loading="lazy"
                             />
                             <div className="puppy-collections-module__itemLabel--sZrSo">
                                 Family Breeds<img
                                 className="puppy-collections-module__itemCaret--dOkfu"
-                                src="https://www.puppyspot.com/preact/./img/puppy-collections-caret.svg"
+                                src="/img/puppy-collections-caret.svg"
                                 />
                             </div></div>
                         </a>
+
+
                         <a
                             onClick={handleAnchorClick}
                             style={{userSelect: 'none'}}
-                            href="/breed/collections/allergy-friendly-dogs"
+                            href={breeds_pages.ALLERGY_FRIENDLY_DOGS}
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
                             ><div className="puppy-collections-module__carouselItemContent--I4OXN">
                             <img
                                 className="puppy-collections-module__carouselItemImage--Mfq83"
-                                src="https://www.puppyspot.com/preact/./img/hypoallergenic.svg"
+                                src="/img/hypoallergenic.svg"
                                 draggable="false"
                                 loading="lazy"
                             />
                             <div className="puppy-collections-module__itemLabel--sZrSo">
                                 Hypoallergenic<img
                                 className="puppy-collections-module__itemCaret--dOkfu"
-                                src="https://www.puppyspot.com/preact/./img/puppy-collections-caret.svg"
+                                src="/img/puppy-collections-caret.svg"
                                 />
                             </div></div>
                         </a>
+
+
                         <a
                             onClick={handleAnchorClick}
                             style={{userSelect: 'none'}}
-                            href="/breed/collections/teacup-puppies"
+                            href={breeds_pages.TEACUP_PUPPIES}
                             className="puppy-collections-module__carouselItemWrapper--mm+9f"
                             draggable="false"
                             ><div className="puppy-collections-module__carouselItemContent--I4OXN">
                             <img
                                 className="puppy-collections-module__carouselItemImage--Mfq83"
-                                src="https://www.puppyspot.com/preact/./img/teacup-breeds.svg"
+                                src="/img/teacup-breeds.svg"
                                 draggable="false"
                                 loading="lazy"
                             />
                             <div className="puppy-collections-module__itemLabel--sZrSo">
                                 Teacup Breeds<img
                                 className="puppy-collections-module__itemCaret--dOkfu"
-                                src="https://www.puppyspot.com/preact/./img/puppy-collections-caret.svg"
+                                src="/img/puppy-collections-caret.svg"
                                 />
                             </div></div>
                         </a>

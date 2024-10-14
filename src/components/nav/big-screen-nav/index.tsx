@@ -3,6 +3,7 @@ import "./index.css"
 import navbarData from '../../../data/navbar-data.json'
 import allBreed from '../../../data/all-breeds.json'
 import Fuse from 'fuse.js';
+import { breeds_pages, navbar, pages } from '../../../contants/routes'
 
 interface Props{
     smallNavOpen: boolean;
@@ -101,7 +102,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   return (
     <ul id="nav-bar" className={`header-nav__content noauth puppy-site`} style={{ display: `${smallNavOpen ? 'none' : 'flex'}`}} onMouseEnter={() => setIsNavbarHover(true)} onMouseLeave={() => setIsNavbarHover(false)}>
         <li className="header-control-hamburger" onClick={()=> setSmallNavOpen(true)}>
-            <a href="#" className="mobile-open js-hamburger">
+            <a className="mobile-open js-hamburger">
                 <svg className="icon" width="23px" height="19px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
                     <g id="Symbols" stroke="none" stroke-width="0" fill-rule="evenodd">
                     <g id="mobile" transform="translate(-336.000000, -19.000000)" fill="#000000">
@@ -120,7 +121,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             </a>
 
             <li style={{marginBottom: '-7px'}}>
-                <a href="/">
+                <a href={pages.HOME}>
                     <svg className="header-nav__logo-large" width="130" height="25" viewBox="0 0 130 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_5772_493)">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1534 1.30069C20.9832 0.108196 17.7594 0.128787 15.4653 2.2261C15.4419 2.21021 15.4209 2.19786 15.4033 2.18668C15.3747 2.16903 15.3543 2.15609 15.3414 2.14373C13.1706 0.23174 9.92573 -0.0359391 7.48727 1.46542C5.35852 2.78146 4.38735 5.31117 5.68926 7.73735C6.43312 9.15634 7.36339 10.4106 8.47948 11.5419C10.1332 13.1868 11.9931 14.5235 14.0184 15.696C14.1634 15.7989 14.3492 15.963 14.3696 16.1072C14.4111 16.6008 14.4316 17.0944 14.3492 17.5674C13.8741 20.0353 12.4273 21.742 10.0297 22.5027C7.5907 23.2633 5.46195 22.6262 3.66393 20.8372C2.92007 20.0971 2.46545 19.1717 2.13471 18.1845C1.92786 17.5674 1.36981 17.3003 0.791314 17.4444C0.233269 17.5885 -0.097468 18.1433 0.0264122 18.7604C0.0427737 18.8587 0.0725751 18.9434 0.104714 19.0364C0.112895 19.0605 0.12166 19.0846 0.12984 19.1099C1.34936 22.4415 3.68497 24.477 7.23951 24.8882C10.5878 25.2789 13.2331 23.9422 15.176 21.2278C15.2093 21.1778 15.2467 21.1278 15.2853 21.0748C15.3426 20.9978 15.4039 20.9142 15.4653 20.8166C15.4986 20.863 15.5296 20.9048 15.5588 20.9442C15.6195 21.0266 15.6715 21.0966 15.7136 21.166C18.8965 25.8754 25.4482 26.2866 29.1891 21.9885C29.9949 21.0631 30.553 20.0141 30.8837 18.8422C31.132 17.958 30.4495 17.1973 29.5818 17.4232C29.0857 17.5468 28.8788 17.9374 28.7345 18.3898C27.7014 21.5155 24.5389 23.3251 21.377 22.6056C18.1737 21.8861 16.3757 18.8422 16.541 16.6008C16.5825 16.066 16.7269 15.7989 17.1815 15.5106C18.6073 14.5852 20.0132 13.6392 21.3151 12.5903C22.9892 11.2537 24.3326 9.60816 25.3038 7.67558C26.5438 5.20763 25.5516 2.59614 23.1546 1.30069H23.1534Z" fill="black"></path>
@@ -146,7 +147,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         </li>
 
         <li className="header-nav__logo">
-            <a href="/">
+            <a href={pages.HOME}>
                 <svg className="header-nav__logo-large" width="130" height="25" viewBox="0 0 130 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_5772_493)">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1534 1.30069C20.9832 0.108196 17.7594 0.128787 15.4653 2.2261C15.4419 2.21021 15.4209 2.19786 15.4033 2.18668C15.3747 2.16903 15.3543 2.15609 15.3414 2.14373C13.1706 0.23174 9.92573 -0.0359391 7.48727 1.46542C5.35852 2.78146 4.38735 5.31117 5.68926 7.73735C6.43312 9.15634 7.36339 10.4106 8.47948 11.5419C10.1332 13.1868 11.9931 14.5235 14.0184 15.696C14.1634 15.7989 14.3492 15.963 14.3696 16.1072C14.4111 16.6008 14.4316 17.0944 14.3492 17.5674C13.8741 20.0353 12.4273 21.742 10.0297 22.5027C7.5907 23.2633 5.46195 22.6262 3.66393 20.8372C2.92007 20.0971 2.46545 19.1717 2.13471 18.1845C1.92786 17.5674 1.36981 17.3003 0.791314 17.4444C0.233269 17.5885 -0.097468 18.1433 0.0264122 18.7604C0.0427737 18.8587 0.0725751 18.9434 0.104714 19.0364C0.112895 19.0605 0.12166 19.0846 0.12984 19.1099C1.34936 22.4415 3.68497 24.477 7.23951 24.8882C10.5878 25.2789 13.2331 23.9422 15.176 21.2278C15.2093 21.1778 15.2467 21.1278 15.2853 21.0748C15.3426 20.9978 15.4039 20.9142 15.4653 20.8166C15.4986 20.863 15.5296 20.9048 15.5588 20.9442C15.6195 21.0266 15.6715 21.0966 15.7136 21.166C18.8965 25.8754 25.4482 26.2866 29.1891 21.9885C29.9949 21.0631 30.553 20.0141 30.8837 18.8422C31.132 17.958 30.4495 17.1973 29.5818 17.4232C29.0857 17.5468 28.8788 17.9374 28.7345 18.3898C27.7014 21.5155 24.5389 23.3251 21.377 22.6056C18.1737 21.8861 16.3757 18.8422 16.541 16.6008C16.5825 16.066 16.7269 15.7989 17.1815 15.5106C18.6073 14.5852 20.0132 13.6392 21.3151 12.5903C22.9892 11.2537 24.3326 9.60816 25.3038 7.67558C26.5438 5.20763 25.5516 2.59614 23.1546 1.30069H23.1534Z" fill="black"></path>
@@ -174,37 +175,22 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             <ul className="header-nav__links">
 
                 <li id='avaible-puppies' className="puppies" onMouseEnter={() => setIsAvailblepuppliesHover(true)} onMouseLeave={() => setIsAvailblepuppliesHover(false)}>
-                    <a href="https://www.puppyspot.com/puppies-for-sale" className="hyperlink menu-item dark-hover" data-toggle-menu=".js-puppies-submenu">Available Puppies</a>
+                    <a href={pages.PUPPIES_FOR_SELL} className="hyperlink menu-item dark-hover" data-toggle-menu=".js-puppies-submenu">Available Puppies</a>
                     <div data-submenu="" data-desktop-main-menu="" className={`header-nav__submenu header-nav__submenu--puppies js-puppies-submenu js-menu ${isActive === 'puppies-available' && !pureBreedActive && !designerBreedActive ? '' : 'hidden'}`}>
-                        {/* <div className="header-nav__submenu-header">
-                            <a href="#" data-close-submenu=".js-puppies-submenu" className="mobile hyperlink menu-item">
-                            Puppies
-                            </a>
-                        </div> */}
 
                         <section className="header-nav__submenu-section breeds">
                             <div className="header-nav__submenu-subheader">
                                 <h5>Breeds</h5>
-                                {/* <a href="https://www.puppyspot.com/puppies-for-sale" className="arrow forward mobile">All Puppies</a> */}
                             </div>
                             <ul>
                                 <li>
-                                    <a href="#" className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_purebreed" onClick={handlePureBreedClick}>Purebred Breeds</a>
-                                    {/* <a href="https://www.puppyspot.com/breed#purebred-breeds" className="mobile hyperlink menu-item">
-                                    Purebred Breeds
-                                    </a> */}
+                                    <a className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_purebreed" onClick={handlePureBreedClick}>Purebred Breeds</a>
                                 </li>
                                 <li>
-                                    <a href="#" className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" onClick={handleDesignerBreedClick}>Designer Breeds</a>
-                                    {/* <a href="https://www.puppyspot.com/breed#designer-breeds" className="mobile hyperlink menu-item">
-                                    Designer Breeds
-                                    </a> */}
+                                    <a className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" onClick={handleDesignerBreedClick}>Designer Breeds</a>
                                 </li>
                                 <li className="desktop">
-                                    <a href="#" className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" data-puppy-submenu="" data-submenu-open=".js-designer-breeds-submenu">Explore Available Breeds</a>
-                                    {/* <a href="https://www.puppyspot.com/breed" className="forward header-nav__category-menu-item gtag-top_more_breeds">
-                                    Explore Available Breeds
-                                    </a> */}
+                                    <a href={pages.BREED} className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" data-puppy-submenu="" data-submenu-open=".js-designer-breeds-submenu">Explore Available Breeds</a>
                                 </li>
                             </ul>
                         </section>
@@ -214,13 +200,12 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                         <section className="header-nav__submenu-section collections">
                             <div className="header-nav__submenu-subheader">
                                 <h5>Characteristics</h5>
-                                {/* <a href="https://www.puppyspot.com/collections" className="arrow forward mobile">All Characteristics</a> */}
                             </div>
                             <ul>
-                                <li><a href="https://www.puppyspot.com/breed/collections/active-dogs" className="hyperlink menu-item header-nav__menu-item top_nav_active_dogs">Top Active Dog Breeds</a></li>
-                                <li><a href="https://www.puppyspot.com/breed/collections/best-apartment-dogs" className="hyperlink menu-item header-nav__menu-item top_nav_best_apartments">Best Apartment Dogs</a></li>
-                                <li><a href="https://www.puppyspot.com/breed/collections/best-family-dogs" className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">Best Family Dogs</a></li>
-                                <li><a href="https://www.puppyspot.com/collections" className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">View All Characteristics</a></li>
+                                <li><a href={breeds_pages.ACTIVE_DOGS} className="hyperlink menu-item header-nav__menu-item top_nav_active_dogs">Top Active Dog Breeds</a></li>
+                                <li><a href={breeds_pages.BEST_APARTMENT_DOGS} className="hyperlink menu-item header-nav__menu-item top_nav_best_apartments">Best Apartment Dogs</a></li>
+                                <li><a href={breeds_pages.BEST_FAMILY_DOGS} className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">Best Family Dogs</a></li>
+                                <li><a href={pages.COLLECTIONS} className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">View All Characteristics</a></li>
                             </ul>
                         </section>
 
@@ -245,22 +230,16 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                             </div>
                         </section>
 
-                        {/* <a href="https://www.puppyspot.com/puppies-for-sale" className="puppies-menu-footer__link button main mobile">View all puppies</a> */}
                         <div className="puppies-menu-footer desktop">
-                            <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font">View All Puppies</a>
+                            <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font">View All Puppies</a>
                         </div>
-                        <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font"></a>
+                        <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font"></a>
                     </div>
                     
-                    {/* <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font"></a> */}
-
-
                     <div data-submenu="" className={`header-nav__submenu header-nav__submenu--puppies custom-sub-menu purebred js-purebreed-breeds-submenu js-menu ${isActive === 'puppies-available' && pureBreedActive ? '' : 'hidden'}`}>
-                        <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font">
+                        <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font">
                             <h3>Featured Purebred Breeds</h3>
                         </a>
-                        {/* <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font"></a> */}
-                        
                     
                         {
                             breedList.map((part: any, index: number) => {
@@ -270,7 +249,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                                             part.map((item: any, index: number)=>{
                                                 return (
                                                     <li className="link-item" key={index}>
-                                                        <a href="https://www.puppyspot.com/puppies-for-sale/breed/australian-shepherd" className="hyperlink menu-item">
+                                                        <a href={`/puppies-for-sale/breed/${item.slug}`} className="hyperlink menu-item">
                                                             {item.name}
                                                         </a>
                                                     </li>
@@ -285,16 +264,14 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
 
                         <div className="puppies-menu-footer">
-                            <a href="https://www.puppyspot.com/breed#purebred-breeds" className="arrow forward white">More Breeds</a>
+                            <a href={breeds_pages.PURE_BREED} className="arrow forward white">More Breeds</a>
                         </div>
                     </div>
 
                     <div data-submenu="" className={`header-nav__submenu header-nav__submenu--puppies custom-sub-menu purebred js-purebreed-breeds-submenu js-menu ${isActive === 'puppies-available' && designerBreedActive ? '' : 'hidden'}`}>
-                        <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font">
+                        <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font">
                             <h3>Featured Designer Breeds</h3>
                         </a>
-                        {/* <a href="https://www.puppyspot.com/puppies-for-sale" className="forward white gtag-top_nav_view_all inter-font"></a> */}
-                        
                     
                         {
                             designerBreed.map((part: any, index: number) => {
@@ -304,7 +281,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                                             part.map((item: any, index: number)=>{
                                                 return (
                                                     <li className="link-item" key={index}>
-                                                        <a href="https://www.puppyspot.com/puppies-for-sale/breed/australian-shepherd" className="hyperlink menu-item">
+                                                        <a href={`/puppies-for-sale/breed/${item.slug}`} className="hyperlink menu-item">
                                                             {item.name}
                                                         </a>
                                                     </li>
@@ -319,7 +296,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
 
                         <div className="puppies-menu-footer">
-                            <a href="https://www.puppyspot.com/breed#purebred-breeds" className="arrow forward white">More Breeds</a>
+                            <a href={breeds_pages.PURE_BREED} className="arrow forward white">More Breeds</a>
                         </div>
                     </div>
 
@@ -327,41 +304,37 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
 
                 <li className="puppyspot-promise" onMouseEnter={() => setIsOurPromiseHover(true)} onMouseLeave={() => setIsOurPromiseHover(false)}>
-                    <a href="https://www.puppyspot.com/promise" className="hyperlink menu-item dark-hover top_nav_our_promise" data-toggle-menu=".js-promise-submenu">Our Promise</a>
+                    <a href={pages.PROMISE} className="hyperlink menu-item dark-hover top_nav_our_promise" data-toggle-menu=".js-promise-submenu">Our Promise</a>
                     <div data-submenu="" className={`header-nav__submenu js-promise-submenu custom-sub-menu js-menu mobile-menu-space ${isActive === 'our-promise' ? '' : 'hidden'}`}>
-                        {/* <div className="header-nav__submenu-header">
-                            <a href="https://www.puppyspot.com/promise" data-close-submenu=".js-promise-submenu" className="mobile top_nav_our_promise">
-                            Promise
-                            </a>
-                        </div> */}
+                       
                         <ul className="header-nav__submenu-section">
                             <li>
-                                <a href="https://www.puppyspot.com/promise" className="hyperlink menu-item top_nav_ps_promise">
+                                <a href={pages.PROMISE} className="hyperlink menu-item top_nav_ps_promise">
                                 PuppySpot Promise
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/puppyspot-standards" className="hyperlink menu-item top_nav_breeder_standards">
+                                <a href={pages.PUPPY_STANDARDS} className="hyperlink menu-item top_nav_breeder_standards">
                                 Breeder Standards
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/dog-travel" className="hyperlink menu-item top_nav_ps_travel">
+                                <a href={pages.DOG_TRAVEL} className="hyperlink menu-item top_nav_ps_travel">
                                 Puppy Travel
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/health-check" className="hyperlink menu-item top_nav_health_check">
+                                <a href={pages.HEALTH_CHECK} className="hyperlink menu-item top_nav_health_check">
                                 Health Check
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/reviews" className="hyperlink menu-item top_nav_customer_reviews">
+                                <a href={pages.CUSTOMER_REVIEW} className="hyperlink menu-item top_nav_customer_reviews">
                                 Customer Reviews
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/gives-back" className="hyperlink menu-item top_nav_ps_gives_back">
+                                <a href={pages.PUPPYSPOT_GIVES_BACK} className="hyperlink menu-item top_nav_ps_gives_back">
                                 PuppySpot Gives Back
                                 </a>
                             </li>
@@ -371,26 +344,22 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
                 
                 <li className="about-us" onMouseEnter={() => setIsAboutUsHover(true)} onMouseLeave={() => setIsAboutUsHover(false)}>
-                    <a href="https://www.puppyspot.com/about-us" className="hyperlink menu-item dark-hover top_nav_about_us_submenu" data-toggle-menu=".js-about-submenu">About Us</a>
+                    <a href={pages.ABOUT_US} className="hyperlink menu-item dark-hover top_nav_about_us_submenu" data-toggle-menu=".js-about-submenu">About Us</a>
                     <div data-submenu="" className={`header-nav__submenu js-about-submenu custom-sub-menu js-menu mobile-menu-space ${isActive === 'about-us' ? '' : 'hidden'}`}>
-                        {/* <div className="header-nav__submenu-header">
-                            <a href="#" data-close-submenu=".js-about-submenu" className="mobile">
-                            About Us
-                            </a>
-                        </div> */}
+                    
                         <ul className="header-nav__submenu-section">
                             <li>
-                                <a href="https://www.puppyspot.com/about-us" className="hyperlink menu-item">
+                                <a href={pages.ABOUT_US} className="hyperlink menu-item">
                                 About Us
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/resource-center" className="hyperlink menu-item">
+                                <a href={pages.RESOURCE_CENTER} className="hyperlink menu-item">
                                 Resource Center
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.puppyspot.com/contact" className="hyperlink menu-item top_nav_contact_us">
+                                <a href={pages.CUSTOMER_REVIEW} className="hyperlink menu-item top_nav_contact_us">
                                 Contact Us
                                 </a>
                             </li>
@@ -404,7 +373,6 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         <li id="searchbar-header-desktop" className="search">
             <div className="desktop-searchbar-module__wrapper--kB8Qr">
                 <div className="style-module__wrapper--7jJ94 style-module__open--k2jZl">
-                    <link rel="preload" as="image" type="image/svg+xml" href="https://www.puppyspot.com/preact/./img/dots-loader.svg" />
                     <div className="style-module__content--UlhVY ">
                         <div className="style-module__reducerWrapper--UVMF-">
                             <div className="style-module__reducer--higDU">
@@ -448,28 +416,21 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             <ul className="header-nav__links">
                 
                 <li className="phone" style={{marginBottom: '-13px'}}>
-                    <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={`https://wa.me/${us_number}`}>
+                    <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={navbar.PHONE_WHATSAPP}>
                         (502) 382-0019
                     </a>
                 </li>
 
                 <li className="auth" style={{marginBottom: '-13px'}}>
-                    <a className="hyperlink" href="https://www.puppyspot.com/log-in">Log In</a>
+                    <a className="hyperlink" href={pages.LOGIN}>Log In</a>
                 </li>
-                {/* <li className="control">
-                    <a href="#" className="mobile-close js-header-close">
-                        <svg className="icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6.53414 7.99996L0.30405 1.76969C-0.101393 1.36443 -0.101393 0.709193 0.30405 0.30394C0.709305 -0.101313 1.36454 -0.101313 1.7698 0.30394L8.00008 6.53421L14.2302 0.30394C14.6356 -0.101313 15.2907 -0.101313 15.6959 0.30394C16.1014 0.709193 16.1014 1.36443 15.6959 1.76969L9.46583 7.99996L15.6959 14.2302C16.1014 14.6355 16.1014 15.2907 15.6959 15.696C15.494 15.8981 15.2284 15.9997 14.963 15.9997C14.6977 15.9997 14.4323 15.8981 14.2302 15.696L8.00008 9.4657L1.7698 15.696C1.56765 15.8981 1.30229 15.9997 1.03692 15.9997C0.771564 15.9997 0.506203 15.8981 0.30405 15.696C-0.101393 15.2907 -0.101393 14.6355 0.30405 14.2302L6.53414 7.99996Z" fill="currentColor"></path>
-                        </svg>
-                    </a>
-                </li> */}
             </ul>
 
 
             <ul className="header-nav__links-modile" style={{marginTop: '-3px'}}>
                 
                 <li className="phone" style={{paddingRight: '0.5rem'}}>
-                    <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={`https://wa.me/${us_number}`}>
+                    <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={navbar.PHONE_WHATSAPP}>
                         <div>
                             <picture className="">
                                 <img id="" alt="" className="icon ls-is-cached lazyloaded" width="18" height="18" src="/img/phone-icon.svg" style={{marginBottom: '-2px'}} />
@@ -479,7 +440,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                 </li>
 
                 <li className="auth" style={{marginTop: '-3px'}}>
-                    <a className="hyperlink" href="https://www.puppyspot.com/log-in">Log In</a>
+                    <a className="hyperlink" href={pages.LOGIN}>Log In</a>
                 </li>
             </ul>
         </li>

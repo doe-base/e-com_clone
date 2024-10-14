@@ -139,10 +139,10 @@ const TrustedSlider: React.FC<Props> = ({}) => {
                 className="carousel-module__wrapper--O59lP"
             >
                 <div id="carouselArrowCircleLeft-trusted_slider" className="trusted-by-community-module__carouselArrowCircleLeft--S7twT" style={{display: "none"}} onClick={handleLeftBtnClick}>
-                    <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
+                    <img src="/img/carousel-arrow.svg" />
                 </div>
                 <div id="carouselArrowCircleRight-trusted_slider" className="trusted-by-community-module__carouselArrowCircleRight--c8e5w"style={{display: "flex"}} onClick={handleRightBtnClick}>
-                    <img src="https://www.puppyspot.com/preact/./img/carousel-arrow.svg" />
+                    <img src="/img/carousel-arrow.svg" />
                 </div>
 
                 <div ref={sliderElementRef} id="child-carousel-module__wrapper" className="carousel-module__content--qDPHs false trusted-by-community-module__carouselContent--cNBUb">

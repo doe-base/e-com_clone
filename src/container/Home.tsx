@@ -11,6 +11,7 @@ import PuppySpotLight from '../components/home-page-components/puppy-spotlight-s
 import PuppyCharacterSlide from '../components/home-page-components/puppy-character-slide/PuppyCharacterSlide';
 import RecentlyViewed from '../components/home-page-components/puppy-spotlight-slide/RecentlyViewed';
 import BreedStateSection from '../components/breed-state';
+import { pages } from '../contants/routes';
 
 
 interface Props{
@@ -95,14 +96,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         <div className="mt-[20px] button-order ml-[10px] mr-[10px]">
                             <a
                             className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo track_browse_all_home hero-module__heroCta--8TpOf"
-                            href="https://www.puppyspot.com/puppies-for-sale"
+                            href={pages.PUPPIES_FOR_SELL}
                             >Browse All Puppies</a>
                 
                         </div>
 
                         <div className="hero-module__searchbarWrapper--Z0IvD search-order max-w-[clamp(0px,calc(100vw_-_20px),1070px)]">
                             <div className="style-module__wrapper--7jJ94 style-module__open--k2jZl" data-cy="hero-searchbar">
-                            <link rel="preload" as="image" type="image/svg+xml" href="https://www.puppyspot.com/preact/./img/dots-loader.svg" />
                             <div className="style-module__content--UlhVY style-module__noBorder--b9CgM">
                                 
                                 <div className="style-module__reducerWrapper--UVMF-">
@@ -213,7 +213,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 
                 <div id='big-screen-why-us' className="styles-module__cardsContainer--NzIp7">
                     <div>
-                        <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
+                        <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="/img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
                             <div className="styles-module__cardInfo--r+Wfi">
                                 <h4 className="styles-module__cardTitle--uTDQy">Your Perfect Puppy</h4>
                                 <p className="styles-module__cardDescription--SZBTD">Breeds in every size, color, and temperament</p>
@@ -222,7 +222,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     </div>
                     <div>
                         <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/certified-breeders.svg" alt="Certified Breeders"/>
+                            <img className="styles-module__buttonIcon--aT7sj" src="/img/certified-breeders.svg" alt="Certified Breeders"/>
                             <div className="styles-module__cardInfo--r+Wfi">
                                 <h4 className="styles-module__cardTitle--uTDQy">Certified Breeders</h4>
                                 <p className="styles-module__cardDescription--SZBTD">Licensed, vetted and committed to our puppies</p>
@@ -231,7 +231,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     </div>
                     <div>
                         <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/health-commitment.svg" alt="10-Year Health Commitment"/>
+                            <img className="styles-module__buttonIcon--aT7sj" src="/img/health-commitment.svg" alt="10-Year Health Commitment"/>
                             <div className="styles-module__cardInfo--r+Wfi">
                                 <h4 className="styles-module__cardTitle--uTDQy">10-Year Health Commitment</h4>
                                 <p className="styles-module__cardDescription--SZBTD">Certified documents, vaccinations, and checkups</p>
@@ -240,7 +240,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     </div>
                     <div>
                         <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/handle-care-delivery.svg" alt="Handle with Care Delivery"/>
+                            <img className="styles-module__buttonIcon--aT7sj" src="/img/handle-care-delivery.svg" alt="Handle with Care Delivery"/>
                             <div className="styles-module__cardInfo--r+Wfi">
                                 <h4 className="styles-module__cardTitle--uTDQy">Handle with<br/>Care Delivery</h4>
                                 <p className="styles-module__cardDescription--SZBTD">White glove travel options to bring your puppy home</p>
@@ -249,7 +249,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     </div>
                     <div>
                         <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/caring-experts.svg" alt="Caring Experts"/>
+                            <img className="styles-module__buttonIcon--aT7sj" src="/img/caring-experts.svg" alt="Caring Experts"/>
                             <div className="styles-module__cardInfo--r+Wfi">
                                 <h4 className="styles-module__cardTitle--uTDQy">Caring<br/>Experts</h4>
                                 <p className="styles-module__cardDescription--SZBTD">Helping you every step to find your perfect puppy </p>
@@ -275,7 +275,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                  >
 
                         <div>
-                            <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
+                            <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="/img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
                                 <div className="styles-module__cardInfo--r+Wfi">
                                     <h4 className="styles-module__cardTitle--uTDQy">Your Perfect Puppy</h4>
                                     <p className="styles-module__cardDescription--SZBTD">Breeds in every size, color, and temperament</p>
@@ -284,7 +284,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         </div>
                         <div>
                             <div className="styles-module__card--D5UVp">
-                                <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/certified-breeders.svg" alt="Certified Breeders"/>
+                                <img className="styles-module__buttonIcon--aT7sj" src="/img/certified-breeders.svg" alt="Certified Breeders"/>
                                 <div className="styles-module__cardInfo--r+Wfi">
                                     <h4 className="styles-module__cardTitle--uTDQy">Certified Breeders</h4>
                                     <p className="styles-module__cardDescription--SZBTD">Licensed, vetted and committed to our puppies</p>
@@ -293,7 +293,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         </div>
                         <div>
                             <div className="styles-module__card--D5UVp">
-                                <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/health-commitment.svg" alt="10-Year Health Commitment"/>
+                                <img className="styles-module__buttonIcon--aT7sj" src="/img/health-commitment.svg" alt="10-Year Health Commitment"/>
                                 <div className="styles-module__cardInfo--r+Wfi">
                                     <h4 className="styles-module__cardTitle--uTDQy">10-Year Health Commitment</h4>
                                     <p className="styles-module__cardDescription--SZBTD">Certified documents, vaccinations, and checkups</p>
@@ -302,7 +302,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         </div>
                         <div>
                             <div className="styles-module__card--D5UVp">
-                                <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/handle-care-delivery.svg" alt="Handle with Care Delivery"/>
+                                <img className="styles-module__buttonIcon--aT7sj" src="/img/handle-care-delivery.svg" alt="Handle with Care Delivery"/>
                                 <div className="styles-module__cardInfo--r+Wfi">
                                     <h4 className="styles-module__cardTitle--uTDQy">Handle with<br/>Care Delivery</h4>
                                     <p className="styles-module__cardDescription--SZBTD">White glove travel options to bring your puppy home</p>
@@ -311,7 +311,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         </div>
                         <div>
                             <div className="styles-module__card--D5UVp">
-                                <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/caring-experts.svg" alt="Caring Experts"/>
+                                <img className="styles-module__buttonIcon--aT7sj" src="/img/caring-experts.svg" alt="Caring Experts"/>
                                 <div className="styles-module__cardInfo--r+Wfi">
                                     <h4 className="styles-module__cardTitle--uTDQy">Caring<br/>Experts</h4>
                                     <p className="styles-module__cardDescription--SZBTD">Helping you every step to find your perfect puppy </p>
@@ -331,7 +331,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 <div className="trusted-by-community-module__sectionLeft--Jg8fx">
                     <img
                         className="trusted-by-community-module__titleImage--148v6"
-                        src="https://www.puppyspot.com/preact/./img/trusted-by-community-icon.svg"
+                        src="/img/trusted-by-community-icon.svg"
                         loading="lazy"
                     />
                     <h3 className="trusted-by-community-module__title--b4Rre">
@@ -343,14 +343,14 @@ const HomeContainer: React.FC<Props> = ({}) => {
                         <strong> here's what real customers have to say about PuppySpot.</strong>
                     </p>
                     <div className="trusted-by-community-module__boxGreen--hTMmj">
-                        <img src="https://www.puppyspot.com/preact/./img/trusted-by-community-check-mark.svg" loading="lazy"/>
+                        <img src="/img/trusted-by-community-check-mark.svg" loading="lazy"/>
                         <span className="trusted-by-community-module__label--GvukA">We’ve been placing healthy puppies in happy homes for nearly
                         <strong className="trusted-by-community-module__highlight--Sjvw8"> 20 </strong>years.</span>
                     </div>
                     <div className="trusted-by-community-module__wrapperButtons--ItUX- first">
                         <div className="trusted-by-community-module__flexRow--EOUTG">
                             <div className="trusted-by-community-module__flexItem--InltY">
-                                <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo" href="/reviews">
+                                <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo" href={pages.REVIEWS}>
                                 Read more reviews
                                 </a>
                 
@@ -358,7 +358,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                             <div className="trusted-by-community-module__flexItem--InltY">
                                 <a
                                 className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw"
-                                href="/puppies-for-sale">
+                                href={pages.PUPPIES_FOR_SELL}>
                                 Browse all puppies
                                 </a>
                 
@@ -377,11 +377,11 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 <div className="trusted-by-community-module__wrapperButtons--ItUX- second">
                     <div className="trusted-by-community-module__flexRow--EOUTG">
                         <div className="trusted-by-community-module__flexItem--InltY">
-                            <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo  " href="/reviews">Read more reviews </a>
+                            <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo  " href={pages.REVIEWS}>Read more reviews </a>
                 
                         </div>
                         <div className="trusted-by-community-module__flexItem--InltY">
-                            <a className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw  " href="/puppies-for-sale">Browse all puppies </a>
+                            <a className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw  " href={pages.PUPPIES_FOR_SELL}>Browse all puppies </a>
                 
                         </div>
                     </div>
@@ -393,12 +393,12 @@ const HomeContainer: React.FC<Props> = ({}) => {
         <section className="long-module">
             <div className="long-module__container">
                 <picture className="">
-                    <img id="" alt="" className="long-module__dog ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/components/contact-us/dog-medium.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/components/contact-us/dog-medium.svg" />
+                    <img id="" alt="" className="long-module__dog ls-is-cached lazyloaded" data-cy="" data-src="/img/components/contact-us/dog-medium.svg" loading="lazy" src="/img/components/contact-us/dog-medium.svg" />
                 </picture>
                 <div className="long-module__copy">
                     <p>Need help finding you new best friend? Start with our&nbsp;<strong>Breed Match Quiz</strong></p>
                 </div>
-                <a href="https://www.puppyspot.com/breed-selector-quiz" className="button main long-module__button">Take Quiz</a>
+                <a href={pages.BREED_QUIZ} className="button main long-module__button">Take Quiz</a>
             </div>
 
         </section>
@@ -412,20 +412,18 @@ const HomeContainer: React.FC<Props> = ({}) => {
 
         <div id="root-puppy-collections">
             <div className="puppy-collections-module__wrapper--XBjZ7">
-                <img className="puppy-collections-module__icon--ct+Hp" src="https://www.puppyspot.com/preact/./img/star.svg" />
+                <img className="puppy-collections-module__icon--ct+Hp" src="/img/star.svg" />
                 <h3 className="puppy-collections-module__title--bQyDZ">Puppy Characteristics</h3>
                 <span className="puppy-collections-module__subtitle--gvRzT">We’ve curated a list of our most popular characteristics of breeds for you.</span>
                 <PuppyCharacterSlide />
                 <div className="root-puppy-colletion-puppy-collections-module__buttonWrapper--yfGD0">
-                    <a className="root-puppy-colletion-button-module__wrapper--jJ7g9 root-puppy-colletion-button-module__outlined--dnOJw  " href="/puppies-for-sale">Browse All Puppies </a>
+                    <a className="root-puppy-colletion-button-module__wrapper--jJ7g9 root-puppy-colletion-button-module__outlined--dnOJw  " href={pages.PUPPIES_FOR_SELL}>Browse All Puppies </a>
                 </div>
             </div>
         </div>
 
         <div className="featured-puppies-module__wrapper--c1np1">
             <h3 className="featured-puppies-module__title--3vIaM">Recently Viewed</h3>
-
-            {/* <div className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU"></div> */}
             <RecentlyViewed />
         </div>
 

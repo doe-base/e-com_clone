@@ -4,8 +4,9 @@
     overflow: hidden;
   }
   .carousel-module__wrapper--O59lP {
-    touch-action: pan-y;
+    touch-action:pan-x;
     scroll-behavior: smooth;
+    /* overflow-x: auto !important; */
   }
   .favorite-breeds-module__wrapper--7M\+J3 .favorite-breeds-module__wrapperCarousel--EqX9F .favorite-breeds-module__carouselArrowCircleLeft--u68nI{
     display: flex;

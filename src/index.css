@@ -17,7 +17,9 @@ body {
   margin: 0;
   font-family: Inter, sans-serif;
 }
-
+body.gray-background, body.gray-background main.body {
+  background-color: #f7f7f7;
+}
 li {
   list-style: none;
 }
@@ -106,8 +108,10 @@ p {
   pointer-events: none !important;
 }
 
+
+
 /* puppy character slider responsive bar tracker */
-responsive-puppy-character-slider-trackbar
+/* responsive-puppy-character-slider-trackbar */
 
 .responsive-puppy-character-slider-trackbar {
   width: 55.5vw !important;
@@ -135,4 +139,18 @@ responsive-puppy-character-slider-trackbar
   .responsive-puppy-character-slider-trackbar {
     width: 28vw !important;
   }
+}
+
+.h1-strong, h1, h1.strong {
+  color: #000;
+  font-family: Nunito,sans-serif;
+  letter-spacing: .1px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.no-click {
+  pointer-events: none;
 }

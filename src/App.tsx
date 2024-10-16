@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NavContainer from './components/nav/nav-container';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import HomePage from './pages/Home';
+import PuppiesForSell from './pages/PuppiesForSell';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
         </Routes>
       </Router>
     </div>

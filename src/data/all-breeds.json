@@ -3,399 +3,326 @@
     {
       "id": 334,
       "name": "Goldendoodle",
-      "slug": "goldendoodle"
+      "slug": "goldendoodle",
+      "isSelected": false
     },
     {
       "id": 390,
       "name": "Cavapoo",
-      "slug": "cavapoo"
+      "slug": "cavapoo",
+      "isSelected": false
     },
     {
       "id": 444,
       "name": "Bernedoodle",
-      "slug": "bernedoodle"
+      "slug": "bernedoodle",
+      "isSelected": false
     },
     {
       "id": 228,
       "name": "Golden Retriever",
-      "slug": "golden-retriever"
+      "slug": "golden-retriever",
+      "isSelected": false
     },
     {
       "id": 322,
       "name": "Poodle",
-      "slug": "poodle"
+      "slug": "poodle",
+      "isSelected": false
     },
     {
       "id": 222,
       "name": "Dachshund",
-      "slug": "dachshund"
+      "slug": "dachshund",
+      "isSelected": false
     },
     {
       "id": 345,
       "name": "Maltipoo",
-      "slug": "maltipoo"
+      "slug": "maltipoo",
+      "isSelected": false
     },
     {
       "id": 276,
       "name": "Cavalier King Charles Spaniel",
-      "slug": "cavalier-king-charles-spaniel"
+      "slug": "cavalier-king-charles-spaniel",
+      "isSelected": false
     },
     {
       "id": 231,
       "name": "Labrador Retriever",
-      "slug": "labrador-retriever"
+      "slug": "labrador-retriever",
+      "isSelected": false
     },
     {
       "id": 225,
       "name": "French Bulldog",
-      "slug": "french-bulldog"
+      "slug": "french-bulldog",
+      "isSelected": false
     },
     {
       "id": 302,
       "name": "Havanese",
-      "slug": "havanese"
+      "slug": "havanese",
+      "isSelected": false
     },
     {
       "id": 226,
       "name": "German Shepherd Dog",
-      "slug": "german-shepherd-dog"
+      "slug": "german-shepherd-dog",
+      "isSelected": false
     },
     {
       "id": 249,
       "name": "Yorkshire Terrier",
-      "slug": "yorkshire-terrier"
+      "slug": "yorkshire-terrier",
+      "isSelected": false
     },
     {
       "id": 244,
       "name": "Shih Tzu",
-      "slug": "shih-tzu"
+      "slug": "shih-tzu",
+      "isSelected": false
     },
     {
       "id": 238,
       "name": "Pomeranian",
-      "slug": "pomeranian"
+      "slug": "pomeranian",
+      "isSelected": false
     },
     {
       "id": 320,
       "name": "Miniature Schnauzer",
-      "slug": "miniature-schnauzer"
+      "slug": "miniature-schnauzer",
+      "isSelected": false
     },
     {
       "id": 232,
       "name": "Maltese",
-      "slug": "maltese"
+      "slug": "maltese",
+      "isSelected": false
     },
     {
       "id": 220,
       "name": "Cocker Spaniel",
-      "slug": "cocker-spaniel"
+      "slug": "cocker-spaniel",
+      "isSelected": false
     },
     {
       "id": 327,
       "name": "Labradoodle",
-      "slug": "labradoodle"
+      "slug": "labradoodle",
+      "isSelected": false
     },
     {
       "id": 219,
       "name": "Chihuahua",
-      "slug": "chihuahua"
+      "slug": "chihuahua",
+      "isSelected": false
     },
     {
       "id": 347,
       "name": "Cockapoo",
-      "slug": "cockapoo"
+      "slug": "cockapoo",
+      "isSelected": false
     },
     {
       "id": 324,
       "name": "Pembroke Welsh Corgi",
-      "slug": "pembroke-welsh-corgi"
+      "slug": "pembroke-welsh-corgi",
+      "isSelected": false
     },
     {
       "id": 212,
       "name": "Beagle",
-      "slug": "beagle"
+      "slug": "beagle",
+      "isSelected": false
     },
     {
       "id": 437,
       "name": "Pomsky",
-      "slug": "pomsky"
+      "slug": "pomsky",
+      "isSelected": false
     },
     {
       "id": 258,
       "name": "Australian Shepherd",
-      "slug": "australian-shepherd"
+      "slug": "australian-shepherd",
+      "isSelected": false
     },
     {
       "id": 245,
       "name": "Siberian Husky",
-      "slug": "siberian-husky"
+      "slug": "siberian-husky",
+      "isSelected": false
     },
     {
       "id": 264,
       "name": "Bernese Mountain Dog",
-      "slug": "bernese-mountain-dog"
+      "slug": "bernese-mountain-dog",
+      "isSelected": false
     },
     {
       "id": 217,
       "name": "Boston Terrier",
-      "slug": "boston-terrier"
+      "slug": "boston-terrier",
+      "isSelected": false
     },
     {
       "id": 218,
       "name": "Bichon Frise",
-      "slug": "bichon-frise"
+      "slug": "bichon-frise",
+      "isSelected": false
     },
     {
       "id": 434,
       "name": "Bichonpoo",
-      "slug": "bichonpoo"
+      "slug": "bichonpoo",
+      "isSelected": false
     },
     {
       "id": 447,
       "name": "Havapoo",
-      "slug": "havapoo"
+      "slug": "havapoo",
+      "isSelected": false
     },
     {
       "id": 404,
       "name": "Aussiedoodle",
-      "slug": "aussiedoodle"
+      "slug": "aussiedoodle",
+      "isSelected": false
     },
     {
       "id": 299,
       "name": "Great Dane",
-      "slug": "great-dane"
+      "slug": "great-dane",
+      "isSelected": false
     },
     {
       "id": 344,
       "name": "Yorkiepoo",
-      "slug": "yorkiepoo"
+      "slug": "yorkiepoo",
+      "isSelected": false
     },
     {
       "id": 285,
       "name": "Coton de Tulear",
-      "slug": "coton-de-tulear"
+      "slug": "coton-de-tulear",
+      "isSelected": false
     },
     {
       "id": 367,
       "name": "Morkie",
-      "slug": "morkie"
+      "slug": "morkie",
+      "isSelected": false
     },
     {
       "id": 378,
       "name": "Shihpoo",
-      "slug": "shihpoo"
+      "slug": "shihpoo",
+      "isSelected": false
     },
     {
       "id": 241,
       "name": "Rottweiler",
-      "slug": "rottweiler"
+      "slug": "rottweiler",
+      "isSelected": false
     },
     {
       "id": 415,
       "name": "Sheepadoodle",
-      "slug": "sheepadoodle"
+      "slug": "sheepadoodle",
+      "isSelected": false
     },
     {
       "id": 253,
       "name": "West Highland White Terrier",
-      "slug": "west-highland-white-terrier"
+      "slug": "west-highland-white-terrier",
+      "isSelected": false
     },
     {
       "id": 216,
       "name": "Boxer",
-      "slug": "boxer"
+      "slug": "boxer",
+      "isSelected": false
     },
     {
       "id": 263,
       "name": "Shiba Inu",
-      "slug": "shiba-inu"
+      "slug": "shiba-inu",
+      "isSelected": false
     },
     {
       "id": 385,
       "name": "Cavachon",
-      "slug": "cavachon"
+      "slug": "cavachon",
+      "isSelected": false
     },
     {
       "id": 240,
       "name": "Pug",
-      "slug": "pug"
+      "slug": "pug",
+      "isSelected": false
     },
     {
       "id": 214,
       "name": "Bulldog",
-      "slug": "bulldog"
+      "slug": "bulldog",
+      "isSelected": false
     },
     {
       "id": 233,
       "name": "Miniature Pinscher",
-      "slug": "miniature-pinscher"
+      "slug": "miniature-pinscher",
+      "isSelected": false
     },
     {
       "id": 236,
       "name": "Pekingese",
-      "slug": "pekingese"
+      "slug": "pekingese",
+      "isSelected": false
     },
     {
       "id": 243,
       "name": "Shetland Sheepdog",
-      "slug": "shetland-sheepdog"
+      "slug": "shetland-sheepdog",
+      "isSelected": false
     },
     {
       "id": 381,
       "name": "Shichon",
-      "slug": "shichon"
+      "slug": "shichon",
+      "isSelected": false
     },
     {
       "id": 275,
       "name": "Portuguese Water Dog",
-      "slug": "portuguese-water-dog"
+      "slug": "portuguese-water-dog",
+      "isSelected": false
     },
     {
       "id": 383,
       "name": "Mal-Shi",
-      "slug": "mal-shi"
+      "slug": "mal-shi",
+      "isSelected": false
     },
     {
       "id": 230,
       "name": "Jack Russell Terrier",
-      "slug": "russell-terrier"
+      "slug": "russell-terrier",
+      "isSelected": false
     },
     {
       "id": 476,
       "name": "Saint Berdoodle",
-      "slug": "saint-berdoodle"
+      "slug": "saint-berdoodle",
+      "isSelected": false
     },
     {
       "id": 346,
-      "name": "Pomapoo",
-      "slug": "pomapoo"
-    },
-    {
-      "id": 211,
-      "name": "Basset Hound",
-      "slug": "basset-hound"
-    },
-    {
-      "id": 425,
-      "name": "Frenchton",
-      "slug": "frenchton"
-    },
-    {
-      "id": 341,
-      "name": "Puggle",
-      "slug": "puggle"
-    },
-    {
-      "id": 246,
-      "name": "Soft Coated Wheaten Terrier",
-      "slug": "soft-coated-wheaten-terrier"
-    },
-    {
-      "id": 268,
-      "name": "Samoyed",
-      "slug": "samoyed"
-    },
-    {
-      "id": 522,
-      "name": "American Corgi",
-      "slug": "american-corgi"
-    },
-    {
-      "id": 518,
-      "name": "Corgipoo",
-      "slug": "corgipoo"
-    },
-    {
-      "id": 209,
-      "name": "Akita",
-      "slug": "akita"
-    },
-    {
-      "id": 382,
-      "name": "Shorkie",
-      "slug": "shorkie"
-    },
-    {
-      "id": 278,
-      "name": "Old English Sheepdog",
-      "slug": "old-english-sheepdog"
-    },
-    {
-      "id": 227,
-      "name": "German Shorthaired Pointer",
-      "slug": "german-shorthaired-pointer"
-    },
-    {
-      "id": 387,
-      "name": "Schnoodle",
-      "slug": "schnoodle"
-    },
-    {
-      "id": 221,
-      "name": "Collie",
-      "slug": "collie"
-    },
-    {
-      "id": 517,
-      "name": "Yoranian",
-      "slug": "yoranian"
-    },
-    {
-      "id": 267,
-      "name": "Schipperke",
-      "slug": "schipperke"
-    },
-    {
-      "id": 576,
-      "name": "Golden Mountain Doodle",
-      "slug": "golden-mountain-doodle"
-    },
-    {
-      "id": 290,
-      "name": "Dogue de Bordeaux",
-      "slug": "dogue-de-bordeaux"
-    },
-    {
-      "id": 274,
-      "name": "Cairn Terrier",
-      "slug": "cairn-terrier"
-    },
-    {
-      "id": 572,
-      "name": "Frenchie Pug",
-      "slug": "frenchie-pug"
-    },
-    {
-      "id": 247,
-      "name": "Vizsla",
-      "slug": "vizsla"
-    },
-    {
-      "id": 559,
-      "name": "Yo-Chon",
-      "slug": "yo-chon"
-    },
-    {
-      "id": 580,
-      "name": "Golden Cavadoodle",
-      "slug": "golden-cavadoodle"
-    },
-    {
-      "id": 511,
-      "name": "Springerdoodle",
-      "slug": "springerdoodles"
-    },
-    {
-      "id": 330,
-      "name": "Chinese Shar-Pei",
-      "slug": "chinese-shar-pei"
-    },
-    {
-      "id": 343,
-      "name": "Cane Corso",
-      "slug": "cane-corso"
+      "name": "Mini Bernedoodle",
+      "slug": "mini-bernedoodle",
+      "isSelected": false
     }
-  ],
-  "buttonLink": "https://www.puppyspot.com/puppies-for-sale",
-  "hide": false
+  ]
 }

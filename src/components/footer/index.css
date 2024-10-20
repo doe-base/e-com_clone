@@ -68,6 +68,9 @@
 .footer-nav__list li a {
   font-weight: 400;
 }
+.footer-nav__list li a:hover {
+  color: #ff9100;
+}
 .footer-nav__payment {
   border-top: 1px solid #d8d8d8;
   padding-top: 2.75rem;

@@ -5,6 +5,8 @@ import HomePage from './pages/Home';
 import PuppiesForSell from './pages/PuppiesForSell';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import AboutUs from './pages/AboutUs';
+import PuppyPromise from './pages/PuppyPromise';
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
           <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
           <Route path="/log-in" element={<Login />} />
           <Route path="/sign-up" element={<Signup />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/promise" element={<PuppyPromise />} />
         </Routes>
       </Router>
     </div>

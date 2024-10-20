@@ -102,6 +102,37 @@
   margin-bottom: 16px;
   margin-top: 16px;
 }
+.puppies-for-sale-header .seo-breed-content-read-more {
+  cursor: pointer;
+  font-weight: 700;
+  /* text-decoration: underline; */
+}
+.js-readmore .mobile-read-more-text-ellipsis.enabled .js-readmore-trigger {
+  display: inline !important;
+  padding-left: 5px;
+}
+.seo-content__container_reponsive_contaier-big {
+  display: block;
+}
+.seo-content__container_reponsive_contaier-small {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .seo-content__container_reponsive_contaier-big {
+    display: none;
+  }
+  .seo-content__container_reponsive_contaier-small {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .puppies-for-sale-header .all-puppies-header {
+    font-size: 22px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
 h1 {
   font-size: 36px;
   line-height: 38px;
@@ -110,7 +141,7 @@ h1 {
 .puppies-for-sale-header .seo-breed-content-read-more {
   cursor: pointer;
   font-weight: 700;
-  text-decoration: underline;
+  /* text-decoration: underline; */
 }
 
 /* Filter Section */
@@ -171,11 +202,23 @@ h1 {
 }
 .puppies-for-sale__filter-nav-sort {
   margin-right: 0.25em;
+  cursor: pointer;
+}
+.js-sort-label{
+  transition: all 0.3s linear;
+}
+.puppies-for-sale__filter-nav-sort:hover #arrow_up2-toggle_up2{
+  color: gray;
+}
+.puppies-for-sale__filter-nav-sort:hover .js-sort-label {
+  color: gray !important;
 }
 .text-tangerine {
   color: #ff9100;
 }
-
+.puppies-for-sale__filter-nav-sort .arrow.up2::after {
+  transform: rotate(180deg);
+}
 .puppies-for-sale__filter-nav-sort .arrow::after {
   background-image: url(/public/img/chevron-rounded.svg);
   background-position-y: center;
@@ -185,6 +228,9 @@ h1 {
   height: 12px !important;
   transform: rotate(0);
   width: 12px !important;
+}
+.puppies-for-sale__filter-nav-sort:hover .puppies-for-sale__filter-nav-sort .arrow::after{
+  filter: invert(54%) sepia(1%) saturate(1630%) hue-rotate(322deg) brightness(92%) contrast(82%);
 }
 
 .puppies-for-sale__filter-nav-sort .arrow > span {
@@ -790,6 +836,8 @@ label {
 .selectr-option::before {
   background-position: 1px;
 }
+.variety-classes_all:hover,
+.variety-size_all:hover,
 .filter_only_ready_to_travel:hover,
 .color-inputs_label_options:hover,
 .gtag-filter_age_all:hover,
@@ -1163,4 +1211,348 @@ selectr-clear::after,
   height: 10px;
   content: " ";
   background-color: #6c7a86;
+}
+
+/* Top tags */
+.breed-searchbar__breed-tag {
+  background: #a9d587;
+  border-radius: 100px;
+  color: #000;
+  display: inline-block;
+  font-size: 0.875rem;
+  margin: 1rem 0 0 0.375rem;
+  padding: 8px 32px 9px 16px;
+  position: relative;
+}
+.selectr-selected .selectr-tag-remove::after,
+li .selectr-tag-remove::after {
+  display: none;
+}
+.selectr-clear::after,
+.selectr-input-clear::after,
+.selectr-tag-remove::after {
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.selectr-tag-remove::after,
+.selectr-tag-remove::before {
+  top: 4px;
+  width: 3px;
+  height: 12px;
+  background-color: #fff;
+}
+.selectr-clear::after,
+.selectr-clear::before,
+.selectr-input-clear::after,
+.selectr-input-clear::before,
+.selectr-tag-remove::after,
+.selectr-tag-remove::before {
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  content: " ";
+  background-color: #6c7a86;
+}
+.selectr-selected .selectr-tag-remove::before,
+li .selectr-tag-remove::before {
+  background: 0 0;
+  content: url(/public/img/remove.svg);
+  height: 100%;
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
+  z-index: 9;
+}
+.selectr-clear::before,
+.selectr-input-clear::before,
+.selectr-tag-remove::before {
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.selectr-selected .selectr-tag-remove,
+li .selectr-tag-remove {
+  height: 1.125rem;
+  right: 9px;
+  width: 1.125rem;
+  z-index: 9;
+}
+.selectr-clear,
+.selectr-input-clear,
+.selectr-tag-remove {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  cursor: pointer;
+  -o-transform: translate3d(0, -50%, 0);
+  -ms-transform: translate3d(0, -50%, 0);
+  -moz-transform: translate3d(0, -50%, 0);
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  border: none;
+  background-color: transparent;
+  z-index: 11;
+}
+
+/* Puppy Grid */
+@media screen and (min-width: 1024px) {
+  @supports (display: grid) {
+    .puppies-for-sale__results {
+      grid-area: results;
+    }
+  }
+}
+@supports (display: grid) {
+  .puppies-for-sale__puppy-list {
+    grid-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
+  }
+}
+@supports (display: grid) {
+  @media screen and (max-width: 1023px) {
+    .puppies-for-sale__puppy-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(16rem, 100%), 1fr));
+    }
+  }
+}
+@supports (display: grid) {
+  @media screen and (max-width: 767px) {
+    .puppies-for-sale__puppy-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
+    }
+  }
+}
+@supports (display: grid) {
+  @media screen and (max-width: 599px) {
+    .puppies-for-sale__puppy-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(12rem, 100%), 1fr));
+    }
+  }
+}
+@supports (display: grid) {
+  @media screen and (max-width: 479px) {
+    .puppies-for-sale__puppy-list {
+      grid-template-columns: repeat(auto-fill, minmax(min(10rem, 100%), 1fr));
+    }
+  }
+}
+.puppy-list-small-gap {
+  grid-gap: 0.2rem;
+}
+
+.auto-content {
+  content-visibility: auto;
+}
+.card {
+  align-items: flex-start;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  min-width: 170px;
+  padding: 8px;
+}
+.card__display {
+  position: relative;
+  width: 100%;
+}
+.card__video-icon {
+  height: 30px !important;
+  left: 5px;
+  position: absolute;
+  top: 5px;
+  width: 30px;
+}
+.card__image {
+  aspect-ratio: 1;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  height: auto;
+  min-height: 10em;
+  width: 100%;
+}
+.card__details_container {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  width: 100%;
+}
+.card__details {
+  align-items: flex-start;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 42px);
+}
+.card__details p.breed,
+.card__details p.name {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.card__details p.name {
+  font-family: Nunito, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.card__details p {
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  line-height: normal;
+  margin: 0;
+}
+.card__details p.age,
+.card__details p.breed,
+.card__details p.location {
+  font-size: 12px;
+  font-weight: 400;
+}
+.card__actions {
+  align-items: flex-end;
+  display: flex;
+}
+.card .favorite-puppy-circle {
+  align-self: flex-end;
+  background-color: #fff;
+  background-image: url(/public/img/shared/favorite-heart-icon.svg);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+  cursor: pointer;
+  height: 32px;
+  min-width: 32px;
+  padding: 1px;
+  width: 32px;
+}
+
+@media screen and (min-width: 1024px) {
+  @supports (display: grid) {
+    .puppies-for-sale__pagination {
+      grid-area: pagination;
+    }
+  }
+}
+.puppies-for-sale__pagination {
+  margin-top: 20px;
+}
+.pagination-pagebar {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+}
+.pagination-pagebar li {
+  display: inline-block;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+.pagination-pagebar li a[data-is-current="false"]:hover,
+.pagination-pagebar li a[data-is-current="true"] {
+  background-color: #219653;
+  border-radius: 99rem;
+  color: #fff !important;
+  font-weight: 700;
+}
+.pagination-pagebar li a[data-is-current="false"]:hover,
+.pagination-pagebar li a[data-is-current="true"] {
+  background-color: #219653;
+  border-radius: 99rem;
+  color: #fff !important;
+  font-weight: 700;
+}
+.pagination-pagebar li a {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 2rem;
+  justify-content: center;
+  position: relative;
+  width: 2rem;
+}
+.pagination-pagebar li a {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 2rem;
+  justify-content: center;
+  position: relative;
+  width: 2rem;
+}
+.arrow.pagination--back::before,
+.arrow.pagination::after {
+  background-image: url(/public/svg/forward-caret-black.svg);
+  background-size: 14px 14px;
+  border: none;
+  content: "";
+  height: 14px;
+  width: 14px;
+}
+.arrow.pagination::after {
+  transform: rotate(0);
+}
+.arrow::after {
+  border: 3px solid #ff9100;
+  border-bottom: none;
+  border-right: none;
+  content: "";
+  display: block;
+  height: 9px;
+  margin-left: 4px;
+  transform: rotate(135deg);
+  width: 9px;
+}
+.pagination-pagebar li a {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 2rem;
+  justify-content: center;
+  position: relative;
+  width: 2rem;
+}
+.pagination-pagebar li a {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  height: 2rem;
+  justify-content: center;
+  position: relative;
+  width: 2rem;
+}
+.arrow {
+  align-items: baseline;
+  color: #ff9100;
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  transition: 0.3s;
 }

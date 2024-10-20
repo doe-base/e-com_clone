@@ -5,8 +5,9 @@ import NavDrawer from './nav-drawer';
 
 interface Props{
   setNavHeight: React.Dispatch<React.SetStateAction<number>>;
+  isPuppiesForSale: boolean;
 }
-const NavContainer: React.FC<Props> = ({setNavHeight}) => {
+const NavContainer: React.FC<Props> = ({setNavHeight, isPuppiesForSale}) => {
    const [smallNavOpen, setSmallNavOpen] = useState(false);
    const navRef = useRef<HTMLDivElement>(null);
 
@@ -14,15 +15,16 @@ const NavContainer: React.FC<Props> = ({setNavHeight}) => {
     if (navRef.current) {
       setNavHeight(navRef.current.offsetHeight);
     }
-  }, []);
+  }, [isPuppiesForSale]);
 
   return (
     <nav ref={navRef} style={{position: 'fixed', zIndex: '10', width: '100%'}}>
         <TopBanner />
 
-        <Navbar smallNavOpen={smallNavOpen} setSmallNavOpen={setSmallNavOpen}/>
+        <Navbar smallNavOpen={smallNavOpen} setSmallNavOpen={setSmallNavOpen} isPuppiesForSale={isPuppiesForSale}/>
 
         <NavDrawer smallNavOpen={smallNavOpen} setSmallNavOpen={setSmallNavOpen}/>
+        
     </nav>
   );
 }

@@ -154,3 +154,35 @@ p {
 .no-click {
   pointer-events: none;
 }
+
+/* Puppy for sale page. Responsive nav */
+@media (max-width: 1024px) and (min-width: 769px) {
+  #FilterSidebar-responsive_1024 {
+    display: block;
+  }
+}
+
+@media (min-width: 1025px), (max-width: 768px) {
+  #FilterSidebar-responsive_1024 {
+    display: none;
+  }
+}
+
+/* Show SmallFilterPopup-responsive_768 only below 768px */
+@media (max-width: 768px) {
+  #SmallFilterPopup-responsive_768 {
+    display: flex;
+  }
+}
+
+@media (min-width: 769px) {
+  #SmallFilterPopup-responsive_768 {
+    display: none;
+  }
+}
+
+form {
+  float: none;
+  margin: 0 auto;
+  max-width: 3000px;
+}

@@ -10,6 +10,15 @@
   width: 100%;
   z-index: 1;
 }
+.root-hideable-header_minimized{
+  transform: translateY(calc(-100% + 7px));
+}
+
+@media (max-width: 800px) {
+  .header-nav__content-no_boarder{
+    border-bottom: none !important;
+  }
+}
 
 @media screen and (min-width: 1024px) {
   .header-nav__content {
@@ -564,5 +573,34 @@
   .header-nav__links-main li {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+  }
+}
+
+/* Exra Searchbar */
+.hideable-header-module__wrapper--wa3zr {
+  display: block !important;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  transition: transform .5s;
+  border-bottom: 2px #dadada solid;
+  margin-top: -5px;
+  padding: 6px 26px;
+  padding-bottom: 15px;
+  background-color: #fff;
+  transition: all 0.3s linear;
+}
+.style-module__wrapper--7jJ94 {
+  margin: 0 auto;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Inter",sans-serif;
+  position: relative;
+}
+@media (min-width: 800px) {
+  .hideable-header-module__wrapper--wa3zr {
+    display: none !important;
   }
 }

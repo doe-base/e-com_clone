@@ -57,17 +57,26 @@
   padding: 70px 10px;
   width: 100%;
 }
+.login-title {
+  font-size: 30px;
+  font-weight: 700;
+  padding-bottom: 15px !important;
+  text-align: center;
+}
 @media screen and (max-width: 1023px) {
   .login-title {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 700;
     padding-bottom: 15px !important;
-    text-align: center;
+    text-align: left;
   }
+}
+.authentication.log-in .authentication__container {
+  padding-top: 20%;
 }
 @media screen and (min-width: 768px) {
   .authentication.log-in .authentication__container {
-    padding-top: 20%;
+    padding-top: 5%;
   }
 }
 
@@ -130,6 +139,11 @@
   display: block;
   justify-content: space-between;
   padding: 1rem 0 0;
+}
+@media screen and (min-width: 768px) {
+  .authentication__social {
+    padding: 0rem 0 0;
+  }
 }
 .authentication__container > * {
   margin: 0 auto;

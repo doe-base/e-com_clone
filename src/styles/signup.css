@@ -1,0 +1,171 @@
+@media screen and (min-width: 768px) {
+  .authentication__container .input-combo {
+    grid-gap: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .authentication__container .input-combo {
+    display: block;
+  }
+}
+.authentication__container > * {
+  margin: 0 auto;
+  width: 340px;
+}
+@media screen and (min-width: 1024px) {
+  .authentication__container > * {
+    width: 380px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .authentication .input-combo {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .authentication .input-combo .input-wrapper:first-child {
+    margin-right: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .authentication .input-combo .input-wrapper {
+    flex: 1;
+  }
+}
+
+input[type="email"]::after,
+input[type="password"]::after,
+input[type="tel"]::after,
+input[type="text"]::after,
+select::after,
+textarea::after {
+  content: "\f107";
+}
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="text"],
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-position: right -0.3rem center;
+  border: 1px solid #a6a6a6;
+  border-radius: 7px;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+  font-size: 16px;
+  height: 41px;
+  margin: 0 auto 0.5rem;
+  outline: 0;
+  padding: 5px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .authentication .input-combo .input-wrapper {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .authentication .input-combo span.password-visibility {
+    top: 2.8em;
+  }
+}
+span.password-visibility {
+  background: url(/public/img/authentication/password-hidden.svg) no-repeat;
+  background-size: contain;
+  height: 1.2em;
+  position: absolute;
+  right: 1em;
+  top: 2.5em;
+  width: 1.2em;
+}
+
+.authentication .t-and-c {
+  margin-top: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .authentication__container > * {
+    width: 380px;
+  }
+}
+.authentication__container > * {
+  margin: 0 auto;
+  width: 340px;
+}
+.authentication .hyperlink {
+  color: #66af37;
+}
+
+.authentication .cta-loader {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .authentication .cta-loader {
+    align-items: center;
+  }
+}
+.authentication__container > * {
+  margin: 0 auto;
+  width: 340px;
+}
+@media screen and (min-width: 1024px) {
+  .authentication__container > * {
+    width: 380px;
+  }
+}
+
+.authentication .cta-loader input[type="submit"] {
+  height: 44px;
+  margin: 10px auto;
+  max-width: 100%;
+  width: 340px;
+}
+.button.main {
+  background-color: #ff9100;
+  border: none;
+  color: #fff;
+}
+@media screen and (min-width: 600px) {
+  button[type="submit"],
+  input[type="submit"] {
+    width: auto;
+  }
+}
+button[type="submit"],
+input[type="submit"] {
+  display: block;
+  margin: 25px auto;
+  width: 100%;
+}
+
+.authentication__container p {
+  padding-bottom: 1em;
+}
+
+.authentication__container > * {
+  margin: 0 auto;
+  width: 340px;
+}
+@media screen and (min-width: 1024px) {
+  .authentication__container > * {
+    width: 380px;
+  }
+}
+
+input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="text"]:focus, select:focus, textarea:focus {
+    border: 2px solid #ff9100;
+    box-shadow: none;
+    height: 41px;
+    outline: 0;
+  }

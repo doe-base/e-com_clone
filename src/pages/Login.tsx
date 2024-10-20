@@ -20,12 +20,12 @@ const Login: React.FC<Props> = ({}) => {
             <h3 className="login-title">Log in to PuppySpot</h3>
 
             <div className="authentication__social">
-                <a className="button ghost" href="https://www.puppyspot.com/auth/google">
+                <a className="button ghost" href="">
                     <img src='/img/googl-logo.svg' style={{width: '1.8rem', height: '1.8rem'}}/>
                 <span>Continue with Google</span>
                 </a>
-                <a className="button blue-facebook" href="https://www.puppyspot.com/auth/facebook">
-                    <img src="https://www.puppyspot.com/assets/img/facebook-icon-white.svg"/>
+                <a className="button blue-facebook" href="">
+                    <img src="/img/facebook-icon-white.svg"/>
                     <span>Continue with Facebook</span>
                 </a>
             </div>
@@ -80,19 +80,19 @@ const Login: React.FC<Props> = ({}) => {
                 <span>Remember me?</span>
                 </label>
                 </div>
-                <a className="hyperlink" href="https://www.puppyspot.com/forgot-password">Forgot password?</a>
+                <a className="hyperlink" href="/forgot-password">Forgot password?</a>
             </div>
 
             <div className="cta-loader">
                 <div className="loading cta invisible">
                     <picture className="">
-                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg"/>
+                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/components/loader-cta.svg" loading="lazy" src="/img/components/loader-cta.svg"/>
                     </picture>
                 </div>
                 <input tabIndex={0} type="submit" className="button login-button main js-submit" value="Log In" />
             </div>
 
-            <p>Don't have an account? <a className="hyperlink" href="https://www.puppyspot.com/sign-up">Sign up</a></p>
+            <p>Don't have an account? <a className="hyperlink" href="/sign-up">Sign up</a></p>
 
         </form>
     

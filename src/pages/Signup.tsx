@@ -6,7 +6,7 @@ interface Props{
 const Signup: React.FC<Props> = ({}) => {
 
     useEffect(() =>{
-        document.title = "Log into your account | PuppySpot";
+        document.title = "Create a new account | PuppySpot";
     }, []);
 
     const [isVisible, setIsvisible] = useState(false)

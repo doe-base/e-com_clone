@@ -102,6 +102,60 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
                 </div>
             </div>
         </article>
+
+        <article className="template-image-copy image-left split-half puppyspot-promise__travel" id="travel">
+            <div className="template-image-copy__content">
+                    <div className="template-image-copy__image puppyspot-promise__travel-image">
+                        <div style={{backgroundImage: "url('https://cdn.buttercms.com/RT4E09z6RNyFPsNGnCZc')"}} className="top"></div>
+                        <div style={{backgroundImage: "url('https://cdn.buttercms.com/XCpoYB2WQ4ia30gUmcH8')"}} className="bottom"></div>
+                    </div>
+
+                    <div className="template-image-copy__copy puppyspot-promise__travel-copy">
+                        <h2 className="template-element-title icon">
+                        <img className="icon" src="/img/PuppySpot_Illustrations_Final_Teacup.png" />
+                        Delivered by Love
+                        </h2>
+                        <ul className="template-list">
+                            <li className="green-check template-copy">We only work with transport partners that love puppies as much as we do
+                            </li>
+                            <li className="green-check template-copy">USDA certified transporters that provide a range of handle with care options
+                            </li>
+                            <li className="green-check template-copy">We guarantee that the delivery experience is as stress-free as possible
+                            </li>
+                        </ul>
+                        <div className="cta-white">
+                        <a href="https://www.puppyspot.com/dog-travel">Learn More</a>
+                        </div>
+                    </div>
+            </div>
+        </article>
+
+        <article className="template-bullet-list puppyspot-promise__gives-back" id="gives-back">
+            <h2 className="template-element-title icon">
+                <img className="icon" src="https://cdn.buttercms.com/pPfukNfSfSil4h9kag7v" />
+                PuppySpot Gives Back
+            </h2>
+            <ul className="template-list">
+                <li className="green-check">
+                PuppySpot is an official Make-A-Wish national partner
+                </li>
+                <li className="green-check">
+                Team members are encouraged to volunteer at local shelters
+                </li>
+                <li className="green-check">
+                Our Retired Dogs Program focuses on rehoming and retired dogs whose families can no longer take care of them
+                </li>
+            </ul>
+            <div className="cta-white">
+                <a href="https://www.puppyspot.com/gives-back">Learn More</a>
+            </div>
+        </article>
+
+        <article className="template-gallery puppyspot-promise__gives back images">
+        <div style={{backgroundImage: "url('https://cdn.buttercms.com/uFUEeFbSdyzCAzSqyXUw')"}} className="template-gallery__image large-image"></div>
+        <div style={{backgroundImage: "url('https://cdn.buttercms.com/yrfMN9DSNCuQ240KhiPp')"}} className="template-gallery__image image-top"></div>
+        <div style={{backgroundImage: "url('https://cdn.buttercms.com/0gv3jOwGTJEDcMXaHwAP')"}} className="template-gallery__image image-bottom"></div>
+        </article>
     </div>
   );
 }

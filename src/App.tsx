@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AboutUs from './pages/AboutUs';
 import PuppyPromise from './pages/PuppyPromise';
+import Career from './pages/Career';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/promise" element={<PuppyPromise />} />
+          <Route path="/careers" element={<Career />} />
         </Routes>
       </Router>
     </div>

@@ -146,7 +146,7 @@ const AKCContainer: React.FC<Props> = ({}) => {
           purchase. By purchasing, you and your puppy will reap benefits of AKC
           programs offered to only select puppies around the nation.
         </p>
-        <article className="template-icon-grid template-icon-grid--akc-authorized akc-authorized__benefits-grid">
+        <article className="akc-article template-icon-grid template-icon-grid--akc-authorized akc-authorized__benefits-grid">
           <div className="template-icon-grid__card">
             <picture className="">
               <img

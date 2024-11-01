@@ -9,6 +9,7 @@ const AKC: React.FC<Props> = ({}) => {
 
     useEffect(() =>{
         document.title = "PuppySpot Partners with AKC | PuppySpot";
+        document.body.classList.add('gray-background')
     }, []);
 
 

@@ -82,24 +82,6 @@ h3 {
     padding: 0;
   }
 }
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
 
 .template-image-copy {
   width: 100%;
@@ -143,16 +125,7 @@ h3 {
     height: 27em;
   }
 }
-.template-image-copy__image {
-  background-repeat: no-repeat;
-  min-height: 15em;
-}
-@media screen and (min-width: 1024px) {
-  .template-image-copy__image {
-    height: 30em;
-    width: 70em;
-  }
-}
+
 
 .careers__about-copy,
 .careers__benefits {
@@ -217,16 +190,6 @@ h3 {
   font-size: 18px;
   margin: 0;
 }
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-
 .careers__culture-copy,
 .careers__extra-mile {
   background-color: #eaf9ff;
@@ -289,16 +252,7 @@ h3 {
     height: 23em;
   }
 }
-.template-image-copy__image {
-  background-repeat: no-repeat;
-  min-height: 15em;
-}
-@media screen and (min-width: 1024px) {
-  .template-image-copy__image {
-    height: 30em;
-    width: 70em;
-  }
-}
+
 
 /* New section */
 .careers__values-title {
@@ -311,24 +265,6 @@ article.template-icon-grid {
 @media screen and (min-width: 71rem) {
   article.template-icon-grid {
     margin: 2rem auto !important;
-  }
-}
-.template article {
-    margin: 0 auto 0.5em;
-    max-width: 1360px;
-  }
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-.template article {
-    margin: 0 auto 0.5em;
-    max-width: 1360px;
-  }
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
   }
 }
 .template-icon-grid {

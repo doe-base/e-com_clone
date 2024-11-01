@@ -1,74 +1,26 @@
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
+
 .template-circle-header--secondary {
   background: #f5ffef;
 }
-/* .template-circle-header {
-  background: linear-gradient(194.01deg, #d9e8ef 9.6%, #eaf2f5 89.64%);
-  width: 100%;
-} */
 
-.template-circle-header__content {
-  background-image: url(/public/img/circle-bg.svg);
-  background-position-x: -29rem;
-  background-position-y: -15rem;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
-}
-@media screen and (min-width: 600px) {
-  .template-circle-header__content {
-    text-align: center;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .template-circle-header__content {
-    align-items: center;
-    background-position-x: -10rem;
-    flex-direction: row-reverse;
-    text-align: left;
-  }
-}
 
-.template-circle-header__content-copy {
-  padding: 1em;
-}
-
-.template-element-title--header {
-  align-items: baseline;
-  font-size: 46px;
-  line-height: 62px;
-  text-align: left;
-}
 @media screen and (min-width: 600px) {
   .template-element-title--header {
     font-size: 68px;
     line-height: 77px;
     text-align: center;
+    padding-top: 0rem;
   }
 }
 @media screen and (min-width: 1024px) {
   .template-element-title--header {
     margin-bottom: 0;
     text-align: left;
+    /* padding-top: 3.5rem; */
+
   }
 }
 
-.template-circle-header__content-copy p {
-  font-family: Inter, sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 33px;
-}
 .about-us__header p {
   font-size: 40px;
   line-height: 63px;
@@ -77,7 +29,7 @@
 @media screen and (min-width: 768px) {
   .about-us__header p {
     font-size: 50px;
-    padding: 2.6rem 0;
+    padding: 1.6rem 0;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -88,51 +40,31 @@
   }
 }
 
+
+
+
 .about-us__description {
   padding: 1em;
   text-align: center;
 }
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
 
+.about-us__description-title {
+  font-size: 36px;
+  padding: 2rem 0;
+}
 @media screen and (min-width: 768px) {
   .about-us__description-title {
     font-size: 46px;
     padding: 2rem 0;
   }
 }
-.about-us__description-title {
-  font-size: 36px;
-}
+
 
 .about-us__description-copy {
   font-size: 18px;
   line-height: 28px;
 }
-.template-copy {
-  font-size: 18px;
-  margin: 0;
-}
-.template-copy {
-  font-size: 18px;
-  margin: 0;
-}
+
 
 /* new section */
 
@@ -146,22 +78,6 @@
   .about-us__puppies-placed {
     padding: 2em 3em;
   }
-}
-
-.template article {
-  margin: 0 auto 0.5em;
-  margin-bottom: 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
 }
 
 .about-us__puppies-placed-container {
@@ -213,10 +129,6 @@
 }
 
 /* New section */
-.template article {
-  margin: 0 auto 0.5em;
-  max-width: 1360px;
-}
 .about-us h2 {
   font-size: 36px;
   text-align: center;
@@ -242,17 +154,6 @@
   max-width: 1130px;
   padding: 1em;
 }
-.template article {
-  margin: 0 auto 0.5em;
-  margin-bottom: 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
-}
-
 .about-us__leadership h2 {
   text-align: center;
 }
@@ -354,16 +255,6 @@ h4 {
 }
 .about-us__coverage-container.first {
   margin-top: 5em;
-}
-.template article {
-  margin: 0 auto 0.5em;
-  margin-bottom: 0.5em;
-  max-width: 1360px;
-}
-@media screen and (min-width: 1024px) {
-  .template article {
-    margin-bottom: 1em;
-  }
 }
 .about-us__coverage-source {
   color: #a6a6a6;

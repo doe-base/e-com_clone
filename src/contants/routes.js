@@ -8,8 +8,8 @@ export const pages = {
     COLLECTIONS: '/collections',
     PROMISE: '/promise',
     CAREERS: '/careers',
-    DOG_REGISTRATION: 'dog-registration',
-    AKC: 'akc',
+    DOG_REGISTRATION: '/dog-registration',
+    AKC: '/akc',
 
     PUPPY_STANDARDS: '/puppyspot-standards',
     DOG_TRAVEL: '/dog-travel',

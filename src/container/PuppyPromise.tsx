@@ -7,7 +7,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
 
   return (
     <div className='puppyspot-promise template'>
-        <article className="template-circle-header puppyspot-promise__header ">
+        <article className="template-circle-header template-circle-header">
             <div className="template-circle-header__content">
                 <div className="template-circle-header__content-copy">
                     <h1 className="template-element-title--header promise">
@@ -82,7 +82,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
 
         <article className="template-image-copy image-left full-half puppyspot-promise__health-check" id="health-check">
             <div className="template-image-copy__content">
-                <div style={{backgroundImage: "url('https://cdn.buttercms.com/1ILMCuRnSsqJMki8xoZ9')"}} className="template-image-copy__image puppyspot-promise__health-check-image"></div>
+                <div style={{backgroundImage: "url('https://cdn.buttercms.com/1ILMCuRnSsqJMki8xoZ9')", backgroundRepeat: 'no-repeat'}} className="puppyspot-promise__health-check-image"></div>
                 <div className="template-image-copy__copy puppyspot-promise__health-check-copy">
                     <h2 className="template-element-title icon">
                     <img className="icon" src="https://cdn.buttercms.com/IlSjnyKoTjO3aox2vr73" />
@@ -152,9 +152,9 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
         </article>
 
         <article className="template-gallery puppyspot-promise__gives back images">
-        <div style={{backgroundImage: "url('https://cdn.buttercms.com/uFUEeFbSdyzCAzSqyXUw')"}} className="template-gallery__image large-image"></div>
-        <div style={{backgroundImage: "url('https://cdn.buttercms.com/yrfMN9DSNCuQ240KhiPp')"}} className="template-gallery__image image-top"></div>
-        <div style={{backgroundImage: "url('https://cdn.buttercms.com/0gv3jOwGTJEDcMXaHwAP')"}} className="template-gallery__image image-bottom"></div>
+            <div style={{backgroundImage: "url('https://cdn.buttercms.com/uFUEeFbSdyzCAzSqyXUw')"}} className="template-gallery__image large-image"></div>
+            <div style={{backgroundImage: "url('https://cdn.buttercms.com/yrfMN9DSNCuQ240KhiPp')"}} className="template-gallery__image image-top"></div>
+            <div style={{backgroundImage: "url('https://cdn.buttercms.com/0gv3jOwGTJEDcMXaHwAP')"}} className="template-gallery__image image-bottom"></div>
         </article>
     </div>
   );

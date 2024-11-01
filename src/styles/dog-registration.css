@@ -1,0 +1,144 @@
+.dog-registration {
+  background-color: #f7f7f7;
+}
+
+.template-element-title--header {
+  align-items: baseline;
+  font-size: 46px;
+  line-height: 62px;
+  text-align: left;
+  padding: 1.5rem 0;
+}
+@media screen and (min-width: 600px) {
+  .template-element-title--header {
+    font-size: 68px;
+    line-height: 77px;
+    text-align: center;
+    padding: 2rem 0;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .template-element-title--header {
+    padding-bottom: 0;
+    text-align: left;
+  }
+}
+
+
+.dog-registration .template-circle-header__content-copy p {
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33px;
+
+  padding: 1.5rem 0;
+}
+
+.template article {
+  margin: 0 auto 0.5em;
+  max-width: 1360px;
+}
+@media screen and (min-width: 1024px) {
+  .template article {
+    margin-bottom: 1em;
+  }
+}
+.template-circle-header--secondary {
+  background: #f5ffef;
+}
+.dog-registration__questions {
+  padding: 1em;
+}
+
+.dog-registration__questions h2, .dog-registration__questions p {
+  text-align: center;
+}
+.dog-registration__questions h2 {
+  font-size: 46px;
+  padding: 2rem 0;
+  line-height: 1;
+}
+.dog-registration__questions p {
+  padding: 0.6rem 0;
+}
+.dog-registration__questions-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,.05);
+  margin: 0 auto;
+  max-width: 1130px;
+  padding: 0 1em 1em;
+}
+
+.dog-registration__questions-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+.dog-registration__questions-item {
+  border-top: 1px solid #d8d8d8;
+  margin: 0;
+}
+.collapsible-panel__container {
+  border-top: 1px solid #ceebbd;
+  margin: 0 auto;
+}
+.collapsible-panel__container {
+  border-bottom-color: #dcdcdc !important;
+  border-top: 1px solid #dcdcdc !important;
+}
+
+
+
+
+.collapsible-panel__container h2.open::before, .collapsible-panel__container h3.open::before {
+  border-color: #000;
+  transform: rotate(180deg);
+}
+.collapsible-panel__handle.open::before {
+  border-color: #66af37;
+  content: "";
+  margin-top: 6px;
+  transform: rotate(-45deg);
+}
+.collapsible-panel__container h2::before, .collapsible-panel__container h3::before {
+  background-image: url(/public/img/chevron-rounded.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  height: 12px !important;
+  transform: rotate(0);
+  width: 12px !important;
+}
+.collapsible-panel__handle::before {
+  border: 2px solid #000;
+  border-bottom: none;
+  border-left: none;
+  content: "";
+  float: right;
+  height: .55em;
+  margin-left: .35em;
+  margin-top: 3px;
+  transform: rotate(135deg);
+  transition: transform .3s;
+  width: .55em;
+}
+
+.dog-registration__questions-item:first-of-type h3.open {
+  color: #000;
+}
+.collapsible-panel__container h2, .collapsible-panel__container h3 {
+  margin: 0;
+  padding: 15px 0 10px;
+  position: relative;
+  text-align: left;
+}
+.collapsible-panel__handle span {
+  pointer-events: none;
+}
+
+.dog-registration__questions-item .collapsible-panel__content {
+  border-top: 1px solid #ceebbd;
+}
+.collapsible-panel__content {
+  padding: 5px 10px 20px;
+}

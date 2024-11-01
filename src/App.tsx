@@ -8,6 +8,8 @@ import Signup from './pages/Signup';
 import AboutUs from './pages/AboutUs';
 import PuppyPromise from './pages/PuppyPromise';
 import Career from './pages/Career';
+import DogRegistration from './pages/DogRegistration';
+import AKC from './pages/AKC';
 
 
 function App() {
@@ -38,6 +40,8 @@ function App() {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/promise" element={<PuppyPromise />} />
           <Route path="/careers" element={<Career />} />
+          <Route path="/dog-registration" element={<DogRegistration />} />
+          <Route path="/akc" element={<AKC />} />
         </Routes>
       </Router>
     </div>

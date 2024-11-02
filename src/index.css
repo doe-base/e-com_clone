@@ -17,7 +17,8 @@ body {
   margin: 0;
   font-family: Inter, sans-serif;
 }
-body.gray-background, body.gray-background main.body {
+body.gray-background,
+body.gray-background main.body {
   background-color: #f7f7f7;
 }
 li {
@@ -49,12 +50,13 @@ h5 {
 }
 h3 {
   font-size: 20px;
-  letter-spacing: .1px;
+  letter-spacing: 0.1px;
   line-height: 22px;
 }
-h2, h3 {
+h2,
+h3 {
   color: #000;
-  font-family: Nunito,sans-serif;
+  font-family: Nunito, sans-serif;
 }
 
 img,
@@ -96,22 +98,19 @@ picture {
 
 p {
   color: #000;
-  font-family: Inter,sans-serif;
+  font-family: Inter, sans-serif;
   font-size: 16px;
-  letter-spacing: .1px;
+  letter-spacing: 0.1px;
   line-height: 26px;
 }
 
-
-.special-scroll-slider-prop{
+.special-scroll-slider-prop {
   user-select: none;
 }
 
 .disable-links a {
   pointer-events: none !important;
 }
-
-
 
 /* puppy character slider responsive bar tracker */
 /* responsive-puppy-character-slider-trackbar */
@@ -144,10 +143,12 @@ p {
   }
 }
 
-.h1-strong, h1, h1.strong {
+.h1-strong,
+h1,
+h1.strong {
   color: #000;
-  font-family: Nunito,sans-serif;
-  letter-spacing: .1px;
+  font-family: Nunito, sans-serif;
+  letter-spacing: 0.1px;
 }
 
 .mb-10 {
@@ -198,4 +199,13 @@ form {
 }
 .cta-white {
   display: flex;
+}
+
+label {
+  display: block;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 5px auto;
+  text-align: left;
+  text-transform: capitalize;
 }

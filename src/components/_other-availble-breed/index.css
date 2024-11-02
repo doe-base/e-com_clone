@@ -1,0 +1,238 @@
+.carousel-module__wrapper--O59lP {
+    touch-action: pan-y;
+    /* max-width: 100%; */
+    overflow: hidden;
+  }
+  .featured-puppies-module__carouselWrapper--bYSHH {
+    /* touch-action: none; */
+    /* max-width: 100%; */
+    /* overflow: hidden; */
+    max-width: 1100px !important;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+  
+  .featured-puppies-module__carouselWrapper--bYSHH
+    .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
+    transform: rotateZ(180deg);
+    left: 0px;
+  }
+  @media not all and (min-width: 1536px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
+      left: 100px;
+    }
+  }
+  @media not all and (min-width: 1280px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
+      left: 80px;
+    }
+  }
+  @media not all and (min-width: 1024px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
+      left: 60px;
+    }
+  }
+  @media not all and (min-width: 640px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleLeft--qWBNd {
+      left: 15px;
+    }
+  }
+  
+  .featured-puppies-module__carouselWrapper--bYSHH
+    .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+    right: 0px;
+  }
+  @media not all and (min-width: 1536px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+      right: 100px;
+    }
+  }
+  @media not all and (min-width: 1280px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+      right: 80px;
+    }
+  }
+  @media not all and (min-width: 1024px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+      right: 60px;
+    }
+  }
+  @media not all and (min-width: 640px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+      right: 15px;
+    }
+  }
+  
+  .featured-puppies-module__carouselWrapper--bYSHH
+    .featured-puppies-module__carouselArrowCircleLeft--qWBNd,
+  .featured-puppies-module__carouselWrapper--bYSHH
+    .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+    position: absolute;
+    z-index: 1;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1490196078);
+    height: 48px;
+    width: 48px;
+    display: flex;
+    opacity: 0.7;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  @media (min-width: 768px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleLeft--qWBNd,
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+      top: calc(50% + 10px);
+    }
+  }
+  @media not all and (min-width: 768px) {
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleLeft--qWBNd,
+    .featured-puppies-module__carouselWrapper--bYSHH
+      .featured-puppies-module__carouselArrowCircleRight--3M3TT {
+      top: calc(50% + 36px);
+    }
+  }
+  
+  .carousel-module__wrapper--O59lP .carousel-module__content--qDPHs {
+    display: flex;
+    width: max-content;
+    align-items: stretch;
+    transition: all 0.3s linear;
+  }
+  @media (max-width: 600px) {
+    .carousel-module__wrapper--O59lP .carousel-module__content--qDPHs {
+      margin-left: 37px !important;
+    }
+  }
+  .featured-puppies-module__carouselWrapper--bYSHH
+    .featured-puppies-module__carouselContent--5fzAU {
+    margin: 0 auto;
+    display: flex;
+    width: max-content;
+    align-items: stretch;
+  }
+  
+  .featured-puppies-module__itemWrapper--O0u\+N {
+    padding: 0;
+    box-shadow: none;
+    border: 1px solid rgba(229, 229, 229, 0.55);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 170px;
+    border-radius: 8px;
+    background-color: #fff;
+    height: 355px;
+    width: 250px;
+    margin: 5px;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__img--U7ezR {
+    width: 100%;
+    height: auto;
+    min-height: 10em;
+    overflow: hidden;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    position: relative;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__img--U7ezR
+    img {
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__content--A6vru {
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    padding: 15px 12px;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__descriptionContent--aNTW4 {
+    display: block;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__content--A6vru
+    .featured-puppies-module__title--3vIaM {
+    font-family: Nunito;
+    line-height: 2rem;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: left;
+    margin: 0;
+  }
+  .featured-puppies-module__wrapper--c1np1
+    .featured-puppies-module__title--3vIaM {
+    margin: 0;
+    font-family: Nunito;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 49px;
+    letter-spacing: 0px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__content--A6vru
+    .featured-puppies-module__subtitleLabel--qIScN,
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__content--A6vru
+    .featured-puppies-module__timeLabel--LYtEG {
+    font-size: 14px;
+    line-height: 1.25rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.75);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+  
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__heartIcon--jWh5x {
+    z-index: 1;
+    color: #fff;
+    cursor: pointer;
+    align-self: flex-end;
+    height: 32px;
+    width: 32px;
+    min-width: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 100px;
+    padding: 6px;
+    margin-left: auto;
+  }
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__heartIcon--jWh5x:hover,
+  .featured-puppies-module__itemWrapper--O0u\+N
+    .featured-puppies-module__heartIcon--jWh5x.favorited {
+    fill: #219653;
+  }
+  

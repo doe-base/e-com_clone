@@ -1,0 +1,164 @@
+.ReactModalPortal {
+  position: relative;
+  z-index: 9999999;
+}
+.styles-module__closeIcon--m4RIB {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+.styles-module__closeIcon--m4RIB img {
+  width: 20px;
+  height: 20px;
+}
+.styles-module__modalContainer--Ros6J {
+  display: flex;
+}
+.styles-module__modalContainer--Ros6J .styles-module__puppyDetail--gApxF {
+  min-width: 344px;
+  width: 344px;
+  background-color: #f7f7f7;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyDetail--gApxF
+  .styles-module__img--YLJYM {
+  width: 390px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyDetail--gApxF
+  .styles-module__infoContainer--3DuTp {
+  padding: 15px 24px 24px 24px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyDetail--gApxF
+  .styles-module__infoContainer--3DuTp
+  .styles-module__puppyTitle--K6pRx {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 30px;
+  padding-bottom: 6px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyDetail--gApxF
+  .styles-module__infoContainer--3DuTp
+  .styles-module__puppyDescription--IHf9s {
+  font-size: 16px;
+}
+.styles-module__modalContainer--Ros6J .styles-module__puppyInformation--YVTOY {
+  display: flex;
+  font-family: Inter;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1019607843);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyInformation--YVTOY
+  > div {
+  text-align: center;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyInformation--YVTOY
+  .styles-module__icon--NFMMT {
+  width: 24px;
+  height: 24px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyInformation--YVTOY
+  .styles-module__informationType--GUSIX {
+  color: rgba(0, 0, 0, 0.4509803922);
+  font-size: 12px;
+  font-weight: 400;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__puppyInformation--YVTOY
+  .styles-module__informationTitle--pkJLt {
+  color: rgba(0, 0, 0, 0.8509803922);
+  font-size: 16px;
+  font-weight: 600;
+  max-width: 80px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ- {
+  width: 100%;
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  align-self: center;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__shareIconModal--5mZjy {
+  width: 28px;
+  height: 28px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__title--qJJ-e {
+  font-family: Nunito;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 1.5rem 0;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe
+  button,
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe
+  .styles-module__button--G8jor {
+  border: 1px solid rgba(0, 0, 0, 0.2509803922) !important;
+  border-radius: 4px !important;
+  margin-right: 16px;
+  background-color: #fff !important;
+  padding: 20px !important;
+  width: 50% !important;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 700 !important;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  transition: font-weight 0.3s;
+}
+
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe
+  button
+  img,
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe
+  .styles-module__button--G8jor
+  img {
+  margin-right: 12px;
+  width: 23px;
+  height: 23px;
+}
+
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe
+  button:last-child,
+.styles-module__modalContainer--Ros6J
+  .styles-module__shareContainerModal--ZzyQ-
+  .styles-module__buttonWrapper--0ndoe
+  .styles-module__button--G8jor:last-child {
+  margin-right: 0 !important;
+}

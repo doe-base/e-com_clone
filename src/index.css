@@ -209,3 +209,49 @@ label {
   text-align: left;
   text-transform: capitalize;
 }
+
+#profile-reviews_js-reviews-component--big {
+  display: none !important;
+}
+#profile-reviews_js-reviews-component--small {
+  display: flex !important;
+}
+/* Show small component on small screens, hide on large screens */
+@media (min-width: 900px) {
+  #profile-reviews_js-reviews-component--big {
+    display: block !important;
+  }
+  #profile-reviews_js-reviews-component--small {
+    display: none !important;
+  }
+}
+
+.show-for-small {
+  display: flex !important;
+}
+@media (min-width: 768px) {
+  .show-for-small {
+    display: none !important;
+  }
+}
+
+.ReactModalPortal {
+  display: none !important;
+}
+@media (min-width: 768px) {
+  .ReactModalPortal {
+    display: block !important;
+  }
+}
+
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+svg,
+video {
+  display: block;
+}
+

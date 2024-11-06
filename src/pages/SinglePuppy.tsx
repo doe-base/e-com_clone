@@ -13,7 +13,6 @@ const SinglePuppy: React.FC<Props> = ({}) => {
         document.title = " | PuppySpot";
     }, []);
 
-
   return (
     <>
         <SinglePuppyContainer />

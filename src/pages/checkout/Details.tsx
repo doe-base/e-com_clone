@@ -82,7 +82,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                   <div className="tw-mt-4 ">
                     <div className="tw-flex tw-flex-col tw-gap-[30px] tw-mt-7 tw-mb-10 initial-scroll">
                             <div className="tw-px-6 sm:tw-px-0"><h3 className="tw-text-green-01 tw-text-[22px] tw-font-nunito tw-font-extrabold">Contact details</h3><p className="tw-font-inter tw-text-sm tw-text-gray-02">Tell us a bit about yourself so we can ensure <span className="tw-capitalize">Ellis</span> finds a safe and happy home!</p></div>
-                            <div style={{"--divider-color":"var(--green-01);", "--divider-size":"var(--divider-size-lg)"} as React.CSSProperties } className="tw-rounded m_3eebeb36 mantine-Divider-root" data-size="lg" data-orientation="horizontal" role="separator"></div>
+                            <div style={{"--divider-color":"var(--green-01)", "--divider-size":"var(--divider-size-lg)"} as React.CSSProperties } className="tw-rounded m_3eebeb36 mantine-Divider-root" data-size="lg" data-orientation="horizontal" role="separator"></div>
                             <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled"><legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-5 tw-w-full m_90794832 mantine-Fieldset-legend">
                                 <div className="tw-flex tw-justify-between tw-items-center tw-w-full"><span>Enter your email</span>
                                 </div></legend><input type="hidden" data-path="csrf_token" value="AAhNhjxZK/GQzstfSOQyllbACw0235f5Wl8gx4HI"/><input type="hidden" data-path="honeytrap" value=""/>
@@ -90,7 +90,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                     <div></div>
                                     <div className="tw-w-full">
                                         <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs" aria-disabled="false">
-                                        <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Email*" data-path="email" autoComplete="no" aria-invalid="false" id="mantine-vhjalif6v" value=""/></div>
+                                        <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Email*" data-path="email" autoComplete="no" aria-invalid="false" id="mantine-vhjalif6v" value=""/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                     <div></div>
                                     <div className="tw-w-full">
                                         <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                        <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="First*" data-path="firstName" autoComplete="no" aria-invalid="false" id="mantine-h20zrslgq" value=""/></div>
+                                        <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="First*" data-path="firstName" autoComplete="no" aria-invalid="false" id="mantine-h20zrslgq" value=""/></div>
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                     <div></div>
                                     <div className="tw-w-full">
                                         <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                        <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Last*" data-path="lastName" autoComplete="no" aria-invalid="false" id="mantine-ywx7al45j" value=""/>
+                                        <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Last*" data-path="lastName" autoComplete="no" aria-invalid="false" id="mantine-ywx7al45j" value=""/>
                                         </div>
                                     </div>
                                     </div>
@@ -125,14 +125,21 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                     <div></div>
                                     <div className="tw-w-full">
                                         <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                            <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Phone Number*" data-path="phone" autoComplete="no" aria-invalid="false" id="mantine-np8sksr47" value=""/></div>
+                                            <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Phone Number*" data-path="phone" autoComplete="no" aria-invalid="false" id="mantine-np8sksr47" value=""/></div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div style={{"--checkbox-size":"var(--checkbox-size-md);", "--checkbox-color":"var(--gray-01);--label-fz:var(--mantine-font-size-md);--label-lh:var(--label-lh-md)"} as React.CSSProperties } className="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root" data-size="md" data-label-position="right" data-checked="true">
-                                    <div className="m_5f6e695e mantine-Checkbox-body">
-                                        <div className="m_26062bec mantine-Checkbox-inner" data-label-position="right"><input className="mantine-focus-auto m_26063560 mantine-Checkbox-input" id="mantine-v3tcd6bih" data-path="canReceiveSms" type="checkbox" checked={true} /><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" className="m_bf295423 mantine-Checkbox-icon"><path d="M13.3337 4L6.00033 11.3333L2.66699 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                <div style={{"--checkbox-size":"var(--checkbox-size-md)", "--checkbox-color":"var(--gray-01)", "--label-fz":"var(--mantine-font-size-md)","--label-lh":"var(--label-lh-md)"} as React.CSSProperties } className="m_bf2d988c mantine-Checkbox-root m_5f75b09e mantine-Checkbox-root" data-size="md" data-label-position="right" data-checked="true">
+                                    <div className="m_5f6e695e mantine-Checkbox-body aliign_items-center">
+                                        <div className="m_26062bec mantine-Checkbox-inner" data-label-position="right">
+                                          <input className="mantine-focus-auto m_26063560 mantine-Checkbox-input" id="mantine-v3tcd6bih" data-path="canReceiveSms" type="checkbox" checked={true} style={{
+                                            '--checkbox-size': 'var(--checkbox-size-md)',
+                                            '--checkbox-color': 'var(--gray-01)',
+                                            '--label-fz': 'var(--mantine-font-size-md)',
+                                            '--label-lh': 'var(--label-lh-md)',
+                                          } as React.CSSProperties}/>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" className="m_bf295423 mantine-Checkbox-icon"><path d="M13.3337 4L6.00033 11.3333L2.66699 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                         </div>
                                         <div className="m_d3ea56bb mantine-Checkbox-labelWrapper"><label className="tw-font-inter tw-text-gray-02 tw-text-sm m_8ee546b8 mantine-Checkbox-label" htmlFor="mantine-v3tcd6bih">Opt in for SMS updates on <span className="tw-capitalize">Ellis.</span> You can opt out anytime.</label></div>
                                     </div>
@@ -146,7 +153,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                         <div></div>
                                         <div className="tw-w-full">
                                             <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                                <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled" data-with-left-section="true">
+                                                <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled" data-with-left-section="true">
                                                     <div data-position="left" className="m_82577fc2 mantine-Input-section"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none"><path d="M9.16667 16.3332C12.8486 16.3332 15.8333 13.3484 15.8333 9.66654C15.8333 5.98465 12.8486 2.99988 9.16667 2.99988C5.48477 2.99988 2.5 5.98465 2.5 9.66654C2.5 13.3484 5.48477 16.3332 9.16667 16.3332Z" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17.5 17.9999L13.875 14.3749" stroke="#828282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                                     </div><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px] m_8fb7ebe7 mantine-Input-input pac-target-input" data-variant="unstyled" placeholder="Start typing address" data-path="address" autoComplete="off" aria-invalid="false" id="mantine-5r6abdybz" value=""/>
                                                 </div>
@@ -155,7 +162,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                 </div>
                                 <div className="tw-w-full">
                                     <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                        <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Apartment/Unit (Optional)" data-path="address2" autoComplete="no" aria-invalid="false" id="mantine-snief0yuf" value=""/>
+                                        <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Apartment/Unit (Optional)" data-path="address2" autoComplete="no" aria-invalid="false" id="mantine-snief0yuf" value=""/>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +172,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                         </div>
                                         <div className="tw-w-full">
                                                 <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                                <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="City*" data-path="city" autoComplete="no" aria-invalid="false" id="mantine-b66xfntwy" value=""/>
+                                                <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="City*" data-path="city" autoComplete="no" aria-invalid="false" id="mantine-b66xfntwy" value=""/>
                                                 </div>
                                             </div>
                                         </div>
@@ -175,7 +182,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                     <div></div>
 
                                     <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] tw-border-gray-04 undefined m_46b77525 mantine-InputWrapper-root mantine-Select-root">
-                                        <div style={{"--input-right-section-pointer-events": "none;"} as React.CSSProperties } className="tw-top-0 m_6c018570 mantine-Input-wrapper mantine-Select-wrapper" data-variant="default" data-pointer="true" data-with-right-section="true"><input className="tw-pl-0 tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none tw-h-[58px]  m_8fb7ebe7 mantine-Input-input mantine-Select-input" data-variant="default" placeholder="State*" data-path="stateAbbr" readOnly aria-haspopup="listbox" autoComplete="no" required aria-invalid="false" id="mantine-1vq052fsz" value=""/>
+                                        <div style={{"--input-right-section-pointer-events": "none"} as React.CSSProperties } className="tw-top-0 m_6c018570 mantine-Input-wrapper mantine-Select-wrapper" data-variant="default" data-pointer="true" data-with-right-section="true"><input className="tw-pl-0 tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none tw-h-[58px]  m_8fb7ebe7 mantine-Input-input mantine-Select-input" data-variant="default" placeholder="State*" data-path="stateAbbr" readOnly aria-haspopup="listbox" autoComplete="no" required aria-invalid="false" id="mantine-1vq052fsz" value=""/>
                                             <div data-position="right" className="m_82577fc2 mantine-Input-section mantine-Select-section"><svg width="24" height="24" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.29167 4.125L5.50001 7.33334L8.70834 4.125" stroke="black" stroke-width="0.870833" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                                             </div>
                                         </div>
@@ -185,7 +192,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
                                         <div></div>
                                         <div className="tw-w-full">
                                             <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs">
-                                                <div style={{"--input-left-section-pointer-events":"none;","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Zip Code*" data-path="postalCode" autoComplete="no" aria-invalid="false" id="mantine-tw6edxjjm" value=""/>
+                                                <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled"><input className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" data-variant="unstyled" placeholder="Zip Code*" data-path="postalCode" autoComplete="no" aria-invalid="false" id="mantine-tw6edxjjm" value=""/>
                                                 </div>
                                             </div>
                                         </div>

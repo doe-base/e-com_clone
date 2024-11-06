@@ -3,7 +3,9 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css"; // Optional: the default styles
 import OtherAvaibleBreed from "../components/_other-availble-breed/OtherAvaibleBreed";
 import RecentlyViewed from "../components/home-page-components/puppy-spotlight-slide/RecentlyViewed";
-
+import AskAboutMePopup from "../components/popups/single-puppy-popups/AskAboutMePopup";
+import LoginPopup from "../components/popups/single-puppy-popups/LoginPopup";
+import SharePopup from "../components/popups/single-puppy-popups/SharePopup";
 
 // This page requires
 // full customsation
@@ -16,12 +18,79 @@ import RecentlyViewed from "../components/home-page-components/puppy-spotlight-s
 interface Props {}
 const SinglePuppyContainer: React.FC<Props> = ({}) => {
   const [showMore, setShowMore] = useState(false);
+  const [sliderCount, setSliderCount] = useState(1);
+  const [askAboutMePopup, setAskAboutMePopup] = useState(false);
+  const [loingPopup, setLoingPopup] = useState(false);
+  const [sharePopup, setSharePopup] = useState(false)
 
   const handleToggle = () => {
     setShowMore(!showMore);
   };
+
+  const incrementSliderCount = () => {
+    setSliderCount((prevCount) => (prevCount >= 3 ? 1 : prevCount + 1));
+  };
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Select the elements
+      const ctaElement = document.getElementById("puppy-profile__cta-js-profile-ctas");
+      const buttonElement = document.getElementById("take-me-home-floating-btn");
+
+      if (!ctaElement || !buttonElement) return;
+
+      // Get the bounding rectangle of the CTA element
+      const ctaRect = ctaElement.getBoundingClientRect().bottom;
+
+      // Check if the element is within 50px of the viewport top
+      if (ctaRect + 50 > 0) {
+        buttonElement.classList.add("hidden");
+      } else {
+        buttonElement.classList.remove("hidden");
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+// Work on Share puppy
+  const handleShare = async () => {
+    if (navigator.share) { 
+      try {
+        await navigator.share({
+          title: document.title,      
+          text: "Wanted to share this with you",   
+          url: window.location.href,      
+          // files: [
+          //   new File([""], "image.jpg", {
+          //     type: "image/jpeg",
+          //     lastModified: new Date().getTime(),
+          //   }),
+          // ], // Optional: include an image file if available on device
+        });
+        console.log("Content shared successfully!");
+      } catch (error) {
+        console.error("Error sharing:", error);
+      }
+    } else {
+      // alert("Web Share API is not supported on this browser.");
+       setSharePopup(true)
+    }
+  };
+
+
+  const phoneNumber = process.env.REACT_APP_US_NUMBER_FORMARTED
+
   return (
     <>
+     <AskAboutMePopup askAboutMePopup={askAboutMePopup} setAskAboutMePopup={setAskAboutMePopup} />
+     <LoginPopup loginPopup={loingPopup} setLoingPopup={setLoingPopup}/>
+     <SharePopup sharePopup={sharePopup} setSharePopup={setSharePopup}/>
       <main className="puppy-profile">
         <section className="puppy-profile__gallery">
           <div className="js-gallery gallery grid-columns-5" data-id="gallery">
@@ -358,6 +427,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
               <button
                 className="styles-module__shareContainer--IMFl2"
                 id="shareButtonOpen"
+                onClick={handleShare}
               >
                 Share{" "}
                 <img
@@ -370,6 +440,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
                 className="favorite-puppy-circle js-favorite-puppy"
                 data-puppy="768727"
                 data-target="pdp"
+                onClick={()=> setLoingPopup(true)}
               ></button>
             </div>
           </section>
@@ -429,11 +500,12 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
               </span>
             </p>
           </section>
-          <section className="puppy-profile__cta js-profile-ctas">
+          <section id="puppy-profile__cta-js-profile-ctas" className="puppy-profile__cta js-profile-ctas">
             <a
               className="button ghost js-open-puppy-request"
               data-puppy="768727"
               data-cy="prf-trigger"
+              onClick={()=> setAskAboutMePopup(true)}
             >
               Ask About Me
             </a>
@@ -479,8 +551,8 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
               <span>Have specific questions about Ellis?</span>
               <span>
                 Call{" "}
-                <a className="hyperlink underline" href="tel:(888) 671-0518">
-                  (888) 671-0518
+                <a className="hyperlink underline" href={`tel:${phoneNumber}`}>
+                  {phoneNumber}
                 </a>
               </span>
             </p>
@@ -887,7 +959,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
               </a>
             </div>
           </section>
-          <div className="puppy-profile__floating-cta show-for-small js-floating-cta hidden">
+          <div id="take-me-home-floating-btn" className="puppy-profile__floating-cta show-for-small js-floating-cta hidden">
             <a
               className="button main js-funnel-cookie js-floating-cta-button zrz-add-to-cart"
               href="https://www.puppyspot.com/shop/checkout/details/768727"
@@ -992,7 +1064,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
             (16,535 reviews)
           </div>
 
-          <div className="profile-reviews js-reviews-component">
+          <div id="profile-reviews_js-reviews-component--big" className="profile-reviews js-reviews-component">
             <div className="profile-reviews__container">
               <div
                 className="profile-reviews__review js-review active"
@@ -1519,17 +1591,335 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
                 </p>
               </div>
             </div>
-
-            {/* <ol className="profile-reviews__indicator">
-              <li
-                data-index="review-0"
-                className="js-indicator-dots active"
-              ></li>
-              <li data-index="review-1" className="js-indicator-dots "></li>
-              <li data-index="review-2" className="js-indicator-dots "></li>
-            </ol> */}
           </div>
 
+          <div id="profile-reviews_js-reviews-component--small" className="profile-reviews js-reviews-component">
+            <div className="profile-reviews__container">
+              <div
+                className={`profile-reviews__review js-review ${sliderCount === 1 ? 'active' : 'hidden'}`}
+                id="review-0"
+                onClick={incrementSliderCount}
+              >
+                <picture className="">
+                  <img
+                    id=""
+                    alt=""
+                    className="profile-reviews__about-thumb lazyloaded"
+                    data-cy=""
+                    data-src="https://cdn-yotpo-images-production.yotpo.com/Review/527428976/495802457/square.jpg?1701528011"
+                    loading="lazy"
+                    width="150"
+                    height="150"
+                    src="https://cdn-yotpo-images-production.yotpo.com/Review/527428976/495802457/square.jpg?1701528011"
+                  />
+                </picture>
+
+                <div className="profile-reviews__about">
+                  <p className="profile-reviews__about-name">by Cherrie H.</p>
+                  <ul className="profile-reviews__about-stars">
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                  </ul>
+                  <p className="profile-reviews__about-date">12/02/2023</p>
+                </div>
+                <p className="profile-reviews__copy" id="">
+                  The puppy is beautiful is named has been changed to Charlie
+                  from Ashton. The only part that was confusing was finding the
+                  drop off spot. But we made and communication was great.
+                </p>
+              </div>
+              <div
+                className={`profile-reviews__review js-review ${sliderCount === 2 ? 'active' : 'hidden'}`}
+                id="review-1"
+                onClick={incrementSliderCount}
+              >
+                <picture className="">
+                  <img
+                    id=""
+                    alt=""
+                    className="profile-reviews__about-thumb lazyloaded"
+                    data-cy=""
+                    data-src="https://cdn-yotpo-images-production.yotpo.com/Review/479140874/436231985/square.jpg?1687487897"
+                    loading="lazy"
+                    width="150"
+                    height="150"
+                    src="https://cdn-yotpo-images-production.yotpo.com/Review/479140874/436231985/square.jpg?1687487897"
+                  />
+                </picture>
+
+                <div className="profile-reviews__about">
+                  <p className="profile-reviews__about-name">by Elizabeth C.</p>
+                  <ul className="profile-reviews__about-stars">
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                  </ul>
+                  <p className="profile-reviews__about-date">06/23/2023</p>
+                </div>
+                <p className="profile-reviews__copy" id="">
+                  We had a fantastic experience from beginning to end, with
+                  choosing our puppy, communicating with PuppySpot about travel
+                  arrangements and receiving our new family member. Our puppy is
+                  extremely smart, loyal, sweet and loving and I think it’s
+                  because the dog comes from a good breeder. I’ve had a previous
+                  horrible experience and I can tell you the breeder matters a
+                  lot.
+                </p>
+              </div>
+              <div
+                className={`profile-reviews__review js-review ${sliderCount === 3 ? 'active' : 'hidden'}`}
+                id="review-2"
+                onClick={incrementSliderCount}
+              >
+                <picture className="">
+                  <img
+                    id=""
+                    alt=""
+                    className="profile-reviews__about-thumb lazyloaded"
+                    data-cy=""
+                    data-src="https://cdn-yotpo-images-production.yotpo.com/Review/452181836/400372700/square.jpg?1678757225"
+                    loading="lazy"
+                    width="150"
+                    height="150"
+                    src="https://cdn-yotpo-images-production.yotpo.com/Review/452181836/400372700/square.jpg?1678757225"
+                  />
+                </picture>
+
+                <div className="profile-reviews__about">
+                  <p className="profile-reviews__about-name">by Daina P.</p>
+                  <ul className="profile-reviews__about-stars">
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                    <li>
+                      <picture className="">
+                        <img
+                          id=""
+                          alt=""
+                          className="full ls-is-cached lazyloaded"
+                          data-cy=""
+                          data-src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                          loading="lazy"
+                          width="16"
+                          height="15"
+                          src="https://www.puppyspot.com/assets/img/components/reviews/star.svg"
+                        />
+                      </picture>
+                    </li>
+                  </ul>
+                  <p className="profile-reviews__about-date">03/14/2023</p>
+                </div>
+                <p className="profile-reviews__copy" id="">
+                  So the process to start was super easy Linda F was helping us
+                  and she was so very kind and informative. Once we proceeded
+                  forward we were updated via the PuppySpot app with our pup’s
+                  specific ID from new pictures to health/travel info. What I
+                  didn’t like is how she was transported, in an RV. I’m saying
+                  that because the email stated they stop for puppy breaks being
+                  it’s a 13 hour plus drive along with other pups. I will say
+                  the drivers were great with letting us know they were behind
+                  due to tr...
+                </p>
+              </div>
+            </div>
+
+            <ol className="profile-reviews__indicator">
+              <li
+                data-index="review-0"
+                className={`js-indicator-dots ${sliderCount === 1 ? 'active' : ''}`}
+              ></li>
+              <li data-index="review-1" className={`js-indicator-dots ${sliderCount === 2 ? 'active' : ''}`}></li>
+              <li data-index="review-2" className={`js-indicator-dots ${sliderCount === 3 ? 'active' : ''}`}></li>
+            </ol>
+          </div>
+          
           <div className="cta-white">
             <a href="https://www.puppyspot.com/reviews">Read More Reviews</a>
           </div>
@@ -1537,7 +1927,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
       </main>
 
       <div className="featured-puppies-module__wrapper--c1np1">
-          <h3 className="featured-puppies-module__title--3vIaM">Other Available Cocker Spaniel Puppies</h3>
+          <h3 className="featured-puppies-module__title--3vIaM" style={{whiteSpace: 'wrap', textOverflow: 'unset'}}>Other Available Cocker Spaniel Puppies</h3>
           <OtherAvaibleBreed />
       </div>
 
@@ -1547,57 +1937,61 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
           </a>
       </div>
 
-      <div id="root-why-puppyspot">
+        <div id="root-why-puppyspot">
             <div className="styles-module__container--CCD9B styles-module__smallPadding--Jh4ha">
-                <h3 id='root-why-puppyspot-h3' className="styles-module__title--lW8PU">Why we’re the leading puppy adoption service in America</h3>
-                
-                <div id='big-screen-why-us' className="styles-module__cardsContainer--NzIp7">
-                    <div>
-                        <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="/img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
-                            <div className="styles-module__cardInfo--r+Wfi">
-                                <h4 className="styles-module__cardTitle--uTDQy">Your Perfect Puppy</h4>
-                                <p className="styles-module__cardDescription--SZBTD">Breeds in every size, color, and temperament</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="/img/certified-breeders.svg" alt="Certified Breeders"/>
-                            <div className="styles-module__cardInfo--r+Wfi">
-                                <h4 className="styles-module__cardTitle--uTDQy">Certified Breeders</h4>
-                                <p className="styles-module__cardDescription--SZBTD">Licensed, vetted and committed to our puppies</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="/img/health-commitment.svg" alt="10-Year Health Commitment"/>
-                            <div className="styles-module__cardInfo--r+Wfi">
-                                <h4 className="styles-module__cardTitle--uTDQy">10-Year Health Commitment</h4>
-                                <p className="styles-module__cardDescription--SZBTD">Certified documents, vaccinations, and checkups</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="/img/handle-care-delivery.svg" alt="Handle with Care Delivery"/>
-                            <div className="styles-module__cardInfo--r+Wfi">
-                                <h4 className="styles-module__cardTitle--uTDQy">Handle with<br/>Care Delivery</h4>
-                                <p className="styles-module__cardDescription--SZBTD">White glove travel options to bring your puppy home</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="styles-module__card--D5UVp">
-                            <img className="styles-module__buttonIcon--aT7sj" src="/img/caring-experts.svg" alt="Caring Experts"/>
-                            <div className="styles-module__cardInfo--r+Wfi">
-                                <h4 className="styles-module__cardTitle--uTDQy">Caring<br/>Experts</h4>
-                                <p className="styles-module__cardDescription--SZBTD">Helping you every step to find your perfect puppy </p>
-                            </div>
-                        </div>
+              <h3 className="styles-module__title--lW8PU">Why we’re the leading puppy adoption service</h3>
+              <div className="styles-module__cardsContainer--NzIp7">
+                <div>
+                    <div className="styles-module__card--D5UVp">
+                      <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
+                      <div className="styles-module__cardInfo--r+Wfi">
+                        <h4 className="styles-module__cardTitle--uTDQy">Your Perfect Puppy</h4>
+                        <p className="styles-module__cardDescription--SZBTD">Breeds in every size, color, and temperament</p>
+                      </div>
                     </div>
                 </div>
 
+                <div>
+                  <div className="styles-module__card--D5UVp">
+                    <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/certified-breeders.svg" alt="Certified Breeders"/>
+                    <div className="styles-module__cardInfo--r+Wfi">
+                      <h4 className="styles-module__cardTitle--uTDQy">Certified Breeders</h4>
+                      <p className="styles-module__cardDescription--SZBTD">Licensed, vetted and committed to our puppies</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="styles-module__card--D5UVp">
+                    <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/health-commitment.svg" alt="10-Year Health Commitment"/>
+                    <div className="styles-module__cardInfo--r+Wfi">
+                      <h4 className="styles-module__cardTitle--uTDQy">10-Year Health Commitment</h4>
+                      <p className="styles-module__cardDescription--SZBTD">Certified documents, vaccinations, and checkups</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="styles-module__card--D5UVp">
+                    <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/handle-care-delivery.svg" alt="Handle with Care Delivery"/>
+                    <div className="styles-module__cardInfo--r+Wfi">
+                      <h4 className="styles-module__cardTitle--uTDQy">Handle with Care Delivery</h4>
+                      <p className="styles-module__cardDescription--SZBTD">White glove travel options to bring your puppy home</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="styles-module__card--D5UVp">
+                    <img className="styles-module__buttonIcon--aT7sj" src="https://www.puppyspot.com/preact/./img/caring-experts.svg" alt="Caring Experts"/>
+                    <div className="styles-module__cardInfo--r+Wfi">
+                      <h4 className="styles-module__cardTitle--uTDQy">Caring Experts</h4>
+                      <p className="styles-module__cardDescription--SZBTD">Helping you every step to find your perfect puppy</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
         </div>
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import NavContainer from './components/nav/nav-container';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import HomePage from './pages/Home';
 import PuppiesForSell from './pages/PuppiesForSell';
 import Login from './pages/Login';
@@ -11,6 +11,7 @@ import Career from './pages/Career';
 import DogRegistration from './pages/DogRegistration';
 import AKC from './pages/AKC';
 import SinglePuppy from './pages/SinglePuppy';
+import CheckoutDetail from './pages/checkout/Details';
 
 
 function App() {
@@ -27,10 +28,21 @@ function App() {
     }
   }, []); // Runs only on initial render
 
+  const location = window.location.pathname;
+  const newPath = location.replace(/\/[^\/]*$/, '');
+  // List of paths where the NavContainer should not be displayed
+  const hideNavPaths = ["/shop/checkout/details"];
+
   return (
     <div className="App">
-      <NavContainer setNavHeight={setNavHeight} isPuppiesForSale={isPuppiesForSale}/>
-      <div style={{height: `${navHeight}px`}} className='space-height-nav'></div>
+
+      {/* Conditionally render NavContainer */}
+      {!hideNavPaths.includes(newPath) && (
+        <>
+          <NavContainer setNavHeight={setNavHeight} isPuppiesForSale={isPuppiesForSale}/>
+          <div style={{height: `${navHeight}px`}} className='space-height-nav'></div>
+        </>
+      )}
 
       <Router>
         <Routes>
@@ -44,6 +56,8 @@ function App() {
           <Route path="/dog-registration" element={<DogRegistration />} />
           <Route path="/akc" element={<AKC />} />
           <Route path="/single-puppy" element={<SinglePuppy />} />
+          <Route path="/shop/checkout/details/:puppy-id" element={<CheckoutDetail />} />
+
         </Routes>
       </Router>
     </div>

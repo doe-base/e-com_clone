@@ -1,0 +1,69 @@
+
+@media screen and (max-width: 1023px) {
+  .login-title {
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 40px !important;
+    text-align: center;
+  }
+}
+.login-title {
+    font-size: 20px;
+    letter-spacing: .1px;
+    line-height: 22px;
+    text-align: left;
+    padding-bottom: 30px !important;
+  }
+
+  
+.authentication__social a img,
+.authentication__social a svg {
+  height: 18px;
+  margin-right: 12px;
+  width: 18px;
+}
+@media screen and (max-width: 1023px) {
+  .authentication__social a img,
+  .authentication__social a svg {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+    .authentication .remember-and-reset .hyperlink {
+      font-size: 14px;
+    }
+  }
+
+.authentication__social a:hover {
+  background: #fff !important;
+  border-color: #ff9100 !important;
+}
+.authentication__social a.blue-facebook:hover {
+  background: #1263cc !important;
+}
+
+.js-sign-up-link{
+    padding: 1rem 0;
+}
+
+.white-modal__close {
+    padding: .5rem 1rem;
+    text-align: right;
+  }
+  @media screen and (min-width: 768px) {
+    .white-modal__close {
+      padding: 0;
+      position: absolute;
+      right: .5em;
+      top: 1.5em;
+      z-index: 40;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .white-modal__close {
+      right: 1em;
+      top: 1em;
+    }
+  }

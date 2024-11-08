@@ -2,9 +2,47 @@ import React, { useEffect, useState } from 'react';
 import "./index.css"
 import navbarData from '../../../data/navbar-data.json'
 import allBreed from '../../../data/all-breeds.json'
+import allPuppies from '../../../data/puppies.json'
 import Fuse from 'fuse.js';
-import { breeds_pages, navbar, pages } from '../../../contants/routes'
+import { breeds_pages, navbar, pages } from '../../../contants/routes';
 
+
+
+interface PuppyDetails {
+    link: string;
+    puppy_id: string;
+    breed: string;
+    puppy_name: string;
+    people_intrested: string;
+    sex_and_age: string;
+    price: string;
+    about: string;
+    vaccinations_info: string;
+    puppy_info_details: Array<{ [key: string]: string }>;
+    siblings: {
+      name: string;
+      gender: string;
+      link: string | null;
+      image: string;
+      found_home: string;
+    }[];
+    breed_info: {
+      trusted_breed_description: string;
+      general_breed_info: Array<{ [key: string]: string }>;
+    };
+    gallery_content: {
+      label_img_src: string;
+      gallery_type: 'image' | 'video';
+      urls: {
+        '220w'?: string;
+        '300w'?: string;
+        '570w'?: string;
+        video_url?: string;
+      };
+    }[];
+  }
+
+  
 interface Props{
     smallNavOpen: boolean;
     setSmallNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -20,13 +58,16 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
     const [pureBreedActive, setPureBreedActive] = useState(false)
     const [designerBreedActive, setDesignerBreedActive] = useState(false)
     const [isActive, setIsActive] = useState('')
-
     const [breedList, setBreedList] = useState<any>([])
     const [designerBreed, setDesignerBreed] = useState<any>([])
-
     const [isFocused, setIsFocused] = useState(false);
     const [searchBreed, setSearchBreed] = useState('');
-    
+    const [query, setQuery] = useState('');
+    const [results, setResults] = useState<any>(allBreed.breedList);
+    const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019';
+    const [allPuppiesArr, setAllPuppiesArr] = useState(allPuppies);
+    const [selectedItem, setSelectedItem] = useState(allPuppies[0]);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -63,6 +104,10 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
         }
 
     }, [ isNavbarHover, isAvailblepuppliesHover, isOurPromiseHover, isAboutUsHover ])
+    useEffect(()=>{
+        setBreedList(splitArrayByChunks(navbarData.activePurebredBreeds, 13));
+        setDesignerBreed(splitArrayByChunks(navbarData.activeDesignerBreeds, 8))
+    }, [])
 
     const handlePureBreedClick = () => {
         setPureBreedActive(!pureBreedActive)
@@ -70,7 +115,6 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
     const handleDesignerBreedClick = () => {
         setDesignerBreedActive(!designerBreedActive);
     }
-
     function splitArrayByChunks(array: any, chunkSize: any) {
         const result = [];
         
@@ -80,21 +124,10 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
       
         return result;
     }
-
-    useEffect(()=>{
-        setBreedList(splitArrayByChunks(navbarData.activePurebredBreeds, 13));
-        setDesignerBreed(splitArrayByChunks(navbarData.activeDesignerBreeds, 8))
-    }, [])
-
-
-    const [query, setQuery] = useState('');
-    const [results, setResults] = useState<any>(allBreed.breedList);
-    
     const fuse = new Fuse(allBreed.breedList, {
         keys: ['name', 'slug'], // Specify which keys to search
         includeScore: true,
     });
-    
     const handleSearch = (e: any) => {
         const searchQuery = e.target.value;
         setSearchBreed(searchQuery)
@@ -107,10 +140,6 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
             setResults(allBreed.breedList);
         }
     };
-
-    const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019'
-
-
     const onInputFocus =()=>{
         setIsFocused(true)
 
@@ -119,6 +148,18 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
         setDesignerBreedActive(false)
         setIsAboutUsHover(false)
     }
+    const selectRandomSpotlightPuppy = () => {
+        if (allPuppiesArr.length > 0) {
+          const randomIndex = Math.floor(Math.random() * allPuppiesArr.length);
+          setSelectedItem(allPuppiesArr[randomIndex]);
+        }
+      };
+
+      useEffect(()=> {
+        selectRandomSpotlightPuppy()
+      }, [])
+
+
   return (
     <>
         <ul id="nav-bar" className={`header-nav__content noauth puppy-site ${isPuppiesForSale ? 'header-nav__content-no_boarder' : ''}`} style={{ display: `${smallNavOpen ? 'none' : 'flex'}`}} onMouseEnter={() => setIsNavbarHover(true)} onMouseLeave={() => setIsNavbarHover(false)}>
@@ -230,25 +271,33 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                 </ul>
                             </section>
 
+
+{/* Custom Navbar Puppy SpotLight  */}
                             <section className="featured-puppy desktop auto-content">
                                 <div className="header-nav__submenu-subheader">
                                     <h5>Featured</h5>
                                 </div>
-                                <div className="header-nav__thumb featured-puppy">
-                                    <a className="featured-puppy__image top_nav_feature_image" href="https://www.puppyspot.com/puppies-for-sale/breed/miniature-schnauzer/puppy/767621?inventory_status_id=1">
-                                        <picture className="">
-                                            <img id="" alt="" className=" lazyloaded" data-cy="" data-src="https://photos.puppyspot.com/1/listing/767621/photo/502957466_thumbnail.jpg" loading="lazy" src="https://photos.puppyspot.com/1/listing/767621/photo/502957466_thumbnail.jpg" />
-                                        </picture>
-                                    </a>
-                                    <div>
-                                        <span className="featured-puppy__name">Huntington</span>,
-                                        <span className="featured-puppy__gender">Male</span>
+                                {
+                                    selectedItem 
+                                    ?
+                                    <div className="header-nav__thumb featured-puppy">
+                                        <a className="featured-puppy__image top_nav_feature_image" href={selectedItem.link}>
+                                            <picture className="">
+                                                <img id="" alt={selectedItem.puppy_name} className=" lazyloaded" data-cy="" data-src={selectedItem.gallery_content[0].label_img_src} loading="lazy" src={selectedItem.gallery_content[0].label_img_src} />
+                                            </picture>
+                                        </a>
+                                        <div>
+                                            <span className="featured-puppy__name">{selectedItem.puppy_name}</span>,
+                                            <span className="featured-puppy__gender">{selectedItem.puppy_gender}</span>
+                                        </div>
+                                        <div>
+                                            <div className="featured-puppy__breed">{selectedItem.breed}</div>,
+                                            <div className="featured-puppy__age"> {selectedItem.puppy_age} Week{selectedItem.puppy_age > 1 ? 's' : ''}</div>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <div className="featured-puppy__breed">Miniature Schnauzer</div>,
-                                        <div className="featured-puppy__age"> 21 Weeks</div>
-                                    </div>
-                                </div>
+                                    :
+                                    null
+                                }
                             </section>
 
                             <div className="puppies-menu-footer desktop">

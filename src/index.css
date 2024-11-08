@@ -255,3 +255,14 @@ video {
   display: block;
 }
 
+/* @media (max-width: 1024px) {
+  #orderSummary--small {
+    display: block !important;
+  }
+} */
+
+@media (min-width: 1024px) {
+  #orderSummary--small {
+    display: none !important;
+  }
+}

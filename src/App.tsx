@@ -12,6 +12,9 @@ import DogRegistration from './pages/DogRegistration';
 import AKC from './pages/AKC';
 import SinglePuppy from './pages/SinglePuppy';
 import CheckoutDetail from './pages/checkout/Details';
+import CheckoutTravel from './pages/checkout/Travel';
+import CheckoutEssentials from './pages/checkout/Essentials';
+import Checkout from './pages/checkout/Checkout';
 
 
 function App() {
@@ -31,7 +34,7 @@ function App() {
   const location = window.location.pathname;
   const newPath = location.replace(/\/[^\/]*$/, '');
   // List of paths where the NavContainer should not be displayed
-  const hideNavPaths = ["/shop/checkout/details"];
+  const hideNavPaths = ["/shop/checkout/details", "/shop/checkout/travel", "/shop/checkout/essentials", "/shop/checkout/checkout"];
 
   return (
     <div className="App">
@@ -57,7 +60,10 @@ function App() {
           <Route path="/akc" element={<AKC />} />
           <Route path="/single-puppy" element={<SinglePuppy />} />
           <Route path="/shop/checkout/details/:puppy-id" element={<CheckoutDetail />} />
-
+          {/* This path sould contain a uniqe session code after payment is register */}
+          <Route path="/shop/checkout/travel/:puppy-id" element={<CheckoutTravel />} />
+          <Route path="/shop/checkout/essentials/:puppy-id" element={<CheckoutEssentials />} />
+          <Route path="/shop/checkout/checkout/:puppy-id" element={<Checkout />} />
         </Routes>
       </Router>
     </div>

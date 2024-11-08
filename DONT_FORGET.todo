@@ -10,3 +10,6 @@ HOME PAGE:
 
 SINGLE PUPPY PAGE:
     - Alot is not function. Just a reminder to fix the share popup functies when working on the rest
+
+CHECKOUT PAGE:
+    - Change state function in travel section will restart the whole process. Save their detail in local storate of better UX

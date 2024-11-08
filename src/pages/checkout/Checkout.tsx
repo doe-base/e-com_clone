@@ -446,8 +446,6 @@ const Checkout: React.FC<Props> = ({}) => {
             </div>
         </div>
 
-
-
     </div>
   );
 }

@@ -1,0 +1,224 @@
+.all-breeds {
+    margin: 0 auto;
+    max-width: 1360px
+}
+
+@media screen and (min-width: 1024px) {
+    .all-breeds__header .template-circle-header__content img {
+        width:25em
+    }
+}
+
+@media screen and (min-width: 1024px) and (min-width:1024px) {
+    .all-breeds__header .template-circle-header__content {
+        max-height:30em;
+        overflow: hidden
+    }
+}
+
+.all-breeds__subtitle {
+    font-size: 24px;
+    margin-top: 1em;
+    text-align: center
+}
+
+@media screen and (min-width: 768px) {
+    .all-breeds__subtitle {
+        font-size:36px;
+        margin-top: 1.5em
+    }
+}
+
+.all-breeds__filters {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 1em
+}
+
+@media screen and (min-width: 900px) {
+    .all-breeds__filters {
+        align-items:center;
+        display: grid;
+        grid-template-columns: max-content 1fr
+    }
+
+    .all-breeds__filters div.chevron-wrapper {
+        width: 15em
+    }
+
+    .all-breeds__filters div.chevron-wrapper select {
+        margin-bottom: .5em
+    }
+}
+
+.all-breeds__letters {
+    scrollbar-base-color:#fff;scrollbar-face-color:#ceebbd;scrollbar-track-color:#fff;scrollbar-arrow-color:#ceebbd;scrollbar-shadow-color:#fff;scrollbar-dark-shadow-color:#fff;display: flex;
+    overflow-x: scroll
+}
+
+.all-breeds__letters::-webkit-scrollbar {
+    max-height: 3px
+}
+
+.all-breeds__letters::-webkit-scrollbar-track {
+    background-clip: content-box;
+    background-color: transparent
+}
+
+.all-breeds__letters::-webkit-scrollbar-thumb {
+    background-color: #ceebbd;
+    border-radius: 3px;
+    opacity: .7
+}
+
+.all-breeds__letters::-webkit-scrollbar-thumb:hover {
+    opacity: 1
+}
+
+.all-breeds__letters-letter {
+    display: inline-block
+}
+
+.all-breeds__letters-letter span {
+    border-radius: 50%;
+    color: #a6a6a6;
+    display: block;
+    font-size: 16px;
+    height: 1.5em;
+    text-align: center;
+    width: 1.5em
+}
+
+.all-breeds__letters-letter span:hover {
+    background-color: #66af37;
+    color: #fff
+}
+
+@media screen and (min-width: 680px) and (max-width:899px) {
+    .all-breeds__letters {
+        justify-content:center
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .all-breeds__letters {
+        justify-content:space-evenly
+    }
+}
+
+.all-breeds__list {
+    padding: 1em
+}
+
+@supports (display: grid) {
+    .all-breeds__list {
+        grid-gap:1rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(min(10rem,100%),1fr))
+    }
+
+    @media screen and (min-width: 768px) {
+        .all-breeds__list {
+            grid-template-columns:repeat(auto-fill,minmax(min(14rem,100%),1fr))
+        }
+    }
+}
+
+.all-breeds__list .group {
+    visibility: hidden
+}
+
+.all-breeds__list .breed-card__copy h3 {
+    font-size: 20px
+}
+
+.all-breeds__scrolltop {
+    background-color: #fff;
+    bottom: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    font-weight: 700;
+    left: 0;
+    padding: .5em;
+    position: fixed
+}
+
+.all-breeds__scrolltop:after {
+    background-image: url(/public/img/caret.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 1em;
+    margin-right: 7px;
+    transform: rotate(270deg);
+    width: 1em
+}
+
+.all-breeds__scrolltop:hover {
+    background-color: #66af37;
+    color: #fff;
+    opacity: 1
+}
+
+.all-breeds__scrolltop:hover:after {
+    background-image: url(/public/img/forward-caret-white.svg);
+    content: "";
+    margin-top: .25em
+}
+
+
+.breed-card__container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, .05);
+    padding: 8px;
+}
+
+.breed-card {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+}
+.breed-card__image {
+    border-radius: 8px;
+    margin-bottom: 7px;
+}
+.breed-card__copy {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+}
+.all-breeds__list .breed-card__copy h3 {
+    font-size: 20px;
+}
+.breed-card h3 {
+    font-size: 16px;
+    margin: .5em;
+}
+.breed-card__ctas {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-top: .5em;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .breed-card__ctas {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+.breed-card__ctas-overview {
+    font-size: 12px;
+}
+.cta-white.small a {
+    font-size: 12px;
+    min-width: auto;
+    padding: 6px 15px
+}

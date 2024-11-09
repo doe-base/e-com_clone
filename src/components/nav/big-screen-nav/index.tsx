@@ -306,6 +306,8 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font"></a>
                         </div>
                         
+
+{/* Custom Pure Breed List  */}
                         <div data-submenu="" className={`header-nav__submenu header-nav__submenu--puppies custom-sub-menu purebred js-purebreed-breeds-submenu js-menu ${isActive === 'puppies-available' && pureBreedActive ? '' : 'hidden'}`}>
                             <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font">
                                 <h3>Featured Purebred Breeds</h3>

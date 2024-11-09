@@ -44,7 +44,9 @@ export const breeds_pages = {
     ALLERGY_FRIENDLY_DOGS: '/breed/collections/allergy-friendly-dogs',
     TEACUP_PUPPIES :'/breed/collections/teacup-puppies',
     DYNAMIC_ROUTE_SINGLE_BREED: '/puppies-for-sale/breed/:breed_slug',
-    PURE_BREED: '/breed#purebred-breeds'
+    PURE_BREED: '/breed/purebred-breeds',
+    DESIGNER_BREED: '/breed/designer-breeds'
+
 }
 
 export const navbar = {

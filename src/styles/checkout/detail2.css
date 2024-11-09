@@ -2173,3 +2173,9 @@ textarea:is(:-webkit-autofill,
 .\[\&_svg_path\]\:tw-fill-black svg path {
   fill:#000
 }
+
+
+/* Added my me */
+.tw-bg-primary-orange-important {
+  background-color:var(--primary-orange) !important;
+}

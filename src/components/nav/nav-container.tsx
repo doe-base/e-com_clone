@@ -10,6 +10,8 @@ interface Props{
 const NavContainer: React.FC<Props> = ({setNavHeight, isPuppiesForSale}) => {
    const [smallNavOpen, setSmallNavOpen] = useState(false);
    const navRef = useRef<HTMLDivElement>(null);
+   const [isOverviewPage, setIsOverviewPage] = useState(false);
+   const  pathname = window.location.pathname;
 
   useEffect(() => {
     if (navRef.current) {
@@ -17,11 +19,16 @@ const NavContainer: React.FC<Props> = ({setNavHeight, isPuppiesForSale}) => {
     }
   }, [isPuppiesForSale]);
 
+  useEffect(() => {
+    const pathRegex = /^\/puppies-for-sale\/breed\/[^/]+\/overview$/;
+    setIsOverviewPage(pathRegex.test(pathname || ''));
+  }, [pathname]);
+
   return (
     <nav ref={navRef} style={{position: 'fixed', zIndex: '10', width: '100%'}}>
         <TopBanner />
 
-        <Navbar smallNavOpen={smallNavOpen} setSmallNavOpen={setSmallNavOpen} isPuppiesForSale={isPuppiesForSale}/>
+        <Navbar smallNavOpen={smallNavOpen} setSmallNavOpen={setSmallNavOpen} isPuppiesForSale={isPuppiesForSale} isOverviewPage={isOverviewPage}/>
 
         <NavDrawer smallNavOpen={smallNavOpen} setSmallNavOpen={setSmallNavOpen}/>
         

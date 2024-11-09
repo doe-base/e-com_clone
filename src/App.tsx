@@ -17,6 +17,7 @@ import CheckoutEssentials from './pages/checkout/Essentials';
 import Checkout from './pages/checkout/Checkout';
 import BreedPuppiesForSell from './pages/BreedPuppiesForSell';
 import Breed from './pages/Breeds';
+import BreedOverview from './pages/BreedsOverview';
 
 
 function App() {
@@ -54,7 +55,9 @@ function App() {
 
           <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
           <Route path="/puppies-for-sale/breed/:breedSlug" element={<BreedPuppiesForSell />} />
-          <Route path="/breed" element={<Breed />} />
+          <Route path="/puppies-for-sale/breed" element={<Breed />} />
+          <Route path="/puppies-for-sale/breed/:breedSlug/overview" element={<BreedOverview />} />
+
 
 
           <Route path="/log-in" element={<Login />} />

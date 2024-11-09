@@ -15,6 +15,8 @@ import CheckoutDetail from './pages/checkout/Details';
 import CheckoutTravel from './pages/checkout/Travel';
 import CheckoutEssentials from './pages/checkout/Essentials';
 import Checkout from './pages/checkout/Checkout';
+import BreedPuppiesForSell from './pages/BreedPuppiesForSell';
+import Breed from './pages/Breeds';
 
 
 function App() {
@@ -23,7 +25,6 @@ function App() {
 
   useEffect(() => {
     const currentPath = window.location.pathname;
-    console.log(currentPath)
     if (currentPath === '/puppies-for-sale/') {
       setIsPuppiesForSale(true);
     } else {
@@ -50,7 +51,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
+
           <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
+          <Route path="/puppies-for-sale/breed/:breedSlug" element={<BreedPuppiesForSell />} />
+          <Route path="/breed" element={<Breed />} />
+
+
           <Route path="/log-in" element={<Login />} />
           <Route path="/sign-up" element={<Signup />} />
           <Route path="/about-us" element={<AboutUs />} />

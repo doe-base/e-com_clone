@@ -1553,6 +1553,8 @@ li .selectr-tag-remove {
   color: #ff9100;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
   font-weight: 700;
   transition: 0.3s;
 }

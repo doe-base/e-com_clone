@@ -48,8 +48,9 @@ interface Props{
     setSmallNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
 
     isPuppiesForSale: boolean;
+    isOverviewPage: boolean;
 }
-const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale}) => {
+const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale, isOverviewPage}) => {
 
     const [isNavbarHover, setIsNavbarHover] = useState(false)
     const [isAvailblepuppliesHover, setIsAvailblepuppliesHover] = useState(false)
@@ -251,9 +252,20 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                     <li>
                                         <a className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" onClick={handleDesignerBreedClick}>Designer Breeds</a>
                                     </li>
-                                    <li className="desktop">
-                                        <a href={pages.BREED} className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" data-puppy-submenu="" data-submenu-open=".js-designer-breeds-submenu">Explore Available Breeds</a>
-                                    </li>
+                                    
+
+                                    {
+                                        isOverviewPage
+                                        ?
+                                        <button className="mantine-focus-auto tw-font-inter tw-text-[17px] tw-h-[34px] tw-p-0 data-[hovered]:tw-bg-transparent data-[hovered]:tw-text-primary-orange m_99ac2aa1 mantine-Menu-item m_87cf2631 mantine-UnstyledButton-root" type="button" tabIndex={-1} role="menuitem" data-menu-item="true"><div className="m_5476e0d3 mantine-Menu-itemLabel"><a className="tw-text-primary-orange tw-font-bold tw-flex tw-items-center tw-gap-2 hover:tw-opacity-70" href="/puppies-for-sale">View All Puppies<svg width="12" height="12" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="[&amp;_path]:tw-fill-primary-orange hover:tw-opacity-70"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292787 9.70741C0.105316 9.51988 0 9.26557 0 9.00041C0 8.73524 0.105316 8.48094 0.292787 8.29341L3.58579 5.00041L0.292787 1.70741C0.110629 1.5188 0.00983372 1.2662 0.0121121 1.00401C0.0143906 0.741809 0.11956 0.490997 0.304968 0.305589C0.490376 0.120181 0.741189 0.0150115 1.00339 0.0127331C1.26558 0.0104547 1.51818 0.111249 1.70679 0.293408L5.70679 4.29341C5.89426 4.48094 5.99957 4.73524 5.99957 5.00041C5.99957 5.26557 5.89426 5.51988 5.70679 5.70741L1.70679 9.70741C1.51926 9.89488 1.26495 10.0002 0.999786 10.0002C0.734622 10.0002 0.480314 9.89488 0.292787 9.70741Z" fill="black"></path></svg></a></div></button>
+                                        :
+                                        <li className="desktop">
+                                            <a href={pages.BREED} className="desktop hyperlink menu-item header-nav__menu-item gtag-top_nav_designerbreed" data-puppy-submenu="" data-submenu-open=".js-designer-breeds-submenu">Explore Available Breeds</a>
+                                        </li>
+                                    }
+
+
+
                                 </ul>
                             </section>
 
@@ -267,42 +279,67 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                     <li><a href={breeds_pages.ACTIVE_DOGS} className="hyperlink menu-item header-nav__menu-item top_nav_active_dogs">Top Active Dog Breeds</a></li>
                                     <li><a href={breeds_pages.BEST_APARTMENT_DOGS} className="hyperlink menu-item header-nav__menu-item top_nav_best_apartments">Best Apartment Dogs</a></li>
                                     <li><a href={breeds_pages.BEST_FAMILY_DOGS} className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">Best Family Dogs</a></li>
-                                    <li><a href={pages.COLLECTIONS} className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">View All Characteristics</a></li>
+
+                                    {
+                                        isOverviewPage
+                                        ?
+                                        <div className="m_5476e0d3 mantine-Menu-itemLabel"><a className="tw-text-primary-orange tw-font-bold tw-flex tw-items-center tw-gap-2 hover:tw-opacity-70" href="/collections">View All Characteristics<svg width="12" height="12" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="[&amp;_path]:tw-fill-primary-orange hover:tw-opacity-70"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292787 9.70741C0.105316 9.51988 0 9.26557 0 9.00041C0 8.73524 0.105316 8.48094 0.292787 8.29341L3.58579 5.00041L0.292787 1.70741C0.110629 1.5188 0.00983372 1.2662 0.0121121 1.00401C0.0143906 0.741809 0.11956 0.490997 0.304968 0.305589C0.490376 0.120181 0.741189 0.0150115 1.00339 0.0127331C1.26558 0.0104547 1.51818 0.111249 1.70679 0.293408L5.70679 4.29341C5.89426 4.48094 5.99957 4.73524 5.99957 5.00041C5.99957 5.26557 5.89426 5.51988 5.70679 5.70741L1.70679 9.70741C1.51926 9.89488 1.26495 10.0002 0.999786 10.0002C0.734622 10.0002 0.480314 9.89488 0.292787 9.70741Z" fill="black"></path></svg></a></div>
+                                        :
+                                        <li><a href={pages.COLLECTIONS} className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">View All Characteristics</a></li>
+                                    }
+
+
+
+
+
                                 </ul>
                             </section>
 
 
 {/* Custom Navbar Puppy SpotLight  */}
-                            <section className="featured-puppy desktop auto-content">
-                                <div className="header-nav__submenu-subheader">
-                                    <h5>Featured</h5>
-                                </div>
-                                {
-                                    selectedItem 
-                                    ?
-                                    <div className="header-nav__thumb featured-puppy">
-                                        <a className="featured-puppy__image top_nav_feature_image" href={selectedItem.link}>
-                                            <picture className="">
-                                                <img id="" alt={selectedItem.puppy_name} className=" lazyloaded" data-cy="" data-src={selectedItem.gallery_content[0].label_img_src} loading="lazy" src={selectedItem.gallery_content[0].label_img_src} />
-                                            </picture>
-                                        </a>
-                                        <div>
-                                            <span className="featured-puppy__name">{selectedItem.puppy_name}</span>,
-                                            <span className="featured-puppy__gender">{selectedItem.puppy_gender}</span>
-                                        </div>
-                                        <div>
-                                            <div className="featured-puppy__breed">{selectedItem.breed}</div>,
-                                            <div className="featured-puppy__age"> {selectedItem.puppy_age} Week{selectedItem.puppy_age > 1 ? 's' : ''}</div>
-                                        </div>
+                            {
+                                isOverviewPage
+                                ?
+                                <></>
+                                :
+                                <section className="featured-puppy desktop auto-content">
+                                    <div className="header-nav__submenu-subheader">
+                                        <h5>Featured</h5>
                                     </div>
-                                    :
-                                    null
-                                }
-                            </section>
-
-                            <div className="puppies-menu-footer desktop">
-                                <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font">View All Puppies</a>
-                            </div>
+                                    {
+                                        selectedItem 
+                                        ?
+                                        <div className="header-nav__thumb featured-puppy">
+                                            <a className="featured-puppy__image top_nav_feature_image" href={selectedItem.link}>
+                                                <picture className="">
+                                                    <img id="" alt={selectedItem.puppy_name} className=" lazyloaded" data-cy="" data-src={selectedItem.gallery_content[0].label_img_src} loading="lazy" src={selectedItem.gallery_content[0].label_img_src} />
+                                                </picture>
+                                            </a>
+                                            <div>
+                                                <span className="featured-puppy__name">{selectedItem.puppy_name}</span>,
+                                                <span className="featured-puppy__gender">{selectedItem.puppy_gender}</span>
+                                            </div>
+                                            <div>
+                                                <div className="featured-puppy__breed">{selectedItem.breed}</div>,
+                                                <div className="featured-puppy__age"> {selectedItem.puppy_age} Week{selectedItem.puppy_age > 1 ? 's' : ''}</div>
+                                            </div>
+                                        </div>
+                                        :
+                                        null
+                                    }
+                                </section>
+                            }
+                            {
+                                 isOverviewPage
+                                 ?
+                                 <div className="puppies-menu-footer desktop tw-bg-primary-orange-important">
+                                     <a className="tw-text-white tw-font-bold tw-flex tw-items-center tw-gap-2 hover:tw-opacity-70 hover:tw-transition-all" href="/breed">More Breeds<svg width="12" height="12" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="[&amp;_path]:tw-fill-white hover:tw-opacity-70"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.292787 9.70741C0.105316 9.51988 0 9.26557 0 9.00041C0 8.73524 0.105316 8.48094 0.292787 8.29341L3.58579 5.00041L0.292787 1.70741C0.110629 1.5188 0.00983372 1.2662 0.0121121 1.00401C0.0143906 0.741809 0.11956 0.490997 0.304968 0.305589C0.490376 0.120181 0.741189 0.0150115 1.00339 0.0127331C1.26558 0.0104547 1.51818 0.111249 1.70679 0.293408L5.70679 4.29341C5.89426 4.48094 5.99957 4.73524 5.99957 5.00041C5.99957 5.26557 5.89426 5.51988 5.70679 5.70741L1.70679 9.70741C1.51926 9.89488 1.26495 10.0002 0.999786 10.0002C0.734622 10.0002 0.480314 9.89488 0.292787 9.70741Z" fill="black"></path></svg></a>
+                                 </div>
+                                 :
+                                <div className="puppies-menu-footer desktop">
+                                    <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font">View All Puppies</a>
+                                </div>
+                            }
                             <a href={pages.PUPPIES_FOR_SELL} className="forward white gtag-top_nav_view_all inter-font"></a>
                         </div>
                         
@@ -368,7 +405,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
 
 
                             <div className="puppies-menu-footer">
-                                <a href={breeds_pages.PURE_BREED} className="arrow forward white">More Breeds</a>
+                                <a href={breeds_pages.DESIGNER_BREED} className="arrow forward white">More Breeds</a>
                             </div>
                         </div>
 
@@ -431,7 +468,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                     </a>
                                 </li>
                                 <li>
-                                    <a href={pages.CUSTOMER_REVIEW} className="hyperlink menu-item top_nav_contact_us">
+                                    <a href={pages.CONTACT} className="hyperlink menu-item top_nav_contact_us">
                                     Contact Us
                                     </a>
                                 </li>

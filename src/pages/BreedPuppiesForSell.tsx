@@ -25,10 +25,12 @@ const BreedPuppiesForSell: React.FC<Props> = ({}) => {
     setBreedObj(findBySlug(allBreed, breedSlug))
   }, []);
 
+
+  // Costomise with breed name. Eg, Alika Puppies for Sale
     useEffect(() =>{
-        document.title = "Puppies for Sale | Dogs for sale | PuppySpot";
+        document.title = `${breedObj?.name ? breedObj.name : ''} Puppies for Sale | PuppySpot`;
         document.body.classList.add('gray-background')
-    }, []);
+    }, [breedObj]);
 
   return (
     <div>

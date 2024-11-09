@@ -53,6 +53,11 @@
   height: 45px;
   margin-right: 1rem;
 }
+@media screen and (min-width: 1024px) {
+  .header-nav__content .link-item {
+      height: 35px;
+  }
+}
 .header-nav__links-desktop > ul > li.active,
 .header-nav__links-desktop > ul > li:hover {
   border-bottom: 2px solid #000;
@@ -65,8 +70,8 @@
   font-size: 1.10rem;
 }
 .header-nav__links-desktop > ul > li a:hover{
-  color: #000;
-  opacity: 1;
+  /* color: #000; */
+  opacity: 0.5;
 }
 .hyperlink {
   background: 0 0;
@@ -243,7 +248,7 @@
   background-color: #fff;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-  margin-top: 1.87em;
+  margin-top: 1.6rem;
   position: absolute;
   text-align: left;
 }
@@ -468,7 +473,7 @@
   background-color: #fff;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.2);
-  margin-top: 1.87em;
+  margin-top: 1.6rem;
   padding: 1em 1em 0;
   position: absolute;
   text-align: left;
@@ -483,7 +488,7 @@
   background-color: #fff;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 0 4px rgba(0,0,0,.2);
-  margin-top: 1.87em;
+  margin-top: 1.6rem;
   padding: 1em 1em 0;
   position: absolute;
   text-align: left;

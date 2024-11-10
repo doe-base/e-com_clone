@@ -681,19 +681,10 @@ label {
   background-color: #fff;
 }
 
-.collapsible-panel__content ol,
+/* .collapsible-panel__content ol,
 .collapsible-panel__content ul {
   margin-left: 20px;
-}
-.collapsible-panel__content ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: disc;
-}
-.collapsible-panel__content ol,
-.collapsible-panel__content ul {
-  margin-left: 20px;
-}
+} */
 .collapsible-panel__content ul {
   display: flex;
   flex-direction: column;
@@ -723,34 +714,7 @@ label {
   margin: 0;
   max-height: 196px;
 }
-.collapsible-panel__content ol,
-.collapsible-panel__content ul {
-  margin-left: 20px;
-}
-.collapsible-panel__content ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: disc;
-}
-.collapsible-panel__content ol,
-.collapsible-panel__content ul {
-  margin-left: 20px;
-}
-.collapsible-panel__content ul {
-  display: flex;
-  flex-direction: column;
-  list-style-type: disc;
-}
-.selectr-options {
-  position: relative;
-  top: calc(100% + 2px);
-  display: none;
-  overflow-x: auto;
-  overflow-y: scroll;
-  max-height: 200px;
-  margin: 0;
-  padding: 0;
-}
+
 
 .breed-searchbar .selectr-option.selected::before {
   background-color: #27ae60 !important;

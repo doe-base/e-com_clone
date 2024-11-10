@@ -81,6 +81,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
         };
       }, []);
 
+      const handleSearchPuppy = (puppySlug: string) => {
+        if (puppySlug) {
+            // https://example.com/search?query=puppies&sort=asc
+            window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+        }
+      };
+
   return (
     <div>
         <div className="relative">
@@ -106,20 +113,20 @@ const HomeContainer: React.FC<Props> = ({}) => {
                             <div className="style-module__content--UlhVY style-module__noBorder--b9CgM">
                                 
                                 <div className="style-module__reducerWrapper--UVMF-">
-                                <div className="style-module__reducer--higDU">
-                                    <form autoComplete="off" className="style-module__controlWrapper--Cak4k" action="." >
-                                    <input
-                                        type="search"
-                                        name="search"
-                                        className="style-module__input--8Dj0T"
-                                        placeholder="Search for Breeds"
-                                        autoComplete="off"
-                                        onChange={(e)=> handleSearch(e)} 
-                                        onFocus={() => setIsFocused(true)}
-                                        onBlur={() => setIsFocused(false)} 
-                                    />
-                                    </form>
-                                </div>
+                                    <div className="style-module__reducer--higDU">
+                                        <form autoComplete="off" className="style-module__controlWrapper--Cak4k" action="." >
+                                        <input
+                                            type="search"
+                                            name="search"
+                                            className="style-module__input--8Dj0T"
+                                            placeholder="Search for Breeds"
+                                            autoComplete="off"
+                                            onChange={(e)=> handleSearch(e)} 
+                                            onFocus={() => setIsFocused(true)}
+                                            onBlur={() => setIsFocused(false)} 
+                                        />
+                                        </form>
+                                    </div>
                                 </div>
 
                                 <button className="style-module__button--uk1Kx" data-cy="submit-button">
@@ -134,7 +141,10 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                         ?
                                         results.map((item: any, index: number)=> {
                                             return (
-                                                <div key={index} className="style-module__item--tuTKJ">{item.name}</div>
+                                                <div key={index} className="style-module__item--tuTKJ" onMouseDown={(e) => {
+                                                    e.preventDefault(); // Prevents the input from losing focus immediately
+                                                    handleSearchPuppy(item.slug);
+                                                }}>{item.name}</div>
                                             )
                                         })
                                         :

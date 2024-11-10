@@ -2,7 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import "./index.css";
 import allBreed from '../../../data/all-breeds.json';
 import Fuse from 'fuse.js';
-import { navbar, pages } from "../../../contants/routes";
+import { breeds_pages, navbar, pages } from "../../../contants/routes";
+import navData from "../../../data/navbar-data.json"
 
 interface Props{
     smallNavOpen: boolean;
@@ -114,6 +115,35 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
     }
   }, []);
 
+
+  const handleSearchPuppy = (puppySlug: string) => {
+    if (puppySlug) {
+        // https://example.com/search?query=puppies&sort=asc
+        window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+    }
+  };
+  const handleNavigateToBreedPuppy =(puppySlug: string) => {
+    if (puppySlug) {
+        window.location.href = `/puppies-for-sale/breed/${puppySlug}`;
+    }
+  }
+  const handleNavigateToBreedPage =(characterSlug: string)=>{
+    if (characterSlug) {
+        window.location.href = `${characterSlug}`;
+    }
+  }
+  const handleNavigateGender =(genderSlug: string)=>{
+    if (genderSlug) {
+        window.location.href = `/puppies-for-sale?gender=${genderSlug}`;
+    }
+  }
+  const handleNavigation =(link: string)=>{
+    if (link) {
+        window.location.href = `${link}`;
+    }
+  }
+  
+
   return (
     <div id="nav-bar-drawer" style={{ display: `${smallNavOpen ? 'block' : 'none'}`}}>
       <div ref={navRef} className="drawer-menu-open-nav__content">
@@ -155,71 +185,75 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             </li>
         </ul>
 
-        <li id="drawer-searchbar-header-modile" className="drawer-search">
-            <div className="drawer-desktop-searchbar-module__wrapper--kB8Qr">
-                <div className="drawer-style-module__wrapper--7jJ94 drawer-style-module__open--k2jZl">
-                    <div className="drawer-style-module__content--UlhVY ">
-                        <div className="drawer-style-module__reducerWrapper--UVMF-">
-                            <div className="drawer-style-module__reducer--higDU">
-                                <form autoComplete="off" className="drawer-style-module__controlWrapper--Cak4k" action=".">
-                                    <input 
-                                        type="search" 
-                                        name="search" 
-                                        className="drawer-style-module__input--8Dj0T" 
-                                        placeholder="Search for Breeds" 
-                                        autoComplete="off" 
-                                        onChange={(e)=> handleSearch(e)} 
-                                        onFocus={() => setIsFocused(true)}
-                                        onBlur={() => setIsFocused(false)} 
-                                    />
-                                </form>
+        
+        <div className="drawer-header-nav__mobile banner-visible" style={{overflow: 'scroll'}}>
+
+            <li id="drawer-searchbar-header-modile" className="drawer-search">
+                <div className="drawer-desktop-searchbar-module__wrapper--kB8Qr">
+                    <div className="drawer-style-module__wrapper--7jJ94 drawer-style-module__open--k2jZl">
+                        <div className="drawer-style-module__content--UlhVY ">
+                            <div className="drawer-style-module__reducerWrapper--UVMF-">
+                                <div className="drawer-style-module__reducer--higDU">
+                                    <form autoComplete="off" className="drawer-style-module__controlWrapper--Cak4k" action=".">
+                                        <input 
+                                            type="search" 
+                                            name="search" 
+                                            className="drawer-style-module__input--8Dj0T" 
+                                            placeholder="Search for Breeds" 
+                                            autoComplete="off" 
+                                            onChange={(e)=> handleSearch(e)} 
+                                            onFocus={() => setIsFocused(true)}
+                                            onBlur={() => setIsFocused(false)} 
+                                        />
+                                    </form>
+                                </div>
                             </div>
+                            <button className="drawer-style-module__button--uk1Kx drawer-track_top_search_bar" data-cy="submit-button"><i className="drawer-style-module__searchIcon--De0gi "></i></button>
                         </div>
-                        <button className="drawer-style-module__button--uk1Kx drawer-track_top_search_bar" data-cy="submit-button"><i className="drawer-style-module__searchIcon--De0gi "></i></button>
-                    </div>
 
 
-                    {/* DropDown */}
-                    <div data-cy="filter-results" className={`drawer-style-module__menu--Xf2XU  ${isFocused ? '' : 'drawer-hidden'}`}>
-                        {
-                            results.length > 0
-                            ?
-                            results.map((item: any, index: number)=> {
-                                return (
-                                    <div key={index} className="drawer-style-module__item--tuTKJ">{item.name}</div>
-                                )
-                            })
-                            :
-                            <div className="drawer-style-module__item--tuTKJ" style={{fontWeight: 'bold'}}>Search "{searchBreed}"</div>
-                        }
+                        {/* DropDown */}
+                        <div data-cy="filter-results" className={`drawer-style-module__menu--Xf2XU  ${isFocused ? '' : 'drawer-hidden'}`}>
+                            {
+                                results.length > 0
+                                ?
+                                results.map((item: any, index: number)=> {
+                                    return (
+                                        <div key={index} className="drawer-style-module__item--tuTKJ" onMouseDown={(e) => {
+                                            e.preventDefault(); // Prevents the input from losing focus immediately
+                                            handleSearchPuppy(item.slug);
+                                        }}>{item.name}</div>
+                                    )
+                                })
+                                :
+                                <div className="drawer-style-module__item--tuTKJ" style={{fontWeight: 'bold'}}>Search "{searchBreed}"</div>
+                            }
+                        </div>
                     </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <li className="drawer-header-nav__links-main">
-            <ul className="drawer-header-nav__links-modile">
-                <li className="drawer-phone">
-                    <a className="drawer-" href={navbar.PHONE_WHATSAPP}>
-                        <div>
-                            <picture className="drawer-">
-                                <img id="" alt="" className="drawer-icon ls-is-cached lazyloaded" width="14" height="14" src="/img/phone-icon.svg" style={{marginBottom: '-2px'}} />
-                            </picture>
-                        </div>
-                    </a>
-                </li>
+            <li className="drawer-header-nav__links-main">
+                <ul className="drawer-header-nav__links-modile">
+                    <li className="drawer-phone">
+                        <a className="drawer-" href={navbar.PHONE_WHATSAPP}>
+                            <div>
+                                <picture className="drawer-">
+                                    <img id="" alt="" className="drawer-icon ls-is-cached lazyloaded" width="14" height="14" src="/img/phone-icon.svg" style={{marginBottom: '-2px'}} />
+                                </picture>
+                            </div>
+                        </a>
+                    </li>
 
-                <li className="drawer-phone">
-                    <a className="drawer-hyperlink-small" href={navbar.PHONE_WHATSAPP}>
-                        (502) 382-0019
-                    </a>
-                </li>
-            </ul>
-        </li>
-      </div>
+                    <li className="drawer-phone">
+                        <a className="drawer-hyperlink-small" href={navbar.PHONE_WHATSAPP}>
+                            (502) 382-0019
+                        </a>
+                    </li>
+                </ul>
+            </li>
 
-    
-        <div className="drawer-header-nav__mobile banner-visible" style={{marginTop: `185px`}}>
+
 
             <div id="main-navigation-options" className="drawer-mobile-menu-container">
                 <a href={pages.PUPPIES_FOR_SELL} className="drawer-searchbar-menu-module__circularButtonContainer--Xgw0D"><button type="button" className="drawer-button drawer-searchbar-menu-module__circularButton--rEiKP" tabIndex={11}>Browse All Puppies</button></a>
@@ -288,59 +322,17 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                 </div>
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
+                    {
+                        navData.top10breed.map((item, index) => {
+                            return (
+                                <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
+                                    <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=>handleNavigateToBreedPuppy(item.slug)}>{item.name}
+                                        <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
+                                    </button>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
 
@@ -352,112 +344,17 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                 </div>
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
+                    {
+                        navData.activePurebredBreeds.map((item, index) => {
+                            return (
+                                <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
+                                    <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=>handleNavigateToBreedPuppy(item.slug)}>{item.name}
+                                        <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
+                                    </button>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
 
@@ -469,112 +366,17 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                 </div>
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Bernedoodle
-
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Cavapoo
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Goldendoodle
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
+                    {
+                        navData.activeDesignerBreeds.map((item, index) => {
+                            return (
+                                <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
+                                    <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=>handleNavigateToBreedPuppy(item.slug)}>{item.name}
+                                        <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
+                                    </button>
+                                </li>
+                            )
+                        })
+                    }
                 </ul>
             </div>
 
@@ -587,33 +389,33 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Best Apartment Dogs
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateToBreedPage(breeds_pages.BEST_APARTMENT_DOGS)}>Best Apartment Dogs
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Allergy Friendly Dogs
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateToBreedPage(breeds_pages.ALLERGY_FRIENDLY_DOGS)}>Allergy Friendly Dogs
 
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Best Family Dogs
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateToBreedPage(breeds_pages.BEST_FAMILY_DOGS)}>Best Family Dogs
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Teacup Puppies
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateToBreedPage(breeds_pages.TEACUP_PUPPIES)}>Teacup Puppies
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Doodle Puppies
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateToBreedPage(breeds_pages.DOODLE_PUPPIES)}>Doodle Puppies
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Top Active Dog Breeds
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateToBreedPage(breeds_pages.ACTIVE_DOGS)}>Top Active Dog Breeds
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
@@ -629,12 +431,12 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Female
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateGender('female')}>Female
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Male
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigateGender('male')}>Male
 
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
@@ -651,32 +453,32 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">PuppySpot Promise
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.PROMISE)}>PuppySpot Promise
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Breeder Standards
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.PUPPY_STANDARDS)}>Breeder Standards
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Puppy Travel
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.DOG_TRAVEL)}>Puppy Travel
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Health Check
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.HEALTH_CHECK)}>Health Check
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Customer Reviews
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.CUSTOMER_REVIEW)}>Customer Reviews
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">PuppySpot Gives Back
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.PUPPYSPOT_GIVES_BACK)}>PuppySpot Gives Back
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
@@ -692,33 +494,36 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">About Us
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.ABOUT_US)}>About Us
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Resource Center
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.RESOURCE_CENTER)}>Resource Center
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Contact Us
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.CONTACT)}>Contact Us
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Frequently Asked Questions
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.FAQ)}>Frequently Asked Questions
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr">Shop Supplies
+                    {/* <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
+                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.PUPPYSPOT_GIVES_BACK)}>Shop Supplies
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </div>
+      </div>
+
+    
     </div>
   );
 }

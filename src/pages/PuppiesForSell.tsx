@@ -6,6 +6,10 @@ import AuthenticationPopup from '../components/authentication-popups/Authenticat
 interface Props{
 }
 const PuppiesForSell: React.FC<Props> = ({}) => {
+    const params = new URLSearchParams(window.location.search);
+    //Work on Auto selecting the query
+    const query = params.get('query');
+    const gender = params.get('gender');
 
     useEffect(() =>{
         document.title = "Puppies for Sale | Dogs for sale | PuppySpot";
@@ -15,7 +19,7 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
   return (
     <div>
       <AuthenticationPopup />
-      <PuppiesForSellContainer />
+      <PuppiesForSellContainer breedQuery={query} genderQuery={gender} />
       <Footer />
     </div>
   );

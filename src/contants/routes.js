@@ -20,6 +20,7 @@ export const pages = {
     ABOUT_US: '/about-us',
     RESOURCE_CENTER: '/resource-center',
     CONTACT: '/contact',
+    FAQ: '/resource-center/dog-ownership/frequently-asked-questions-faqs',
 
     LOGIN: '/log-in',
     SIGNUP: '/sign-up',

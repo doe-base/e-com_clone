@@ -7,7 +7,6 @@ import Fuse from 'fuse.js';
 import { breeds_pages, navbar, pages } from '../../../contants/routes';
 
 
-
 interface PuppyDetails {
     link: string;
     puppy_id: string;
@@ -68,7 +67,6 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
     const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019';
     const [allPuppiesArr, setAllPuppiesArr] = useState(allPuppies);
     const [selectedItem, setSelectedItem] = useState(allPuppies[0]);
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -159,6 +157,13 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
       useEffect(()=> {
         selectRandomSpotlightPuppy()
       }, [])
+
+      const handleSearchPuppy = (puppySlug: string) => {
+        if (puppySlug) {
+            // https://example.com/search?query=puppies&sort=asc
+            window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+        }
+      };
 
 
   return (
@@ -504,13 +509,16 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
 
 
                         {/* DropDown */}
-                        <div data-cy="filter-results" className={`style-module__menu--Xf2XU  ${isFocused ? '' : 'hidden'}`}>
+                        <div className={`style-module__menu--Xf2XU  ${isFocused ? '' : 'hidden'}`}>
                             {
                                 results.length > 0
                                 ?
                                 results.map((item: any, index: number)=> {
                                     return (
-                                        <div key={index} className="style-module__item--tuTKJ">{item.name}</div>
+                                        <div key={index} className="style-module__item--tuTKJ" onMouseDown={(e) => {
+                                            e.preventDefault(); // Prevents the input from losing focus immediately
+                                            handleSearchPuppy(item.slug);
+                                        }}>{item.name}</div>
                                     )
                                 })
                                 :
@@ -586,7 +594,10 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             ?
                             results.map((item: any, index: number)=> {
                                 return (
-                                    <div key={index} className="style-module__item--tuTKJ">{item.name}</div>
+                                    <div key={index} className="style-module__item--tuTKJ" onMouseDown={(e) => {
+                                        e.preventDefault(); // Prevents the input from losing focus immediately
+                                        handleSearchPuppy(item.slug);
+                                    }}>{item.name}</div>
                                 )
                             })
                             :

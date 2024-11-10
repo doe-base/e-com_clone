@@ -4,7 +4,7 @@
   position: relative;
   width: 100%;
   z-index: 1;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   margin-bottom: 1rem;
   border-bottom: 2px solid #dadada;
 }
@@ -203,9 +203,9 @@
 .drawer-header-nav__mobile {
   background-color: #fff;
   height: 100vh;
-  position: absolute;
+  /* position: absolute; */
   text-align: center;
-  top: 52px;
+  /* top: 52px; */
   width: 100vw;
 }
 .drawer-mobile-menu-container {
@@ -246,11 +246,11 @@
 .drawer-searchbar-menu-module__listUl--Ed91Y {
   padding-bottom: 300px;
 }
-.drawer-searchbar-menu-module__listUl--Ed91Y li:nth-last-child(3) button::after {
+.drawer-searchbar-menu-module__listUl--Ed91Y li button::after {
   content: "";
   position: absolute;
   top: 50px;
-  height: 2px;
+  height: 1px;
   width: 100%;
   background-color: rgba(0,0,0,.1490196078);
 }
@@ -302,7 +302,7 @@
   font-size: 20px;
 }
 .drawer-divider {
-  /* border-left: 1px solid rgba(0,0,0,.2); */
+  border-left: 1px solid rgba(0,0,0,.2);
   height: auto;
   margin: 0 15px;
   width: 0;

@@ -1223,6 +1223,56 @@
       "mediumCardImageUrl": "https://www.puppyspot.com/assets/puppyspot-minimal/img/generic.png"
     }
   ],
+  "top10breed": [
+    {
+      "id": 390,
+      "name": "Cavapoo",
+      "slug": "cavapoo"
+    },
+    {
+      "id": 444,
+      "name": "Bernedoodle",
+      "slug": "bernedoodle"
+    },
+    {
+      "id": 228,
+      "name": "Golden Retriever",
+      "slug": "golden-retriever"
+    },
+    {
+      "id": 322,
+      "name": "Poodle",
+      "slug": "poodle"
+    },
+    {
+      "id": 222,
+      "name": "Dachshund",
+      "slug": "dachshund"
+    },
+    {
+      "id": 345,
+      "name": "Maltipoo",
+      "slug": "maltipoo"
+    },
+    {
+      "id": 276,
+      "name": "Cavalier King Charles Spaniel",
+      "slug": "cavalier-king-charles-spaniel"
+    },
+    {
+      "id": 231,
+      "name": "Labrador Retriever",
+      "slug": "labrador-retriever"
+    },
+    {
+      "id": 225,
+      "name": "French Bulldog",
+      "slug": "french-bulldog"
+    }
+  ],
+
+
+
   "phoneLink": "+18886710518",
   "phoneFormatted": "(888) 671-0518",
   "isLoggedIn": false,

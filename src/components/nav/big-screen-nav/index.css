@@ -66,6 +66,10 @@
   color: #333;
   font-weight: 400;
 }
+.hyperlink.menu-item:hover {
+  color: #000;
+  opacity: 1 !important;
+}
 .header-nav__links-desktop > ul > li a {
   font-size: 1.10rem;
 }

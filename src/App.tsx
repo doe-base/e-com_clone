@@ -34,6 +34,19 @@ const familyDogs = {
   text: 'Choosing the perfect puppy for your family requires thoughtful consideration of your lifestyle, living condition, energy level, and children ages. You want a puppy that can keep up with your activities, has an outgoing and friendly personality and who is affectionate with the whole family. Discover the best dog breeds for your family.',
 }
 
+const friendlyDogs = {
+  title: 'Allergy Friendly Dogs',
+  text: "While the American Kennel Club says there are no 100% hypoallergenic there are certain breeds that cause fewer allergy symptoms. These dogs shed significantly less than other dogs and, therefore, produce less dander (the main cause of pet allergies in humans). Explore our recommended hypoallergenic dog breeds.",
+}
+const teaCupDogs = {
+  title: 'Teacup Puppies',
+  text: 'Teacup puppies are an adorable type of dog that are extra friendly and incredibly cute. Are you considering adding a teacup puppy? Read on to learn more about teacup puppies and how to choose the right one for your family.',
+}
+const doodleDogs = {
+  title: 'Doodle Puppies',
+  text: 'Put simply, a Doodle dog is a crossbreed of a Poodle any other breed - that’s where we get the “oodle” in “Doodle” and the “poo” in Cockapoo, Shihpoo and Cavapoo. There are many different types of Doodles and they are known as intelligent, trainable, and affectionate pups.',
+}
+
 function App() {
   const [navHeight, setNavHeight] = useState<number>(0)
   const [isPuppiesForSale, setIsPuppiesForSale] = useState(false);
@@ -71,6 +84,8 @@ function App() {
 
           <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
           <Route path="/puppies-for-sale/breed/:breedSlug" element={<BreedPuppiesForSell />} />
+
+
           <Route path="/breed" element={<Breed pureordesigner={''} />} />
           <Route path="/puppies-for-sale/breed/:breedSlug/overview" element={<BreedOverview />} />
           <Route path="/breed/purebred-breeds" element={<Breed pureordesigner={'pure'} />} />
@@ -78,7 +93,11 @@ function App() {
           <Route path="/breed/collections/active-dogs" element={<CharacteristicPuppyForSell charater={activeDogs} />} />
           <Route path="/breed/collections/best-apartment-dogs" element={<CharacteristicPuppyForSell charater={apartmentDogs} />} />
           <Route path="/breed/collections/best-family-dogs" element={<CharacteristicPuppyForSell charater={familyDogs} />} />
-
+          <Route path="/breed/collections/allergy-friendly-dogs" element={<CharacteristicPuppyForSell charater={friendlyDogs} />} />
+          <Route path="/breed/collections/teacup-puppies" element={<CharacteristicPuppyForSell charater={teaCupDogs} />} />
+          <Route path="/breed/collections/doodle-puppies" element={<CharacteristicPuppyForSell charater={doodleDogs} />} />
+          
+          
 
           
 

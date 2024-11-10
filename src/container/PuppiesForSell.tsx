@@ -10,10 +10,12 @@ import FilterSidebar from '../components/filter-sidebar/FilterSidebar';
 
 
 interface Props{
+    breedQuery: string | null;
+    genderQuery: string | null;
 }
-const PuppiesForSellContainer: React.FC<Props> = ({}) => {
-
-    const [breedsArr, setBreedsArr] = useState(allBreed.breedList)
+const PuppiesForSellContainer: React.FC<Props> = ({breedQuery, genderQuery}) => {
+    const breeds = allBreed.breedList
+    const [breedsArr, setBreedsArr] = useState(breeds)
     const [query, setQuery] = useState('');
     const inputRef = useRef(null)
     const [results, setResults] = useState<any>(breedsArr);
@@ -107,7 +109,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({}) => {
         // Store the filtered array in selectedBreedCheck state
         setSelectedBreedCheck(breedsArr.filter((item) => item.isSelected));
     }
-    const handleCheckAndUncheckBreed =(name: string)=>{
+    const handleCheckAndUncheckBreed =(name: string | null)=>{
         setBreedsArr((prevList) =>
             prevList.map((breed) =>
               breed.slug === name
@@ -117,6 +119,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({}) => {
           );
           handleSelectionCheck()
     }
+
     const handleSelectAll =()=>{
         setBreedsArr((prevList) =>
                 prevList.map((breed) =>(
@@ -214,6 +217,24 @@ const PuppiesForSellContainer: React.FC<Props> = ({}) => {
             el2.classList.remove('hidden')
         }
     }
+
+    useEffect(()=>{
+
+        setBreedsArr((prevList) =>
+            prevList.map((breed) =>
+              breed.slug === breedQuery
+                ? { ...breed, isSelected: true } // Toggle isSelected
+                : breed
+            )
+          );
+
+
+        
+        
+        
+          // Work on gender filter from small nav here  
+          console.log(genderQuery)
+    }, [])
 
   return (
     <>

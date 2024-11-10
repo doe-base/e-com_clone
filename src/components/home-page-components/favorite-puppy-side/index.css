@@ -1,3 +1,7 @@
+.special-scroll-slider-prop {
+  scroll-behavior: smooth;
+}
+
 /* Slider */
 .favorite-breeds-module__wrapper--7M\+J3 .favorite-breeds-module__wrapperCarousel--EqX9F {
     max-width: 100%;

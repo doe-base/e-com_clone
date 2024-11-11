@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import '../styles/signup.css'
+import { FirebaseContext } from '../context/firebase';
 
 interface Props{
 }
@@ -9,13 +10,73 @@ const Signup: React.FC<Props> = ({}) => {
         document.title = "Create a new account | PuppySpot";
     }, []);
 
+    // function getUUID() {
+    //     // eslint gets funny about bitwise
+    //     /* eslint-disable */
+    //     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    //         const piece = (Math.random() * 16) | 0;
+    //         const elem = c === 'x' ? piece : (piece & 0x3) | 0x8;
+    //         return elem.toString(16);
+    //     });
+    //     /* eslint-enable */
+    // }
+    
+    // firebase.firestore().collection('series').add({
+    //     id: getUUID(),
+    //     title: 'Tiger King',
+    //     description: 'An exploration of big cat breeding and its bizarre underworld, populated by eccentric characters.',
+    //     genre: 'documentaries',
+    //     maturity: '18',
+    //     slug: 'tiger-king',
+    //   });
+
+
     const [isVisible, setIsvisible] = useState(false)
+    const { firebase } = useContext(FirebaseContext)
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
+    const [emailAddress, setEmailAddress] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmpassword, setConfirmPassword] = useState('')
+
+
+    const [error, setError] = useState('')
+
+
+    const handlesignup = (e: React.FormEvent<HTMLFormElement>) =>{
+        e.preventDefault()
+        if(!firebase){return}
+
+        // firebase work here!
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(emailAddress, password)
+            .then((result: any) => 
+
+                result.user.updateProfile({
+                    displayName: firstName,
+                    photoURL: Math.floor(Math.random() * 5) + 1, 
+                })
+                .then(() => {
+                    // history(ROUTES.BROWSE)
+                    console.log('success')
+                })
+
+            .catch((error: any) =>{
+                setFirstName('')
+                setEmailAddress('')
+                setPassword('')
+                setError(error.message)
+            })
+        )
+
+    }
 
   return (
     <main className='authentication authentication__page log-in'>
         <h2>Discover, learn about, and find your new puppy!</h2>
 
-        <form action="" className='js-form-validate authentication__container'>
+        <form onSubmit={(e)=>handlesignup(e)} className='js-form-validate authentication__container'>
 
             <h3 className="login-title">Sign up to find your new puppy</h3>
 
@@ -97,23 +158,33 @@ const Signup: React.FC<Props> = ({}) => {
             <div className="input-combo">
                 <div className="input-wrapper first-name">
                     <label htmlFor="firstName">First name</label>
-                    <input autoFocus={true} tabIndex={1} id="firstName" type="text" name="first_name" data-prefill-field="firstName" data-validate="required" />
+                    <input autoFocus={true} tabIndex={1} id="firstName" type="text" name="first_name" data-prefill-field="firstName" required onChange={(e)=> setFirstName(e.currentTarget.value)} />
                 </div>
                 <div className="input-wrapper last-name">
                     <label htmlFor="lastName">Last name</label>
-                    <input tabIndex={2} id="lastName" type="text" name="last_name" data-prefill-field="lastName" data-validate="required" />
+                    <input tabIndex={2} id="lastName" type="text" name="last_name" data-prefill-field="lastName" required />
                 </div>
             </div>
 
             <div className="input-wrapper email">
                 <label htmlFor="email">Email address</label>
-                <input tabIndex={3} id="email" type="email" pattern="[^@]+@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9\-]+" name="email" data-name="Email Address" data-validate="required,email"/>
+                <input 
+                    tabIndex={3} 
+                    id="email" 
+                    type="email" 
+                    pattern="[^@]+@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9\-]+" 
+                    name="email" 
+                    data-name="Email Address" 
+                    data-validate="email"
+                    required 
+                    onChange={(e)=> setEmailAddress(e.currentTarget.value.trim())}
+                />
             </div>
 
             <div className="input-combo">
                 <div className="input-wrapper password js-password-input" style={{position: 'relative'}}>
                     <label htmlFor="password">Password</label>
-                    <input autoComplete="off" tabIndex={4} id="password" className="password" type="password" name="password" data-name="Password" data-related="password_confirmation" data-validate="required,password" />
+                    <input autoComplete="off" tabIndex={4} id="password" className="password" type="password" name="password" data-name="Password" data-related="password_confirmation" data-validate="password" required onChange={(e) => setPassword(e.currentTarget.value)} />
                     <p className="password-help js-password-help hidden">
                     Password must be 8 characters long, contain an uppercase and lowercase letter, a number, and a symbol
                     </p>
@@ -122,7 +193,7 @@ const Signup: React.FC<Props> = ({}) => {
 
                 <div className="input-wrapper password" style={{position: 'relative'}}>
                     <label htmlFor="passwordConfirmation">Confirm Password</label>
-                    <input autoComplete="off" tabIndex={5} id="passwordConfirmation" type="password" name="password_confirmation" data-match="password" data-validate="required,match" />
+                    <input autoComplete="off" tabIndex={5} id="passwordConfirmation" type="password" name="password_confirmation" data-match="password" data-validate="match" required />
                     <span className="password-visibility js-show-password"></span>
                 </div>
             </div>

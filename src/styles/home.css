@@ -1171,3 +1171,11 @@ element {
   transition: .3s;
   cursor: pointer;
 }
+
+
+/* REact slider */
+.slick-initialized .slick-slide {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}

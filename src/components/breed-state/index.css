@@ -112,7 +112,7 @@
   color: #000;
 }
 .breed-states .collapsible-panel__handle span {
-  margin-right: 0.5rem;
+  margin-right: -0.5rem;
 }
 .breed-states .collapsible-panel__handle span,
 .breed-states .collapsible-panel__handle::before {

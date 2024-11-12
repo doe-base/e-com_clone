@@ -1,0 +1,93 @@
+.paypal-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #0070ba;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.paypal-button:hover {
+    background-color: #005c99;
+}
+.paypal-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.crypto-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f7931a; /* Bitcoin orange color */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.crypto-button:hover {
+    background-color: #d67b15;
+}
+.crypto-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.boa-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #002d72; /* Bank of America's blue color */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.boa-button:hover {
+    background-color: #001f4b;
+}
+.boa-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+
+
+.bank-transfer-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #004085; /* Dark blue for a professional look */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.bank-transfer-button:hover {
+    background-color: #002f5e;
+}
+.bank-logo {
+    width: 26px;
+    height: 26px;
+    margin-right: 10px;
+}

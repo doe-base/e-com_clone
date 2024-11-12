@@ -77,7 +77,7 @@ textarea {
 
 @media screen and (min-width: 1024px) {
   .authentication .input-combo span.password-visibility {
-    top: 2.8em;
+    top: 3.1em;
   }
 }
 span.password-visibility {
@@ -163,9 +163,36 @@ input[type="submit"] {
   }
 }
 
-input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="text"]:focus, select:focus, textarea:focus {
-    border: 2px solid #ff9100;
-    box-shadow: none;
-    height: 41px;
-    outline: 0;
-  }
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+select:focus,
+textarea:focus {
+  border: 2px solid #ff9100;
+  box-shadow: none;
+  height: 41px;
+  outline: 0;
+}
+
+.authentication p.password-help {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 0;
+  text-align: left !important; 
+}
+.authentication__container p {
+  padding-bottom: 1em;
+}
+.authentication .error-container {
+  margin-bottom: .5em;
+}
+.error-container {
+  text-align: left;
+}
+.error-container span {
+  color: red;
+}
+input[type=email].field-error, input[type=password].field-error, input[type=tel].field-error, input[type=text].field-error, select.field-error, textarea.field-error {
+  border: 2px solid red;
+}

@@ -1,0 +1,317 @@
+[
+    {
+        "name": "Emma",
+        "breed": "Goldendoodle",
+        "age": "8 weeksold",
+        "image": "https://photos.puppyspot.com/4/listing/776094/photo/503065505_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/776094"
+    },
+    {
+        "name": "Egan",
+        "breed": "Havanese",
+        "age": "15 weeksold",
+        "image": "https://photos.puppyspot.com/0/listing/773380/photo/503056711_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havanese/puppy/773380"
+    },
+    {
+        "name": "Gavin",
+        "breed": "Chihuahua",
+        "age": "14 weeksold",
+        "image": "https://photos.puppyspot.com/7/listing/774337/photo/503057293_medium.JPG",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/chihuahua/puppy/774337"
+    },
+    {
+        "name": "Adam",
+        "breed": "Poodle",
+        "age": "13 weeksold",
+        "image": "https://photos.puppyspot.com/8/listing/772208/photo/503084764_medium.JPG",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/772208"
+    },
+    {
+        "name": "Lexi",
+        "breed": "French Bulldog",
+        "age": "14 weeksold",
+        "image": "https://photos.puppyspot.com/2/listing/772932/photo/503034499_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/french-bulldog/puppy/772932"
+    },
+    {
+        "name": "Paige",
+        "breed": "Rottweiler",
+        "age": "16 weeksold",
+        "image": "https://photos.puppyspot.com/8/listing/771688/photo/503080307_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "Reserved",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/rottweiler/puppy/771688"
+    },
+    {
+        "name": "Anna",
+        "breed": "Corgipoo",
+        "age": "11 weeksold",
+        "image": "https://photos.puppyspot.com/3/listing/773503/photo/503032421_medium.JPG",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/corgipoo/puppy/773503"
+    },
+    {
+        "name": "Draven",
+        "breed": "Havanese",
+        "age": "8 weeksold",
+        "image": "https://photos.puppyspot.com/8/listing/777038/photo/503069379_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havanese/puppy/777038"
+    },
+    {
+        "name": "Dublin",
+        "breed": "Havanese",
+        "age": "8 weeksold",
+        "image": "https://photos.puppyspot.com/9/listing/777039/photo/503069437_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havanese/puppy/777039"
+    },
+    {
+        "name": "Gabriel",
+        "breed": "Goldendoodle",
+        "age": "5 weeksold",
+        "image": "https://photos.puppyspot.com/1/listing/776301/photo/503040475_medium.jpg",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/776301"
+    },
+    {
+        "name": "Rufus",
+        "breed": "Goldendoodle",
+        "age": "5 weeksold",
+        "image": "https://photos.puppyspot.com/6/listing/776296/photo/503040283_medium.jpg",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/776296"
+    },
+    {
+        "name": "Jade",
+        "breed": "Pomsky",
+        "age": "15 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/pomsky/puppy/771791"
+    },
+    {
+        "name": "Dash",
+        "breed": "Havanese",
+        "age": "8 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havanese/puppy/777035"
+    },
+    {
+        "name": "Vicky",
+        "breed": "Poodle",
+        "age": "14 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "Champion Bloodlines",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/777379"
+    },
+    {
+        "name": "Maddie",
+        "breed": "Shorkie",
+        "age": "11 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/shorkie/puppy/774023"
+    },
+    {
+        "name": "Casio",
+        "breed": "Cockapoo",
+        "age": "17 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/cockapoo/puppy/770685"
+    },
+    {
+        "name": "Neely",
+        "breed": "Bichon Frise",
+        "age": "11 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/bichon-frise/puppy/775030"
+    },
+    {
+        "name": "Jewels",
+        "breed": "Shih Tzu",
+        "age": "9 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/shih-tzu/puppy/775690"
+    },
+    {
+        "name": "Ranger",
+        "breed": "Golden Retriever",
+        "age": "13 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/golden-retriever/puppy/772494"
+    },
+    {
+        "name": "Fernando",
+        "breed": "Bernedoodle",
+        "age": "6 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/bernedoodle/puppy/776372"
+    },
+    {
+        "name": "Beckham",
+        "breed": "Corgipoo",
+        "age": "21 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/corgipoo/puppy/771440"
+    },
+    {
+        "name": "Elf",
+        "breed": "Golden Retriever",
+        "age": "11 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/golden-retriever/puppy/776130"
+    },
+    {
+        "name": "Trinity",
+        "breed": "Poodle",
+        "age": "14 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/775989"
+    },
+    {
+        "name": "Ziggy",
+        "breed": "Shihpoo",
+        "age": "10 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/shihpoo/puppy/774540"
+    },
+    {
+        "name": "Precious",
+        "breed": "Poodle",
+        "age": "7 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/776470"
+    },
+    {
+        "name": "Apollos",
+        "breed": "Goldendoodle",
+        "age": "5 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/776305"
+    },
+    {
+        "name": "Chuck",
+        "breed": "Havapoo",
+        "age": "7 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havapoo/puppy/775268"
+    },
+    {
+        "name": "Autumn",
+        "breed": "Cavapoo",
+        "age": "13 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/cavapoo/puppy/772808"
+    },
+    {
+        "name": "Chuck",
+        "breed": "Havanese",
+        "age": "8 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havanese/puppy/775264"
+    },
+    {
+        "name": "Angel",
+        "breed": "Pomsky",
+        "age": "16 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/pomsky/puppy/771226"
+    },
+    {
+        "name": "Elmo",
+        "breed": "Pekingese",
+        "age": "9 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/pekingese/puppy/776766"
+    },
+    {
+        "name": "Bernard",
+        "breed": "Labradoodle",
+        "age": "4 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "N/A",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/labradoodle/puppy/776981"
+    },
+    {
+        "name": "Nash",
+        "breed": "Pomsky",
+        "age": "6 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/pomsky/puppy/776171"
+    },
+    {
+        "name": "Darma",
+        "breed": "French Bulldog",
+        "age": "16 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/french-bulldog/puppy/772020"
+    },
+    {
+        "name": "Allie",
+        "breed": "Poodle",
+        "age": "13 weeksold",
+        "image": "https://www.puppyspot.com/assets/img/generic.png",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/772277"
+    }
+]

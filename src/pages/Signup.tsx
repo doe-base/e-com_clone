@@ -4,73 +4,105 @@ import { FirebaseContext } from '../context/firebase';
 
 interface Props{
 }
+
+
+function validatePassword(password: string) {
+  // Regular expression to match the password requirements
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
+  return passwordRegex.test(password);
+}
+function getUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+        const piece = (Math.random() * 16) | 0;
+        const elem = c === 'x' ? piece : (piece & 0x3) | 0x8;
+        return elem.toString(16);
+    });
+}
+
 const Signup: React.FC<Props> = ({}) => {
 
     useEffect(() =>{
         document.title = "Create a new account | PuppySpot";
     }, []);
 
-    // function getUUID() {
-    //     // eslint gets funny about bitwise
-    //     /* eslint-disable */
-    //     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-    //         const piece = (Math.random() * 16) | 0;
-    //         const elem = c === 'x' ? piece : (piece & 0x3) | 0x8;
-    //         return elem.toString(16);
-    //     });
-    //     /* eslint-enable */
-    // }
+
     
-    // firebase.firestore().collection('series').add({
-    //     id: getUUID(),
-    //     title: 'Tiger King',
-    //     description: 'An exploration of big cat breeding and its bizarre underworld, populated by eccentric characters.',
-    //     genre: 'documentaries',
-    //     maturity: '18',
-    //     slug: 'tiger-king',
-    //   });
 
 
+
+    const [passwordRequirement, setPasswordRequirement] = useState(false)
+    const [isPasswordHelpVisible, setIsPasswordHelpVisible] = useState(false);
+    const [passwordMatches, setPassWordMatches] = useState(true)
     const [isVisible, setIsvisible] = useState(false)
+    const [isVisible2, setIsvisible2] = useState(false)
+    const [wrongPasswordFormat, setWrongPasswordFormat] = useState(false)
+    
     const { firebase } = useContext(FirebaseContext)
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [emailAddress, setEmailAddress] = useState('')
     const [password, setPassword] = useState('')
     const [confirmpassword, setConfirmPassword] = useState('')
-
-
     const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const handlePasswordChange =(innerText: string)=>{
+        setPassword(innerText)
+        setPasswordRequirement(validatePassword(password))
+    }
 
 
     const handlesignup = (e: React.FormEvent<HTMLFormElement>) =>{
         e.preventDefault()
+
+        if(!validatePassword(password)){
+            setWrongPasswordFormat(true)
+            return
+        }else{
+            setWrongPasswordFormat(false)
+        }
+
+        setPassWordMatches(password === confirmpassword)
+        if(!passwordMatches){return}
+
         if(!firebase){return}
 
-        // firebase work here!
+        setLoading(true)
+
         firebase
             .auth()
             .createUserWithEmailAndPassword(emailAddress, password)
             .then((result: any) => 
-
                 result.user.updateProfile({
-                    displayName: firstName,
-                    photoURL: Math.floor(Math.random() * 5) + 1, 
-                })
-                .then(() => {
-                    // history(ROUTES.BROWSE)
-                    console.log('success')
-                })
-
+                    firstName: firstName,
+                    lastName: lastName,
+                    emailAddress: emailAddress,
+                }
+            ))
+            // .then(() => {
+            //     firebase.firestore().collection('series').add({
+            //         firstName: firstName,
+            //         lastName: lastName,
+            //         emailAddress: emailAddress,
+            //     })
+            //     .then(() => {
+            //         setLoading(false)
+            //         console.log('success')
+            //     })
+            //     .catch((error: any) => {
+            //         setLoading(false)
+            //         setError(error.message)
+            //     })
+            // })
             .catch((error: any) =>{
-                setFirstName('')
-                setEmailAddress('')
-                setPassword('')
+                setLoading(false)
                 setError(error.message)
             })
-        )
 
     }
+
+
 
   return (
     <main className='authentication authentication__page log-in'>
@@ -184,17 +216,59 @@ const Signup: React.FC<Props> = ({}) => {
             <div className="input-combo">
                 <div className="input-wrapper password js-password-input" style={{position: 'relative'}}>
                     <label htmlFor="password">Password</label>
-                    <input autoComplete="off" tabIndex={4} id="password" className="password" type="password" name="password" data-name="Password" data-related="password_confirmation" data-validate="password" required onChange={(e) => setPassword(e.currentTarget.value)} />
-                    <p className="password-help js-password-help hidden">
-                    Password must be 8 characters long, contain an uppercase and lowercase letter, a number, and a symbol
-                    </p>
-                    <span className="password-visibility js-show-password"></span>
+                    <input 
+                        autoComplete="off" 
+                        tabIndex={4} id="password" 
+                        className="password" 
+                        type={isVisible2 ? 'text' : 'password'} 
+                        name="password" 
+                        data-name="Password" 
+                        data-related="password_confirmation" 
+                        data-validate="password" 
+                        required 
+                        onChange={(e) => handlePasswordChange(e.currentTarget.value)} 
+                        onFocus={() => setIsPasswordHelpVisible(true)}
+                        onBlur={() => setIsPasswordHelpVisible(false)}
+                    />
+                    {
+                        wrongPasswordFormat
+                        ?
+                        <div className="error-container">
+                            <span>
+                                Password must be 8 characters long, contain an uppercase and lowercase letter, a number, and a symbol    
+                            </span>
+                        </div>
+                        :
+                        <p className={`password-help js-password-help ${isPasswordHelpVisible && !passwordRequirement ? '' : 'hidden'}`}>
+                            Password must be 8 characters long, contain an uppercase and lowercase letter, a number, and a symbol
+                        </p>
+                    }
+                    <span className={isVisible2 ? "password-visibility js-show-password visible" : "password-visibility js-show-password" }  onClick={()=> setIsvisible2(!isVisible2)}></span>
                 </div>
 
                 <div className="input-wrapper password" style={{position: 'relative'}}>
                     <label htmlFor="passwordConfirmation">Confirm Password</label>
-                    <input autoComplete="off" tabIndex={5} id="passwordConfirmation" type="password" name="password_confirmation" data-match="password" data-validate="match" required />
-                    <span className="password-visibility js-show-password"></span>
+                    <input 
+                        autoComplete="off" 
+                        tabIndex={5} 
+                        id="passwordConfirmation" 
+                        type={isVisible ? 'text' : 'password'}
+                        name="password_confirmation" 
+                        data-match="password" 
+                        data-validate="match" 
+                        required 
+                        onChange={(e)=> setConfirmPassword(e.currentTarget.value)}
+                        
+                    />
+                    <span className={isVisible ? "password-visibility js-show-password visible" : "password-visibility js-show-password" }  onClick={()=> setIsvisible(!isVisible)}></span>
+
+                    {
+                        passwordMatches
+                        ?
+                        null
+                        :
+                        <div className="error-container"><span>The password doesn't match</span></div>
+                    }
                 </div>
             </div>
 
@@ -208,16 +282,16 @@ const Signup: React.FC<Props> = ({}) => {
             </div>
 
             <div className="cta-loader">
-                <div className="loading cta invisible">
+                <div className={`loading cta ${loading ? '' : 'invisible'}`}>
                     <picture className="">
-                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/loader-cta.svg" loading="lazy" src="/img/loader-cta.svg" />
                     </picture>
                 </div>
                 <input tabIndex={6} type="submit" className="button main js-submit" value="Sign Up" />
             </div>
 
             <p>Already have an account? <a className="hyperlink" href="https://www.puppyspot.com/log-in">Click here to log in</a></p>
-
+<>{error}</>
         </form>
 
     </main>

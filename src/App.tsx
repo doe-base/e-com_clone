@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import NavContainer from './components/nav/nav-container';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from "@mui/styles";
+import { createTheme } from '@mui/material/styles';
 import HomePage from './pages/Home';
 import PuppiesForSell from './pages/PuppiesForSell';
 import Login from './pages/Login';
@@ -51,6 +53,19 @@ function App() {
   const [navHeight, setNavHeight] = useState<number>(0)
   const [isPuppiesForSale, setIsPuppiesForSale] = useState(false);
 
+  let theme = createTheme({
+    breakpoints: {
+      values: {
+        xs: 0, // Extra small
+        sm: 600, // Small
+        md: 1000, // Medium
+        lg: 1200, // Large
+        xl: 1536, // Extra large
+        // Add custom breakpoints here (e.g., xxl: 1800)
+      }
+    },
+  });
+
 
   useEffect(() => {
     const currentPath = window.location.pathname;
@@ -68,56 +83,56 @@ function App() {
 
 
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
+      <div className="App">
 
-      {/* Conditionally render NavContainer */}
-      {!hideNavPaths.includes(newPath) && (
-        <>
-          <NavContainer setNavHeight={setNavHeight} isPuppiesForSale={isPuppiesForSale} />
-          <div style={{height: `${navHeight}px`}} className='space-height-nav'></div>
-        </>
-      )}
+        {/* Conditionally render NavContainer */}
+        {!hideNavPaths.includes(newPath) && (
+          <>
+            <NavContainer setNavHeight={setNavHeight} isPuppiesForSale={isPuppiesForSale} />
+            <div style={{height: `${navHeight}px`}} className='space-height-nav'></div>
+          </>
+        )}
 
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
 
-          <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
-          <Route path="/puppies-for-sale/breed/:breedSlug" element={<BreedPuppiesForSell />} />
-
-
-          <Route path="/breed" element={<Breed pureordesigner={''} />} />
-          <Route path="/puppies-for-sale/breed/:breedSlug/overview" element={<BreedOverview />} />
-          <Route path="/breed/purebred-breeds" element={<Breed pureordesigner={'pure'} />} />
-          <Route path="/breed/designer-breeds" element={<Breed pureordesigner={'designer'}/>} />
-          <Route path="/breed/collections/active-dogs" element={<CharacteristicPuppyForSell charater={activeDogs} />} />
-          <Route path="/breed/collections/best-apartment-dogs" element={<CharacteristicPuppyForSell charater={apartmentDogs} />} />
-          <Route path="/breed/collections/best-family-dogs" element={<CharacteristicPuppyForSell charater={familyDogs} />} />
-          <Route path="/breed/collections/allergy-friendly-dogs" element={<CharacteristicPuppyForSell charater={friendlyDogs} />} />
-          <Route path="/breed/collections/teacup-puppies" element={<CharacteristicPuppyForSell charater={teaCupDogs} />} />
-          <Route path="/breed/collections/doodle-puppies" element={<CharacteristicPuppyForSell charater={doodleDogs} />} />
-          
-          
-
-          
+            <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
+            <Route path="/puppies-for-sale/breed/:breedSlug" element={<BreedPuppiesForSell />} />
 
 
-          <Route path="/log-in" element={<Login />} />
-          <Route path="/sign-up" element={<Signup />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/promise" element={<PuppyPromise />} />
-          <Route path="/careers" element={<Career />} />
-          <Route path="/dog-registration" element={<DogRegistration />} />
-          <Route path="/akc" element={<AKC />} />
-          <Route path="/single-puppy" element={<SinglePuppy />} />
-          <Route path="/shop/checkout/details/:puppy-id" element={<CheckoutDetail />} />
-          {/* This path sould contain a uniqe session code after payment is register */}
-          <Route path="/shop/checkout/travel/:puppy-id" element={<CheckoutTravel />} />
-          <Route path="/shop/checkout/essentials/:puppy-id" element={<CheckoutEssentials />} />
-          <Route path="/shop/checkout/checkout/:puppy-id" element={<Checkout />} />
-        </Routes>
-      </Router>
-    </div>
+            <Route path="/breed" element={<Breed pureordesigner={''} />} />
+            <Route path="/puppies-for-sale/breed/:breedSlug/overview" element={<BreedOverview />} />
+            <Route path="/breed/purebred-breeds" element={<Breed pureordesigner={'pure'} />} />
+            <Route path="/breed/designer-breeds" element={<Breed pureordesigner={'designer'}/>} />
+            <Route path="/breed/collections/active-dogs" element={<CharacteristicPuppyForSell charater={activeDogs} />} />
+            <Route path="/breed/collections/best-apartment-dogs" element={<CharacteristicPuppyForSell charater={apartmentDogs} />} />
+            <Route path="/breed/collections/best-family-dogs" element={<CharacteristicPuppyForSell charater={familyDogs} />} />
+            <Route path="/breed/collections/allergy-friendly-dogs" element={<CharacteristicPuppyForSell charater={friendlyDogs} />} />
+            <Route path="/breed/collections/teacup-puppies" element={<CharacteristicPuppyForSell charater={teaCupDogs} />} />
+            <Route path="/breed/collections/doodle-puppies" element={<CharacteristicPuppyForSell charater={doodleDogs} />} />
+            
+            
+
+
+            <Route path="/log-in" element={<Login />} />
+            <Route path="/sign-up" element={<Signup />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/promise" element={<PuppyPromise />} />
+            <Route path="/careers" element={<Career />} />
+            <Route path="/dog-registration" element={<DogRegistration />} />
+            <Route path="/akc" element={<AKC />} />
+            <Route path="/single-puppy" element={<SinglePuppy />} />
+            <Route path="/shop/checkout/details/:puppy-id" element={<CheckoutDetail />} />
+            {/* This path sould contain a uniqe session code after payment is register */}
+            <Route path="/shop/checkout/travel/:puppy-id" element={<CheckoutTravel />} />
+            <Route path="/shop/checkout/essentials/:puppy-id" element={<CheckoutEssentials />} />
+            <Route path="/shop/checkout/checkout/:puppy-id" element={<Checkout />} />
+          </Routes>
+        </Router>
+      </div>
+    </ThemeProvider>
 
   );
 }

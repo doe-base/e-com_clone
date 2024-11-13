@@ -15,8 +15,10 @@ import SharePopup from "../components/popups/single-puppy-popups/SharePopup";
 
 
 
-interface Props {}
-const SinglePuppyContainer: React.FC<Props> = ({}) => {
+interface Props {
+  puppyInfo: any;
+}
+const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
   const [showMore, setShowMore] = useState(false);
   const [sliderCount, setSliderCount] = useState(1);
   const [askAboutMePopup, setAskAboutMePopup] = useState(false);
@@ -86,6 +88,9 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
 
   const phoneNumber = process.env.REACT_APP_US_NUMBER_FORMARTED
 
+  var imageCount = 0
+  var videoCount = 0
+
   return (
     <>
      <AskAboutMePopup askAboutMePopup={askAboutMePopup} setAskAboutMePopup={setAskAboutMePopup} />
@@ -96,316 +101,158 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
           <div className="js-gallery gallery grid-columns-5" data-id="gallery">
             <div className="gallery__label empty-space space-1"></div>
             <div className="gallery__label empty-space space-2"></div>
-            <input
-              type="radio"
-              name="puppy-gallery"
-              id="gallery-photo-0"
-              className="gallery__control"
-              checked={true}
-            />
-            <label htmlFor="gallery-photo-0" className="gallery__label">
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className=" lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051080_small.JPG"
-                  loading="lazy"
-                  width="60"
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051080_small.JPG"
-                />
-              </picture>
-            </label>
-            <div className="gallery__content" id="gallery-large-photo-0">
-              <a className="js-gallery-arrow-left arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Previous Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-              <a className="js-gallery-arrow-right arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Next Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
 
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className="gallery__content-puppy-image ls-is-cached lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051080_medium.JPG"
-                  loading="lazy"
-                  data-index="gallery-image-0"
-                  sizes="(max-width: 390px) 300px, 570px"
-                  data-srcset="
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051080_small.JPG 220w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051080_medium.JPG 300w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051080_large.JPG 570w
-                                "
-                  srcSet="
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051080_small.JPG 220w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051080_medium.JPG 300w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051080_large.JPG 570w
-                                "
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051080_medium.JPG"
-                />
-              </picture>
+            {
+              puppyInfo.gallery_content.map((item: any, index: number) => {
+                if(item.gallery_type === 'image'){
+                  imageCount = imageCount + 1
+                  return (
+                    <>
+                      <input
+                          key={index}
+                          type="radio"
+                          name="puppy-gallery"
+                          id={`gallery-photo-${imageCount}`}
+                          className="gallery__control"
+                          checked={true}
+                        />
+                        <label htmlFor={`gallery-photo-${imageCount}`} className="gallery__label">
+                          <picture className="">
+                            <img
+                              id=""
+                              alt={`${item.breed} puppy for sale ${item.puppy_name}, dog for sale`}
+                              className=" lazyloaded"
+                              data-cy=""
+                              data-src={item.label_img_src}
+                              loading="lazy"
+                              width="60"
+                              src={item.label_img_src}
+                            />
+                          </picture>
+                        </label>
+                        <div className="gallery__content" id={`gallery-large-photo-${imageCount}`}>
+                          <a className="js-gallery-arrow-left arrow-button">
+                            <img
+                              src="/img/puppy-listings/chevron-right-icon.svg"
+                              alt="Previous Image"
+                              width="8"
+                              height="14"
+                            />
+                          </a>
+                          <a className="js-gallery-arrow-right arrow-button">
+                            <img
+                              src="/img/puppy-listings/chevron-right-icon.svg"
+                              alt="Next Image"
+                              width="8"
+                              height="14"
+                            />
+                          </a>
 
-              <div className="photo-count">1 / 5</div>
-            </div>
-            <input
-              type="radio"
-              name="puppy-gallery"
-              id="gallery-video-0"
-              className="gallery__control radio-video"
-            />
-            <label
-              htmlFor="gallery-video-0"
-              className="gallery__label  gallery__label-video"
-            >
-              <picture className="">
-                <img
-                  id=""
-                  alt=""
-                  className=" lazyloaded"
-                  data-cy=""
-                  data-src="https://customer-4tih2bjymu20uxxn.cloudflarestream.com/02a009f082b541f5b16d6a1fc214956e/thumbnails/thumbnail.jpg?width=60&amp;height=60"
-                  loading="lazy"
-                  width="60"
-                  height="60"
-                  src="https://customer-4tih2bjymu20uxxn.cloudflarestream.com/02a009f082b541f5b16d6a1fc214956e/thumbnails/thumbnail.jpg?width=60&amp;height=60"
-                />
-              </picture>
-            </label>
-            <div className="gallery__content gallery__content-video">
-              <a className="js-gallery-arrow-left arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Previous Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-              <a className="js-gallery-arrow-right arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Next Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
+                          <picture className="">
+                            <img
+                              id=""
+                              alt={`${item.breed} puppy for sale ${item.puppy_name}, dog for sale`}
+                              className="gallery__content-puppy-image ls-is-cached lazyloaded"
+                              data-cy=""
+                              data-src={item.urls.medium}
+                              loading="lazy"
+                              data-index="gallery-image-0"
+                              sizes="(max-width: 390px) 300px, 570px"
+                              data-srcset={`
+                                                ${item.urls.small} 220w,
+                                                ${item.urls.medium} 300w,
+                                                ${item.urls.large} 570w
+                                          `}
+                              srcSet={`
+                                                ${item.urls.small} 220w,
+                                                ${item.urls.medium} 300w,
+                                                ${item.urls.large} 570w
+                                    `}
+                              src={item.urls.medium}
+                            />
+                          </picture>
 
-              <div className="cloudflare-video-container right"></div>
-              <div className="cloudflare-video-container left"></div>
-              <div className="video-container" id="gallery-video">
-                <iframe
-                  className="js-cloudflare-player cloudflare-player"
-                  src="https://customer-4tih2bjymu20uxxn.cloudflarestream.com/02a009f082b541f5b16d6a1fc214956e/iframe?muted=true"
-                  style={{ border: "medium", width: "100%" }}
-                  height="640"
-                  width="640"
-                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-                  allowFullScreen={true}
-                ></iframe>
-              </div>
-              <div className="photo-count video">2 / 5</div>
-            </div>
-            <input
-              type="radio"
-              name="puppy-gallery"
-              id="gallery-photo-2"
-              className="gallery__control"
-            />
-            <label htmlFor="gallery-photo-2" className="gallery__label">
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className=" lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051079_small.JPG"
-                  loading="lazy"
-                  width="60"
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051079_small.JPG"
-                />
-              </picture>
-            </label>
-            <div className="gallery__content" id="gallery-large-photo-2">
-              <a className="js-gallery-arrow-left arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Previous Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-              <a className="js-gallery-arrow-right arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Next Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
+                          <div className="photo-count">{index} / 5</div>
+                        </div>
+                    </>
+                  )
+                }if (item.gallery_type === 'video'){
+                  videoCount = videoCount + 1
+                  return (
+                    <>
+                      <input
+                        type="radio"
+                        name="puppy-gallery"
+                        id={`gallery-video-${videoCount}`}
+                        className="gallery__control radio-video"
+                      />
+                      <label
+                        htmlFor={`gallery-video-${videoCount}`}
+                        className="gallery__label  gallery__label-video"
+                      >
+                        <picture className="">
+                          <img
+                            id=""
+                            alt=""
+                            className=" lazyloaded"
+                            data-cy=""
+                            data-src={item.label_img_src}
+                            loading="lazy"
+                            width="60"
+                            height="60"
+                            src={item.label_img_src}
+                          />
+                        </picture>
+                      </label>
+                      <div className="gallery__content gallery__content-video">
+                        <a className="js-gallery-arrow-left arrow-button">
+                          <img
+                            src="/img/puppy-listings/chevron-right-icon.svg"
+                            alt="Previous Image"
+                            width="8"
+                            height="14"
+                          />
+                        </a>
+                        <a className="js-gallery-arrow-right arrow-button">
+                          <img
+                            src="/img/puppy-listings/chevron-right-icon.svg"
+                            alt="Next Image"
+                            width="8"
+                            height="14"
+                          />
+                        </a>
 
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className="gallery__content-puppy-image lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051079_medium.JPG"
-                  loading="lazy"
-                  data-index="gallery-image-0"
-                  sizes="(max-width: 390px) 300px, 570px"
-                  data-srcset="https://photos.puppyspot.com/7/listing/768727/photo/503051079_small.JPG 220w, https://photos.puppyspot.com/7/listing/768727/photo/503051079_medium.JPG 300w, https://photos.puppyspot.com/7/listing/768727/photo/503051079_large.JPG 57"
-                  srcSet=" https://photos.puppyspot.com/7/listing/768727/photo/503051079_small.JPG 220w, https://photos.puppyspot.com/7/listing/768727/photo/503051079_medium.JPG 300w, https://photos.puppyspot.com/7/listing/768727/photo/503051079_large.JPG 570w"
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051079_medium.JPG"
-                />
-              </picture>
+                        <div className="cloudflare-video-container right"></div>
+                        <div className="cloudflare-video-container left"></div>
+                        <div className="video-container" id="gallery-video">
+                          <iframe
+                            className="js-cloudflare-player cloudflare-player"
+                            src={item.urls.video_url}
+                            style={{ border: "medium", width: "100%" }}
+                            height="640"
+                            width="640"
+                            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                            allowFullScreen={true}
+                          ></iframe>
+                        </div>
+                        <div className="photo-count video">{index} / 5</div>
+                      </div>
+                    </>
+                  )
+                }
+              
+              })
+            }
 
-              <div className="photo-count">3 / 5</div>
-            </div>
-            <input
-              type="radio"
-              name="puppy-gallery"
-              id="gallery-photo-3"
-              className="gallery__control"
-            />
-            <label htmlFor="gallery-photo-3" className="gallery__label">
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className=" lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051077_small.JPG"
-                  loading="lazy"
-                  width="60"
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051077_small.JPG"
-                />
-              </picture>
-            </label>
-            <div className="gallery__content" id="gallery-large-photo-3">
-              <a className="js-gallery-arrow-left arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Previous Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-              <a className="js-gallery-arrow-right arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Next Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className="gallery__content-puppy-image lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051077_medium.JPG"
-                  loading="lazy"
-                  data-index="gallery-image-1"
-                  sizes="(max-width: 390px) 300px, 570px"
-                  data-srcset="
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051077_small.JPG 220w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051077_medium.JPG 300w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051077_large.JPG 570w
-                                "
-                  srcSet="
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051077_small.JPG 220w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051077_medium.JPG 300w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051077_large.JPG 570w
-                                "
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051077_medium.JPG"
-                />
-              </picture>
-
-              <div className="photo-count">4 / 5</div>
-            </div>
-            <input
-              type="radio"
-              name="puppy-gallery"
-              id="gallery-photo-4"
-              className="gallery__control"
-            />
-            <label htmlFor="gallery-photo-4" className="gallery__label">
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className=" lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051075_small.JPG"
-                  loading="lazy"
-                  width="60"
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051075_small.JPG"
-                />
-              </picture>
-            </label>
-            <div className="gallery__content" id="gallery-large-photo-4">
-              <a className="js-gallery-arrow-left arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Previous Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-              <a className="js-gallery-arrow-right arrow-button">
-                <img
-                  src="/img/puppy-listings/chevron-right-icon.svg"
-                  alt="Next Image"
-                  width="8"
-                  height="14"
-                />
-              </a>
-
-              <picture className="">
-                <img
-                  id=""
-                  alt="Cocker Spaniel puppy for sale Ellis, dog for sale"
-                  className="gallery__content-puppy-image lazyloaded"
-                  data-cy=""
-                  data-src="https://photos.puppyspot.com/7/listing/768727/photo/503051075_medium.JPG"
-                  loading="lazy"
-                  data-index="gallery-image-2"
-                  sizes="(max-width: 390px) 300px, 570px"
-                  data-srcset="
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051075_small.JPG 220w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051075_medium.JPG 300w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051075_large.JPG 570w
-                                "
-                  srcSet="
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051075_small.JPG 220w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051075_medium.JPG 300w,
-                                    https://photos.puppyspot.com/7/listing/768727/photo/503051075_large.JPG 570w
-                                "
-                  src="https://photos.puppyspot.com/7/listing/768727/photo/503051075_medium.JPG"
-                />
-              </picture>
-
-              <div className="photo-count">5 / 5</div>
-            </div>
             <div className="gallery__label empty-space space-3"></div>
             <div className="gallery__label empty-space space-4"></div>
           </div>
         </section>
+
+
+
+
+
 
         <section className="puppy-profile__information">
           <div className="ps-breadcrumbs-small column">
@@ -438,7 +285,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
               </button>
               <button
                 className="favorite-puppy-circle js-favorite-puppy"
-                data-puppy="768727"
+                data-puppy={puppyInfo.puppy_id}
                 data-target="pdp"
                 onClick={()=> setLoingPopup(true)}
               ></button>
@@ -503,7 +350,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
           <section id="puppy-profile__cta-js-profile-ctas" className="puppy-profile__cta js-profile-ctas">
             <a
               className="button ghost js-open-puppy-request"
-              data-puppy="768727"
+              data-puppy={puppyInfo.puppy_id}
               data-cy="prf-trigger"
               onClick={()=> setAskAboutMePopup(true)}
             >
@@ -511,8 +358,8 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
             </a>
             <a
               className="button main js-funnel-cookie js-add-to-cart zrz-add-to-cart"
-              href="https://www.puppyspot.com/shop/checkout/details/768727"
-              data-puppy="768727"
+              href={`/shop/checkout/details/${puppyInfo.puppy_id}`}
+              data-puppy={puppyInfo.puppy_id}
               data-funnel="Profile"
               data-cy="cy-checkout"
             >
@@ -523,7 +370,7 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
             <p>
               <a
                 className="hyperlink js-financing"
-                data-puppy="768727"
+                data-puppy={puppyInfo.puppy_id}
                 href="https://www.puppyspot.com/financing/768727"
               >
                 Financing Options
@@ -962,8 +809,8 @@ const SinglePuppyContainer: React.FC<Props> = ({}) => {
           <div id="take-me-home-floating-btn" className="puppy-profile__floating-cta show-for-small js-floating-cta hidden">
             <a
               className="button main js-funnel-cookie js-floating-cta-button zrz-add-to-cart"
-              href="https://www.puppyspot.com/shop/checkout/details/768727"
-              data-puppy="768727"
+              href={`/shop/checkout/details/${puppyInfo.puppy_id}`}
+              data-puppy={puppyInfo.puppy_id}
               data-funnel="Profile"
             >
               Take Me Home

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../styles/checkout/detail.css'
 import '../../styles/checkout/detail2.css'
 import '../../styles/checkout/detail3.css'
@@ -7,15 +7,24 @@ import OrderSummary from '../../components/checkout-components/order-summary-bar
 import PrcessTracker from '../../components/checkout-components/process-tracker/ProcessTracker';
 import DetailsSection from '../../components/checkout-components/details-page';
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
+import { useParams } from 'react-router-dom';
+import allIndivialPuppies from '../../data/individual-puppy-data/individual_puppy1.json'
 
+
+function getObjectById(array: any[], id: string | undefined): any | undefined {
+  return array.find(item => item.puppy_id === id);
+}
 interface Props{
 }
 const CheckoutDetail: React.FC<Props> = ({}) => {
-    
-    // const {name, breed, sex} = {};
+    const { puppyId } = useParams();
+    const [ puppyInfo, setPuppyInfo ] = useState(getObjectById(allIndivialPuppies, puppyId))
+   
     useEffect(() =>{
         document.title = "Find the Right Puppy for Your Family | PuppySpot | PuppySpot";
     }, []);
+
+    
 
   return (
     <>
@@ -26,17 +35,17 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
 
            <div className='tw-flex tw-flex-col tw-justify-between tw-items-start tw-gap-8 lg:tw-flex-row sm:tw-mt-12'>
             
-             <DetailsSection />
+             <DetailsSection puppyInfo={puppyInfo}/>
 
 
-              <OrderSummary />
+              <OrderSummary puppyInfo={puppyInfo}/>
 
            </div>
 
 
       </section>
       <CheckoutFooter />
-      <OrderSummary/>
+      {/* <OrderSummary/> */}
     </>
   );
 }

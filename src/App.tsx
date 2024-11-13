@@ -100,6 +100,7 @@ function App() {
 
             <Route path="/puppies-for-sale" element={<PuppiesForSell />} />
             <Route path="/puppies-for-sale/breed/:breedSlug" element={<BreedPuppiesForSell />} />
+            <Route path="/puppies-for-sale/breed/:breedSlug/puppy/:puppyId" element={<SinglePuppy />} />
 
 
             <Route path="/breed" element={<Breed pureordesigner={''} />} />
@@ -112,8 +113,6 @@ function App() {
             <Route path="/breed/collections/allergy-friendly-dogs" element={<CharacteristicPuppyForSell charater={friendlyDogs} />} />
             <Route path="/breed/collections/teacup-puppies" element={<CharacteristicPuppyForSell charater={teaCupDogs} />} />
             <Route path="/breed/collections/doodle-puppies" element={<CharacteristicPuppyForSell charater={doodleDogs} />} />
-            
-            
 
 
             <Route path="/log-in" element={<Login />} />
@@ -123,12 +122,11 @@ function App() {
             <Route path="/careers" element={<Career />} />
             <Route path="/dog-registration" element={<DogRegistration />} />
             <Route path="/akc" element={<AKC />} />
-            <Route path="/single-puppy" element={<SinglePuppy />} />
-            <Route path="/shop/checkout/details/:puppy-id" element={<CheckoutDetail />} />
+            <Route path="/shop/checkout/details/:puppyId" element={<CheckoutDetail />} />
             {/* This path sould contain a uniqe session code after payment is register */}
-            <Route path="/shop/checkout/travel/:puppy-id" element={<CheckoutTravel />} />
-            <Route path="/shop/checkout/essentials/:puppy-id" element={<CheckoutEssentials />} />
-            <Route path="/shop/checkout/checkout/:puppy-id" element={<Checkout />} />
+            <Route path="/shop/checkout/travel/:puppyId" element={<CheckoutTravel />} />
+            <Route path="/shop/checkout/essentials/:puppyId" element={<CheckoutEssentials />} />
+            <Route path="/shop/checkout/checkout/:puppyId" element={<Checkout />} />
           </Routes>
         </Router>
       </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CheckoutNav from '../../components/checkout-components/nav/Nav';
 import OrderSummary from '../../components/checkout-components/order-summary-bar/OrderSummary';
 import PrcessTracker from '../../components/checkout-components/process-tracker/ProcessTracker';
@@ -6,11 +6,18 @@ import TravelSection from '../../components/checkout-components/travel-page';
 import OrderSummarySmall from '../../components/checkout-components/order-summary-small/OrderSummarySmall';
 import EssentialsSection from '../../components/checkout-components/essentials-page';
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
+import { useParams } from 'react-router-dom';
+import allIndivialPuppies from '../../data/individual-puppy-data/individual_puppy1.json'
 
+
+function getObjectById(array: any[], id: string | undefined): any | undefined {
+  return array.find(item => item.puppy_id === id);
+}
 interface Props{
 }
 const CheckoutEssentials: React.FC<Props> = ({}) => {
-    
+  const { puppyId } = useParams();
+  const [ puppyInfo, setPuppyInfo ] = useState(getObjectById(allIndivialPuppies, puppyId))
     useEffect(() =>{
         document.title = "Find the Right Puppy for Your Family | PuppySpot | PuppySpot";
     }, []);
@@ -26,7 +33,7 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
             
               <EssentialsSection />
 
-              <OrderSummary />
+              <OrderSummary puppyInfo={puppyInfo}/>
 
            </div>
 

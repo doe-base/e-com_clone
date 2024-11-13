@@ -1,34 +1,23 @@
 [
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/cocker-spaniel/puppy/776654",
-        "puppy_id": "Reva 776654",
+        "link": "/puppies-for-sale/breed/cocker-spaniel/puppy/776654",
+        "puppy_id": "776654",
         "breed": "Cocker Spaniel",
         "puppy_name": "Reva",
         "people_intrested": "21",
         "sex_and_age": "Female\n                        \u2022\n                        6 weeks",
+        "sex": "Female",
         "price": "$2692",
         "about": "Hi! My name is Reva and there is no need to look any further because I am the one for you! I promise to brighten your every morning with puppy kisses and snuggle with you every night. I have the nicest coat that just begs to be petted. I have a secret to share with you, too. I absolutely love to have my tummy rubbed! I love it so much that I will melt in your arms while you do it. Don't you want me to be the newest addition to your family? I will have a complete nose-to-tail vet check and my vaccinations will also be up to date. Choose me and I promise to make a lifetime of memories with you. I can't wait to leap in your arms and be yours forever!",
         "vaccinations_info": "Reva will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
-        "puppy_info_details": [
-            {
-                "Birthday": "September 30, 2024"
-            },
-            {
-                "Available": "November 26, 2024"
-            },
-            {
-                "Mom's Weight": "20 - 22 lbs"
-            },
-            {
-                "Dad's Weight": "25 - 30 lbs"
-            },
-            {
-                "Color": "Black & Tan"
-            },
-            {
-                "Registry": "APRI"
-            }
-        ],
+        "puppy_info_details": {
+            "Birthday": "September 30, 2024",
+            "Available": "November 26, 2024",
+            "Mom's Weight": "20 - 22 lbs",
+            "Dad's Weight": "25 - 30 lbs",
+            "Color": "Black & Tan",
+            "Registry": "APRI"
+        },
         "siblings": [
             {
                 "name": "Rosa",
@@ -92,9 +81,9 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776654/photo/503060929_large.jpg"
                 }
             },
             {
@@ -108,38 +97,39 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776654/photo/503060917_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776654/photo/503060922_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776654/photo/503060905_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/french-bulldog/puppy/775087",
-        "puppy_id": "Carson 775087",
+        "link": "/puppies-for-sale/breed/french-bulldog/puppy/775087",
+        "puppy_id": "775087",
         "breed": "French Bulldog",
         "puppy_name": "Carson",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        11 weeks",
+        "sex": "Male",
         "price": "$5098",
         "about": "Well, hello there! It is a pleasure to meet you. I am looking for the perfect family for me. I love being the center of attention and making my friends and family laugh. I am the all-around perfect pup! I look forward to my walks and nap times. Just put on a good movie and I will be there curled up right next to you before you know it. I promise to come home up to date on my puppy vaccinations and pre-spoiled. I am a very happy, healthy puppy and I am sure I will make that perfect addition to your loving family. Make me the newest member and I will be sure to have puppy kisses waiting just for you.",
         "vaccinations_info": "Carson will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -208,9 +198,9 @@
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775087/photo/503073174_large.jpg"
                 }
             },
             {
@@ -224,29 +214,30 @@
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775087/photo/503073175_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775087/photo/503073172_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/bernedoodle/puppy/774985",
-        "puppy_id": "Tucker 774985",
+        "link": "/puppies-for-sale/breed/bernedoodle/puppy/774985",
+        "puppy_id": "774985",
         "breed": "Bernedoodle",
         "puppy_name": "Tucker",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        14 weeks",
+        "sex": "Male",
         "price": "$2386",
         "about": "Meet Tucker! He is as handsome and loving as they come. Tucker will be sure to win your heart over with just one look. This little pup is always up for anything. He loves to play with toys. When he is all done with playtime, he will be the first one to curl right up to you for a good, old afternoon nap. Tucker will be coming home to you up to date on his vaccinations and will have a full head-to-tail checkup. Don't miss out on this lovable, handsome boy. He will surely be the perfect puppy addition to your family!",
         "vaccinations_info": "Tucker will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -301,9 +292,9 @@
                 "label_img_src": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/774985/photo/503059260_large.jpg"
                 }
             },
             {
@@ -317,38 +308,39 @@
                 "label_img_src": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/774985/photo/502992153_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/774985/photo/502992151_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/774985/photo/502992152_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/maltipoo/puppy/773964",
-        "puppy_id": "Oreo 773964",
+        "link": "/puppies-for-sale/breed/maltipoo/puppy/773964",
+        "puppy_id": "773964",
         "breed": "Maltipoo",
         "puppy_name": "Oreo",
         "people_intrested": "60",
         "sex_and_age": "Male\n                        \u2022\n                        10 weeks",
+        "sex": "Male",
         "price": "$2950",
         "about": "My name is Oreo and I believe in love. I believe in sharing smiles, hello hugs, and goodnight kisses. I believe in playing fair, taking turns, and holding hands or paws in my case. I believe in making wishes come true, and friendships last. If you believe in all of that too, make me yours. I promise to never let you down and to always be there when you need me.",
         "vaccinations_info": "Oreo will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -411,9 +403,9 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/773964/photo/503066042_large.jpg"
                 }
             },
             {
@@ -427,38 +419,39 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/773964/photo/503066041_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/773964/photo/503066043_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_small.JPG",
-                    "300w": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_large.JPG"
+                    "small": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_small.JPG",
+                    "medium": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_medium.JPG",
+                    "large": "https://photos.puppyspot.com/4/listing/773964/photo/503032083_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/yorkshire-terrier/puppy/768408",
-        "puppy_id": "Preston 768408",
+        "link": "/puppies-for-sale/breed/yorkshire-terrier/puppy/768408",
+        "puppy_id": "768408",
         "breed": "Yorkshire Terrier",
         "puppy_name": "Preston",
         "people_intrested": "7",
         "sex_and_age": "Male\n                        \u2022\n                        19 weeks",
+        "sex": "Male",
         "price": "$3496",
         "about": "I know what you are thinking. You are thinking that I am just too good to be true. Well, it's not a dream and you don't have to pinch yourself awake because I really can be yours! I have been staying here to get ready to be yours. I've been to the vet, and I've been making sure to keep up with my looks. I am all ready to head to my new home, so you better snatch me up before another family gets me! See you soon!",
         "vaccinations_info": "Preston will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -531,9 +524,9 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/768408/photo/503079542_large.jpg"
                 }
             },
             {
@@ -547,38 +540,39 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/768408/photo/503079530_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/768408/photo/503079536_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/768408/photo/503079500_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/french-bulldog/puppy/774902",
-        "puppy_id": "Lana 774902",
+        "link": "/puppies-for-sale/breed/french-bulldog/puppy/774902",
+        "puppy_id": "774902",
         "breed": "French Bulldog",
         "puppy_name": "Lana",
         "people_intrested": "7",
         "sex_and_age": "Female\n                        \u2022\n                        8 weeks",
+        "sex": "Female",
         "price": "$6898",
         "about": "Hi! There is no need to look any further because I am the one for you! I promise to brighten your every morning with puppy kisses and snuggle with you every night. I have the nicest coat that just begs to be petted. I have a secret to share with you, too. I absolutely love to have my tummy rubbed! I love it so much that I will melt in your arms while you do it. Don't you want me to be the newest addition to your family? I will have a complete nose to tail vet check and my vaccinations will also be up to date. Choose me and I promise to make a lifetime of memories with you. I can't wait to leap into your arms and be yours forever! Call today",
         "vaccinations_info": "Lana will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -654,9 +648,9 @@
                 "label_img_src": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/774902/photo/503082428_large.jpg"
                 }
             },
             {
@@ -670,38 +664,39 @@
                 "label_img_src": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/774902/photo/503082426_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/774902/photo/503082429_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/774902/photo/503082423_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/772885",
-        "puppy_id": "Diva 772885",
+        "link": "/puppies-for-sale/breed/goldendoodle/puppy/772885",
+        "puppy_id": "772885",
         "breed": "Goldendoodle",
         "puppy_name": "Diva",
         "people_intrested": "5",
         "sex_and_age": "Female\n                        \u2022\n                        12 weeks",
+        "sex": "Female",
         "price": "$2999",
         "about": "Hello! My name is Diva! Am I not the cutest puppy you have ever seen? That is what everyone keeps telling me. Not only am I cute, but I also have a great personality too. Before arriving home, I will be up to date on my vaccinations and be pre-spoiled. I will make the perfect best friend and companion! So, what are you waiting for? Choose me today!",
         "vaccinations_info": "Diva will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -760,9 +755,9 @@
                 "label_img_src": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_small.JPG",
-                    "300w": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_large.JPG"
+                    "small": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_small.JPG",
+                    "medium": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_medium.JPG",
+                    "large": "https://photos.puppyspot.com/5/listing/772885/photo/503040505_large.JPG"
                 }
             },
             {
@@ -776,38 +771,39 @@
                 "label_img_src": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_small.JPG",
-                    "300w": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_large.JPG"
+                    "small": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_small.JPG",
+                    "medium": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_medium.JPG",
+                    "large": "https://photos.puppyspot.com/5/listing/772885/photo/503040503_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_small.JPG",
-                    "300w": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_large.JPG"
+                    "small": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_small.JPG",
+                    "medium": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_medium.JPG",
+                    "large": "https://photos.puppyspot.com/5/listing/772885/photo/503040507_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_small.JPG",
-                    "300w": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_large.JPG"
+                    "small": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_small.JPG",
+                    "medium": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_medium.JPG",
+                    "large": "https://photos.puppyspot.com/5/listing/772885/photo/503040501_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/776019",
-        "puppy_id": "Irvin 776019",
+        "link": "/puppies-for-sale/breed/goldendoodle/puppy/776019",
+        "puppy_id": "776019",
         "breed": "Goldendoodle",
         "puppy_name": "Irvin",
         "people_intrested": "264",
         "sex_and_age": "Male\n                        \u2022\n                        8 weeks",
+        "sex": "Male",
         "price": "$3899",
         "about": "I'm Irvin! It's very nice to meet you. Are you looking for a lifelong companion? Look no further. I am here and just perfect for you. Trust me! I am very loyal, and I can make you smile with just the way I wag my tail. I have a wonderful disposition. Oh! Did I mention that I'm as healthy as can be? Oh, silly me! I'm up to date on my vaccinations and vet checked from head to tail. I bet you are excited now, aren't you? Well, choose me today!",
         "vaccinations_info": "Irvin will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -894,9 +890,9 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776019/photo/503063018_large.JPG"
                 }
             },
             {
@@ -910,38 +906,39 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776019/photo/503063017_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776019/photo/503063016_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776019/photo/503063015_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/bernedoodle/puppy/777264",
-        "puppy_id": "Annie 777264",
+        "link": "/puppies-for-sale/breed/bernedoodle/puppy/777264",
+        "puppy_id": "777264",
         "breed": "Bernedoodle",
         "puppy_name": "Annie",
         "people_intrested": "35",
         "sex_and_age": "Female\n                        \u2022\n                        5 weeks",
+        "sex": "Female",
         "price": "$4036",
         "about": "Are you looking for the best puppy ever? Well, you found me! My name is Annie and I am the best! How do I know? Well, just look at me. Aren't I adorable? Also, I come up to date on my vaccinations and vet checked from head to tail, so not only am I cute, but healthy too! I promise to be on my best behavior when I'm with my new family. I'm just a bundle of joy to have around. So, hurry and pick me to show off what an excellent puppy you have!",
         "vaccinations_info": "Annie will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1021,38 +1018,39 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/777264/photo/503077072_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/777264/photo/503077070_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/777264/photo/503077071_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/miniature-schnauzer/puppy/776730",
-        "puppy_id": "Dare 776730",
+        "link": "/puppies-for-sale/breed/miniature-schnauzer/puppy/776730",
+        "puppy_id": "776730",
         "breed": "Miniature Schnauzer",
         "puppy_name": "Dare",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        4 weeks",
+        "sex": "Male",
         "price": "$3444",
         "about": "Are you looking for the best puppy ever? Well, you found me! My name is Dare and I am the best! How do I know? Well, just look at me. Aren't I adorable? Also, I come up to date on my vaccinations and vet checked from head to tail, so not only am I cute, but healthy too! I promise to be on my best behavior when I'm with my new family. I'm just a bundle of joy to have around. So, hurry and pick me to show off what an excellent puppy you have",
         "vaccinations_info": "Dare will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1125,9 +1123,9 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/776730/photo/503055306_large.jpg"
                 }
             },
             {
@@ -1141,29 +1139,30 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/776730/photo/503055307_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/776730/photo/503055308_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/775567",
-        "puppy_id": "Rex 775567",
+        "link": "/puppies-for-sale/breed/goldendoodle/puppy/775567",
+        "puppy_id": "775567",
         "breed": "Goldendoodle",
         "puppy_name": "Rex",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        9 weeks",
+        "sex": "Male",
         "price": "$3299",
         "about": "Are you looking for the best puppy ever? Well, you found me! My name is Rex, and I am the best! How do I know? Well, just look at me. Aren't I adorable? Also, I come up to date on my vaccinations and vet checked from head to tail, so not only am I cute, but healthy too! I promise to be on my best behavior when I'm with my new family. I'm just a bundle of joy to have around. So, hurry and pick me to show off what an excellent puppy you have!",
         "vaccinations_info": "Rex will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1229,9 +1228,9 @@
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775567/photo/503053615_large.jpg"
                 }
             },
             {
@@ -1245,38 +1244,39 @@
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775567/photo/503053614_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775567/photo/503053613_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_small.jpg",
-                    "300w": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_large.jpg"
+                    "small": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_small.jpg",
+                    "medium": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_medium.jpg",
+                    "large": "https://photos.puppyspot.com/7/listing/775567/photo/503053612_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/772924",
-        "puppy_id": "Luke 772924",
+        "link": "/puppies-for-sale/breed/poodle/puppy/772924",
+        "puppy_id": "772924",
         "breed": "Poodle",
         "puppy_name": "Luke",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        13 weeks",
+        "sex": "Male",
         "price": "$2549",
         "about": "Thank you for stopping by to check me out! My name is Luke! You can search the world and not find a sweeter puppy than me. Some may say that I am spoiled, but I think that I am just well-loved. I would be more than honored if you choose me to love you fur-ever. I promise that every day we spend together will be special. We can play, cuddle, and laugh at all the silly things we will do. Please call now! I want to start planning all the fun things that best friends do!",
         "vaccinations_info": "Luke will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1331,9 +1331,9 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/772924/photo/503076790_large.jpg"
                 }
             },
             {
@@ -1347,29 +1347,30 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/772924/photo/503076791_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/772924/photo/503076792_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/havanese/puppy/773793",
-        "puppy_id": "Kyle 773793",
+        "link": "/puppies-for-sale/breed/havanese/puppy/773793",
+        "puppy_id": "773793",
         "breed": "Havanese",
         "puppy_name": "Kyle",
         "people_intrested": "122",
         "sex_and_age": "Male\n                        \u2022\n                        11 weeks",
+        "sex": "Male",
         "price": "$2793",
         "about": "Hi! I'm Kyle. I'm currently searching for a good, loving home. I hope to find a family that loves to play and loves to receive puppy kisses! I'm good at giving out plenty. Whether we are playing or cuddling together, I promise to be your most loving companion. I will arrive at my new home up to date on vaccinations and pre-spoiled. I can't wait to meet you. I have so much fun planned for us! See you soon!",
         "vaccinations_info": "Kyle will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1442,9 +1443,9 @@
                 "label_img_src": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_small.jpg",
-                    "300w": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_large.jpg"
+                    "small": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_small.jpg",
+                    "medium": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_medium.jpg",
+                    "large": "https://photos.puppyspot.com/3/listing/773793/photo/503062423_large.jpg"
                 }
             },
             {
@@ -1458,29 +1459,30 @@
                 "label_img_src": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_small.jpg",
-                    "300w": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_large.jpg"
+                    "small": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_small.jpg",
+                    "medium": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_medium.jpg",
+                    "large": "https://photos.puppyspot.com/3/listing/773793/photo/503062426_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_small.jpg",
-                    "300w": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_large.jpg"
+                    "small": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_small.jpg",
+                    "medium": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_medium.jpg",
+                    "large": "https://photos.puppyspot.com/3/listing/773793/photo/503062424_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/yorkshire-terrier/puppy/776574",
-        "puppy_id": "Gina 776574",
+        "link": "/puppies-for-sale/breed/yorkshire-terrier/puppy/776574",
+        "puppy_id": "776574",
         "breed": "Yorkshire Terrier",
         "puppy_name": "Gina",
         "people_intrested": "5",
         "sex_and_age": "Female\n                        \u2022\n                        5 weeks",
+        "sex": "Female",
         "price": "$3646",
         "about": "Thank you for stopping by to check me out! My name is Gina! You can search the world and not find a sweeter puppy than me. Some may say that I am spoiled, but I think that I am just well loved. I would be more than honored if you choose me to love you fur-ever. I promise that every day we spend together will be special. We can play, cuddle, and laugh at all the silly things we will do. Please call now! I want to start planning all the fun things that best friends do!",
         "vaccinations_info": "Gina will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1532,9 +1534,9 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776574/photo/503073553_large.jpg"
                 }
             },
             {
@@ -1548,38 +1550,39 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776574/photo/503073552_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776574/photo/503073540_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776574/photo/503073551_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/cocker-spaniel/puppy/776836",
-        "puppy_id": "Cali 776836",
+        "link": "/puppies-for-sale/breed/cocker-spaniel/puppy/776836",
+        "puppy_id": "776836",
         "breed": "Cocker Spaniel",
         "puppy_name": "Cali",
         "people_intrested": "76",
         "sex_and_age": "Female\n                        \u2022\n                        7 weeks",
+        "sex": "Female",
         "price": "$2842",
         "about": "Hello! I'm really excited to meet my new fur-ever family. My name is Cali. Aren\u2019t I adorable?  I am a beautiful buff and white girl. My fur is so soft and luscious! The nice people here have been telling me about how much fun I'll have when I get to my new home! I am outgoing and love kids. I love to play with other dogs as well. I have loads of personality! I am ready to learn new tricks, explore your home, and maybe just nap on the couch with you! I really hope you are my new family because I'm ready to meet you! I come up to date on my vaccinations and vet checked from head to tail, so not only am I cute, but healthy too! Call about me today! I can't wait to meet you!",
         "vaccinations_info": "Cali will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1638,9 +1641,9 @@
                 "label_img_src": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_small.JPG",
-                    "300w": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_large.JPG"
+                    "small": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_small.JPG",
+                    "medium": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_medium.JPG",
+                    "large": "https://photos.puppyspot.com/6/listing/776836/photo/503061628_large.JPG"
                 }
             },
             {
@@ -1654,38 +1657,39 @@
                 "label_img_src": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_small.JPG",
-                    "300w": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_large.JPG"
+                    "small": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_small.JPG",
+                    "medium": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_medium.JPG",
+                    "large": "https://photos.puppyspot.com/6/listing/776836/photo/503061633_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_small.JPG",
-                    "300w": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_large.JPG"
+                    "small": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_small.JPG",
+                    "medium": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_medium.JPG",
+                    "large": "https://photos.puppyspot.com/6/listing/776836/photo/503061631_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_small.JPG",
-                    "300w": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_large.JPG"
+                    "small": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_small.JPG",
+                    "medium": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_medium.JPG",
+                    "large": "https://photos.puppyspot.com/6/listing/776836/photo/503061632_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/maltipoo/puppy/772258",
-        "puppy_id": "Honey 772258",
+        "link": "/puppies-for-sale/breed/maltipoo/puppy/772258",
+        "puppy_id": "772258",
         "breed": "Maltipoo",
         "puppy_name": "Honey",
         "people_intrested": "8",
         "sex_and_age": "Female\n                        \u2022\n                        14 weeks",
+        "sex": "Female",
         "price": "$2200",
         "about": "Hi! I'm currently searching for a good, loving home. I hope to find a family that loves to play and loves to receive puppy kisses! I'm good at giving out plenty. Whether we are playing or cuddling together, I promise to be your most loving companion. I will arrive at my new home up to date on vaccinations and pre-spoiled. I can't wait to meet you. I have so much fun planned for us! See you soon!",
         "vaccinations_info": "Honey will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1741,9 +1745,9 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/772258/photo/503062859_large.jpg"
                 }
             },
             {
@@ -1757,38 +1761,39 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/772258/photo/503062865_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/772258/photo/503062867_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/772258/photo/503062868_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/maltipoo/puppy/776918",
-        "puppy_id": "Bessie 776918",
+        "link": "/puppies-for-sale/breed/maltipoo/puppy/776918",
+        "puppy_id": "776918",
         "breed": "Maltipoo",
         "puppy_name": "Bessie",
         "people_intrested": "N/A",
         "sex_and_age": "Female\n                        \u2022\n                        7 weeks",
+        "sex": "Female",
         "price": "$2950",
         "about": "Are you looking for the best puppy ever? Well, you found me! My name is Bessie, and I am the best! How do I know? Well, just look at me. Aren't I adorable? Also, I come up to date on my vaccinations and vet checked from head to tail, so not only am I cute, but healthy too! I promise to be on my best behavior when I'm with my new family. I'm just a bundle of joy to have around. So, hurry and pick me to show off what an excellent puppy you have!",
         "vaccinations_info": "Bessie will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1851,9 +1856,9 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/776918/photo/503063791_large.jpg"
                 }
             },
             {
@@ -1867,29 +1872,30 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/776918/photo/503063789_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/776918/photo/503063794_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/beagle/puppy/777471",
-        "puppy_id": "Cookie 777471",
+        "link": "/puppies-for-sale/breed/beagle/puppy/777471",
+        "puppy_id": "777471",
         "breed": "Beagle",
         "puppy_name": "Cookie",
         "people_intrested": "37",
         "sex_and_age": "Female\n                        \u2022\n                        5 weeks",
+        "sex": "Female",
         "price": "$3392",
         "about": "Cookie is an absolutely scrumptious blue merle tri-colored Beagle girl. To look at her is to see true beauty! She will definitely stand out in a crowd and be the center of attention with her unique and soft coat with her sprinkles of color! Cookie which is super fun and loving enjoys bouncing around and playing with the other dogs, big and small. She seriously sprinkles so much joy into everyone that gets to meet her! Cookie would add the perfect amount of sugar, spice, and everything nice to any lucky home! Snatch her up before your opportunity crumbles away!",
         "vaccinations_info": "Cookie will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -1955,47 +1961,48 @@
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_small.jpg",
-                    "300w": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_large.jpg"
+                    "small": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_small.jpg",
+                    "medium": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_medium.jpg",
+                    "large": "https://photos.puppyspot.com/1/listing/777471/photo/503085615_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_small.jpg",
-                    "300w": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_large.jpg"
+                    "small": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_small.jpg",
+                    "medium": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_medium.jpg",
+                    "large": "https://photos.puppyspot.com/1/listing/777471/photo/503085616_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_small.jpg",
-                    "300w": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_large.jpg"
+                    "small": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_small.jpg",
+                    "medium": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_medium.jpg",
+                    "large": "https://photos.puppyspot.com/1/listing/777471/photo/503085617_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_small.jpg",
-                    "300w": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_large.jpg"
+                    "small": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_small.jpg",
+                    "medium": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_medium.jpg",
+                    "large": "https://photos.puppyspot.com/1/listing/777471/photo/503085619_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/yorkshire-terrier/puppy/774998",
-        "puppy_id": "Kylie 774998",
+        "link": "/puppies-for-sale/breed/yorkshire-terrier/puppy/774998",
+        "puppy_id": "774998",
         "breed": "Yorkshire Terrier",
         "puppy_name": "Kylie",
         "people_intrested": "7",
         "sex_and_age": "Female\n                        \u2022\n                        8 weeks",
+        "sex": "Female",
         "price": "$3346",
         "about": "Hello there! My name is Kylie. I am looking for a loving, new family. I have a wonderful, rich, and soft coat. Am I your future family member? I like to be held, but I also like to follow you everywhere. I will come to you up to date vaccinations and vet checked. So, if you are my new family, please call right away. Get ready for all the puppy love and kisses I have in store for you.",
         "vaccinations_info": "Kylie will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2054,9 +2061,9 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/774998/photo/503068266_large.jpg"
                 }
             },
             {
@@ -2070,38 +2077,39 @@
                 "label_img_src": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/774998/photo/503068265_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/774998/photo/503068264_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_small.jpg",
-                    "300w": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_large.jpg"
+                    "small": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_small.jpg",
+                    "medium": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_medium.jpg",
+                    "large": "https://photos.puppyspot.com/8/listing/774998/photo/503068263_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/boxer/puppy/777032",
-        "puppy_id": "Slater 777032",
+        "link": "/puppies-for-sale/breed/boxer/puppy/777032",
+        "puppy_id": "777032",
         "breed": "Boxer",
         "puppy_name": "Slater",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        8 weeks",
+        "sex": "Male",
         "price": "$3598",
         "about": "My name is Slater. I am the sweetest puppy you will ever meet. I like to play by day and cuddle at night. I love to run and roll around outside. But, my favorite thing to do after a long day at play is to snuggle up on the couch next to my family and sleep as they pet my head. I will come up to date on my vaccinations and vet checked. Please call about me. I can't wait to meet you!",
         "vaccinations_info": "Slater will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2174,9 +2182,9 @@
                 "label_img_src": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/777032/photo/503069432_large.jpg"
                 }
             },
             {
@@ -2190,38 +2198,39 @@
                 "label_img_src": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/777032/photo/503069428_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/777032/photo/503069431_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_small.jpg",
-                    "300w": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_large.jpg"
+                    "small": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_small.jpg",
+                    "medium": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_medium.jpg",
+                    "large": "https://photos.puppyspot.com/2/listing/777032/photo/503069430_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/776592",
-        "puppy_id": "Oliver 776592",
+        "link": "/puppies-for-sale/breed/goldendoodle/puppy/776592",
+        "puppy_id": "776592",
         "breed": "Goldendoodle",
         "puppy_name": "Oliver",
         "people_intrested": "108",
         "sex_and_age": "Male\n                        \u2022\n                        6 weeks",
+        "sex": "Male",
         "price": "$3899",
         "about": "I'm Oliver! It's very nice to meet you. Are you looking for a lifelong companion? Look no further. I am here and just perfect for you. Trust me! I am very loyal, and I can make you smile with just the way I wag my tail. I have a wonderful disposition. Oh! Did I mention that I'm as healthy as can be? Oh, silly me! I'm up to date on my vaccinations and vet checked from head to tail. I bet you are excited now, aren't you? Well, choose me today!",
         "vaccinations_info": "Oliver will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2280,9 +2289,9 @@
                 "label_img_src": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_small.JPG",
-                    "300w": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_large.JPG"
+                    "small": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_small.JPG",
+                    "medium": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_medium.JPG",
+                    "large": "https://photos.puppyspot.com/2/listing/776592/photo/503051378_large.JPG"
                 }
             },
             {
@@ -2296,38 +2305,39 @@
                 "label_img_src": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_small.JPG",
-                    "300w": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_large.JPG"
+                    "small": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_small.JPG",
+                    "medium": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_medium.JPG",
+                    "large": "https://photos.puppyspot.com/2/listing/776592/photo/503051375_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_small.JPG",
-                    "300w": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_large.JPG"
+                    "small": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_small.JPG",
+                    "medium": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_medium.JPG",
+                    "large": "https://photos.puppyspot.com/2/listing/776592/photo/503051372_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_small.JPG",
-                    "300w": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_large.JPG"
+                    "small": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_small.JPG",
+                    "medium": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_medium.JPG",
+                    "large": "https://photos.puppyspot.com/2/listing/776592/photo/503051371_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/777014",
-        "puppy_id": "Moe 777014",
+        "link": "/puppies-for-sale/breed/goldendoodle/puppy/777014",
+        "puppy_id": "777014",
         "breed": "Goldendoodle",
         "puppy_name": "Moe",
         "people_intrested": "28",
         "sex_and_age": "Male\n                        \u2022\n                        4 weeks",
+        "sex": "Male",
         "price": "$3299",
         "about": "Hi, I'm Moe! It's very nice to meet you. I am a very outgoing puppy looking for a family where I would fit in! If you think you could be that family, hurry up and pick me up. I will be up to date on my vaccinations before coming home to you, so we can play as soon as I get there. I'm very excited about meeting my new family, so please don't make me wait too long!",
         "vaccinations_info": "Moe will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2396,9 +2406,9 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/777014/photo/503068726_large.jpg"
                 }
             },
             {
@@ -2412,29 +2422,30 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/777014/photo/503068709_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/777014/photo/503068708_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/769869",
-        "puppy_id": "Joy 769869",
+        "link": "/puppies-for-sale/breed/cavalier-king-charles-spaniel/puppy/769869",
+        "puppy_id": "769869",
         "breed": "Cavalier King Charles Spaniel",
         "puppy_name": "Joy",
         "people_intrested": "7",
         "sex_and_age": "Female\n                        \u2022\n                        25 weeks",
+        "sex": "Female",
         "price": "$2749",
         "about": "Hi, I'm Joy! It's very nice to meet you. I am a very outgoing puppy looking for a family where I would fit in! If you think you could be that family, hurry up and pick me up. I will be up to date on my vaccinations before coming home to you, so we can play as soon as I get there. I'm very excited about meeting my new family, so please don't make me wait too long!",
         "vaccinations_info": "Joy will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2507,9 +2518,9 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/769869/photo/503064540_large.jpg"
                 }
             },
             {
@@ -2523,38 +2534,39 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/769869/photo/503064539_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/769869/photo/503064537_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/769869/photo/503064534_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/pomeranian/puppy/776859",
-        "puppy_id": "Dotty 776859",
+        "link": "/puppies-for-sale/breed/pomeranian/puppy/776859",
+        "puppy_id": "776859",
         "breed": "Pomeranian",
         "puppy_name": "Dotty",
         "people_intrested": "58",
         "sex_and_age": "Female\n                        \u2022\n                        6 weeks",
+        "sex": "Female",
         "price": "$3252",
         "about": "Hello! My name is Dotty! Am I not the cutest puppy you have ever seen? That is what everyone keeps telling me. Not only am I cute, but I also have a great personality too. Before arriving home, I will be up to date on my vaccinations and be pre-spoiled. I will make the perfect best friend and companion! So, what are you waiting for? Choose me today!",
         "vaccinations_info": "Dotty will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2606,9 +2618,9 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776859/photo/503086553_large.JPG"
                 }
             },
             {
@@ -2622,38 +2634,39 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776859/photo/503086552_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776859/photo/503086554_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_small.JPG",
-                    "300w": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_large.JPG"
+                    "small": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_small.JPG",
+                    "medium": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_medium.JPG",
+                    "large": "https://photos.puppyspot.com/9/listing/776859/photo/503061430_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/maltipoo/puppy/776659",
-        "puppy_id": "Ryder 776659",
+        "link": "/puppies-for-sale/breed/maltipoo/puppy/776659",
+        "puppy_id": "776659",
         "breed": "Maltipoo",
         "puppy_name": "Ryder",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        6 weeks",
+        "sex": "Male",
         "price": "$2950",
         "about": "Hi, I'm Ryder! It's very nice to meet you. I am a very outgoing puppy looking for a family where I would fit in! If you think you could be that family, hurry up and pick me up. I will be up to date on my vaccinations before coming home to you, so we can play as soon as I get there. I'm very excited about meeting my new family, so please don't make me wait too long!",
         "vaccinations_info": "Ryder will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2723,9 +2736,9 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/776659/photo/503054957_large.jpg"
                 }
             },
             {
@@ -2739,38 +2752,39 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/776659/photo/503054956_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/776659/photo/503054955_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/776659/photo/503054954_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/maltipoo/puppy/765416",
-        "puppy_id": "Ricky 765416",
+        "link": "/puppies-for-sale/breed/maltipoo/puppy/765416",
+        "puppy_id": "765416",
         "breed": "Maltipoo",
         "puppy_name": "Ricky",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        25 weeks",
+        "sex": "Male",
         "price": "$2100",
         "about": "That's me in the picture! If you are reading this, you probably already think I'm the pick of the litter. I agree. My breeder tells me that I am going to go places in life. Maybe one of those places should be your place. Call that phone number over there and tell them I'm the pup for you. They will answer all of your questions and make sure I find my way to your home. You know my personality outshines the rest, so don't think I'm going to stick around too long. Get calling!",
         "vaccinations_info": "Ricky will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2836,9 +2850,9 @@
                 "label_img_src": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_small.jpg",
-                    "300w": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_large.jpg"
+                    "small": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_small.jpg",
+                    "medium": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_medium.jpg",
+                    "large": "https://photos.puppyspot.com/6/listing/765416/photo/503060300_large.jpg"
                 }
             },
             {
@@ -2852,38 +2866,39 @@
                 "label_img_src": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_small.jpg",
-                    "300w": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_large.jpg"
+                    "small": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_small.jpg",
+                    "medium": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_medium.jpg",
+                    "large": "https://photos.puppyspot.com/6/listing/765416/photo/503060301_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_small.jpg",
-                    "300w": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_large.jpg"
+                    "small": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_small.jpg",
+                    "medium": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_medium.jpg",
+                    "large": "https://photos.puppyspot.com/6/listing/765416/photo/503060302_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_small.jpg",
-                    "300w": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_large.jpg"
+                    "small": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_small.jpg",
+                    "medium": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_medium.jpg",
+                    "large": "https://photos.puppyspot.com/6/listing/765416/photo/503060303_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/shihpoo/puppy/772069",
-        "puppy_id": "Finley 772069",
+        "link": "/puppies-for-sale/breed/shihpoo/puppy/772069",
+        "puppy_id": "772069",
         "breed": "Shihpoo",
         "puppy_name": "Finley",
         "people_intrested": "23",
         "sex_and_age": "Male\n                        \u2022\n                        15 weeks",
+        "sex": "Male",
         "price": "$1697",
         "about": "Hey there, I'm Finley, a handsome, dark sable, fluffy dude indeed! I am just a squish who loves to snuggle by your side and to play with you! I am looking for that perfect loyal friend in my life to just spoil me in every single way possible! I would love fetch and snuggle, and sleep with you! I can just imagine what a bright future I have, and I literally cannot wait! I have my bags packed so once I grow up, I can go home with you!",
         "vaccinations_info": "Finley will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -2953,9 +2968,9 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/772069/photo/503050802_large.jpg"
                 }
             },
             {
@@ -2969,38 +2984,39 @@
                 "label_img_src": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/772069/photo/503050804_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/772069/photo/503050806_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_small.jpg",
-                    "300w": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_large.jpg"
+                    "small": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_small.jpg",
+                    "medium": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_medium.jpg",
+                    "large": "https://photos.puppyspot.com/9/listing/772069/photo/503050807_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/aussiedoodle/puppy/777321",
-        "puppy_id": "Chandler 777321",
+        "link": "/puppies-for-sale/breed/aussiedoodle/puppy/777321",
+        "puppy_id": "777321",
         "breed": "Aussiedoodle",
         "puppy_name": "Chandler",
         "people_intrested": "N/A",
         "sex_and_age": "Male\n                        \u2022\n                        6 weeks",
+        "sex": "Male",
         "price": "$2345",
         "about": "I'm Chandler! It's very nice to meet you. Are you looking for a lifelong companion? Look no further. I am here and just perfect for you. Trust me! I am very loyal, and I can make you smile with just the way I wag my tail. I have a wonderful disposition. Oh! Did I mention that I'm as healthy as can be? Oh, silly me! I'm up to date on my vaccinations and vet checked from head to tail. I bet you are excited now, aren't you? Well, choose me today!",
         "vaccinations_info": "Chandler will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -3069,9 +3085,9 @@
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_small.JPG",
-                    "300w": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_large.JPG"
+                    "small": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_small.JPG",
+                    "medium": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_medium.JPG",
+                    "large": "https://photos.puppyspot.com/1/listing/777321/photo/503079270_large.JPG"
                 }
             },
             {
@@ -3085,38 +3101,39 @@
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_small.JPG",
-                    "300w": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_large.JPG"
+                    "small": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_small.JPG",
+                    "medium": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_medium.JPG",
+                    "large": "https://photos.puppyspot.com/1/listing/777321/photo/503079271_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_small.JPG",
-                    "300w": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_large.JPG"
+                    "small": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_small.JPG",
+                    "medium": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_medium.JPG",
+                    "large": "https://photos.puppyspot.com/1/listing/777321/photo/503079278_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_small.JPG",
-                    "300w": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_large.JPG"
+                    "small": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_small.JPG",
+                    "medium": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_medium.JPG",
+                    "large": "https://photos.puppyspot.com/1/listing/777321/photo/503079265_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/bernedoodle/puppy/776800",
-        "puppy_id": "Saffron 776800",
+        "link": "/puppies-for-sale/breed/bernedoodle/puppy/776800",
+        "puppy_id": "776800",
         "breed": "Bernedoodle",
         "puppy_name": "Saffron",
         "people_intrested": "N/A",
         "sex_and_age": "Female\n                        \u2022\n                        4 weeks",
+        "sex": "Female",
         "price": "$3686",
         "about": "My name is Saffron. You could say action is my middle name and loving is my game. I love long walks on the beach and don\u2019t mind staying up all night cuddling. I love a good book with a nice dog bone close by. Movie night is my favorite; Lady and the Tramp is my favorite of course. Don\u2019t worry, I have enough love to go around for everyone! I am game for any lifestyle. If you are looking for adventure and unconditional love, then call in and ask for me!",
         "vaccinations_info": "Saffron will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -3189,9 +3206,9 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/776800/photo/503060019_large.jpg"
                 }
             },
             {
@@ -3205,29 +3222,30 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/776800/photo/503060018_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/776800/photo/503060016_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/yorkshire-terrier/puppy/770625",
-        "puppy_id": "Denver 770625",
+        "link": "/puppies-for-sale/breed/yorkshire-terrier/puppy/770625",
+        "puppy_id": "770625",
         "breed": "Yorkshire Terrier",
         "puppy_name": "Denver",
         "people_intrested": "6",
         "sex_and_age": "Male\n                        \u2022\n                        19 weeks",
+        "sex": "Male",
         "price": "$2546",
         "about": "Hi! I am the keeper of all squeaky toys. If it\u2019s on the floor, I own it. If it has peanut butter on it, then yes, I probably licked it. I am a confident little pup, and I plan to win the hearts of all I meet. I like belly rubs, lots of hugs and pats on the head, so I know when I\u2019m being good. I\u2019ll be up to date on my vaccinations and vet checks, so I plan on being a loyal and healthy companion to my new family. I'll be here with my squeaky toys and peanut butter, waiting for your call! Don't miss out on me!",
         "vaccinations_info": "Denver will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -3279,9 +3297,9 @@
                 "label_img_src": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/770625/photo/503069044_large.jpg"
                 }
             },
             {
@@ -3295,29 +3313,30 @@
                 "label_img_src": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/770625/photo/503069045_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_small.jpg",
-                    "300w": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_large.jpg"
+                    "small": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_small.jpg",
+                    "medium": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_medium.jpg",
+                    "large": "https://photos.puppyspot.com/5/listing/770625/photo/503069046_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/pembroke-welsh-corgi/puppy/776644",
-        "puppy_id": "Alyce 776644",
+        "link": "/puppies-for-sale/breed/pembroke-welsh-corgi/puppy/776644",
+        "puppy_id": "776644",
         "breed": "Pembroke Welsh Corgi",
         "puppy_name": "Alyce",
         "people_intrested": "N/A",
         "sex_and_age": "Female\n                        \u2022\n                        6 weeks",
+        "sex": "Female",
         "price": "$2597",
         "about": "Hello! My name is Alyce and I would love to come home to you! I'm the sweetest, cutest, softest and cuddliest puppy you could ever bring home. I will be your best friend forever, no questions asked! I know that I will be the perfect fit. I will come home up to date on my vaccinations, so all you will have to do is snuggle me! I'm the best at that. I'm a super happy puppy and I love to play with whomever is up for it. If you want the best in breed, then pick me! I promise to give you a lifetime of puppy kisses and a tail-wagging good time! If you are looking for the perfect pup, I'm the one for you.",
         "vaccinations_info": "Alyce will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -3407,9 +3426,9 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776644/photo/503054803_large.jpg"
                 }
             },
             {
@@ -3423,38 +3442,39 @@
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776644/photo/503054810_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776644/photo/503054805_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_small.jpg",
-                    "300w": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_large.jpg"
+                    "small": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_small.jpg",
+                    "medium": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_medium.jpg",
+                    "large": "https://photos.puppyspot.com/4/listing/776644/photo/503054804_large.jpg"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/goldendoodle/puppy/772250",
-        "puppy_id": "Polly 772250",
+        "link": "/puppies-for-sale/breed/goldendoodle/puppy/772250",
+        "puppy_id": "772250",
         "breed": "Goldendoodle",
         "puppy_name": "Polly",
         "people_intrested": "N/A",
         "sex_and_age": "Female\n                        \u2022\n                        14 weeks",
+        "sex": "Female",
         "price": "$2549",
         "about": "Meet Polly, the mini Goldendoodle with a heart as golden as her curly coat. With her compact size and boundless energy, Polly is the perfect blend of cuddly companion and adventurous sidekick, ready to charm her way into your heart with every playful bounce. She will be updated on vaccinations, vet checked, and pre-spoiled! She would love to be your best friend. Hurry, her bags are packed and she's ready to venture into her new home!",
         "vaccinations_info": "Polly will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -3509,9 +3529,9 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_small.JPG",
-                    "300w": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_large.JPG"
+                    "small": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_small.JPG",
+                    "medium": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_medium.JPG",
+                    "large": "https://photos.puppyspot.com/0/listing/772250/photo/503066254_large.JPG"
                 }
             },
             {
@@ -3525,38 +3545,39 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_small.JPG",
-                    "300w": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_large.JPG"
+                    "small": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_small.JPG",
+                    "medium": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_medium.JPG",
+                    "large": "https://photos.puppyspot.com/0/listing/772250/photo/503066255_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_small.JPG",
-                    "300w": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_large.JPG"
+                    "small": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_small.JPG",
+                    "medium": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_medium.JPG",
+                    "large": "https://photos.puppyspot.com/0/listing/772250/photo/503066256_large.JPG"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_small.JPG",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_small.JPG",
-                    "300w": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_medium.JPG",
-                    "570w": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_large.JPG"
+                    "small": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_small.JPG",
+                    "medium": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_medium.JPG",
+                    "large": "https://photos.puppyspot.com/0/listing/772250/photo/503066257_large.JPG"
                 }
             }
         ]
     },
     {
-        "link": "https://www.puppyspot.com/puppies-for-sale/breed/poodle/puppy/772480",
-        "puppy_id": "Autumn 772480",
+        "link": "/puppies-for-sale/breed/poodle/puppy/772480",
+        "puppy_id": "772480",
         "breed": "Poodle",
         "puppy_name": "Autumn",
         "people_intrested": "N/A",
         "sex_and_age": "Female\n                        \u2022\n                        17 weeks",
+        "sex": "Female",
         "price": "$2449",
         "about": "Ready for a lifetime of endless love? Then look no further, because I am going to do my very best to always please you. I will love you and be your fur-ever best friend. I come up to date on my vaccinations and am ready to come home to play. Just look at me and you will see that I will complete you. I hope you pick me, as I have been custom-made for someone special.",
         "vaccinations_info": "Autumn will be current onvaccinations&vet\n                                examsbefore\n                            going home.",
@@ -3611,9 +3632,9 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/772480/photo/503039173_large.jpg"
                 }
             },
             {
@@ -3627,27 +3648,27 @@
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/772480/photo/503039176_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/772480/photo/503039175_large.jpg"
                 }
             },
             {
                 "label_img_src": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_small.jpg",
                 "gallery_type": "image",
                 "urls": {
-                    "220w": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_small.jpg",
-                    "300w": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_medium.jpg",
-                    "570w": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_large.jpg"
+                    "small": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_small.jpg",
+                    "medium": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_medium.jpg",
+                    "large": "https://photos.puppyspot.com/0/listing/772480/photo/503039177_large.jpg"
                 }
             }
         ]

@@ -132,7 +132,7 @@ function App() {
             <Route path="/shop/checkout/travel/:paymentID/:puppyId" element={<CheckoutTravel />} />
             <Route path="/shop/checkout/essentials/:paymentID/:puppyId" element={<CheckoutEssentials />} />
             
-            <Route path="/shop/checkout/checkout/:puppyId" element={<Checkout />} />
+            <Route path="/shop/checkout/:paymentID/:puppyId/:paymentOption" element={<Checkout />} />
 
             {/* Has to be authenticated */}
             <Route path="/my-account" element={<MyAccount />} />

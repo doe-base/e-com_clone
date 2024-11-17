@@ -80,7 +80,7 @@ const CheckoutTravel: React.FC<Props> = ({}) => {
                 <>
                   <TravelSection paymentInfo={paymentInfo} puppyInfo={puppyInfo} shippingPrice={shippingPrice} setShippingPrice={setShippingPrice} paymentID={paymentID} />
 
-                  <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice}/>
+                  <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={paymentInfo.passedEssentials}/>
                 </>
               :
               null

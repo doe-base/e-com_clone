@@ -19,8 +19,9 @@ function formatNumberWithCommas(number: number) {
 interface Props{
     puppyInfo: any;
     shippingPrice: number;
+    passedEssentials: boolean | undefined;
 }
-const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice}) => {
+const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice, passedEssentials}) => {
     const price = extractAndFormatNumber(puppyInfo.price)
     const shippingPriceVar = formatNumberWithCommas(shippingPrice)
     const subTotal = formatNumberWithCommas( Number(puppyInfo.price.slice(1)) + shippingPrice )
@@ -60,7 +61,7 @@ const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice}) => {
             <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
             <div className="tw-flex tw-justify-between"><span className="tw-font-inter tw-text-gray-01">Subtotal</span><span className="tw-font-inter tw-text-gray-01">{shippingPriceVar == '0' ? '--' : `$${subTotal}.00`}</span></div>
             <div>
-                <div className="tw-flex tw-justify-between"><span className="tw-font-inter tw-text-gray-01">Tax</span><span className="tw-font-inter tw-text-gray-01">--</span>
+                <div className="tw-flex tw-justify-between"><span className="tw-font-inter tw-text-gray-01">Tax</span><span className="tw-font-inter tw-text-gray-01">{passedEssentials ? 'Free' : '--'}</span>
                 </div>
                 <p className="tw-font-inter tw-text-xs tw-text-gray-02 tw-w-64">Calculated once essentials are confirmed</p>
             </div>

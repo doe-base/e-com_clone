@@ -7,7 +7,11 @@ import useStyles from '../styles/checkout';
 
 
 
-interface Props{}
+interface Props{
+  paymentOption: string | undefined;
+  puppyId: string | undefined;
+  paymentID: string | undefined;
+}
 function startTimer(stateFunction: React.Dispatch<React.SetStateAction<boolean>>) {
     setTimeout(() => {
       stateFunction(false)
@@ -19,14 +23,17 @@ function startTimer(stateFunction: React.Dispatch<React.SetStateAction<boolean>>
     // Return the converted price
     return convertedPrice.toFixed(8);
   }
-const CheckoutContainer: React.FC<Props> = ({}) => {
+const CheckoutContainer: React.FC<Props> = ({paymentOption, puppyId, paymentID}) => {
     const classes = useStyles()
     const bitcoinAddRef = useRef<HTMLHeadingElement>(null)
     const bitcoinPriceRef = useRef<HTMLHeadingElement>(null)
 
+    const paypalAddRef = useRef<HTMLHeadingElement>(null)
+
     const [cpActive4, setcpActie4] = useState(false)
     const [cpActive5, setcpActie5] = useState(false)
 
+    const [cpActive2, setcpActie2] = useState(false)
     
     const copyToClipboard4 = () => {
         const textToCopy = bitcoinAddRef.current?.innerText
@@ -54,9 +61,26 @@ const CheckoutContainer: React.FC<Props> = ({}) => {
           });
         }
       };
+
+
+      const copyToClipboard2 = () => {
+        const textToCopy = paypalAddRef.current?.innerText
+        if(textToCopy){
+        navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            setcpActie2(true)
+            startTimer(setcpActie2)
+        })
+        .catch((err) => {
+            alert("Failed to copy text:");
+        });
+        }
+    };  
+
     
 
     const us_number = process.env.REACT_APP_US_NUMBER_FORMARTED
+    const paypal_address = process.env.REACT_APP_PAYPAL_ADDRESS
   return (
 
     <div className='tw-flex tw-flex-col tw-w-full lg:tw-max-w-[711px]'>
@@ -114,120 +138,154 @@ const CheckoutContainer: React.FC<Props> = ({}) => {
 
                 <Grid container>
                   <Grid item xs={12} md={4}>
-                    <a href="https://www.paypal.com" className="paypal-button">
+                    <a href={`/shop/checkout/${paymentID}/${puppyId}/paypal`} className="paypal-button">
                         <img src="/img/bank-logos/pp.png" alt="PayPal Logo" className="paypal-logo" />
                         Pay with PayPal
                     </a>
                   </Grid>
                   <Grid item xs={12} md={4}>
-                    <a href="https://www.example.com/crypto-payment" className="crypto-button">
+                    <a href={`/shop/checkout/${paymentID}/${puppyId}/crypto-currency`} className="crypto-button">
                         <img src="/img/bank-logos/Bitcoin.svg" alt="Crypto Logo" className="crypto-logo" />
                         Pay with Crypto
                     </a>
                   </Grid>
                   <Grid item xs={12} md={4}>
-                    <a href="#" className="bank-transfer-button">
+                    <a href={`/shop/checkout/${paymentID}/${puppyId}/bank-transfer`} className="bank-transfer-button">
                         <img src="/img/bank-logos/bank-building.png" alt="Bank Logo" className="bank-logo" style={{'filter': 'invert(84%) sepia(100%) saturate(0%) hue-rotate(185deg) brightness(105%) contrast(104%)'}} />
                         Bank Transfer
                     </a>
                   </Grid>
                 </Grid>
 
-                {/* <section className="payment-info-section">
-                      <h2>Procedure to Complete PayPal Payment</h2>
-                      <ol>
-                          <li>Log in to your PayPal account using your email and password.</li>
-                          <li>Navigate to the "Send & Request" tab at the top of the page.</li>
-                          <li>Enter the recipient's email address or phone number.</li>
-                          <li>Specify the payment amount and currency.</li>
-                          <li>Select Friends and Family as type of payment.</li>
-                          <li>Review the payment details and any applicable fees.</li>
-                          <li>Click "Send Payment" to complete the transaction.</li>
-                          <li>Save the receipt (or screenshot) and upload below for verification.</li>
-                      </ol>
-                  </section>
-              
-
-                  <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
-                      <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Upload payment receipt below</legend>
-                      <p className="tw-font-inter tw-text-sm tw-text-gray-02">This could be a PDF, JPG, JPEG, or PNG file.</p>
-                    <div className="tw-w-full">
-                        <div></div>
-                        <div className="tw-w-full">
-                            <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs" style={{display: 'flex', alignItems: 'center'}}>
-                                <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled">
-                                  <input 
-                                    className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" 
-                                    type='file'
-                                    accept=".pdf, .jpg, .jpeg, .png"
-                                    data-path="phone" 
-                                    autoComplete="no" 
-                                    aria-invalid="false" 
-                                    id="mantine-np8sksr47" 
-                                    value=""
-                                    style={{height: '0px', margin: '0'}}
-                                  />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-
-                <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div> */}
 
 
-                <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
-                  <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">What will be <span className="tw-capitalize">Ellis</span>'s new home address?</legend>
-                  <p className="tw-font-inter tw-text-sm tw-text-gray-02">Full address is needed for <span className="tw-capitalize">Ellis</span>’s Health Certificate and to help us determine available travel programs.</p>
 
-                    <div className="tw-w-full">
-                        <div></div>
+                {
+                  paymentOption === 'paypal'
+                  ?
+                    <>
+                      <section className="payment-info-section">
+                          <h2>Procedure to Complete PayPal Payment</h2>
+                          <ol>
+                              <li>Log in to your PayPal account.</li>
+                              <li>Navigate to the "Send & Request" tab at the top of the page.</li>
+                              <li>Enter the paypal address below.</li>
+                              <li>Specify the payment amount.</li>
+                              <li>Select Friends and Family as type of payment.</li>
+                              <li>Review the payment details and any applicable fees.</li>
+                              <li>Click "Send Payment" to complete the transaction.</li>
+                              <li>Save the receipt (or screenshot) and upload below for verification.</li>
+                          </ol>
+                      </section>
 
-                        <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] tw-border-gray-04 undefined m_46b77525 mantine-InputWrapper-root mantine-Select-root">
-                            <div style={{"--input-right-section-pointer-events": "none"} as React.CSSProperties } className="tw-top-0 m_6c018570 mantine-Input-wrapper mantine-Select-wrapper" data-variant="default" data-pointer="true" data-with-right-section="true"><input className="tw-pl-0 tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none tw-h-[58px]  m_8fb7ebe7 mantine-Input-input mantine-Select-input" data-variant="default" placeholder="State*" data-path="stateAbbr" readOnly aria-haspopup="listbox" autoComplete="no" required aria-invalid="false" id="mantine-1vq052fsz" value=""/>
-                                <div data-position="right" className="m_82577fc2 mantine-Input-section mantine-Select-section"><svg width="24" height="24" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.29167 4.125L5.50001 7.33334L8.70834 4.125" stroke="black" stroke-width="0.870833" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                                </div>
-                            </div>
-                        </div><input type="hidden" value=""/>
-                    </div>
+                      <div className={classes.cryptocurrencyaddressholder}>
 
-
-                    <div className={classes.cryptocurrencyaddressholder}>
-
-                        <span className={classes.cryptocurrencyaddressholdertitle}>Bitcoin wallet address:</span>
+                        <span className={classes.cryptocurrencyaddressholdertitle}>Paypal address:</span>
 
                         <div style={{display: 'flex'}}>
-                        <div><h2 ref={bitcoinAddRef} className={classes.selectField2Text2}>bc1qtnyank53k08pg8rh38cgw8wjr80a62rqgv3hxj</h2></div>
+                        <div><h2 ref={paypalAddRef} className={classes.selectField2Text2}>{paypal_address}</h2></div>
 
                         {
-                            cpActive4
+                            cpActive2
                             ?
                             <div><DoneAllIcon style={{ color:'green' }}  /></div>
                             :
-                            <div onClick={copyToClipboard4} style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                            <div onClick={copyToClipboard2} style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
                         } 
                         </div>
-                    </div>
+                      </div>
+                  
 
-                    <div className={classes.cryptocurrencyaddressholder}>
-                        <span className={classes.cryptocurrencyaddressholdertitle}>Equivalent <span style={{fontWeight: 'bold'}}>Bitcoin</span> amount for wire transfer:</span>
+                      <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
+                          <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Upload payment receipt below</legend>
+                          <p className="tw-font-inter tw-text-sm tw-text-gray-02">This could be a PDF, JPG, JPEG, or PNG file.</p>
+                        <div className="tw-w-full">
+                            <div></div>
+                            <div className="tw-w-full">
+                                <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] aria-disabled:tw-bg-gray-05 tw-border-gray-04 false m_46b77525 mantine-InputWrapper-root" data-size="xs" style={{display: 'flex', alignItems: 'center'}}>
+                                    <div style={{"--input-left-section-pointer-events":"none","--input-right-section-pointer-events":"none"} as React.CSSProperties} className="tw-top-0 m_6c018570 mantine-Input-wrapper" data-variant="unstyled">
+                                      <input 
+                                        className="tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none disabled:tw-bg-gray-05 disabled:tw-text-gray-03 tw-h-[60px]  m_8fb7ebe7 mantine-Input-input" 
+                                        type='file'
+                                        accept=".pdf, .jpg, .jpeg, .png"
+                                        data-path="phone" 
+                                        autoComplete="no" 
+                                        aria-invalid="false" 
+                                        id="mantine-np8sksr47" 
+                                        value=""
+                                        style={{height: '0px', margin: '0'}}
+                                      />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </fieldset>
+                    </>
+                  :
+                  paymentOption === 'crypto-currency'
+                  ?
+                    <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
+                      <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">What will be <span className="tw-capitalize">Ellis</span>'s new home address?</legend>
+                      <p className="tw-font-inter tw-text-sm tw-text-gray-02">Full address is needed for <span className="tw-capitalize">Ellis</span>’s Health Certificate and to help us determine available travel programs.</p>
 
-                        <div style={{display: 'flex'}}>
-                            {/* <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{convertPrice(initalPaymentData.price ,cryptoRates.bitcoin)}</h2></div> */}
-                            <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{convertPrice(2555 ,0.0004)}</h2></div>
-                            
+                        <div className="tw-w-full">
+                            <div></div>
+
+                            <div className="tw-h-[60px] tw-border tw-px-4 tw-rounded-[10px] tw-border-gray-04 undefined m_46b77525 mantine-InputWrapper-root mantine-Select-root">
+                                <div style={{"--input-right-section-pointer-events": "none"} as React.CSSProperties } className="tw-top-0 m_6c018570 mantine-Input-wrapper mantine-Select-wrapper" data-variant="default" data-pointer="true" data-with-right-section="true"><input className="tw-pl-0 tw-text-base placeholder:tw-text-gray-03 tw-font-inter tw-border-none tw-h-[58px]  m_8fb7ebe7 mantine-Input-input mantine-Select-input" data-variant="default" placeholder="State*" data-path="stateAbbr" readOnly aria-haspopup="listbox" autoComplete="no" required aria-invalid="false" id="mantine-1vq052fsz" value=""/>
+                                    <div data-position="right" className="m_82577fc2 mantine-Input-section mantine-Select-section"><svg width="24" height="24" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.29167 4.125L5.50001 7.33334L8.70834 4.125" stroke="black" stroke-width="0.870833" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    </div>
+                                </div>
+                            </div><input type="hidden" value=""/>
+                        </div>
+
+
+                        <div className={classes.cryptocurrencyaddressholder}>
+
+                            <span className={classes.cryptocurrencyaddressholdertitle}>Bitcoin wallet address:</span>
+
+                            <div style={{display: 'flex'}}>
+                            <div><h2 ref={bitcoinAddRef} className={classes.selectField2Text2}>bc1qtnyank53k08pg8rh38cgw8wjr80a62rqgv3hxj</h2></div>
+
                             {
-                                cpActive5
+                                cpActive4
                                 ?
                                 <div><DoneAllIcon style={{ color:'green' }}  /></div>
                                 :
-                                <div onClick={copyToClipboard5} style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                                <div onClick={copyToClipboard4} style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
                             } 
+                            </div>
                         </div>
-                    </div>
-                </fieldset>
+
+                        <div className={classes.cryptocurrencyaddressholder}>
+                            <span className={classes.cryptocurrencyaddressholdertitle}>Equivalent <span style={{fontWeight: 'bold'}}>Bitcoin</span> amount for wire transfer:</span>
+
+                            <div style={{display: 'flex'}}>
+                                {/* <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{convertPrice(initalPaymentData.price ,cryptoRates.bitcoin)}</h2></div> */}
+                                <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{convertPrice(2555 ,0.0004)}</h2></div>
+                                
+                                {
+                                    cpActive5
+                                    ?
+                                    <div><DoneAllIcon style={{ color:'green' }}  /></div>
+                                    :
+                                    <div onClick={copyToClipboard5} style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                                } 
+                            </div>
+                        </div>
+                    </fieldset>
+                  :
+                  paymentOption === 'bank-transfer'
+                  ?
+                    <></>
+                  :
+                  null
+                  
+                }
+                
 
 
+<div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
 
 
 

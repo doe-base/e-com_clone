@@ -88,9 +88,9 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
               puppyInfo && paymentInfo
               ?
               <>
-                <EssentialsSection puppyInfo={puppyInfo} />
+                <EssentialsSection puppyInfo={puppyInfo} paymentID={paymentID}/>
 
-                <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice}/>
+                <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={paymentInfo.passedEssentials}/>
               </>
               :
               null

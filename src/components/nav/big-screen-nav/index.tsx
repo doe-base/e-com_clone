@@ -1,45 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import "./index.css"
 import navbarData from '../../../data/navbar-data.json'
 import allBreed from '../../../data/all-breeds.json'
 import allPuppies from '../../../data/puppies.json'
 import Fuse from 'fuse.js';
-import { breeds_pages, navbar, pages } from '../../../contants/routes';
+import { account, breeds_pages, navbar, pages } from '../../../contants/routes';
+import { FirebaseContext } from '../../../context/firebase';
+import { useNavigate } from 'react-router-dom';
 
 
-interface PuppyDetails {
-    link: string;
-    puppy_id: string;
-    breed: string;
-    puppy_name: string;
-    people_intrested: string;
-    sex_and_age: string;
-    price: string;
-    about: string;
-    vaccinations_info: string;
-    puppy_info_details: Array<{ [key: string]: string }>;
-    siblings: {
-      name: string;
-      gender: string;
-      link: string | null;
-      image: string;
-      found_home: string;
-    }[];
-    breed_info: {
-      trusted_breed_description: string;
-      general_breed_info: Array<{ [key: string]: string }>;
-    };
-    gallery_content: {
-      label_img_src: string;
-      gallery_type: 'image' | 'video';
-      urls: {
-        '220w'?: string;
-        '300w'?: string;
-        '570w'?: string;
-        video_url?: string;
-      };
-    }[];
-  }
 
   
 interface Props{
@@ -48,8 +17,11 @@ interface Props{
 
     isPuppiesForSale: boolean;
     isOverviewPage: boolean;
+
+    user: any;
 }
-const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale, isOverviewPage}) => {
+const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale, isOverviewPage, user}) => {
+    console.log(user)
 
     const [isNavbarHover, setIsNavbarHover] = useState(false)
     const [isAvailblepuppliesHover, setIsAvailblepuppliesHover] = useState(false)
@@ -67,6 +39,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
     const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019';
     const [allPuppiesArr, setAllPuppiesArr] = useState(allPuppies);
     const [selectedItem, setSelectedItem] = useState(allPuppies[0]);
+    const [isAccountDropdown, setIsAccountDropdown] = useState(false)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -93,6 +66,8 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
             setIsActive('our-promise')
         }else if(isAboutUsHover){
             setIsActive('about-us')
+        }else if(isAccountDropdown){
+            setIsActive('account')
         }
 
         if(!isNavbarHover){
@@ -100,9 +75,10 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
             setPureBreedActive(false)
             setDesignerBreedActive(false)
             setIsAboutUsHover(false)
+            setIsAccountDropdown(false)
         }
 
-    }, [ isNavbarHover, isAvailblepuppliesHover, isOurPromiseHover, isAboutUsHover ])
+    }, [ isNavbarHover, isAvailblepuppliesHover, isOurPromiseHover, isAboutUsHover, isAccountDropdown ])
     useEffect(()=>{
         setBreedList(splitArrayByChunks(navbarData.activePurebredBreeds, 13));
         setDesignerBreed(splitArrayByChunks(navbarData.activeDesignerBreeds, 8))
@@ -164,6 +140,20 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
             window.location.href = `/puppies-for-sale?query=${puppySlug}`;
         }
       };
+    const { firebase } = useContext(FirebaseContext)
+      const Logout = () =>{
+        if(!firebase){return}
+
+        firebase
+            .auth()
+            .signOut()
+            .then(() => {
+                window.location.replace(pages.LOGIN);
+            })
+            .catch((error) => {
+                console.error("Error signing out:", error);
+            });
+      }
 
 
   return (
@@ -532,15 +522,79 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
             <li className="header-nav__links-main">
                 <ul className="header-nav__links">
                     
-                    <li className="phone" style={{marginBottom: '-13px'}}>
+                    <li className="phone">
                         <a className="header-nav__links-phone hyperlink js-header-nav-phone" href={navbar.PHONE_WHATSAPP}>
                             (502) 382-0019
                         </a>
                     </li>
+                
+                    {
+                        !user?.email
+                        ?
+                        <li className="auth">
+                            <a className="hyperlink" href={pages.LOGIN}>Log In</a>
+                        </li>
+                        :
+                        <>
+                            <li className="user" onMouseEnter={() => setIsAccountDropdown(true)} onMouseLeave={() => setIsAccountDropdown(false)}>
+                                <a href="#" data-toggle-menu=".js-account-submenu" className="">
+                                    <picture className="">
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-account.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-account.svg" />
+                                    </picture>
+                                </a>
 
-                    <li className="auth" style={{marginBottom: '-13px'}}>
-                        <a className="hyperlink" href={pages.LOGIN}>Log In</a>
-                    </li>
+                                <div data-submenu="" className={`js-account-submenu header-nav__submenu header-nav__submenu--account js-menu ${isActive === 'account' ? '' : 'hidden'}`}>
+                                    <div className="header-nav__submenu-header">
+                                        <a href="#" data-close-submenu=".js-account-submenu" className="mobile">
+                                            My Account
+                                        </a>
+                                    </div>
+                                    <ul className="header-nav__submenu-section">
+                                        <li>
+                                            <a href={account.ACCOUNT} className="hyperlink menu-item">
+                                                Profile
+                                            </a>
+                                        </li>
+                                                    <li>
+                                                <a href={account.ACCOUNT_FAVORITE_PUPPIES} className="hyperlink menu-item">
+                                                    Favorites
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href={account.ACCOUNT_PUPPIES} className="hyperlink menu-item">
+                                                    My Puppy
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href={account.ACCOUNT_ORDER_HISTORY} className="hyperlink menu-item">
+                                                    Order History
+                                                </a>
+                                            </li>
+                                            </ul>
+                                    <hr style={{height: '1px', backgroundColor: '#000'}}/>
+                                    <div className="header-nav__submenu-footer">
+                                        <a className="button ghost account__button-log-in" onClick={Logout}>
+                                            <picture className="">
+                                                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/log-out.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/log-out.svg" />
+                                            </picture>
+                                            Log out
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li className="my-wishlist">
+                                <a href={account.ACCOUNT_FAVORITE_PUPPIES} className="header-nav__links-my-wishlist">
+                                    <picture className="">
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" />
+                                    </picture>
+                                </a>
+                            </li>
+
+                            
+                        </>
+                        
+                    }
                 </ul>
 
 

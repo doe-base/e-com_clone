@@ -5,7 +5,7 @@ import { Theme } from "@mui/material";
 const useStyles = makeStyles((theme: Theme)=>{
     return {
         innerMain: {
-            maxWidth: '100%',
+            maxWidth: '95%',
             margin: '0 auto'
         },
         nav: {
@@ -14,8 +14,7 @@ const useStyles = makeStyles((theme: Theme)=>{
             alignItems: 'center',
             padding: '15px 30px',
             height: 'auto !important',
-            backgroundColor: '#fff !important',
-            borderBottom: '1px solid hsl(0, 0%, 87%)',
+            backgroundColor: '#150723 !important',
 
             [theme.breakpoints.down('sm')]: {
                 padding: '10px 20px',
@@ -41,8 +40,9 @@ const useStyles = makeStyles((theme: Theme)=>{
         }, 
 
         module: {
-            height: '100%',
-            padding: '3.8rem'
+            background: '#ffffff',
+            borderRadius: '5px',
+            marginBottom: '2rem',
         }, 
 
         header: {

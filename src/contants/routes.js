@@ -67,3 +67,11 @@ export const socials = {
     YOUTUBE: `https://www.youtube.com/channel/UCFL3Y1Lo6J7BrXg-uC7QUjQ`,
     PINTREST: `https://www.pinterest.com/puppyspot/`,
 }
+
+export const account = {
+    ACCOUNT: '/my-account',
+    ACCOUNT_FAVORITE_PUPPIES: '/my-account/favorite-puppies',
+    ACCOUNT_PUPPIES: '/my-account/my-puppies',
+    ACCOUNT_ORDER_HISTORY: '/my-account/order-history',
+    ACCOUNT_LOGOUT: '/log-out'
+}

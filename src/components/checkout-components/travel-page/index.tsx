@@ -1,9 +1,247 @@
-import React, { useEffect } from 'react';
-import "../../../styles/checkout/travel.css"
+import React, { useEffect, useState, useContext } from 'react';
+import "../../../styles/checkout/travel.css";
+import { Oval } from 'react-loader-spinner';
+import { FirebaseContext } from '../../../context/firebase';
 
-interface Props{
-}
-const TravelSection: React.FC<Props> = ({}) => {
+
+    const regions = {
+        Northeast: [
+            "Connecticut",
+            "Maine",
+            "Massachusetts",
+            "New Hampshire",
+            "Rhode Island",
+            "Vermont",
+            "New Jersey",
+            "New York",
+            "Pennsylvania"
+        ],
+        Midwest: [
+            "Illinois",
+            "Indiana",
+            "Iowa",
+            "Kansas",
+            "Michigan",
+            "Minnesota",
+            "Missouri",
+            "Nebraska",
+            "North Dakota",
+            "Ohio",
+            "South Dakota",
+            "Wisconsin"
+        ],
+        South: [
+            "Alabama",
+            "Arkansas",
+            "Delaware",
+            "Florida",
+            "Georgia",
+            "Kentucky",
+            "Louisiana",
+            "Maryland",
+            "Mississippi",
+            "North Carolina",
+            "Oklahoma",
+            "South Carolina",
+            "Tennessee",
+            "Texas",
+            "Virginia",
+            "West Virginia",
+            "District of Columbia"
+        ],
+        West: [
+            "Alaska",
+            "Arizona",
+            "California",
+            "Colorado",
+            "Hawaii",
+            "Idaho",
+            "Montana",
+            "Nevada",
+            "New Mexico",
+            "Oregon",
+            "Utah",
+            "Washington",
+            "Wyoming"
+        ]
+    };
+    function extractAndFormatNumber(input: string) {
+        const numericString = input.replace(/[^0-9.]/g, '');
+        if (!numericString) return 'Invalid input';
+        const formattedNumber = parseFloat(numericString).toLocaleString('en-US');
+        return formattedNumber;
+    }
+    function formatNumberWithCommas(number: number) {
+        if (typeof number !== 'number') {
+          return 'Input must be a number';
+        }
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+    const getRegion = (state: string): string | null => {
+        for (const [region, states] of Object.entries(regions)) {
+            if (states.includes(state)) {
+            return region;
+            }
+        }
+        return null; // State not found
+    };
+    const calculateDeliveryCost = (state1: string, state2: string, multipier: number) => {
+        const region1 = getRegion(state1);
+        const region2 = getRegion(state2);
+        
+        if (!region1 || !region2) {
+            // throw new Error("One or both states are invalid.");
+        }
+    
+        let flightCost;
+        let groundCost;
+        let premiumCost;
+
+        // Set delivery costs based on regions
+        if(state1 === state2) {
+            // flightCost = 750 * multipier;
+            // groundCost = 300 * multipier;
+        }
+        if (region1 === region2) {
+            flightCost = 750 * multipier; // Same region flight cost
+            groundCost = 300 * multipier; // Same region ground cost
+
+        }else if(region1 == 'Northeast' && region2 === 'Midwest'){
+            flightCost = 1050 * multipier;
+            groundCost = 600 * multipier;
+        }else if(region1 == 'Northeast' && region2 === 'South'){
+            flightCost = 1750 * multipier;
+            groundCost = 950 * multipier;
+        }else if(region1 == 'Northeast' && region2 === 'West'){
+            flightCost = 2550 * multipier;
+            groundCost = 1500 * multipier;
+
+        }else if(region1 == 'Midwest' && region2 === 'Northeast'){
+            flightCost = 1050 * multipier;
+            groundCost = 600 * multipier;
+        }else if(region1 == 'Midwest' && region2 === 'South'){
+            flightCost = 1050 * multipier;
+            groundCost = 600 * multipier;
+        }else if(region1 == 'Midwest' && region2 === 'West'){
+            flightCost = 1050 * multipier;
+            groundCost = 600 * multipier;
+
+        }else if(region1 == 'South' && region2 === 'Northeast'){
+            flightCost = 1750 * multipier;
+            groundCost = 950 * multipier;
+        }else if(region1 == 'South' && region2 === 'Midwest'){
+            flightCost = 1050 * multipier;
+            groundCost = 600 * multipier;
+        }else if(region1 == 'South' && region2 === 'West'){
+            flightCost = 1750 * multipier;
+            groundCost = 950 * multipier;
+
+        }else if(region1 == 'West' && region2 === 'Northeast'){
+            flightCost = 2550 * multipier;
+            groundCost = 1500 * multipier;
+        }else if(region1 == 'West' && region2 === 'Midwest'){
+            flightCost = 1050 * multipier;
+            groundCost = 600 * multipier;
+        }else if(region1 == 'West' && region2 === 'South'){
+            flightCost = 1750 * multipier;
+            groundCost = 950 * multipier;
+        }
+        
+        if(flightCost){
+            premiumCost = flightCost - 550
+        }
+        return {flightCost,groundCost, premiumCost};
+    };
+    const getDateInDays = (days: number): string => {
+        const today = new Date();
+        const futureDate = new Date();
+        
+        // Calculate the date in X number of days
+        futureDate.setDate(today.getDate() + days);
+      
+        // Formatting function
+        const formatDate = (date: Date): string => {
+          const options: Intl.DateTimeFormatOptions = {
+            weekday: 'short',
+            month: 'short',
+            day: '2-digit',
+          };
+          return date.toLocaleDateString('en-US', options);
+        };
+      
+        return `${formatDate(futureDate)}`;
+    };
+    interface Props{
+        puppyInfo: any;
+        paymentInfo: any;
+        shippingPrice: number;
+        setShippingPrice: React.Dispatch<React.SetStateAction<number>>;
+        paymentID: string | undefined;
+    }
+const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, setShippingPrice, paymentID}) => {
+    const { firebase } = useContext(FirebaseContext)
+    const price = extractAndFormatNumber(puppyInfo.price)
+    const [deliveryCost, setDeleveryCost] = useState(calculateDeliveryCost(paymentInfo.state, puppyInfo.puppy_location, 1))
+    const changeStateLink = `/shop/checkout/details/${puppyInfo.puppy_id}`
+    const [deliveryMethod, setDeliveryMethod] = useState('air')
+    const [premiumSerivce, setPremiumSerivce] = useState(false)
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    useEffect(()=>{
+        var totalCost = 0;
+        if(deliveryMethod === 'air'){
+            totalCost = deliveryCost.flightCost || 0;
+        }else if(deliveryMethod === 'ground'){
+            totalCost = deliveryCost.groundCost || 0;
+        }
+
+        if(premiumSerivce === true) {totalCost += deliveryCost.premiumCost || 0}
+
+        setShippingPrice(totalCost)
+    }, [deliveryMethod, premiumSerivce])
+
+
+    async function updateItem(documentId: any) {
+        if (!firebase) return;
+        setError('');
+        setLoading(true);
+      
+        try {
+          // Query the collection to find the document
+          const querySnapshot = await firebase.firestore()
+            .collection('puppy_orders')
+            .where('paymentId', '==', documentId)
+            .get();
+      
+          if (querySnapshot.empty) {
+            setLoading(false);
+            setError('Document not found');
+            return;
+          }
+      
+          // Update each document that matches the query
+          for (const doc of querySnapshot.docs) {
+            await doc.ref.update({
+                shippingMethod: deliveryMethod,
+                shippingpremiumSerivce: premiumSerivce,
+                shippingPrice: shippingPrice,
+                shippingflighCost: deliveryCost.flightCost,
+                shippinggroundCost: deliveryCost.groundCost,
+                shippingpremiumCost: deliveryCost.premiumCost,
+            });
+          }
+      
+          setLoading(false);
+          window.location.replace(`/shop/checkout/essentials/${paymentID}/${puppyInfo.puppy_id}`);
+        } catch (error) {
+          setLoading(false);
+          setError('An unexpected error occurred');
+          console.error('Error updating document:', error);
+        }
+    }
+      
+
     const openOrderSummarySmall = () => {
         const el = document.getElementById('mantine-Drawer-overlay-id')
         const el2 = document.getElementById('mantine-Drawer-content-id')
@@ -17,15 +255,31 @@ const TravelSection: React.FC<Props> = ({}) => {
             el2.style.transform = 'translateY(0%)';
         }
     }
+
+    
   return (
 
     <div className='tw-flex tw-flex-col tw-w-full lg:tw-max-w-[711px]'>
         <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
         {/* <img alt="Bring Ellis home" loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} srcSet="/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75 2x" src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"> */}
-        
-        <img alt="Bring Ellis home" loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"/>
+        {/* <img alt="Bring Ellis home" loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"/> */}
+            <img 
+                alt={`Bring ${puppyInfo.puppy_name} home`} 
+                loading="lazy" 
+                width="150" 
+                height="150" 
+                decoding="async" 
+                data-nimg="1" 
+                className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" 
+                style={{color:"transparent"}} 
+                // srcSet={`
+                //     /_next/image?url=${puppyInfo.gallery_content[0].urls.small}&amp;w=256&amp;q=75 1x, 
+                //     /_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75 2x`} 
+                // src={`https://www.puppyspot.com/_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75`}
+                src={puppyInfo.gallery_content[0].urls.medium}
+            />
         <div className="tw-flex tw-flex-col tw-items-center"><span>
-            <p className="tw-font-nunito tw-text-[32px] tw-font-black tw-leading-10 tw-text-black tw-text-center"><strong className="tw-capitalize">Ellis</strong> is in Atlanta Currently</p></span><span className=" tw-font-nunito tw-text-gray-01 tw-flex tw-items-center tw-gap-3 lg:tw-hidden tw-text-base">Show summary: <span className="tw-font-bold tw-underline tw-cursor-pointer">$2,292.00</span>
+            <p className="tw-font-nunito tw-text-[32px] tw-font-black tw-leading-10 tw-text-black tw-text-center"><strong className="tw-capitalize">{puppyInfo.puppy_name}</strong> is in {puppyInfo.puppy_location} Currently</p></span><span className=" tw-font-nunito tw-text-gray-01 tw-flex tw-items-center tw-gap-3 lg:tw-hidden tw-text-base">Show summary: <span className="tw-font-bold tw-underline tw-cursor-pointer">${price}.00</span>
             <button 
             onClick={openOrderSummarySmall}
             style={{
@@ -64,7 +318,9 @@ const TravelSection: React.FC<Props> = ({}) => {
         
         <div className="tw-mt-4 ">
             <div className="tw-flex tw-flex-col tw-gap-[30px] tw-mt-7 tw-mb-10 initial-scroll">
-                <div className="tw-px-6 sm:tw-px-0"><h3 className="tw-text-green-01 tw-text-[22px] tw-font-nunito tw-font-extrabold">Delivery details</h3><p className="tw-font-inter tw-text-sm tw-text-gray-02">Tell us your preferred way for <span className="tw-capitalize">Ellis</span> to get to you. Your current state is <strong style={{color: '#219653'}}>Califonia</strong> (<a href='' style={{fontWeight: 'normal', textDecoration: 'underline'}}>change</a>) </p></div>
+                <div className="tw-px-6 sm:tw-px-0">
+                    <h3 className="tw-text-green-01 tw-text-[22px] tw-font-nunito tw-font-extrabold">Delivery details</h3>
+                    <p className="tw-font-inter tw-text-sm tw-text-gray-02">Tell us your preferred way for <span className="tw-capitalize">{puppyInfo.puppy_name}</span> to get to you. Your current state is <strong style={{color: '#219653'}}>{paymentInfo.state}</strong> (<a href={changeStateLink} style={{fontWeight: 'normal', textDecoration: 'underline'}}>change</a>) </p></div>
                 <div style={{"--divider-color":"var(--green-01)", "--divider-size":"var(--divider-size-lg)"} as React.CSSProperties } className="tw-rounded m_3eebeb36 mantine-Divider-root" data-size="lg" data-orientation="horizontal" role="separator"></div>
                 
                 <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled"><legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Shipping method</legend>
@@ -72,48 +328,52 @@ const TravelSection: React.FC<Props> = ({}) => {
                     <div className="m_46b77525 mantine-InputWrapper-root mantine-RadioGroup-root" data-path="age">
                         <div role="radiogroup" aria-labelledby="mantine-7z98cluo3-label">
                             <div className="tw-flex tw-flex-col tw-gap-5">
-                                <button style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" data-with-border="true" type="button" role="radio" aria-checked="false" name="mantine-um6crajz4">
+                                <button 
+                                    style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } 
+                                    className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" 
+                                    data-with-border="true" 
+                                    type="button" 
+                                    role="radio" 
+                                    aria-checked="false" 
+                                    name="mantine-um6crajz4" 
+                                    onClick={()=> setDeliveryMethod('air')}
+                                    data-checked={deliveryMethod === 'air' ? 'true' : ''}
+                                >
                                     <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
                                     </div>
                                     <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
-                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Pet Transport Service</span>
-                                            <p className="date-text_transport-card">Have a nanny follow you puppy from pickup to your door step</p>
+                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Airline Delivery</span>
+                                            <p className="date-text_transport-card">{getDateInDays(4)}-{getDateInDays(5)}</p>
                                         </div>
 
-                                        {/* <p className="date-text_transport-card">Wed, Nov 13–Thu, Nov 14</p> */}
 
-                                        <span translate="no" className="price-text_transport-card">$9.90</span>
+                                        <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.flightCost || 0)}.00</span>
                                     </div>
                                 </button>
-                                <button style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" data-with-border="true" type="button" role="radio" aria-checked="false" name="mantine-um6crajz4">
-                                    <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
-                                    </div>
-                                    <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
-                                        <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
-                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Airline Pet Shipping</span>
-                                            <p className="date-text_transport-card">Have your puppy delivered to your city via an aircraft</p>
-                                        </div>
 
-                                        {/* <p className="date-text_transport-card">Wed, Nov 13–Thu, Nov 14</p> */}
-
-                                        <span translate="no" className="price-text_transport-card">$9.90</span>
-                                    </div>
-                                </button>
-                                <button style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" data-with-border="true" type="button" role="radio" aria-checked="false" name="mantine-um6crajz4">
+                                <button 
+                                    style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } 
+                                    className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" 
+                                    data-with-border="true" 
+                                    type="button" role="radio" 
+                                    aria-checked="false" 
+                                    name="mantine-um6crajz4"
+                                    onClick={()=> setDeliveryMethod('ground')}
+                                    data-checked={deliveryMethod === 'ground' ? 'true' : ''}
+                                >
                                     <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
                                     </div>
                                     <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
                                             <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Ground Shipping</span>
-                                            <p className="date-text_transport-card">Wed, Nov 13–Thu, Nov 14</p>
+                                            <p className="date-text_transport-card">{getDateInDays(11)}-{getDateInDays(12)}</p>
                                         </div>
 
 
-                                        <span translate="no" className="price-text_transport-card">$9.90</span>
+                                        <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.groundCost || 0)}.00</span>
                                     </div>
                                 </button>
-
                             </div>
                         </div>
                     </div>
@@ -122,14 +382,69 @@ const TravelSection: React.FC<Props> = ({}) => {
 
                 <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
 
+                <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
+                    <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Premier Services</legend>
+                    <div></div>
+                    <div className="m_46b77525 mantine-InputWrapper-root mantine-RadioGroup-root" data-path="age">
+                        <div role="radiogroup" aria-labelledby="mantine-7z98cluo3-label">
+                            <div className="tw-flex tw-flex-col tw-gap-5">
+                                <button 
+                                    style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } 
+                                    className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" 
+                                    data-with-border="true" 
+                                    type="button" role="radio" 
+                                    aria-checked="false" 
+                                    name="mantine-um6crajz4"
+                                    onClick={()=> setPremiumSerivce(!premiumSerivce)}
+                                    data-checked={premiumSerivce}
+                                >
+                                    <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
+                                    </div>
+                                    <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
+                                        <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
+                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Pet Transport Service</span>
+                                            <p className="date-text_transport-card">Have a nanny accompany your puppy from pickup to your doorstep.</p>
+                                        </div>
+
+                                        <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.premiumCost || 0)}.00</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
 
 
-                <div className="tw-px-6 sm:tw-px-0"><button style={{"--button-color":"var(--mantine-color-white)"} as React.CSSProperties } className="mantine-focus-auto mantine-active 
+                <div className="tw-px-6 sm:tw-px-0">
+                    <button style={{"--button-color":"var(--mantine-color-white)"} as React.CSSProperties } className="mantine-focus-auto mantine-active 
                         tw-px-6 tw-py-4 tw-h-[52px] tw-rounded-full tw-w-full tw-bg-blue-01
                         hover:tw-bg-blue-02
                         data-[disabled]:tw-bg-gray-05 disabled:tw-bg-gray-05
                         lg:tw-max-w-[400px]
-                    tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" type="button"><span className="m_80f1301b mantine-Button-inner"><span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">Continue to essentials</span></span></button>
+                    tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" 
+                    type="button" onClick={()=>updateItem(paymentID)}>
+                            <span className="m_80f1301b mantine-Button-inner">
+                                <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">
+                                    Continue to essentials
+                                    {
+                                        loading
+                                        ?
+                                        <Oval
+                                            visible={true}
+                                            height="30"
+                                            width="30"
+                                            color="#ffffff"
+                                            ariaLabel="oval-loading"
+                                            wrapperStyle={{marginLeft: '0.3rem'}}
+                                            wrapperClass=""
+                                        />
+                                        :
+                                        null
+                                    }
+                                </span>
+                            </span>
+                        </button>
+                                <p style={{fontSize: '0.85rem', color: 'red'}}>{error}</p>
                 </div>
             </div>
         </div>

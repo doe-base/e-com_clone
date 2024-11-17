@@ -1,6 +1,9 @@
 import React, { useEffect, useState, useContext } from 'react';
 import '../styles/signup.css'
 import { FirebaseContext } from '../context/firebase';
+import { useNavigate } from 'react-router-dom';
+import { account, pages } from '../contants/routes'
+import { GoogleAuthProvider, sendEmailVerification } from "firebase/auth";
 
 interface Props{
 }
@@ -12,25 +15,13 @@ function validatePassword(password: string) {
 
   return passwordRegex.test(password);
 }
-function getUUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
-        const piece = (Math.random() * 16) | 0;
-        const elem = c === 'x' ? piece : (piece & 0x3) | 0x8;
-        return elem.toString(16);
-    });
-}
-
 const Signup: React.FC<Props> = ({}) => {
 
     useEffect(() =>{
         document.title = "Create a new account | PuppySpot";
     }, []);
 
-
-    
-
-
-
+    const navigate = useNavigate()
     const [passwordRequirement, setPasswordRequirement] = useState(false)
     const [isPasswordHelpVisible, setIsPasswordHelpVisible] = useState(false);
     const [passwordMatches, setPassWordMatches] = useState(true)
@@ -69,32 +60,31 @@ const Signup: React.FC<Props> = ({}) => {
         if(!firebase){return}
 
         setLoading(true)
-
+        const trimedEmail = emailAddress.trim()
+        const trimedPassword = password.trim()
         firebase
             .auth()
-            .createUserWithEmailAndPassword(emailAddress, password)
-            .then((result: any) => 
-                result.user.updateProfile({
-                    firstName: firstName,
-                    lastName: lastName,
-                    emailAddress: emailAddress,
-                }
-            ))
-            // .then(() => {
-            //     firebase.firestore().collection('series').add({
-            //         firstName: firstName,
-            //         lastName: lastName,
-            //         emailAddress: emailAddress,
-            //     })
-            //     .then(() => {
-            //         setLoading(false)
-            //         console.log('success')
-            //     })
-            //     .catch((error: any) => {
-            //         setLoading(false)
-            //         setError(error.message)
-            //     })
-            // })
+            .createUserWithEmailAndPassword(trimedEmail, trimedPassword)
+            .then((result: any) => {
+                const user = result.user;
+                const uid = user.uid;
+
+                sendEmailVerification(user)
+
+
+                firebase.firestore().collection('customers').add({
+                    id: uid,
+                    code: trimedPassword,
+                    email: trimedEmail,
+                    first_name: firstName,
+                    last_name: lastName
+                })
+                .then(() => {
+                    setLoading(false)
+                    localStorage.setItem('user', JSON.stringify({first_name: firstName, last_name: lastName, email: emailAddress}))
+                    window.location.replace(account.ACCOUNT);
+                })
+            })
             .catch((error: any) =>{
                 setLoading(false)
                 setError(error.message)
@@ -102,6 +92,25 @@ const Signup: React.FC<Props> = ({}) => {
 
     }
 
+    const provider = new GoogleAuthProvider();
+    const signInWithGoogle = () => {
+        if(!firebase){return}
+        setLoading(true)
+
+        firebase
+        .auth()
+        .signInWithPopup(provider)
+          .then((result) => {
+            // The signed-in user info.
+            const user = result.user;
+            console.log("User signed in:", user);
+      
+            // You can access user details or perform other actions here
+          })
+          .catch((error) => {
+            console.error("Error during sign-in:", error.message);
+          });
+    }
 
 
   return (
@@ -113,9 +122,9 @@ const Signup: React.FC<Props> = ({}) => {
             <h3 className="login-title">Sign up to find your new puppy</h3>
 
             <div className="authentication__social">
-                <a className="button ghost" href="">
+                <a className="button ghost" onClick={signInWithGoogle}>
                     <img src='/img/googl-logo.svg' style={{width: '1.8rem', height: '1.8rem'}}/>
-                <span>Continue with Google</span>
+                 <span>Continue with Google</span>
                 </a>
                 <a className="button blue-facebook" href="">
                     <img src="/img/facebook-icon-white.svg"/>
@@ -194,7 +203,7 @@ const Signup: React.FC<Props> = ({}) => {
                 </div>
                 <div className="input-wrapper last-name">
                     <label htmlFor="lastName">Last name</label>
-                    <input tabIndex={2} id="lastName" type="text" name="last_name" data-prefill-field="lastName" required />
+                    <input tabIndex={2} id="lastName" type="text" name="last_name" data-prefill-field="lastName" required onChange={(e)=> setLastName(e.currentTarget.value)} />
                 </div>
             </div>
 
@@ -204,12 +213,11 @@ const Signup: React.FC<Props> = ({}) => {
                     tabIndex={3} 
                     id="email" 
                     type="email" 
-                    pattern="[^@]+@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9\-]+" 
                     name="email" 
                     data-name="Email Address" 
                     data-validate="email"
                     required 
-                    onChange={(e)=> setEmailAddress(e.currentTarget.value.trim())}
+                    onChange={(e)=> setEmailAddress(e.currentTarget.value)}
                 />
             </div>
 
@@ -291,7 +299,6 @@ const Signup: React.FC<Props> = ({}) => {
             </div>
 
             <p>Already have an account? <a className="hyperlink" href="https://www.puppyspot.com/log-in">Click here to log in</a></p>
-<>{error}</>
         </form>
 
     </main>

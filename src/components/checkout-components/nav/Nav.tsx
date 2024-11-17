@@ -1,8 +1,11 @@
 import React from "react";
 import "./index.css";
+import { navbar } from '../../../contants/routes';
 
 interface Props {}
 const CheckoutNav: React.FC<Props> = ({}) => {
+  const us_number = process.env.REACT_APP_US_NUMBER_FORMARTED
+
   return (
     <header className="tw-bg-white tw-flex tw-items-center tw-justify-between tw-px-6 tw-py-3 tw-border-b tw-border-b-light-gray tw-h-[70px]">
       <a href="/">
@@ -112,7 +115,7 @@ const CheckoutNav: React.FC<Props> = ({}) => {
             ></path>
           </svg>
           <a
-            href="tel:+18663066064"
+            href={navbar.PHONE_WHATSAPP}
             className="sm:tw-hidden tw-font-nunito tw-underline tw-font-bold"
           >
             Call Us
@@ -121,10 +124,10 @@ const CheckoutNav: React.FC<Props> = ({}) => {
             Need Help? Call us at
           </span>
           <a
-            href="tel:+18663066064"
+            href={navbar.PHONE_WHATSAPP}
             className="tw-font-bold tw-font-nunito tw-underline tw-hidden sm:tw-block"
           >
-            866-306-6064
+            {us_number}
           </a>
         </div>
       </div>

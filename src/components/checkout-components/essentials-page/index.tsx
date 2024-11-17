@@ -1,9 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useState, useContext } from 'react';
+import ScrollContainer from 'react-indiana-drag-scroll';
+import { FirebaseContext } from '../../../context/firebase';
+import { Oval } from 'react-loader-spinner';
 
 interface Props{
     puppyInfo: any;
+    paymentID: string | undefined;
 }
-const EssentialsSection: React.FC<Props> = ({puppyInfo}) => {
+const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID}) => {
+    const { firebase } = useContext(FirebaseContext)
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
     const openOrderSummarySmall = () => {
         const el = document.getElementById('mantine-Drawer-overlay-id')
         const el2 = document.getElementById('mantine-Drawer-content-id')
@@ -17,8 +25,42 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo}) => {
             el2.style.transform = 'translateY(0%)';
         }
     }
-  return (
 
+    async function updateItem(documentId: any) {
+        if (!firebase) return;
+        setError('');
+        setLoading(true);
+      
+        try {
+          // Query the collection to find the document
+          const querySnapshot = await firebase.firestore()
+            .collection('puppy_orders')
+            .where('paymentId', '==', documentId)
+            .get();
+      
+          if (querySnapshot.empty) {
+            setLoading(false);
+            setError('Document not found');
+            return;
+          }
+      
+          // Update each document that matches the query
+          for (const doc of querySnapshot.docs) {
+            await doc.ref.update({
+                passedEssentials: true,
+            });
+          }
+      
+          setLoading(false);
+          window.location.replace(`/shop/checkout/${paymentID}/${puppyInfo.puppy_id}/paypal`);
+        } catch (error) {
+          setLoading(false);
+          setError('An unexpected error occurred');
+          console.error('Error updating document:', error);
+        }
+    }
+
+  return (
     <div className='tw-flex tw-flex-col tw-w-full lg:tw-max-w-[711px]'>
         <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
             <img 
@@ -94,7 +136,7 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo}) => {
                         </div>
 
                         <div className="slider-container">
-                            <div className="slider">
+                            <ScrollContainer className="slider" vertical={false}>
 
                                 <a href="/img/starter-kit/small_kit.webp" target='_blank'>
                                     <div className="image-card">
@@ -194,7 +236,7 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo}) => {
                                         </div>
                                     </div>
                                 </a>
-                            </div>
+                            </ScrollContainer>
                         </div>
 
                         <p className='tw-font-inter tw-text-sm tw-text-gray-02' style={{padding: '0 1rem'}}>Welcoming a new puppy into your home is an exhilarating adventure filled with joy and companionship. Alongside this excitement comes the responsibility and preparation needed for your furry friend's arrival. That's where PuppySpot's Starter Kit comes to the rescue–  a comprehensive set featuring 13 essential items. It's designed to ensure a smooth transition for both you and your new four-legged family member.</p>
@@ -242,12 +284,37 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo}) => {
 
 
 
-                <div className="tw-px-6 sm:tw-px-0"><button style={{"--button-color":"var(--mantine-color-white)"} as React.CSSProperties } className="mantine-focus-auto mantine-active 
+                <div className="tw-px-6 sm:tw-px-0">
+                    <button style={{"--button-color":"var(--mantine-color-white)"} as React.CSSProperties } className="mantine-focus-auto mantine-active 
                         tw-px-6 tw-py-4 tw-h-[52px] tw-rounded-full tw-w-full tw-bg-blue-01
                         hover:tw-bg-blue-02
                         data-[disabled]:tw-bg-gray-05 disabled:tw-bg-gray-05
                         lg:tw-max-w-[400px]
-                    tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" type="button"><span className="m_80f1301b mantine-Button-inner"><span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">Continue to payment</span></span></button>
+                    tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" 
+                    type="button"
+                    onClick={()=>updateItem(paymentID)}>
+                        <span className="m_80f1301b mantine-Button-inner">
+                            <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">
+                                Continue to payment
+
+                                {
+                                    loading
+                                    ?
+                                    <Oval
+                                        visible={true}
+                                        height="30"
+                                        width="30"
+                                        color="#ffffff"
+                                        ariaLabel="oval-loading"
+                                        wrapperStyle={{marginLeft: '0.3rem'}}
+                                        wrapperClass=""
+                                    />
+                                    :
+                                    null
+                                }
+                            </span>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>

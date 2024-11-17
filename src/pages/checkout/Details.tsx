@@ -49,7 +49,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
               ?
               <>
                 <DetailsSection puppyInfo={puppyInfo}/>
-                <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice}/>
+                <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={false}/>
               </>
               :
               null

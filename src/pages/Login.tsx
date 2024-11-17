@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../styles/login.css'
+import { FirebaseContext } from '../context/firebase';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { account } from '../contants/routes';
+
 
 interface Props{
 }
@@ -9,13 +13,48 @@ const Login: React.FC<Props> = ({}) => {
         document.title = "Log into your account | PuppySpot";
     }, []);
 
+    const { firebase } = useContext(FirebaseContext)
+    const [emailAddress, setEmailAddress] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const handlesignin = (event: React.FormEvent<HTMLFormElement>) =>{
+        event.preventDefault()
+        setLoading(true)
+        if(!firebase){return}
+        const trimedEmail = emailAddress.trim()
+        const trimedPassword = password.trim()
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(trimedEmail, trimedPassword)
+            .then(() => {
+                setLoading(false)
+                window.location.replace(account.ACCOUNT);
+            })
+            .catch((error) =>{
+                setLoading(false)
+                console.log(error)
+                
+                    // Handle specific error codes
+                    if (error.code === 'auth/user-not-found') {
+                        setError('User not found');
+                    } else if (error.code === 'auth/wrong-password') {
+                        setError('Wrong password');
+                    } else {
+                        setError('An error occurred. Please try again.');
+                    }
+            })
+
+    }
+
     const [isVisible, setIsvisible] = useState(false)
 
   return (
     <main className='authentication authentication__page log-in'>
         <h2>Discover, learn about, and find your new puppy!</h2>
 
-        <form action="" className='js-form-validate authentication__container'>
+        <form onSubmit={handlesignin} className='js-form-validate authentication__container'>
 
             <h3 className="login-title">Log in to PuppySpot</h3>
 
@@ -44,7 +83,7 @@ const Login: React.FC<Props> = ({}) => {
                     autoFocus={true}
                     autoComplete="off"
                     tabIndex={0}
-                    type="text"
+                    type="email"
                     id="log-in__email"
                     pattern="[^@]+@([a-zA-Z0-9\-]+\.)+[a-zA-Z0-9\-]+"
                     name="email"
@@ -53,6 +92,7 @@ const Login: React.FC<Props> = ({}) => {
                     placeholder=""
                     data-tid="emailTextInput"
                     className="floating-input"
+                    onChange={(e)=> setEmailAddress(e.currentTarget.value)}
                     />
                 <label htmlFor="log-in__password" className="floating-label">Email</label>
             </div>
@@ -68,6 +108,7 @@ const Login: React.FC<Props> = ({}) => {
                     data-name="Password"
                     data-validate="required"
                     className="floating-input"
+                    onChange={(e)=> setPassword(e.currentTarget.value)}
                 />
                    <label htmlFor="log-in__password" className="floating-label">Password</label>
                 <span className={isVisible ? "password-visibility js-show-password visible" : "password-visibility js-show-password" }  onClick={()=> setIsvisible(!isVisible)}></span>
@@ -84,18 +125,18 @@ const Login: React.FC<Props> = ({}) => {
             </div>
 
             <div className="cta-loader">
-                <div className="loading cta invisible">
+                <div className={`loading cta ${loading ? '' : 'invisible'}`}>
                     <picture className="">
-                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/components/loader-cta.svg" loading="lazy" src="/img/components/loader-cta.svg"/>
+                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/loader-cta.svg" loading="lazy" src="/img/loader-cta.svg" />
                     </picture>
-                </div>
+                </div>  
                 <input tabIndex={0} type="submit" className="button login-button main js-submit" value="Log In" />
             </div>
 
             <p>Don't have an account? <a className="hyperlink" href="/sign-up">Sign up</a></p>
 
         </form>
-    
+        <>{error}</>
     </main>
   );
 }

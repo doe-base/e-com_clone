@@ -21,6 +21,8 @@ import BreedPuppiesForSell from './pages/BreedPuppiesForSell';
 import Breed from './pages/Breeds';
 import BreedOverview from './pages/BreedsOverview';
 import CharacteristicPuppyForSell from './pages/CharacteristicPuppyForSell';
+import MyAccount from './pages/MyAccount';
+import useAuthListener from './hooks/use-auth-listener';
 
 
 const activeDogs = {
@@ -52,6 +54,8 @@ const doodleDogs = {
 function App() {
   const [navHeight, setNavHeight] = useState<number>(0)
   const [isPuppiesForSale, setIsPuppiesForSale] = useState(false);
+  const {user} = useAuthListener();
+
 
   let theme = createTheme({
     breakpoints: {
@@ -77,9 +81,10 @@ function App() {
   }, []); // Runs only on initial render
 
   const location = window.location.pathname;
-  const newPath = location.replace(/\/[^\/]*$/, '');
+  console.log(location)
   // List of paths where the NavContainer should not be displayed
-  const hideNavPaths = ["/shop/checkout/details", "/shop/checkout/travel", "/shop/checkout/essentials", "/shop/checkout/checkout"];
+  const pathSegments = location.split('/').filter(segment => segment);
+  const hideNavPaths = ["/shop/checkout"];
 
 
   return (
@@ -87,9 +92,9 @@ function App() {
       <div className="App">
 
         {/* Conditionally render NavContainer */}
-        {!hideNavPaths.includes(newPath) && (
+        {!hideNavPaths.includes(`/${pathSegments[0]}/${pathSegments[1]}`) && (
           <>
-            <NavContainer setNavHeight={setNavHeight} isPuppiesForSale={isPuppiesForSale} />
+            <NavContainer setNavHeight={setNavHeight} isPuppiesForSale={isPuppiesForSale} user={user} />
             <div style={{height: `${navHeight}px`}} className='space-height-nav'></div>
           </>
         )}
@@ -122,11 +127,15 @@ function App() {
             <Route path="/careers" element={<Career />} />
             <Route path="/dog-registration" element={<DogRegistration />} />
             <Route path="/akc" element={<AKC />} />
-            <Route path="/shop/checkout/details/:puppyId" element={<CheckoutDetail />} />
             {/* This path sould contain a uniqe session code after payment is register */}
-            <Route path="/shop/checkout/travel/:puppyId" element={<CheckoutTravel />} />
-            <Route path="/shop/checkout/essentials/:puppyId" element={<CheckoutEssentials />} />
+            <Route path="/shop/checkout/details/:puppyId" element={<CheckoutDetail />} />
+            <Route path="/shop/checkout/travel/:paymentID/:puppyId" element={<CheckoutTravel />} />
+            <Route path="/shop/checkout/essentials/:paymentID/:puppyId" element={<CheckoutEssentials />} />
+            
             <Route path="/shop/checkout/checkout/:puppyId" element={<Checkout />} />
+
+            {/* Has to be authenticated */}
+            <Route path="/my-account" element={<MyAccount />} />
           </Routes>
         </Router>
       </div>

@@ -9,6 +9,7 @@ import DetailsSection from '../../components/checkout-components/details-page';
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
 import { useParams } from 'react-router-dom';
 import allIndivialPuppies from '../../data/individual-puppy-data/individual_puppy1.json'
+import FullScreenLoader from '../../components/loader/FullScreenLoader';
 
 
 function getObjectById(array: any[], id: string | undefined): any | undefined {
@@ -18,13 +19,21 @@ interface Props{
 }
 const CheckoutDetail: React.FC<Props> = ({}) => {
     const { puppyId } = useParams();
-    const [ puppyInfo, setPuppyInfo ] = useState(getObjectById(allIndivialPuppies, puppyId))
-   
+    const [ puppyInfo, setPuppyInfo ] = useState(null)
+    const [shippingPrice, setShippingPrice] = useState(0)
+
     useEffect(() =>{
         document.title = "Find the Right Puppy for Your Family | PuppySpot | PuppySpot";
     }, []);
 
-    
+    useEffect(()=> {
+      const puppy = getObjectById(allIndivialPuppies, puppyId)
+      if (puppy){
+        setPuppyInfo(puppy)
+      }else{
+        window.location.replace('/page-not-found');
+      }
+    }, [])
 
   return (
     <>
@@ -35,10 +44,18 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
 
            <div className='tw-flex tw-flex-col tw-justify-between tw-items-start tw-gap-8 lg:tw-flex-row sm:tw-mt-12'>
             
-             <DetailsSection puppyInfo={puppyInfo}/>
+            {
+              puppyInfo
+              ?
+              <>
+                <DetailsSection puppyInfo={puppyInfo}/>
+                <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice}/>
+              </>
+              :
+              null
+            }
 
 
-              <OrderSummary puppyInfo={puppyInfo}/>
 
            </div>
 
@@ -46,6 +63,7 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
       </section>
       <CheckoutFooter />
       {/* <OrderSummary/> */}
+      {/* <FullScreenLoader /> */}
     </>
   );
 }

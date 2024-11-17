@@ -6483,4 +6483,29 @@ sentinel {
 }
 
 
-/* Left out style */
+/* Added by me */
+.select-field-special{
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-color: var(--gray-04);
+  border-width: 1px;
+  border-radius: 10px;
+  height: 60px;
+  line-height: var(--mantine-line-height);
+}
+.select-field-special:focus{
+  height: 60px !important;
+}
+.select-field-special:active, .select-field-special:focus{
+  border-color: var(--gray-04);
+}
+.select-field-special:hover{
+  border-color: var(--gray-04);
+}
+.margin-bottom_important{
+  margin-bottom: 1rem !important;
+}
+
+/* .select-field-special-red{
+  border-color: red !important;
+} */

@@ -72,7 +72,7 @@
 .bank-transfer-button {
     display: inline-flex;
     align-items: center;
-    background-color: #004085; /* Dark blue for a professional look */
+    background-color: #000; /* Dark blue for a professional look */
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -84,10 +84,38 @@
     transition: background-color 0.3s;
 }
 .bank-transfer-button:hover {
-    background-color: #002f5e;
+    background-color: #000000e7;
 }
 .bank-logo {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     margin-right: 10px;
+}
+
+
+.payment-info-section {
+    background-color: #f0f0f0; /* Light gray */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family:inherit;
+}
+
+.payment-info-section h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.payment-info-section ol {
+    padding-left: 20px;
+    line-height: 1.6;
+    list-style-type: decimal; 
+}
+
+.payment-info-section li {
+    /* margin-bottom: 10px; */
+    list-style-type: decimal;
+    font-size: 0.9rem;
 }

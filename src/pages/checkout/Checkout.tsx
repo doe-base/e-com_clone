@@ -15,6 +15,12 @@ import FullScreenLoader from '../../components/loader/FullScreenLoader';
 function getObjectById(array: any[], id: string | undefined): any | undefined {
   return array.find(item => item.puppy_id === id);
 }
+function formatNumberWithCommas(number: number) {
+  if (typeof number !== 'number') {
+    return 'Input must be a number';
+  }
+  return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
 interface Props{
 }
 const Checkout: React.FC<Props> = ({}) => {
@@ -26,6 +32,8 @@ const Checkout: React.FC<Props> = ({}) => {
   const [shippingPrice, setShippingPrice] = useState(0)
   const [loading, setLoading] = useState(false)
   const [ paymentInfo, setPaymentInfo ] = useState<any>(null)
+  const [subTotal, setSubTotal] = useState(formatNumberWithCommas( Number(puppyInfo.price.slice(1)) + shippingPrice ))
+  const [subTotalInNumber, setSubTotalInNumber] = useState(Number(puppyInfo.price.slice(1)) + shippingPrice)
 
     useEffect(() =>{
         document.title = "Find the Right Puppy for Your Family | PuppySpot | PuppySpot";
@@ -76,6 +84,12 @@ const Checkout: React.FC<Props> = ({}) => {
 
       setShippingPrice(totalCost)
     }, [paymentInfo])
+
+    useEffect(()=>{
+      setSubTotal(formatNumberWithCommas( Number(puppyInfo.price.slice(1)) + shippingPrice ))
+      setSubTotalInNumber(Number(puppyInfo.price.slice(1)) + shippingPrice)
+    }, [shippingPrice])
+
   return (
     <>
       <CheckoutNav/>
@@ -88,7 +102,7 @@ const Checkout: React.FC<Props> = ({}) => {
               puppyInfo && paymentInfo
               ?
               <>
-              <CheckoutContainer puppyId={puppyId} paymentID={paymentID} paymentOption={paymentOption} />
+              <CheckoutContainer puppyInfo={puppyInfo} paymentInfo={paymentInfo} subTotal={subTotal} puppyId={puppyId} paymentID={paymentID} paymentOption={paymentOption} subTotalInNumber={subTotalInNumber} />
 
               <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={paymentInfo.passedEssentials}/>
               </>

@@ -238,7 +238,7 @@ const useStyles = makeStyles((theme: Theme)=>{
             },
         },
         cryptocurrencyaddressholder: {
-            marginBottom: '2.5rem',
+            marginBottom: '1.5rem',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',

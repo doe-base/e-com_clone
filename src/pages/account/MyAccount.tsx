@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import '../styles/account.css'
-import MyAccountContainer from '../container/MyAccountContainer';
+import '../../styles/account.css'
+import MyAccountContainer from '../../container/MyAccountContainer';
+import MyAccountAuthenticatedContainer from '../../container/MyAccountAuthenticatedContainer';
 
 interface Props{
 }
@@ -14,7 +15,8 @@ const MyAccount: React.FC<Props> = ({}) => {
 
   return (
     <>
-        <MyAccountContainer />
+        {/* <MyAccountContainer /> */}
+        <MyAccountAuthenticatedContainer />
     </>
   );
 }

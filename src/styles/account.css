@@ -1184,3 +1184,23 @@
   fill: #ff9100 !important;
   color: #ff9100 !important;
 }
+
+
+
+span.password-visibility:hover {
+  cursor: pointer;
+}
+span.password-visibility {
+  background: url(/public/img/authentication/password-hidden.svg) no-repeat;
+  background-size: contain;
+  height: 1.2em;
+  position: absolute;
+  right: 1em;
+  top: 2.5em;
+  width: 1.2em;
+}
+span.password-visibility.visible {
+  background-image: url(/public/img/authentication/password-visible.svg);
+  height: 1.3em;
+  top: 2.7em;
+}

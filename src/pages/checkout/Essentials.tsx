@@ -80,7 +80,7 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
     <>
       <CheckoutNav/>
       <section className='tw-max-w-7xl tw-mx-auto tw-mb-4 sm:tw-px-6'>
-        <PrcessTracker page={"travel"}/>
+        <PrcessTracker page={"essentials"}/>
 
 
            <div className='tw-flex tw-flex-col tw-justify-between tw-items-start tw-gap-8 lg:tw-flex-row sm:tw-mt-12'>

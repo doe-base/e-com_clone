@@ -68,9 +68,8 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
 
     const [Loading, setLoading] = useState(false)
     const [Failure, setFailure] = useState(false)
-    const [paypalField, setPaypalField] = useState(false)
     const defaultBlob = new Blob(["default content"], { type: 'text/plain' });
-    const onPaypalSubmit = ( e: any ) =>{
+    const onCryptocurrencySubmit = ( e: any ) =>{
       e.preventDefault()
       
       setLoading(true)
@@ -81,9 +80,11 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
       newFormData.append('puppyID', puppyId || defaultBlob)
       newFormData.append('price', subTotal || defaultBlob)
       newFormData.append('payerEmail', paymentInfo.emailInput)
-      newFormData.append('paymentMethod', 'paypal')
+      newFormData.append('blockChain', blockChain)
+      newFormData.append('cryptoPrice', cryptoPrice)
+      newFormData.append('paymentMethod', 'crypto')
 
-      const url = process.env.REACT_APP_PAYPAL_PAYMENT || ''
+      const url = process.env.REACT_APP_CRYPTOCURRENCY || ''
       axios.post(url, newFormData, {
         onUploadProgress: (ProgressEvent)=>{  }
       })
@@ -234,7 +235,7 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
                                     lg:tw-max-w-[400px]
                                 tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" 
                                 type="button"
-                                onClick={onPaypalSubmit}
+                                onClick={onCryptocurrencySubmit}
                             >
                                 <span className="m_80f1301b mantine-Button-inner">
                                     <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">

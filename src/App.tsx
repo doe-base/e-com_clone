@@ -21,7 +21,7 @@ import BreedPuppiesForSell from './pages/BreedPuppiesForSell';
 import Breed from './pages/Breeds';
 import BreedOverview from './pages/BreedsOverview';
 import CharacteristicPuppyForSell from './pages/CharacteristicPuppyForSell';
-import MyAccount from './pages/MyAccount';
+import MyAccount from './pages/account/MyAccount';
 import useAuthListener from './hooks/use-auth-listener';
 
 

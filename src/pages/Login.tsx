@@ -18,35 +18,70 @@ const Login: React.FC<Props> = ({}) => {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const [rememberMe, setRemeberMe] = useState(true)
 
-    const handlesignin = (event: React.FormEvent<HTMLFormElement>) =>{
-        event.preventDefault()
-        setLoading(true)
-        if(!firebase){return}
-        const trimedEmail = emailAddress.trim()
-        const trimedPassword = password.trim()
-        firebase
+    const handlesignin = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setLoading(true);
+      
+        if (!firebase) {
+          return;
+        }
+
+        const trimmedEmail = emailAddress.trim();
+        const trimmedPassword = password.trim();
+
+        try {
+          const userCredential = await firebase
             .auth()
-            .signInWithEmailAndPassword(trimedEmail, trimedPassword)
-            .then(() => {
-                setLoading(false)
-                window.location.replace(account.ACCOUNT);
-            })
-            .catch((error) =>{
-                setLoading(false)
-                console.log(error)
-                
-                    // Handle specific error codes
-                    if (error.code === 'auth/user-not-found') {
-                        setError('User not found');
-                    } else if (error.code === 'auth/wrong-password') {
-                        setError('Wrong password');
-                    } else {
-                        setError('An error occurred. Please try again.');
-                    }
-            })
-
-    }
+            .signInWithEmailAndPassword(trimmedEmail, trimmedPassword);
+          
+          const userUid = userCredential.user?.uid;
+      
+          if (userUid) {
+            const customerDoc = await firebase
+              .firestore()
+              .collection('customers')
+              .where('id', '==', userUid)
+              .get();
+      
+            if (!customerDoc.empty) {
+              localStorage.setItem('user', JSON.stringify({
+                    user: userUid, 
+                    first_name: customerDoc.docs[0].data().first_name, 
+                    last_name: customerDoc.docs[0].data().last_name, 
+                    email: customerDoc.docs[0].data().email, 
+                    phone: customerDoc.docs[0].data().phone,
+                    address1: customerDoc.docs[0].data().address1,
+                    address2: customerDoc.docs[0].data().address2,
+                    city: customerDoc.docs[0].data().city,
+                    state: customerDoc.docs[0].data().state,
+                    zip: customerDoc.docs[0].data().zip,
+                    country: customerDoc.docs[0].data().country,
+                    code: rememberMe && customerDoc.docs[0].data().code 
+                }))
+              window.location.replace(account.ACCOUNT);
+            } else {
+              console.error('No customer found with the given UID');
+              setError('Customer data not found');
+            }
+          }
+      
+          setLoading(false);
+        } catch (error) {
+          setLoading(false);
+          console.log(error);
+      
+          // Handle specific error codes
+        //   if (error.code === 'auth/user-not-found') {
+        //     setError('User not found');
+        //   } else if (error.code === 'auth/wrong-password') {
+        //     setError('Wrong password');
+        //   } else {
+        //     setError('An error occurred. Please try again.');
+        //   }
+        }
+     };
 
     const [isVisible, setIsvisible] = useState(false)
 

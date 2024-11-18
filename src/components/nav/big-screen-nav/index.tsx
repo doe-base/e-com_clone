@@ -21,7 +21,7 @@ interface Props{
     user: any;
 }
 const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale, isOverviewPage, user}) => {
-    console.log(user)
+    // console.log(user)
 
     const [isNavbarHover, setIsNavbarHover] = useState(false)
     const [isAvailblepuppliesHover, setIsAvailblepuppliesHover] = useState(false)

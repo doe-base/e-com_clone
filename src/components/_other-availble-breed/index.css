@@ -1,12 +1,8 @@
 .carousel-module__wrapper--O59lP {
     touch-action: pan-y;
-    /* max-width: 100%; */
     overflow: hidden;
   }
   .featured-puppies-module__carouselWrapper--bYSHH {
-    /* touch-action: none; */
-    /* max-width: 100%; */
-    /* overflow: hidden; */
     max-width: 1100px !important;
     margin: 0 auto;
     margin-top: 30px;

@@ -5,19 +5,22 @@ interface Props{
 }
 const OtherAvaibleBreed: React.FC<Props> = ({}) => {
 
-
-    const [movementCount, setMovementCount] = useState(0); // Use state for movementCount
+    const [movementCount, setMovementCount] = useState(0);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const sliderElementRef = useRef<HTMLDivElement>(null);
+    const [isDown, setIsDown] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+    const [isScrolling, setIsScrolling] = useState(false);
 
     const handleRightBtnClick = () => {
 
         if (scrollContainerRef.current && sliderElementRef.current) {
-            const sliderWidth = scrollContainerRef.current.clientWidth; // Width of the parent container
+            const sliderWidth = scrollContainerRef.current.clientWidth;
             const maxMovement = sliderElementRef.current.scrollWidth;
 
             if (movementCount < maxMovement) {
-                const newMovementCount = Math.min(movementCount + sliderWidth, maxMovement); // Cap at maxMovement
+                const newMovementCount = Math.min(movementCount + sliderWidth, maxMovement);
                 setMovementCount(newMovementCount);
                 scrollContainerRef.current.scrollLeft = newMovementCount
             }
@@ -27,7 +30,7 @@ const OtherAvaibleBreed: React.FC<Props> = ({}) => {
     const handleLeftBtnClick = () => {
 
         if (scrollContainerRef.current && sliderElementRef.current) {
-            const sliderWidth = scrollContainerRef.current.clientWidth; // Width of the parent container
+            const sliderWidth = scrollContainerRef.current.clientWidth;
 
             // Only slide left if we are not already at the beginning
             if (movementCount > 0) {
@@ -37,12 +40,6 @@ const OtherAvaibleBreed: React.FC<Props> = ({}) => {
             }
         }
     };
-
-
-    const [isDown, setIsDown] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
-    const [isScrolling, setIsScrolling] = useState(false); // Flag to track if the user has scrolled
 
     const onMouseDown = (e: React.MouseEvent) => {
         if (!scrollContainerRef.current) return;
@@ -76,7 +73,6 @@ const OtherAvaibleBreed: React.FC<Props> = ({}) => {
         setMovementCount(newScrollLeft);
     };
 
-    // Attach these handlers to your anchors:
     const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         if (isScrolling) {
             e.preventDefault(); // If user has scrolled, prevent anchor click

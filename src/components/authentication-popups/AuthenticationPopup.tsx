@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 
 interface Props {}
 const AuthenticationPopup: React.FC<Props> = ({}) => {
@@ -34,7 +33,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 href="https://www.puppyspot.com/auth/google"
               >
                 <svg>
-                  {/* <use xlink:href="/assets/img/spritemap.svg#sprite-google"></use> */}
                 </svg>
                 <span>Continue with Google</span>
               </a>
@@ -46,15 +44,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 <span>Continue with Facebook</span>
               </a>
             </div>
-            {/* <script>
-        document.querySelectorAll('.authentication__social>.button')?.forEach((button) => {
-            button.addEventListener('click', () => {
-                statsig.logEvent(
-                    button.className.includes('facebook') ? 'session_start_facebook' : 'session_start_google'
-                );
-            })
-        })
-    </script> */}
             <div className="authentication__divider">
               <hr />
               <span>or</span>
@@ -210,7 +199,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 href="https://www.puppyspot.com/auth/google"
               >
                 <svg>
-                  {/* <use xlink:href="/assets/img/spritemap.svg#sprite-google"></use> */}
                 </svg>
                 <span>Continue with Google</span>
               </a>
@@ -222,15 +210,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 <span>Continue with Facebook</span>
               </a>
             </div>
-            {/* <script>
-        document.querySelectorAll('.authentication__social>.button')?.forEach((button) => {
-            button.addEventListener('click', () => {
-                statsig.logEvent(
-                    button.className.includes('facebook') ? 'session_start_facebook' : 'session_start_google'
-                );
-            })
-        })
-    </script> */}
             <div className="authentication__divider">
               <hr />
               <span>or</span>
@@ -314,13 +293,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
               data-prefill-field="order"
               value="803952"
             />
-            {/* <script>
-        document.querySelector('.login-button.js-submit').addEventListener('click', () => {
-            statsig.logEvent(
-                'session_start_email'
-            );
-        })
-    </script> */}
             <p className="js-sign-up-link">
               Don't have an account?{" "}
               <a className="hyperlink js-form-change" href="javascript:void(0)">

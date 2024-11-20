@@ -24,6 +24,7 @@ import CharacteristicPuppyForSell from './pages/CharacteristicPuppyForSell';
 import MyAccount from './pages/account/MyAccount';
 import useAuthListener from './hooks/use-auth-listener';
 import puppyCharacterArr from './data/puppy-characteristics';
+import ForgotPassword from './pages/ForgetPassword';
 
 
 
@@ -91,6 +92,7 @@ function App() {
             }
             <Route path="/log-in" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/promise" element={<PuppyPromise />} />
             <Route path="/careers" element={<Career />} />

@@ -66,40 +66,50 @@ const Signup: React.FC<Props> = ({}) => {
         setLoading(true)
         const trimedEmail = emailAddress.trim()
         const trimedPassword = password.trim()
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(trimedEmail, trimedPassword)
-            .then((result: any) => {
-                const user = result.user;
-                const uid = user.uid;
-                result.user.updateProfile({
-                    displayName: firstName,
-                    // photoURL: Math.floor(Math.random() * 5) + 1,
-                })
+        firebase.auth().currentUser?.updateProfile({
+            displayName: firstName
+        })
+        firebase.firestore().collection('customers').add({
+            id: '',
+            code: trimedPassword,
+            email: trimedEmail,
+            first_name: firstName,
+            last_name: lastName,
+            from: 'email_password'
+        })
+        .then(() => {
+            firebase
+                .auth()
+                .createUserWithEmailAndPassword(trimedEmail, trimedPassword)
+                .then((result: any) => {
+                    const user = result.user;
+                    const uid = user.uid;
+                    result.user.updateProfile({
+                        displayName: firstName,
+                    })
+    
+                    sendEmailVerification(user)
 
-                sendEmailVerification(user)
-
-
-                firebase.firestore().collection('customers').add({
-                    id: uid,
-                    code: trimedPassword,
-                    email: trimedEmail,
-                    first_name: firstName,
-                    last_name: lastName
-                })
-                .then(() => {
                     setLoading(false)
-                    localStorage.setItem('user', JSON.stringify({user: uid, first_name: firstName, last_name: lastName, email: emailAddress, code: rememberMe && trimedPassword }))
+                    localStorage.setItem('user', JSON.stringify({user: uid, first_name: firstName, last_name: lastName, email: emailAddress, code: rememberMe && trimedPassword, from: 'email_password' }))
                     window.location.replace(account.ACCOUNT);
+                    
+                })
+                .catch((error: any) =>{
+                    setLoading(false)
+                    setAlert(true)
+                    setAlertMessage('Something went wrong!')
+                    setAlertMode(false)
+                    setError(error.message)
                 })
             })
-            .catch((error: any) =>{
-                setLoading(false)
-                setAlert(true)
-                setAlertMessage('Something went wrong!')
-                setAlertMode(false)
-                setError(error.message)
-            })
+        .catch((error: any) =>{
+            setLoading(false)
+            setAlert(true)
+            setAlertMessage('Something went wrong!')
+            setAlertMode(false)
+            setError(error.message)
+        })
 
     }
 
@@ -111,15 +121,49 @@ const Signup: React.FC<Props> = ({}) => {
         .auth()
         .signInWithPopup(provider)
           .then((result) => {
-            // The signed-in user info.
             const user = result.user;
-            console.log("User signed in:", user);
-      
+
+            firebase.firestore().collection('customers').add({
+                id: user?.uid,
+                code: '',
+                email: user?.email,
+                first_name: user?.displayName,
+                last_name: '',
+                from: 'google_auth'
+            })
+            .then(() => {
+                localStorage.setItem('user', JSON.stringify({
+                    user: user?.uid, 
+                    first_name: user?.displayName, 
+                    last_name: '', 
+                    email: user?.email, 
+                    code: '', 
+                    from: 'google_auth' 
+                }))
+                setLoading(false)
+                window.location.replace(account.ACCOUNT);
+            })
+            .catch((error: any) =>{
+                localStorage.setItem('user', JSON.stringify({
+                    user: user?.uid, 
+                    first_name: user?.displayName, 
+                    last_name: '', 
+                    email: user?.email, 
+                    code: '', 
+                    from: 'google_auth' 
+                }))
+                setLoading(false)
+                window.location.replace(account.ACCOUNT);
+            })
             // You can access user details or perform other actions here
           })
-          .catch((error) => {
-            console.error("Error during sign-in:", error.message);
-          });
+          .catch((error: any) =>{
+            setLoading(false)
+            setAlert(true)
+            setAlertMessage('Something went wrong!')
+            setAlertMode(false)
+            setError(error.message)
+        })
     }
 
     useEffect(()=>{

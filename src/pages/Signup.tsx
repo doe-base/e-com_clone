@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { account, pages } from '../contants/routes'
 import { GoogleAuthProvider, sendEmailVerification } from "firebase/auth";
 import AlertPopup from '../components/alert-popup/AlertPopup';
+import ThanksForSignupPopup from '../components/popups/signup-popups/ThanksForSignup';
 
 interface Props{
 }
@@ -42,7 +43,7 @@ const Signup: React.FC<Props> = ({}) => {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const [rememberMe, setRemeberMe] = useState(true)
-
+    const [thanksForSignupPopup, setThanksForSignupPopup] = useState(false)
     const handlePasswordChange =(innerText: string)=>{
         setPassword(innerText)
         setPasswordRequirement(validatePassword(password))
@@ -92,8 +93,7 @@ const Signup: React.FC<Props> = ({}) => {
 
                     setLoading(false)
                     localStorage.setItem('user', JSON.stringify({user: uid, first_name: firstName, last_name: lastName, email: emailAddress, code: rememberMe && trimedPassword, from: 'email_password' }))
-                    window.location.replace(account.ACCOUNT);
-                    
+                    setThanksForSignupPopup(true)                    
                 })
                 .catch((error: any) =>{
                     setLoading(false)
@@ -141,8 +141,7 @@ const Signup: React.FC<Props> = ({}) => {
                     from: 'google_auth' 
                 }))
                 setLoading(false)
-                window.location.replace(account.ACCOUNT);
-            })
+                    setThanksForSignupPopup(true)            })
             .catch((error: any) =>{
                 localStorage.setItem('user', JSON.stringify({
                     user: user?.uid, 
@@ -153,8 +152,7 @@ const Signup: React.FC<Props> = ({}) => {
                     from: 'google_auth' 
                 }))
                 setLoading(false)
-                window.location.replace(account.ACCOUNT);
-            })
+                    setThanksForSignupPopup(true)            })
             // You can access user details or perform other actions here
           })
           .catch((error: any) =>{
@@ -314,6 +312,7 @@ const Signup: React.FC<Props> = ({}) => {
             alertMode={alertMode} 
             setAlertMode={setAlertMode} 
         />
+        <ThanksForSignupPopup thanksForSignupPopup={thanksForSignupPopup} setThanksForSignupPopup={setThanksForSignupPopup} />
     </>
   );
 }

@@ -186,6 +186,7 @@ const Login: React.FC<Props> = ({}) => {
                       className="floating-input"
                       value={emailAddress}
                       onChange={(e)=> setEmailAddress(e.currentTarget.value)}
+                      required
                       />
                   <label htmlFor="log-in__password" className="floating-label">Email</label>
               </div>
@@ -203,6 +204,7 @@ const Login: React.FC<Props> = ({}) => {
                       className="floating-input"
                       value={password}
                       onChange={(e)=> setPassword(e.currentTarget.value)}
+                      required
                   />
                     <label htmlFor="log-in__password" className="floating-label">Password</label>
                   <span className={isVisible ? "password-visibility js-show-password visible" : "password-visibility js-show-password" }  onClick={()=> setIsvisible(!isVisible)}></span>
@@ -230,7 +232,6 @@ const Login: React.FC<Props> = ({}) => {
               <p>Don't have an account? <a className="hyperlink" href="/sign-up">Sign up</a></p>
 
           </form>
-          <>{error}</>
       </main>
 
       <AlertPopup 

@@ -1,0 +1,52 @@
+.white-modal--success .success-message {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.success-message__symbol {
+    background-color: #66af37;
+    background-image: url(/public/svg/check.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    height: 2em;
+    margin-top: 1rem;
+    width: 2em;
+}
+
+.white-modal--success .success-message + .button {
+    margin: 1rem 0;
+    width: 100%;
+}
+.white-modal--success .success-message .success-message__message {
+    margin: 1rem 0;
+  }
+.success-message__title{
+    margin: 1.3rem 0;
+}
+
+
+
+
+.white-modal__close {
+    padding: .5rem 1rem;
+    text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+    .white-modal__close {
+        padding: 0;
+        position: absolute;
+        right: .5em;
+        top: 1.5em;
+        z-index: 40;
+    }
+}
+@media screen and (min-width: 768px) {
+    .white-modal__close {
+      right: 1em;
+      top: 1em;
+    }
+}

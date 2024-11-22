@@ -349,11 +349,12 @@ const varieties =[
 ]
 
 interface BreedObject {
-    id: number;
     name: string;
     slug: string;
     isSelected: boolean;
-    discription: string;
+    description: string;
+    id: number;
+    characterID: number;
 }
 
 interface Props {
@@ -382,6 +383,8 @@ interface Props {
     setSelectedColorFilter: React.Dispatch<React.SetStateAction<any[]>>;
     travleFilter: string;
     setTravleFilter: React.Dispatch<React.SetStateAction<string>>;
+
+    resetFilters: ()=> void;
 }
 const PuppiesForSellFilterSidebar: React.FC<Props> = ({
     breedsArr, 
@@ -408,6 +411,7 @@ const PuppiesForSellFilterSidebar: React.FC<Props> = ({
     setSelectedColorFilter,
     travleFilter,
     setTravleFilter,
+    resetFilters
 }) => {
     
     const navigate = useNavigate();
@@ -710,7 +714,7 @@ const PuppiesForSellFilterSidebar: React.FC<Props> = ({
                 <div className="puppies-for-sale-filter__header">
                     <span className="bold">Filters</span>
                     <div>
-                        <a className="js-clear-filters ab-filters-btn text-underline" href="javascript:void(0)">
+                        <a onClick={resetFilters} className="js-clear-filters ab-filters-btn text-underline" href="javascript:void(0)">
                         Reset
                         </a>
                         <a className="js-close-filters ab-filters-btn text-underline" href="javascript:void(0)">

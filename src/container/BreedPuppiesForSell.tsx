@@ -9,14 +9,16 @@ import FilterResult from '../components/puppies-for-sell-componets/FilterResult'
 import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componets/Siderbar';
 import { pages } from '../contants/routes'; 
 
-interface Breed {
-    id: number;
-    slug: string;
+interface BreedObject {
     name: string;
-    discription: string;
-  }
+    slug: string;
+    isSelected: boolean;
+    description: string;
+    id: number;
+    characterID: number;
+}
 interface Props{
-    breedObj: Breed | undefined;
+    breedObj: BreedObject | undefined;
 }
 const PuppiesForSellContainer: React.FC<Props> = ({breedObj}) => {
 
@@ -105,14 +107,14 @@ const PuppiesForSellContainer: React.FC<Props> = ({breedObj}) => {
                         <div className="seo-content__container_reponsive_contaier-big">
                             <div className="js-readmore">
                                 <div className="js-seo-readmore mobile-read-more-text-ellipsis">
-                                    <p>Welcome to PuppySpot! Take a moment to browse our incredible selection of adorable, ready for love puppies. {breedObj?.discription} We only work with the country’s top breeders, offer three handle with care delivery options and a 10-year health commitment. So wherever you live we can deliver your perfect puppy! Complimentary consultations with one of our Puppy Concierges are available when you’re ready.</p>
+                                    <p>Welcome to PuppySpot! Take a moment to browse our incredible selection of adorable, ready for love puppies. {breedObj?.description} We only work with the country’s top breeders, offer three handle with care delivery options and a 10-year health commitment. So wherever you live we can deliver your perfect puppy! Complimentary consultations with one of our Puppy Concierges are available when you’re ready.</p>
                                 </div>
                             </div>
                         </div>
                         <div className="seo-content__container_reponsive_contaier-small">
                             <div className="js-readmore">
                                 <div className="js-seo-readmore mobile-read-more-text-ellipsis enabled">
-                                    <p>Welcome to PuppySpot! Take a moment to browse our incredible selection<span className={`dots-delete ${readMore ? '' : 'hidden'}`}>...</span> <span className={`read-more-real-target ${readMore ? 'hidden' : ''}`}>adorable, ready for love puppies. {breedObj?.discription} We only work with the country’s top breeders, offer three handle with care delivery options and a 10-year health commitment. So wherever you live we can deliver your perfect puppy! Complimentary consultations with one of our Puppy Concierges are available when you’re ready.</span> <span onClick={handleReadMore} className="seo-breed-content-read-more js-readmore-trigger" data-target="js-seo-readmore">Read {`${readMore ? 'More' : 'Less'}`}</span></p>
+                                    <p>Welcome to PuppySpot! Take a moment to browse our incredible selection<span className={`dots-delete ${readMore ? '' : 'hidden'}`}>...</span> <span className={`read-more-real-target ${readMore ? 'hidden' : ''}`}>adorable, ready for love puppies. {breedObj?.description} We only work with the country’s top breeders, offer three handle with care delivery options and a 10-year health commitment. So wherever you live we can deliver your perfect puppy! Complimentary consultations with one of our Puppy Concierges are available when you’re ready.</span> <span onClick={handleReadMore} className="seo-breed-content-read-more js-readmore-trigger" data-target="js-seo-readmore">Read {`${readMore ? 'More' : 'Less'}`}</span></p>
                                     
                                 </div>
                             </div>

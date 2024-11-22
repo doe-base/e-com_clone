@@ -1,0 +1,634 @@
+[
+  {
+    "name": "Australian Mountain Doodle",
+    "slug": "australian-mountain-doodle",
+    "isSelected": false,
+    "description": "",
+    "id": 1,
+    "characterID": 6
+  },
+  {
+    "name": "Cocker Spaniel",
+    "slug": "cocker-spaniel",
+    "isSelected": false,
+    "description": "",
+    "id": 2,
+    "characterID": 11
+  },
+  {
+    "name": "Saint Bernard",
+    "slug": "saint-bernard",
+    "isSelected": false,
+    "description": "",
+    "id": 3,
+    "characterID": 11
+  },
+  {
+    "name": "German Shepherd Dog",
+    "slug": "german-shepherd-dog",
+    "isSelected": false,
+    "description": "",
+    "id": 4,
+    "characterID": 11
+  },
+  {
+    "name": "Corgipoo",
+    "slug": "corgipoo",
+    "isSelected": false,
+    "description": "",
+    "id": 5,
+    "characterID": 11
+  },
+  {
+    "name": "Siberian Husky",
+    "slug": "siberian-husky",
+    "isSelected": false,
+    "description": "",
+    "id": 6,
+    "characterID": 11
+  },
+  {
+    "name": "Shorkie",
+    "slug": "shorkie",
+    "isSelected": false,
+    "description": "",
+    "id": 7,
+    "characterID": 11
+  },
+  {
+    "name": "Shihpoo",
+    "slug": "shihpoo",
+    "isSelected": false,
+    "description": "",
+    "id": 8,
+    "characterID": 11
+  },
+  {
+    "name": "Shiba Inu",
+    "slug": "shiba-inu",
+    "isSelected": false,
+    "description": "",
+    "id": 9,
+    "characterID": 11
+  },
+  {
+    "name": "Morkie",
+    "slug": "morkie",
+    "isSelected": false,
+    "description": "",
+    "id": 10,
+    "characterID": 11
+  },
+  {
+    "name": "Maltipoo",
+    "slug": "maltipoo",
+    "isSelected": false,
+    "description": "",
+    "id": 11,
+    "characterID": 5
+  },
+  {
+    "name": "Pomapoo",
+    "slug": "pomapoo",
+    "isSelected": false,
+    "description": "",
+    "id": 12,
+    "characterID": 11
+  },
+  {
+    "name": "West Highland White Terrier",
+    "slug": "west-highland-white-terrier",
+    "isSelected": false,
+    "description": "",
+    "id": 13,
+    "characterID": 2
+  },
+  {
+    "name": "Bernedoodle",
+    "slug": "bernedoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 14,
+    "characterID": 6
+  },
+  {
+    "name": "Coton de Tulear",
+    "slug": "coton-de-tulear",
+    "isSelected": false,
+    "description": "",
+    "id": 15,
+    "characterID": 11
+  },
+  {
+    "name": "Pug",
+    "slug": "pug",
+    "isSelected": false,
+    "description": "",
+    "id": 16,
+    "characterID": 11
+  },
+  {
+    "name": "Pomeranian",
+    "slug": "pomeranian",
+    "isSelected": false,
+    "description": "",
+    "id": 17,
+    "characterID": 11
+  },
+  {
+    "name": "Samoyed",
+    "slug": "samoyed",
+    "isSelected": false,
+    "description": "",
+    "id": 18,
+    "characterID": 11
+  },
+  {
+    "name": "Keeshond",
+    "slug": "keeshond",
+    "isSelected": false,
+    "description": "",
+    "id": 19,
+    "characterID": 11
+  },
+  {
+    "name": "Golden Retriever",
+    "slug": "golden-retriever",
+    "isSelected": false,
+    "description": "",
+    "id": 20,
+    "characterID": 4
+  },
+  {
+    "name": "Boston Terrier",
+    "slug": "boston-terrier",
+    "isSelected": false,
+    "description": "",
+    "id": 21,
+    "characterID": 2
+  },
+  {
+    "name": "Lhasa Apso",
+    "slug": "lhasa-apso",
+    "isSelected": false,
+    "description": "",
+    "id": 22,
+    "characterID": 11
+  },
+  {
+    "name": "Aussiedoodle",
+    "slug": "aussiedoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 23,
+    "characterID": 6
+  },
+  {
+    "name": "Collie",
+    "slug": "collie",
+    "isSelected": false,
+    "description": "",
+    "id": 24,
+    "characterID": 11
+  },
+  {
+    "name": "Miniature Schnauzer",
+    "slug": "miniature-schnauzer",
+    "isSelected": false,
+    "description": "",
+    "id": 25,
+    "characterID": 11
+  },
+  {
+    "name": "Miniature Pinscher",
+    "slug": "miniature-pinscher",
+    "isSelected": false,
+    "description": "",
+    "id": 26,
+    "characterID": 11
+  },
+  {
+    "name": "Labradoodle",
+    "slug": "labradoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 27,
+    "characterID": 6
+  },
+  {
+    "name": "Papillon",
+    "slug": "papillon",
+    "isSelected": false,
+    "description": "",
+    "id": 28,
+    "characterID": 11
+  },
+  {
+    "name": "Pomsky",
+    "slug": "pomsky",
+    "isSelected": false,
+    "description": "",
+    "id": 29,
+    "characterID": 11
+  },
+  {
+    "name": "Beagle",
+    "slug": "beagle",
+    "isSelected": false,
+    "description": "",
+    "id": 30,
+    "characterID": 11
+  },
+  {
+    "name": "Akita",
+    "slug": "akita",
+    "isSelected": false,
+    "description": "",
+    "id": 31,
+    "characterID": 11
+  },
+  {
+    "name": "Scottish Terrier",
+    "slug": "scottish-terrier",
+    "isSelected": false,
+    "description": "",
+    "id": 32,
+    "characterID": 2
+  },
+  {
+    "name": "Maltese",
+    "slug": "maltese",
+    "isSelected": false,
+    "description": "",
+    "id": 33,
+    "characterID": 5
+  },
+  {
+    "name": "Shichon",
+    "slug": "shichon",
+    "isSelected": false,
+    "description": "",
+    "id": 34,
+    "characterID": 11
+  },
+  {
+    "name": "Bulldog",
+    "slug": "bulldog",
+    "isSelected": false,
+    "description": "",
+    "id": 35,
+    "characterID": 11
+  },
+  {
+    "name": "Cavapoo",
+    "slug": "cavapoo",
+    "isSelected": false,
+    "description": "",
+    "id": 36,
+    "characterID": 11
+  },
+  {
+    "name": "Yorkiepoo",
+    "slug": "yorkiepoo",
+    "isSelected": false,
+    "description": "",
+    "id": 37,
+    "characterID": 11
+  },
+  {
+    "name": "Portuguese Water Dog",
+    "slug": "portuguese-water-dog",
+    "isSelected": false,
+    "description": "",
+    "id": 38,
+    "characterID": 11
+  },
+  {
+    "name": "Australian Shepherd",
+    "slug": "australian-shepherd",
+    "isSelected": false,
+    "description": "",
+    "id": 39,
+    "characterID": 11
+  },
+  {
+    "name": "Havanese",
+    "slug": "havanese",
+    "isSelected": false,
+    "description": "",
+    "id": 40,
+    "characterID": 11
+  },
+  {
+    "name": "Boxer",
+    "slug": "boxer",
+    "isSelected": false,
+    "description": "",
+    "id": 41,
+    "characterID": 11
+  },
+  {
+    "name": "Sheepadoodle",
+    "slug": "sheepadoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 42,
+    "characterID": 6
+  },
+  {
+    "name": "French Bulldog",
+    "slug": "french-bulldog",
+    "isSelected": false,
+    "description": "",
+    "id": 43,
+    "characterID": 11
+  },
+  {
+    "name": "Cockapoo",
+    "slug": "cockapoo",
+    "isSelected": false,
+    "description": "",
+    "id": 44,
+    "characterID": 11
+  },
+  {
+    "name": "Frenchton",
+    "slug": "frenchton",
+    "isSelected": false,
+    "description": "",
+    "id": 45,
+    "characterID": 11
+  },
+  {
+    "name": "Bichon Frise",
+    "slug": "bichon-frise",
+    "isSelected": false,
+    "description": "",
+    "id": 46,
+    "characterID": 11
+  },
+  {
+    "name": "Chihuahua",
+    "slug": "chihuahua",
+    "isSelected": false,
+    "description": "",
+    "id": 47,
+    "characterID": 11
+  },
+  {
+    "name": "Miniature American Shepherd",
+    "slug": "miniature-american-shepherd",
+    "isSelected": false,
+    "description": "",
+    "id": 48,
+    "characterID": 11
+  },
+  {
+    "name": "Dachshund",
+    "slug": "dachshund",
+    "isSelected": false,
+    "description": "",
+    "id": 49,
+    "characterID": 11
+  },
+  {
+    "name": "Yorkshire Terrier",
+    "slug": "yorkshire-terrier",
+    "isSelected": false,
+    "description": "",
+    "id": 50,
+    "characterID": 2
+  },
+  {
+    "name": "Havamalt",
+    "slug": "havamalt",
+    "isSelected": false,
+    "description": "",
+    "id": 51,
+    "characterID": 5
+  },
+  {
+    "name": "Goldendoodle",
+    "slug": "goldendoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 52,
+    "characterID": 6
+  },
+  {
+    "name": "Havachon",
+    "slug": "havachon",
+    "isSelected": false,
+    "description": "",
+    "id": 53,
+    "characterID": 11
+  },
+  {
+    "name": "Pembroke Welsh Corgi",
+    "slug": "pembroke-welsh-corgi",
+    "isSelected": false,
+    "description": "",
+    "id": 54,
+    "characterID": 11
+  },
+  {
+    "name": "Great Dane",
+    "slug": "great-dane",
+    "isSelected": false,
+    "description": "",
+    "id": 55,
+    "characterID": 11
+  },
+  {
+    "name": "Bernese Mountain Dog",
+    "slug": "bernese-mountain-dog",
+    "isSelected": false,
+    "description": "",
+    "id": 56,
+    "characterID": 11
+  },
+  {
+    "name": "Jack Russell Terrier",
+    "slug": "jack-russell-terrier",
+    "isSelected": false,
+    "description": "",
+    "id": 57,
+    "characterID": 2
+  },
+  {
+    "name": "Doberman Pinscher",
+    "slug": "doberman-pinscher",
+    "isSelected": false,
+    "description": "",
+    "id": 58,
+    "characterID": 11
+  },
+  {
+    "name": "Vizsla",
+    "slug": "vizsla",
+    "isSelected": false,
+    "description": "",
+    "id": 59,
+    "characterID": 11
+  },
+  {
+    "name": "Bichonpoo",
+    "slug": "bichonpoo",
+    "isSelected": false,
+    "description": "",
+    "id": 60,
+    "characterID": 11
+  },
+  {
+    "name": "Shih Tzu",
+    "slug": "shih-tzu",
+    "isSelected": false,
+    "description": "",
+    "id": 61,
+    "characterID": 11
+  },
+  {
+    "name": "Schnoodle",
+    "slug": "schnoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 62,
+    "characterID": 11
+  },
+  {
+    "name": "Cavalier King Charles Spaniel",
+    "slug": "cavalier-king-charles-spaniel",
+    "isSelected": false,
+    "description": "",
+    "id": 63,
+    "characterID": 11
+  },
+  {
+    "name": "Dogue de Bordeaux",
+    "slug": "dogue-de-bordeaux",
+    "isSelected": false,
+    "description": "",
+    "id": 64,
+    "characterID": 11
+  },
+  {
+    "name": "American Corgi",
+    "slug": "american-corgi",
+    "isSelected": false,
+    "description": "",
+    "id": 65,
+    "characterID": 11
+  },
+  {
+    "name": "Cane Corso",
+    "slug": "cane-corso",
+    "isSelected": false,
+    "description": "",
+    "id": 66,
+    "characterID": 11
+  },
+  {
+    "name": "Cairn Terrier",
+    "slug": "cairn-terrier",
+    "isSelected": false,
+    "description": "",
+    "id": 67,
+    "characterID": 2
+  },
+  {
+    "name": "Basset Hound",
+    "slug": "basset-hound",
+    "isSelected": false,
+    "description": "",
+    "id": 68,
+    "characterID": 11
+  },
+  {
+    "name": "Whoodle",
+    "slug": "whoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 69,
+    "characterID": 11
+  },
+  {
+    "name": "Poodle",
+    "slug": "poodle",
+    "isSelected": false,
+    "description": "",
+    "id": 70,
+    "characterID": 11
+  },
+  {
+    "name": "Saint Berdoodle",
+    "slug": "saint-berdoodle",
+    "isSelected": false,
+    "description": "",
+    "id": 71,
+    "characterID": 6
+  },
+  {
+    "name": "Puggle",
+    "slug": "puggle",
+    "isSelected": false,
+    "description": "",
+    "id": 72,
+    "characterID": 11
+  },
+  {
+    "name": "Havapoo",
+    "slug": "havapoo",
+    "isSelected": false,
+    "description": "",
+    "id": 73,
+    "characterID": 11
+  },
+  {
+    "name": "Labrador Retriever",
+    "slug": "labrador-retriever",
+    "isSelected": false,
+    "description": "",
+    "id": 74,
+    "characterID": 4
+  },
+  {
+    "name": "Old English Sheepdog",
+    "slug": "old-english-sheepdog",
+    "isSelected": false,
+    "description": "",
+    "id": 75,
+    "characterID": 11
+  },
+  {
+    "name": "Rottweiler",
+    "slug": "rottweiler",
+    "isSelected": false,
+    "description": "",
+    "id": 76,
+    "characterID": 11
+  },
+  {
+    "name": "Pekingese",
+    "slug": "pekingese",
+    "isSelected": false,
+    "description": "",
+    "id": 77,
+    "characterID": 11
+  },
+  {
+    "name": "Cavachon",
+    "slug": "cavachon",
+    "isSelected": false,
+    "description": "",
+    "id": 78,
+    "characterID": 11
+  },
+  {
+    "name": "Newfoundland",
+    "slug": "newfoundland",
+    "isSelected": false,
+    "description": "",
+    "id": 79,
+    "characterID": 11
+  }
+]

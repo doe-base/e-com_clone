@@ -8,10 +8,12 @@ import AllbreedList from '../data/all-breeds.json'
 interface Props{
 }
 interface Breed {
-  id: number;
-  slug: string;
   name: string;
-  discription: string;
+  slug: string;
+  isSelected: boolean;
+  description: string;
+  id: number;
+  characterID: number;
 }
 const BreedPuppiesForSell: React.FC<Props> = ({}) => {
   const [breedObj, setBreedObj] = useState<Breed>()

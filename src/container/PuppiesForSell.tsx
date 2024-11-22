@@ -9,11 +9,12 @@ import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componet
 import FilterResult from '../components/puppies-for-sell-componets/FilterResult';
 
 interface BreedObject {
-    id: number;
     name: string;
     slug: string;
     isSelected: boolean;
-    discription: string;
+    description: string;
+    id: number;
+    characterID: number;
 }
 interface Props{
     breedQuery: string | null;
@@ -40,6 +41,8 @@ interface Props{
     setSelectedColorFilter: React.Dispatch<React.SetStateAction<any[]>>;
     travleFilter: string;
     setTravleFilter: React.Dispatch<React.SetStateAction<string>>;
+
+    resetFilters: ()=> void;
 }
 const PuppiesForSellContainer: React.FC<Props> = ({
     breedQuery, 
@@ -65,6 +68,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({
     setSelectedColorFilter,
     travleFilter,
     setTravleFilter,
+    resetFilters
 }) => {
     
     const [query, setQuery] = useState('');
@@ -269,6 +273,8 @@ const PuppiesForSellContainer: React.FC<Props> = ({
                 setSelectedColorFilter={setSelectedColorFilter}
                 travleFilter={travleFilter}
                 setTravleFilter={setTravleFilter}
+
+                resetFilters={resetFilters}
             />
 
             <FilterResult 

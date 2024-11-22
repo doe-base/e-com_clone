@@ -4,7 +4,7 @@ import Loading from '../components/loading/Loading';
 import allBreed from '../data/all-breeds.json'
 import DropDown from '../components/drop-down/DropDown';
 import SmallFilterPopup from '../components/small-filter-popup/SmallFilterPopup';
-import FilterSidebar from '../components/filter-sidebar/FilterSidebar';
+import FilterSidebar from '../components/filter-sidebar/MediumFilterSidebar';
 import FilterResult from '../components/puppies-for-sell-componets/FilterResult';
 import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componets/Siderbar';
 import { pages } from '../contants/routes'; 
@@ -60,7 +60,6 @@ const PuppiesForSellContainer: React.FC<Props> = ({breedObj}) => {
         setY(buttonRect.bottom + dropDownElement.getBoundingClientRect().height);
       }
     }, []);
-
 
     const handleFilterClick =()=>{
         const el = document.getElementById("tippy-tooltip-dropdown_xzdk")
@@ -157,18 +156,29 @@ const PuppiesForSellContainer: React.FC<Props> = ({breedObj}) => {
 
             </section>
 
-            <PuppiesForSellFilterSidebar 
+            {/* <PuppiesForSellFilterSidebar 
                 selectedBreedCheck={selectedBreedCheck} 
                 setSelectedBreedCheck={setSelectedBreedCheck}
                 breedsArr={breedsArr} 
                 setBreedsArr={setBreedsArr}
-            />
+            /> */}
 
-            <FilterResult />
+            {/* <FilterResult /> */}
 
         </div>
-        <SmallFilterPopup />
-        <FilterSidebar />
+        {/* <SmallFilterPopup 
+            breedsArr={breedsArr} 
+            setBreedsArr={setBreedsArr} 
+            query={query}
+            setQuery={setQuery}
+            results={results}
+            setResults={setResults}
+            emptyQuery={emptyQuery}
+            setEmptyQuery={setEmptyQuery}
+            selectedBreedCheck={selectedBreedCheck}
+            setSelectedBreedCheck={setSelectedBreedCheck}
+        /> */}
+        {/* <FilterSidebar /> */}
     </>
   );
 }

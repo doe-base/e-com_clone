@@ -4,17 +4,41 @@ import allBreed from '../../data/all-breeds.json'
 import Fuse from 'fuse.js';
 
 
-interface Props {}
-const SmallFilterPopup: React.FC<Props> = ({}) => {
+interface BreedObject {
+    id: number;
+    name: string;
+    slug: string;
+    isSelected: boolean;
+    discription: string;
+}
+interface Props {
+    breedsArr: BreedObject[];
+    setBreedsArr: React.Dispatch<React.SetStateAction<BreedObject[]>>
+    query: string;
+    setQuery: React.Dispatch<React.SetStateAction<string>>
+    results: any;
+    setResults: React.Dispatch<any>;
+    emptyQuery: boolean;
+    setEmptyQuery: React.Dispatch<React.SetStateAction<boolean>>;
+    selectedBreedCheck: any;
+    setSelectedBreedCheck: React.Dispatch<React.SetStateAction<any[]>>;
+}
+const SmallFilterPopup: React.FC<Props> = ({
+    breedsArr, 
+    setBreedsArr, 
+    query, 
+    setQuery, 
+    results, 
+    setResults,
+    emptyQuery,
+    setEmptyQuery,
+    selectedBreedCheck,
+    setSelectedBreedCheck
+}) => {
 
-    const [breedsArr, setBreedsArr] = useState(allBreed.breedList)
-    const [query, setQuery] = useState('');
     const inputRef = useRef(null)
-    const [results, setResults] = useState<any>(breedsArr);
-    const [emptyQuery, setEmptyQuery] = useState(true)
     const checkerUlLiCheckerRef = useRef<HTMLUListElement | null>(null)
     const checkerUlLiCheckerFirstChildRef = useRef<HTMLLIElement | null>(null)
-    const [selectedBreedCheck, setSelectedBreedCheck] = useState<any[]>([]);
 
     const handleGender =()=>{
         const elBtn = document.getElementById('js-collapsible-panel_gender-btn_small')

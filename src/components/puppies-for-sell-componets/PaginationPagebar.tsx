@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
 }
 
-const PaginationBar: React.FC<PaginationProps> = ({ totalPages }) => {
-    const [currentPage, setCurrentPage] = useState(5)
+const PaginationBar: React.FC<PaginationProps> = ({ totalPages, currentPage }) => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    // const [currentPage, setCurrentPage] = useState(1)
     const [isAtStart, setIsAtStart] = useState(true)
     const [isAtEnd, setIsAtEnd] = useState(false)
     const [isInBetween, setIsInBetween] = useState(true)
@@ -51,6 +54,20 @@ const PaginationBar: React.FC<PaginationProps> = ({ totalPages }) => {
     }, [currentPage])
 
 
+    
+    
+    
+    const handleClick = (page: any) => {
+        // Get the current query parameters
+        const queryParams = new URLSearchParams(location.search);
+        // Update the page parameter
+        queryParams.set("page", page.toString());
+        // Create the updated URL
+        const updatedSearch = `?${queryParams.toString()}`;
+        navigate(`${location.pathname}${updatedSearch}`);
+    };
+
+
   return (
         <ul className="pagination-pagebar">
             {   isAtStart 
@@ -58,11 +75,11 @@ const PaginationBar: React.FC<PaginationProps> = ({ totalPages }) => {
                     null 
                 : 
                 <li className="">
-                    <a href={`/puppies-for-sale?page=${currentPage - 1}`} rel="prev" className="arrow pagination--back" data-page={currentPage - 1}></a>
+                    <a href="javascript:void(0)" onClick={()=>handleClick(currentPage - 1)} rel="prev" className="arrow pagination--back" data-page={currentPage - 1}></a>
                 </li>
             }
-                <li className={`${ currentPage === 1 && "current pagination-pagenumber" }`} onClick={()=> setCurrentPage(1)}>
-                    <a data-page="1" data-is-current={`${ currentPage === 1 && "true" }`}>
+                <li className={`${ currentPage === 1 && "current pagination-pagenumber" }`}>
+                    <a href="javascript:void(0)" onClick={()=>handleClick(1)} data-page="1" data-is-current={`${ currentPage === 1 && "true" }`}>
                         1
                     </a>
                 </li>
@@ -73,10 +90,11 @@ const PaginationBar: React.FC<PaginationProps> = ({ totalPages }) => {
                         return(
                             <li key={index} className=" pagination-pagenumber">
                                 <a 
-                                    href={`/puppies-for-sale?page=${item}`} 
+                                    href="javascript:void(0)" 
+                                    onClick={()=>handleClick(item)}
                                     data-page={item} 
                                     data-is-current={`${ currentPage === item ? "true" : 'false' }`}
-                                    onClick={()=> setCurrentPage(item)}
+                                    // onClick={()=> setCurrentPage(item)}
                                 >
                                     {item}
                                 </a>
@@ -87,8 +105,8 @@ const PaginationBar: React.FC<PaginationProps> = ({ totalPages }) => {
 
 
                 { isAtEnd ? null : <>...</>}
-                <li className={`${ currentPage === totalPages && "current pagination-pagenumber" }`} onClick={()=> setCurrentPage(totalPages)}>
-                    <a data-page={totalPages} data-is-current={`${ currentPage === totalPages && "true" }`}>
+                <li className={`${ currentPage === totalPages && "current pagination-pagenumber" }`}>
+                    <a href="javascript:void(0)" onClick={()=>handleClick(totalPages)} data-page={totalPages} data-is-current={`${ currentPage === totalPages && "true" }`}>
                         {totalPages}
                     </a>
                 </li>
@@ -100,7 +118,8 @@ const PaginationBar: React.FC<PaginationProps> = ({ totalPages }) => {
                     : 
                     <li className="">
                         <a 
-                            href={`/puppies-for-sale?sort=search_sort_order+asc&amp;page=${currentPage + 1}`} 
+                            href="javascript:void(0)"
+                            onClick={()=>handleClick(currentPage + 1)}
                             className="arrow pagination" 
                             rel="next" 
                             data-page={currentPage + 1}

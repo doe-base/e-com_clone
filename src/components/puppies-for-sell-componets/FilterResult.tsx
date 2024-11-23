@@ -6,15 +6,26 @@ interface Props{
     paginationPage: number;
     totalPages: number;
     puppySinglePageArr: any[];
+    filterArray: any[];
 }
-const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySinglePageArr}) => {
+const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySinglePageArr, filterArray}) => {
     const [randomIndex, setRandomIndex] = useState(Math.floor(Math.random() * puppySinglePageArr.length));
-
   return (
 
     <div className="puppies-for-sale__results">
         <AlertPopup />
-
+            {
+                filterArray.length <= 0
+                &&
+                <section className="js-puppies-for-sale__no-results puppies-for-sale__no-results">
+                    <div className="puppies-for-sale__no-results-title">
+                        <h3>Oops!</h3>
+                        <p>
+                            We apologize for not finding a puppy that matches your search. Don't worry, though! View all our adorable puppies available below.
+                        </p>
+                    </div>
+                </section>
+            }
         <div className="js-puppy-list-container puppies-for-sale__puppy-list puppy-list-small-gap auto-content">
                 {
                 puppySinglePageArr.map((item, index)=>{

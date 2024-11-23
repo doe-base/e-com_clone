@@ -6,57 +6,7 @@ import AllPuppies from '../data/puppy-data/all_puppies.json'
 import allBreed from '../data/all-breeds.json'
 import { useLocation } from 'react-router-dom';
  
-const varieties =[
-  { value: "8", label: "American" },
-  { value: "40", label: "American and English" },
-  { value: "43", label: "American and European" },
-  { value: "37", label: "American and German" },
-  { value: "44", label: "Broken-Coated" },
-  { value: "45", label: "Brush Coat" },
-  { value: "46", label: "Coated" },
-  { value: "34", label: "English" },
-  { value: "47", label: "European" },
-  { value: "56", label: "F1" },
-  { value: "57", label: "F1b" },
-  { value: "58", label: "F2" },
-  { value: "48", label: "Fluffy-Coated" },
-  { value: "9", label: "German" },
-  { value: "10", label: "Hairless" },
-  { value: "49", label: "Horse Coat" },
-  { value: "26", label: "Long Coat" },
-  { value: "30", label: "Long Coat Apple Head" },
-  { value: "36", label: "Long Haired" },
-  { value: "18", label: "Medium F1" },
-  { value: "19", label: "Medium F1B" },
-  { value: "31", label: "Medium F1B Reverse" },
-  { value: "20", label: "Medium F2" },
-  { value: "21", label: "Medium Multi-generation" },
-  { value: "50", label: "Medium-Coated" },
-  { value: "39", label: "Miniature" },
-  { value: "22", label: "Miniature F1" },
-  { value: "23", label: "Miniature F1B" },
-  { value: "32", label: "Miniature F1B Reverse" },
-  { value: "24", label: "Miniature F2" },
-  { value: "5", label: "Miniature Long Haired" },
-  { value: "25", label: "Miniature Multi-generation" },
-  { value: "6", label: "Miniature Smooth Haired" },
-  { value: "7", label: "Miniature Wire Haired" },
-  { value: "59", label: "Multi-generation" },
-  { value: "35", label: "Phalene (ears down)" },
-  { value: "11", label: "Powderpuff" },
-  { value: "12", label: "Rough-coated" },
-  { value: "28", label: "Short-haired" },
-  { value: "27", label: "Smooth Coat" },
-  { value: "29", label: "Smooth Coat Apple Head" },
-  { value: "33", label: "Smooth Haired" },
-  { value: "13", label: "Smooth-coated" },
-  { value: "16", label: "Soft-coated" },
-  { value: "14", label: "Straight-coated" },
-  { value: "17", label: "Thick-coated" },
-  { value: "38", label: "Tiny Toy" },
-  { value: "15", label: "Wire-coated" },
-]
-const colors =[
+const colorsArr =[
   {value: "6", label: 'Agouti & White'}, 
   {value: '108', label: 'Apricot'}, 
   {value: '229', label: 'Apricot & White'}, 
@@ -349,6 +299,64 @@ const colors =[
   {value: '1000019', label: 'Wolfgray & Black'}, 
   {value: '163', label: 'Yellow'}
 ]
+const varietiesArr =[
+  { value: "8", label: "American" },
+  { value: "40", label: "American and English" },
+  { value: "43", label: "American and European" },
+  { value: "37", label: "American and German" },
+  { value: "44", label: "Broken-Coated" },
+  { value: "45", label: "Brush Coat" },
+  { value: "46", label: "Coated" },
+  { value: "34", label: "English" },
+  { value: "47", label: "European" },
+  { value: "56", label: "F1" },
+  { value: "57", label: "F1b" },
+  { value: "58", label: "F2" },
+  { value: "48", label: "Fluffy-Coated" },
+  { value: "9", label: "German" },
+  { value: "10", label: "Hairless" },
+  { value: "49", label: "Horse Coat" },
+  { value: "26", label: "Long Coat" },
+  { value: "30", label: "Long Coat Apple Head" },
+  { value: "36", label: "Long Haired" },
+  { value: "18", label: "Medium F1" },
+  { value: "19", label: "Medium F1B" },
+  { value: "31", label: "Medium F1B Reverse" },
+  { value: "20", label: "Medium F2" },
+  { value: "21", label: "Medium Multi-generation" },
+  { value: "50", label: "Medium-Coated" },
+  { value: "39", label: "Miniature" },
+  { value: "22", label: "Miniature F1" },
+  { value: "23", label: "Miniature F1B" },
+  { value: "32", label: "Miniature F1B Reverse" },
+  { value: "24", label: "Miniature F2" },
+  { value: "5", label: "Miniature Long Haired" },
+  { value: "25", label: "Miniature Multi-generation" },
+  { value: "6", label: "Miniature Smooth Haired" },
+  { value: "7", label: "Miniature Wire Haired" },
+  { value: "59", label: "Multi-generation" },
+  { value: "35", label: "Phalene (ears down)" },
+  { value: "11", label: "Powderpuff" },
+  { value: "12", label: "Rough-coated" },
+  { value: "28", label: "Short-haired" },
+  { value: "27", label: "Smooth Coat" },
+  { value: "29", label: "Smooth Coat Apple Head" },
+  { value: "33", label: "Smooth Haired" },
+  { value: "13", label: "Smooth-coated" },
+  { value: "16", label: "Soft-coated" },
+  { value: "14", label: "Straight-coated" },
+  { value: "17", label: "Thick-coated" },
+  { value: "38", label: "Tiny Toy" },
+  { value: "15", label: "Wire-coated" },
+]
+const charactersArr =[
+  { id: "11", label: "Top Active Dog Breeds" },
+  { id: "2", label: "Best Apartment Dogs" },
+  { id: "4", label: "Best Family Dogs" },
+  { id: "5", label: "Teacup Puppies" },
+  { id: "3", label: "Allergy Friendly Dogs" },
+  { id: "6", label: "Doodle Puppies" },
+]
 function getItemsByPage<T>(page: number, array: T[]): T[] {
   if (typeof page !== 'number' || Number.isNaN(page)) { page = 1 }
   page === 0 && (page = 1)
@@ -363,7 +371,7 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
     const location = useLocation();
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
-    const page = Number(params.get('page'));
+    const page = Number(params.get('page') || '1');
     const gender = params.get('gender');
     const age = params.get('age');
     const travel = params.get('travel');
@@ -401,10 +409,19 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
         "slug": "active-dogs"
       }
     })
+    const [allPuppies, setAllPuppies] = useState(AllPuppies)
+    const [sortOption, setSortOption] = useState('Featured')
     const [breedsArr, setBreedsArr] = useState(allBreed.breedList)
-    const [filterArray, setFilterArray] = useState(AllPuppies)
+    const [filterArray, setFilterArray] = useState(allPuppies)
     const [puppySinglePageArr, setPuppySinglePageArr] = useState(getItemsByPage(page, filterArray))
     const [totalPages, setTotalPages] = useState(Math.floor(filterArray.length / 35))
+
+    // Dynamic Checkbox
+    const [colors, setColors] = useState(colorsArr)
+    const [varieties, setVarieties] = useState(varietiesArr)
+    const [characters, setCharacters] = useState(charactersArr)
+
+
     // Filter States
     const [genderFilter, setGenderFilter] = useState(gender ? gender : 'all')
     const [selectedBreedCheck, setSelectedBreedCheck] = useState<any[]>(breedsArr.filter((item) => breed_slug?.includes(item.slug)));
@@ -415,54 +432,96 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
     const [selectedColorFilter, setSelectedColorFilter] = useState<any[]>([])
     const [travleFilter, setTravleFilter] = useState(travel ? travel : 'all-pupies')
 
-    useEffect(() =>{
-        document.title = "Puppies for Sale | Dogs for sale | PuppySpot";
-        document.body.classList.add('gray-background')
-    }, []);
-    useEffect(()=> {
-      setBreedsArr((prevBreedsArr) =>
-        prevBreedsArr.map((breed) => ({
-            ...breed,
-            isSelected: Array.isArray(breed_slug) && breed_slug.includes(breed.slug),
-        }))
-      );
-    }, [])
-    useEffect(() => {
-      const searchParams = new URLSearchParams(location.search);
-      const breedCollectionIds = searchParams.get("breed_characteristics");
-      if (breedCollectionIds) {
-        setSelectedCharacteristicsFilter(breedCollectionIds.split(","));
-      }
-    }, []);
-    useEffect(() => {
-      const searchParams = new URLSearchParams(location.search);
-      const sizeCollection = searchParams.get("size");
-      if (sizeCollection) {
-        setSelectedSizeFilter(sizeCollection.split(","));
-      }
-    }, []);
-    useEffect(() => {
-      const searchParams = new URLSearchParams(location.search);
-      const colorCollection = searchParams.get("color");
-      if (colorCollection) {
-        setSelectedColorFilter(colorCollection.split(","));
-      }
-    }, []);
-    useEffect(() => {
-      const searchParams = new URLSearchParams(location.search);
-      const varietyCollection = searchParams.get("variety");
-      if (varietyCollection) {
-        setSelectedVarietyFilter(varietyCollection.split(","));
-      }
-    }, []);
+  useEffect(() =>{
+      document.title = "Puppies for Sale | Dogs for sale | PuppySpot";
+      document.body.classList.add('gray-background')
+  }, []);
+
+  useEffect(() => {
+    // Create a dynamic color array from the filter array
+    const dynamicColors = colorsArr.filter((color) =>
+      filterArray.some(
+        (item) => item.puppy_info_details?.Color?.toLowerCase() === color.label.toLowerCase()
+      )
+    );
+    setColors(dynamicColors);
+  }, [filterArray]);
+  useEffect(() => {
+    // Filter varietiesArr to include only varieties that are present in filterArray
+    const dynamicVarieties = varietiesArr.filter((variety) =>
+      filterArray.some(
+        (item) =>
+          item.puppy_info_details?.Variety?.toLowerCase() ===
+          variety.label.toLowerCase()
+      )
+    );
+    setVarieties(dynamicVarieties);
+  }, [filterArray]);
+  useEffect(() => {
+    // Filter charactersArr to include only those in filterArray
+    const dynamicCharacters = charactersArr.filter((character) =>
+      filterArray.some(
+        (item) => String(item.characterID) === character.id
+      )
+    );
+    setCharacters(dynamicCharacters);
+  }, [filterArray]);
+
+
+  useEffect(()=> {
+    setBreedsArr((prevBreedsArr) =>
+      prevBreedsArr.map((breed) => ({
+          ...breed,
+          isSelected: Array.isArray(breed_slug) && breed_slug.includes(breed.slug),
+      }))
+    );
+  }, [])
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const breedCollectionIds = searchParams.get("breed_characteristics");
+    if (breedCollectionIds) {
+      setSelectedCharacteristicsFilter(breedCollectionIds.split(","));
+    }
+  }, []);
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const sizeCollection = searchParams.get("size");
+    if (sizeCollection) {
+      setSelectedSizeFilter(sizeCollection.split(","));
+    }
+  }, []);
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const colorCollection = searchParams.get("color");
+    if (colorCollection) {
+      setSelectedColorFilter(colorCollection.split(","));
+    }
+  }, []);
+  useEffect(() => {
+    const searchParams = new URLSearchParams(location.search);
+    const varietyCollection = searchParams.get("variety");
+    if (varietyCollection) {
+      setSelectedVarietyFilter(varietyCollection.split(","));
+    }
+  }, []);
 
     useEffect(()=> {
-      setPuppySinglePageArr(getItemsByPage(page, filterArray))
-    }, [filterArray])
+
+      if(filterArray.length <= 0){
+        setPuppySinglePageArr(getItemsByPage(page, allPuppies))
+        setTotalPages(Math.floor(allPuppies.length / 35))
+
+      }else{
+        setPuppySinglePageArr(getItemsByPage(page, filterArray))
+        setTotalPages(Math.floor(filterArray.length / 35))
+      }
+      
+
+    }, [filterArray, page])
 
     useEffect(() => {
       const filterPuppies = () => {
-        let filtered = AllPuppies;
+        let filtered = allPuppies;
     
         // Gender filter
         if (genderFilter !== 'all') {
@@ -571,8 +630,69 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
       ageFilter,
       selectedColorFilter,
       travleFilter,
-      AllPuppies,
+      allPuppies,
     ]);
+
+
+    useEffect(() => {
+      let sortedPuppies = [...allPuppies]; // Copy the array to avoid mutating the state
+
+      switch (sortOption) {
+          case "Featured":
+              sortedPuppies = AllPuppies; // Assume default order is "Featured"
+              break;
+
+          case "Name":
+              sortedPuppies.sort((a, b) => a.name.localeCompare(b.name));
+              break;
+
+          case "Color":
+              sortedPuppies.sort((a, b) => {
+                  // Add safety checks to ensure puppy_info_details is not undefined
+                  const colorA = a.puppy_info_details?.Color || "";
+                  const colorB = b.puppy_info_details?.Color || "";
+                  return colorA.localeCompare(colorB);
+              });
+              break;
+
+          case "Age: Young to Old":
+              sortedPuppies.sort((a, b) => {
+                  const ageA = Number(a.age);
+                  const ageB = Number(b.age);
+                  return ageA - ageB;
+              });
+              break;
+
+          case "Age: Old to Young":
+              sortedPuppies.sort((a, b) => {
+                  const ageA = Number(a.age);
+                  const ageB = Number(b.age);
+                  return ageB - ageA;
+              });
+              break;
+
+          case "Price: Low to High":
+              sortedPuppies.sort((a, b) => {
+                  const priceA = a.price ? parseFloat(a.price.replace(/[^0-9.-]+/g, "")) : Infinity;
+                  const priceB = b.price ? parseFloat(b.price.replace(/[^0-9.-]+/g, "")) : Infinity;
+                  return priceA - priceB; // Ascending order
+              });
+              break;
+    
+          case "Price: High to Low":
+              sortedPuppies.sort((a, b) => {
+                  const priceA = a.price ? parseFloat(a.price.replace(/[^0-9.-]+/g, "")) : -Infinity;
+                  const priceB = b.price ? parseFloat(b.price.replace(/[^0-9.-]+/g, "")) : -Infinity;
+                  return priceB - priceA; // Descending order
+              });
+              break;
+
+          default:
+              break;
+      }
+
+      setAllPuppies(sortedPuppies); // Update the sorted state
+  }, [sortOption, AllPuppies]);
 
 
     const clearUrlParams = () => {
@@ -627,6 +747,12 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
         setTravleFilter={setTravleFilter}
 
         resetFilters={resetFilters}
+        colors={colors}
+        varieties={varieties}
+        characters={characters}
+        filterArray={filterArray}
+        sortOption={sortOption} 
+        setSortOption={setSortOption}
       />
       <Footer />
     </div>

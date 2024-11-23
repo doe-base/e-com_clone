@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 
 interface Props {
     x: number
     y: number
     dropDownRef: React.RefObject<HTMLDivElement>
+    sortOption: string; 
+    setSortOption: React.Dispatch<React.SetStateAction<string>>;
 }
-const DropDown: React.FC<Props> = ({x, y, dropDownRef}) => {
+const DropDown: React.FC<Props> = ({x, y, dropDownRef, sortOption, setSortOption,}) => {
+
   return (
     <div 
         id="tippy-tooltip-dropdown_xzdk"
@@ -16,7 +19,7 @@ const DropDown: React.FC<Props> = ({x, y, dropDownRef}) => {
         style={{
             position: 'absolute',
             top: '100%', // Places it directly below the button
-            left: '-10%', // Aligns dropdown to the left of the button
+            left: '-20%', // Aligns sortOption to the left of the button
             zIndex: 1,
             marginTop: '5px', // Small gap below the button
             backgroundColor: 'white',
@@ -35,19 +38,81 @@ const DropDown: React.FC<Props> = ({x, y, dropDownRef}) => {
                 <section className="js-sort" id="sort-puppies">
                     <form className="sort">
                         <div data-sort="">
-                            <input type="radio" name="sort" value="search_sort_order asc" id="search-sort-order-asc" data-key="Featured" data-is-default="" />
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="search-sort-order-asc" 
+                                data-key="Featured" 
+                                value="Featured" 
+                                checked={sortOption === "Featured"} 
+                                onClick={()=> setSortOption('Featured')}
+                                 />
                             <label htmlFor="search-sort-order-asc" className="search-sort-order-asc">Featured</label>
-                            <input type="radio" name="sort" value="sort_group asc, puppy_color asc, search_sort_order asc" id="sort-group-asc-puppy-color-asc-search-sort-order-asc" data-key="Color"/>
+
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="sort-group-asc-puppy-color-asc-search-sort-order-asc" 
+                                data-key="Color" 
+                                value="Color" 
+                                checked={sortOption === "Color"} 
+                                onClick={()=> setSortOption('Color')}
+                                />
                             <label htmlFor="sort-group-asc-puppy-color-asc-search-sort-order-asc" className="sort-group-asc-puppy-color-asc-search-sort-order-asc">Color</label>
-                            <input type="radio" name="sort" value="sort_group asc, display_puppy_name asc, search_sort_order asc" id="sort-group-asc-display-puppy-name-asc-search-sort-order-asc" data-key="Name"/>
+
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="sort-group-asc-display-puppy-name-asc-search-sort-order-asc" 
+                                data-key="Name" 
+                                value="Name" 
+                                checked={sortOption === "Name"} 
+                                onClick={()=> setSortOption('Name')}
+                                />
                             <label htmlFor="sort-group-asc-display-puppy-name-asc-search-sort-order-asc" className="sort-group-asc-display-puppy-name-asc-search-sort-order-asc">Name</label>
-                            <input type="radio" name="sort" value="sort_group asc, litter_birth_date desc, search_sort_order asc" id="sort-group-asc-litter-birth-date-desc-search-sort-order-asc" data-key="Age: Young to Old"/>
+
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="sort-group-asc-litter-birth-date-desc-search-sort-order-asc" 
+                                data-key="Age: Young to Old" 
+                                value="Age: Young to Old" 
+                                checked={sortOption === "Age: Young to Old"} 
+                                onClick={()=> setSortOption('Age: Young to Old')}
+                                />
                             <label htmlFor="sort-group-asc-litter-birth-date-desc-search-sort-order-asc" className="sort-group-asc-litter-birth-date-desc-search-sort-order-asc">Age: Young to Old</label>
-                            <input type="radio" name="sort" value="sort_group asc, litter_birth_date asc, search_sort_order asc" id="sort-group-asc-litter-birth-date-asc-search-sort-order-asc" data-key="Age: Old to Young"/>
+
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="sort-group-asc-litter-birth-date-asc-search-sort-order-asc" 
+                                data-key="Age: Old to Young" 
+                                value="Age: Old to Young" 
+                                checked={sortOption === "Age: Old to Young"} 
+                                onClick={()=> setSortOption('Age: Old to Young')}
+                                />
                             <label htmlFor="sort-group-asc-litter-birth-date-asc-search-sort-order-asc" className="sort-group-asc-litter-birth-date-asc-search-sort-order-asc">Age: Old to Young</label>
-                            <input type="radio" name="sort" value="sort_group asc, price asc, search_sort_order asc" id="sort-group-asc-price-asc-search-sort-order-asc" data-key="Price: Low to High"/>
+
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="sort-group-asc-price-asc-search-sort-order-asc" 
+                                data-key="Price: Low to High" 
+                                value="Price: Low to High" 
+                                checked={sortOption === "Price: Low to High"} 
+                                onClick={()=> setSortOption('Price: Low to High')}
+                                />
                             <label htmlFor="sort-group-asc-price-asc-search-sort-order-asc" className="sort-group-asc-price-asc-search-sort-order-asc">Price: Low to High</label>
-                            <input type="radio" name="sort" value="sort_group asc, price desc, search_sort_order asc" id="sort-group-asc-price-desc-search-sort-order-asc" data-key="Price: High to Low" checked={true}/>
+                            
+                            <input 
+                                type="radio" 
+                                name="sort" 
+                                id="sort-group-asc-price-desc-search-sort-order-asc" 
+                                data-key="Price: High to Low" 
+                                value="Price: High to Low" 
+                                checked={sortOption === "Price: High to Low"} 
+                                onClick={()=> setSortOption('Price: High to Low')}
+                                />
                             <label htmlFor="sort-group-asc-price-desc-search-sort-order-asc" className="sort-group-asc-price-desc-search-sort-order-asc">Price: High to Low</label>
                         </div>
                     </form>

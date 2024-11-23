@@ -153,7 +153,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({breedObj}) => {
                         Sort by <span className="js-sort-label text-black" data-cy="filter-sort">Featured</span>
                         </span>
                     </button>
-                    <DropDown x={x} y={y} dropDownRef={dropDownRef}/>
+{/* <DropDown x={x} y={y} dropDownRef={dropDownRef}/> */}
                 </div>
 
             </section>

@@ -130,6 +130,98 @@ const TrustedSlider: React.FC<Props> = ({}) => {
                             <img
                                 draggable="false"
                                 className="trusted-by-community-module__itemImage--W95SX"
+                                src="https://cdn-yotpo-images-production.yotpo.com/Review/619174635/605137099/original.jpg?1725648321"
+                                loading="lazy"
+                            />
+                            <div className="trusted-by-community-module__itemContent--PNEfz">
+                                <div className="trusted-by-community-module__itemStars--E9nzp">
+                                <div style={{display: 'flex', flexDirection: 'row'}}>
+                                    <svg
+                                    width="20"
+                                    height="19"
+                                    viewBox="0 0 20 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                    <path
+                                        id="Star Copy 4"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
+                                        fill="#EB9D33"></path></svg><svg
+                                    width="20"
+                                    height="19"
+                                    viewBox="0 0 20 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                    <path
+                                        id="Star Copy 4"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
+                                        fill="#EB9D33"></path></svg><svg
+                                    width="20"
+                                    height="19"
+                                    viewBox="0 0 20 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                    <path
+                                        id="Star Copy 4"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
+                                        fill="#EB9D33"></path></svg><svg
+                                    width="20"
+                                    height="19"
+                                    viewBox="0 0 20 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                    <path
+                                        id="Star Copy 4"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
+                                        fill="#EB9D33"></path></svg><svg
+                                    width="20"
+                                    height="19"
+                                    viewBox="0 0 20 19"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                    <path
+                                        id="Star Copy 4"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
+                                        fill="#EB9D33"
+                                    ></path>
+                                    </svg>
+                                </div>
+                                </div>
+                                <div className="trusted-by-community-module__reviewContent--U-TcQ">
+                                I could not have been happier or more satisifed with my Puppyspot
+                                experience. The staff were great - responsive, kind,
+                                understanding, and helpful. My puppy is just perfect and a
+                                wonderful addition to our family. Thank you!
+                                </div>
+                                <div className="trusted-by-community-module__reviewQuote--BoFUw">
+                                - <b>Angela B.</b>, Texas
+                                </div>
+                                <div className="trusted-by-community-module__createdAt--w5q4-">
+                                09/06/2024
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                        <div className="trusted-by-community-module__itemFlexItem--hnQXC" style={{userSelect: 'none'}}>
+                            <div className="trusted-by-community-module__itemWrapper--RB3sa">
+                            <img
+                                draggable="false"
+                                className="trusted-by-community-module__itemImage--W95SX"
                                 src="https://cdn-yotpo-images-production.yotpo.com/Review/634219690/617358142/original.jpg?1728218283"
                                 loading="lazy"
                             />
@@ -765,98 +857,6 @@ const TrustedSlider: React.FC<Props> = ({}) => {
                                 </div>
                                 <div className="trusted-by-community-module__createdAt--w5q4-">
                                 09/08/2024
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div className="trusted-by-community-module__itemFlexItem--hnQXC" style={{userSelect: 'none'}}>
-                            <div className="trusted-by-community-module__itemWrapper--RB3sa">
-                            <img
-                                draggable="false"
-                                className="trusted-by-community-module__itemImage--W95SX"
-                                src="https://cdn-yotpo-images-production.yotpo.com/Review/619174635/605137099/original.jpg?1725648321"
-                                loading="lazy"
-                            />
-                            <div className="trusted-by-community-module__itemContent--PNEfz">
-                                <div className="trusted-by-community-module__itemStars--E9nzp">
-                                <div style={{display: 'flex', flexDirection: 'row'}}>
-                                    <svg
-                                    width="20"
-                                    height="19"
-                                    viewBox="0 0 20 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                    <path
-                                        id="Star Copy 4"
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
-                                        fill="#EB9D33"></path></svg><svg
-                                    width="20"
-                                    height="19"
-                                    viewBox="0 0 20 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                    <path
-                                        id="Star Copy 4"
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
-                                        fill="#EB9D33"></path></svg><svg
-                                    width="20"
-                                    height="19"
-                                    viewBox="0 0 20 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                    <path
-                                        id="Star Copy 4"
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
-                                        fill="#EB9D33"></path></svg><svg
-                                    width="20"
-                                    height="19"
-                                    viewBox="0 0 20 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                    <path
-                                        id="Star Copy 4"
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
-                                        fill="#EB9D33"></path></svg><svg
-                                    width="20"
-                                    height="19"
-                                    viewBox="0 0 20 19"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                    <path
-                                        id="Star Copy 4"
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M10 15L4.12215 18.0902L5.24472 11.5451L0.489435 6.90983L7.06107 5.95492L10 0L12.9389 5.95492L19.5106 6.90983L14.7553 11.5451L15.8779 18.0902L10 15Z"
-                                        fill="#EB9D33"
-                                    ></path>
-                                    </svg>
-                                </div>
-                                </div>
-                                <div className="trusted-by-community-module__reviewContent--U-TcQ">
-                                I could not have been happier or more satisifed with my Puppyspot
-                                experience. The staff were great - responsive, kind,
-                                understanding, and helpful. My puppy is just perfect and a
-                                wonderful addition to our family. Thank you!
-                                </div>
-                                <div className="trusted-by-community-module__reviewQuote--BoFUw">
-                                - <b>Angela B.</b>, Texas
-                                </div>
-                                <div className="trusted-by-community-module__createdAt--w5q4-">
-                                09/06/2024
                                 </div>
                             </div>
                             </div>

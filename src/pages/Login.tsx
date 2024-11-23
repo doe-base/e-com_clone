@@ -187,7 +187,7 @@ const Login: React.FC<Props> = ({}) => {
                       value={emailAddress}
                       onChange={(e)=> setEmailAddress(e.currentTarget.value)}
                       required
-                      />
+                    />
                   <label htmlFor="log-in__password" className="floating-label">Email</label>
               </div>
 
@@ -217,7 +217,7 @@ const Login: React.FC<Props> = ({}) => {
                   <span>Remember me?</span>
                   </label>
                   </div>
-                  <a className="hyperlink" href="/forgot-password">Forgot password?</a>
+                  <a className="hyperlink" href={account.FORGOT_PASSWORD}>Forgot password?</a>
               </div>
 
               <div className="cta-loader">

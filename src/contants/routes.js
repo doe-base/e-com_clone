@@ -73,5 +73,6 @@ export const account = {
     ACCOUNT_FAVORITE_PUPPIES: '/my-account/favorite-puppies',
     ACCOUNT_PUPPIES: '/my-account/my-puppies',
     ACCOUNT_ORDER_HISTORY: '/my-account/order-history',
-    ACCOUNT_LOGOUT: '/log-out'
+    ACCOUNT_LOGOUT: '/log-out',
+    FORGOT_PASSWORD: '/forgot-password'
 }

@@ -3,6 +3,7 @@ import "./index.css";
 import ScrollContainer from 'react-indiana-drag-scroll';
 import LoginPopup from "../../popups/single-puppy-popups/LoginPopup";
 import AllPuppies from "../../../data/puppy-data/all_puppies.json"
+import useAuthListener from "../../../hooks/use-auth-listener";
 
 interface Props{
     recentlyViewed: any[];
@@ -11,13 +12,14 @@ const getPuppiesByIds = (idArray: string[], allPuppies: any[]) => {
     return allPuppies.filter((puppy) => idArray.includes(puppy.puppy_id));
 };
 const RecentlyViewed: React.FC<Props> = ({ recentlyViewed }) => {
-
+    const {user} = useAuthListener();
     const [movementCount, setMovementCount] = useState(0); // Use state for movementCount
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     const sliderElementRef = useRef<HTMLDivElement>(null);
     const [loginPopup, setLoginPopup] = useState(false)
     const [notEnoghtToScroll, setNotEnoghtToScroll] = useState(false)
     const filteredPuppies = getPuppiesByIds(recentlyViewed, AllPuppies);
+    const [likePuppyListID, setLikePuppyListID] = useState(JSON.parse(localStorage.getItem("liked-puppies-id") || '[]'))
 
     const handleRightBtnClick = () => {
     
@@ -85,11 +87,67 @@ const RecentlyViewed: React.FC<Props> = ({ recentlyViewed }) => {
     }, []);
 
 
-    const handleLike =(e: React.MouseEvent<SVGSVGElement, MouseEvent>)=>{
+    const handleLikePuppy = (puppyId: string) => {
+        // Retrieve the current liked puppies from localStorage
+        const likedPuppiesString = localStorage.getItem('liked-puppies-id');
+        
+        // Parse the retrieved value or default to an empty array
+        const likedPuppies: string[] = likedPuppiesString ? JSON.parse(likedPuppiesString) : [];
+      
+        // Check if the puppy ID is already in the array
+        if (!likedPuppies.includes(puppyId)) {
+          // Add the new puppy ID to the array
+          likedPuppies.push(puppyId);
+      
+          // Save the updated array back to localStorage
+          localStorage.setItem('liked-puppies-id', JSON.stringify(likedPuppies));
+      
+          console.log(`Puppy ID ${puppyId} added to liked puppies.`);
+        } else {
+          console.log(`Puppy ID ${puppyId} is already liked.`);
+        }
+    };
+    const handleUnlikePuppy = (puppyId: string) => {
+        // Retrieve the current liked puppies from localStorage
+        const likedPuppiesString = localStorage.getItem('liked-puppies-id');
+    
+        // Parse the retrieved value or default to an empty array
+        const likedPuppies: string[] = likedPuppiesString ? JSON.parse(likedPuppiesString) : [];
+    
+        // Check if the puppy ID exists in the array
+        if (likedPuppies.includes(puppyId)) {
+            // Remove the puppy ID from the array
+            const updatedPuppies = likedPuppies.filter(id => id !== puppyId);
+    
+            // Save the updated array back to localStorage
+            localStorage.setItem('liked-puppies-id', JSON.stringify(updatedPuppies));
+    
+            console.log(`Puppy ID ${puppyId} removed from liked puppies.`);
+        } else {
+            console.log(`Puppy ID ${puppyId} is not in the liked puppies list.`);
+        }
+    };
+    
+      
+    const handleLike =(e: React.MouseEvent<SVGSVGElement, MouseEvent>, puppyId: string)=>{
         e.preventDefault();
         e.stopPropagation();
-        setLoginPopup(true)
+
+        if(!user?.email){
+            setLoginPopup(true)
+        }else{
+            if(likePuppyListID.includes(puppyId)){
+                handleUnlikePuppy(puppyId)
+            }else{
+                handleLikePuppy(puppyId)
+            }
+            
+            setLikePuppyListID(JSON.parse(localStorage.getItem("liked-puppies-id") || '[]'))
+            //In Future Hanlde OPTIMISTICAL like
+        }
+                        
     }
+
 
     // Check the total width of the slider and hide the right arrow if no scrolling is needed
     const checkArrowsVisibility = () => {
@@ -164,13 +222,13 @@ const RecentlyViewed: React.FC<Props> = ({ recentlyViewed }) => {
                                         </p>
                                         </div>
                                         <svg
-                                        onClick={(e) =>handleLike(e)}
+                                        onClick={(e) =>handleLike(e, item.puppy_id)}
                                         width="18"
                                         height="18"
                                         viewBox="0 0 18 18"
                                         fill="transparent"
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="featured-puppies-module__heartIcon--jWh5x js-favorite-puppy"
+                                        className={`featured-puppies-module__heartIcon--jWh5x js-favorite-puppy ${likePuppyListID.includes(item.puppy_id) ? 'favorited' : ''}`}
                                         data-puppy={item.puppy_id}
                                         >
                                         <path

@@ -22,6 +22,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
     const [results, setResults] = useState<any>(allBreed.breedList);
     const [searchBreed, setSearchBreed] = useState('');
     const [isFocused, setIsFocused] = useState(false);
+    const [recentlyViewed, setRecentlyViewed] = useState(JSON.parse(localStorage.getItem("recently-viewed") || '[]'))
     const fuse = new Fuse(allBreed.breedList, {
         keys: ['name', 'slug'], // Specify which keys to search
         includeScore: true,
@@ -90,6 +91,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
 
   return (
     <div>
+{/* Hero Section */}
         <div className="relative">
             <div className="heroBg"></div>
             <div id="root-hero">
@@ -169,7 +171,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
             </div>
         </div>
-
+{/* Spotted By Section */}
         <div id="root-spotted-by">
             <div className="root-spotted-by-inner">
                 <div className="root-spotted-by-inner-inner">
@@ -207,7 +209,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
             </div>
         </div>
-
+{/* Favorite Breeds */}
         <div id="root-favorite-breeds">
             <div className="favorite-breeds-module__wrapper--7M+J3">
                 <div className="favorite-breeds-module__title--fkU9E">Our Customers’ Favorite Breeds</div>
@@ -216,7 +218,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 <FavouritePuppySlider />
             </div>
         </div>
-
+{/* Why Puppy spot */}
         <div id="root-why-puppyspot">
             <div className="styles-module__container--CCD9B styles-module__smallPadding--Jh4ha">
                 <h3 id='root-why-puppyspot-h3' className="styles-module__title--lW8PU">Why we’re the leading puppy adoption service in America</h3>
@@ -334,7 +336,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 
             </div>
         </div>
-
+{/* Review Section */}
         <div id="root-trusted-by-community">
             <div className="trusted-by-community-module__wrapper--0Kxj-">
 
@@ -399,7 +401,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
 
             </div>
         </div>
-
+{/* Breed Quiz */}
         <section className="long-module">
             <div className="long-module__container">
                 <picture className="">
@@ -412,14 +414,14 @@ const HomeContainer: React.FC<Props> = ({}) => {
             </div>
 
         </section>
-
+{/* Puppy Spotlight */}
         <div className="featured-puppies-module__wrapper--c1np1">
             <h3 className="featured-puppies-module__title--3vIaM">Puppy Spotlight</h3>
-
+            
             {/* <div className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU"></div> */}
             <PuppySpotLight />
         </div>
-
+{/* Puppy Characteristics */}
         <div id="root-puppy-collections">
             <div className="puppy-collections-module__wrapper--XBjZ7">
                 <img className="puppy-collections-module__icon--ct+Hp" src="/img/star.svg" />
@@ -431,11 +433,17 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
             </div>
         </div>
-
-        <div className="featured-puppies-module__wrapper--c1np1">
-            <h3 className="featured-puppies-module__title--3vIaM">Recently Viewed</h3>
-            <RecentlyViewed />
-        </div>
+{/* Recently Viewed Section */}
+        {
+            recentlyViewed.length <= 0
+            ?
+            null
+            :
+            <div className="featured-puppies-module__wrapper--c1np1">
+                <h3 className="featured-puppies-module__title--3vIaM">Recently Viewed</h3>
+                <RecentlyViewed recentlyViewed={recentlyViewed} />
+            </div>
+        }
 
         <BreedStateSection />
 

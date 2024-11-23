@@ -24,6 +24,7 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
   const [askAboutMePopup, setAskAboutMePopup] = useState(false);
   const [loingPopup, setLoingPopup] = useState(false);
   const [sharePopup, setSharePopup] = useState(false)
+  const [recentlyViewed, setRecentlyViewed] = useState(JSON.parse(localStorage.getItem("recently-viewed") || '[]'))
 
   const handleToggle = () => {
     setShowMore(!showMore);
@@ -1842,10 +1843,16 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
             </div>
         </div>
 
-        <div className="featured-puppies-module__wrapper--c1np1">
-            <h3 className="featured-puppies-module__title--3vIaM">Recently Viewed</h3>
-            <RecentlyViewed />
-        </div>
+        {
+            recentlyViewed.length <= 0
+            ?
+            null
+            :
+            <div className="featured-puppies-module__wrapper--c1np1">
+                <h3 className="featured-puppies-module__title--3vIaM">Recently Viewed</h3>
+                <RecentlyViewed recentlyViewed={recentlyViewed} />
+            </div>
+        }
     </>
   );
 };

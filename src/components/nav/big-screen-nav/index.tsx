@@ -1,28 +1,55 @@
 import React, { useEffect, useState, useContext } from 'react';
 import "./index.css"
 import navbarData from '../../../data/navbar-data.json'
-import allBreed from '../../../data/all-breeds.json'
-import allPuppies from '../../../data/puppies.json'
+import allBreed from '../../../data/transformed_breeds.json'
+import allPuppies from '../../../data/puppy-data/all_puppies.json'
 import Fuse from 'fuse.js';
 import { account, breeds_pages, navbar, pages } from '../../../contants/routes';
 import { FirebaseContext } from '../../../context/firebase';
-import { useNavigate } from 'react-router-dom';
-
-
 
   
 interface Props{
     smallNavOpen: boolean;
     setSmallNavOpen: React.Dispatch<React.SetStateAction<boolean>>;
-
     isPuppiesForSale: boolean;
     isOverviewPage: boolean;
-
     user: any;
 }
-const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale, isOverviewPage, user}) => {
-    // console.log(user)
+type FirstArrayItem = {
+    id: number;
+    name: string;
+    slug: string;
+    url: string;
+    isInInventory: number;
+    breedTypeId: number;
+    cardImageUrl: string;
+    mediumCardImageUrl: string;
+};
+type SecondArrayItem = {
+    name: string;
+    slug: string;
+    isSelected: boolean;
+    description: string;
+    id: number;
+    characterID: number;
+};
 
+
+const filterMatchingBreeds = ( firstArray: FirstArrayItem[], secondArray: SecondArrayItem[]): FirstArrayItem[] => {
+    // Extract all slugs from the second array into a Set for efficient lookup
+    const secondArraySlugs = new Set(secondArray.map(item => item.slug));
+
+    // Filter the first array based on matching slugs
+    return firstArray.filter(item => secondArraySlugs.has(item.slug));
+};
+const getRandomItem = <T,>(array: T[]): T | undefined => {
+    if (array.length === 0) return undefined;
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+};
+
+const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSale, isOverviewPage, user}) => {
+    const { firebase } = useContext(FirebaseContext)
     const [isNavbarHover, setIsNavbarHover] = useState(false)
     const [isAvailblepuppliesHover, setIsAvailblepuppliesHover] = useState(false)
     const [isOurPromiseHover, setIsOurPromiseHover] = useState(false)
@@ -35,11 +62,80 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
     const [isFocused, setIsFocused] = useState(false);
     const [searchBreed, setSearchBreed] = useState('');
     const [query, setQuery] = useState('');
-    const [results, setResults] = useState<any>(allBreed.breedList);
+    const [results, setResults] = useState<any>(allBreed);
     const us_number = process.env.REACT_APP_US_NUMBER || '+15023820019';
     const [allPuppiesArr, setAllPuppiesArr] = useState(allPuppies);
-    const [selectedItem, setSelectedItem] = useState(allPuppies[0]);
+    const [selectedItem, setSelectedItem] = useState(getRandomItem(allPuppies));
     const [isAccountDropdown, setIsAccountDropdown] = useState(false)
+
+
+
+    const handlePureBreedClick = () => {
+        setPureBreedActive(!pureBreedActive)
+    }
+    const handleDesignerBreedClick = () => {
+        setDesignerBreedActive(!designerBreedActive);
+    }
+    function splitArrayByChunks(array: any, chunkSize: any) {
+        const result = [];
+        
+        for (let i = 0; i < array.length; i += chunkSize) {
+          result.push(array.slice(i, i + chunkSize));
+        }
+      
+        return result;
+    }
+    const fuse = new Fuse(allBreed, {
+        keys: ['name', 'slug'], // Specify which keys to search
+        includeScore: true,
+    });
+    const handleSearch = (e: any) => {
+        const searchQuery = e.target.value;
+        setSearchBreed(searchQuery)
+        setQuery(searchQuery);
+    
+        if (searchQuery.trim()) {
+        const fuseResults = fuse.search(searchQuery);
+            setResults(fuseResults.map((result: any) => result.item));
+        } else {
+            setResults(allBreed);
+        }
+    };
+    const onInputFocus =()=>{
+        setIsFocused(true)
+
+        setIsActive('')
+        setPureBreedActive(false)
+        setDesignerBreedActive(false)
+        setIsAboutUsHover(false)
+    }
+    const selectRandomSpotlightPuppy = () => {
+        if (allPuppiesArr.length > 0) {
+          const randomIndex = Math.floor(Math.random() * allPuppiesArr.length);
+          setSelectedItem(allPuppiesArr[randomIndex]);
+        }
+    };
+    const handleSearchPuppy = (puppySlug: string) => {
+        if (puppySlug) {
+            // https://example.com/search?query=puppies&sort=asc
+            window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+        }
+    };
+    const Logout = () =>{
+    if(!firebase){return}
+
+    firebase
+        .auth()
+        .signOut()
+        .then(() => {
+            window.location.replace(pages.LOGIN);
+        })
+        .catch((error) => {
+            console.error("Error signing out:", error);
+        });
+    }
+
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -80,80 +176,13 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
 
     }, [ isNavbarHover, isAvailblepuppliesHover, isOurPromiseHover, isAboutUsHover, isAccountDropdown ])
     useEffect(()=>{
-        setBreedList(splitArrayByChunks(navbarData.activePurebredBreeds, 13));
-        setDesignerBreed(splitArrayByChunks(navbarData.activeDesignerBreeds, 8))
+        setBreedList(splitArrayByChunks(filterMatchingBreeds(navbarData.activePurebredBreeds, allBreed) , 13));
+        setDesignerBreed(splitArrayByChunks(filterMatchingBreeds(navbarData.activeDesignerBreeds, allBreed) , 8))
+    }, [])
+    useEffect(()=> {
+    selectRandomSpotlightPuppy()
     }, [])
 
-    const handlePureBreedClick = () => {
-        setPureBreedActive(!pureBreedActive)
-    }
-    const handleDesignerBreedClick = () => {
-        setDesignerBreedActive(!designerBreedActive);
-    }
-    function splitArrayByChunks(array: any, chunkSize: any) {
-        const result = [];
-        
-        for (let i = 0; i < array.length; i += chunkSize) {
-          result.push(array.slice(i, i + chunkSize));
-        }
-      
-        return result;
-    }
-    const fuse = new Fuse(allBreed.breedList, {
-        keys: ['name', 'slug'], // Specify which keys to search
-        includeScore: true,
-    });
-    const handleSearch = (e: any) => {
-        const searchQuery = e.target.value;
-        setSearchBreed(searchQuery)
-        setQuery(searchQuery);
-    
-        if (searchQuery.trim()) {
-        const fuseResults = fuse.search(searchQuery);
-            setResults(fuseResults.map((result: any) => result.item));
-        } else {
-            setResults(allBreed.breedList);
-        }
-    };
-    const onInputFocus =()=>{
-        setIsFocused(true)
-
-        setIsActive('')
-        setPureBreedActive(false)
-        setDesignerBreedActive(false)
-        setIsAboutUsHover(false)
-    }
-    const selectRandomSpotlightPuppy = () => {
-        if (allPuppiesArr.length > 0) {
-          const randomIndex = Math.floor(Math.random() * allPuppiesArr.length);
-          setSelectedItem(allPuppiesArr[randomIndex]);
-        }
-      };
-
-      useEffect(()=> {
-        selectRandomSpotlightPuppy()
-      }, [])
-
-      const handleSearchPuppy = (puppySlug: string) => {
-        if (puppySlug) {
-            // https://example.com/search?query=puppies&sort=asc
-            window.location.href = `/puppies-for-sale?query=${puppySlug}`;
-        }
-      };
-    const { firebase } = useContext(FirebaseContext)
-      const Logout = () =>{
-        if(!firebase){return}
-
-        firebase
-            .auth()
-            .signOut()
-            .then(() => {
-                window.location.replace(pages.LOGIN);
-            })
-            .catch((error) => {
-                console.error("Error signing out:", error);
-            });
-      }
 
 
   return (
@@ -307,16 +336,16 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                         <div className="header-nav__thumb featured-puppy">
                                             <a className="featured-puppy__image top_nav_feature_image" href={selectedItem.link}>
                                                 <picture className="">
-                                                    <img id="" alt={selectedItem.puppy_name} className=" lazyloaded" data-cy="" data-src={selectedItem.gallery_content[0].label_img_src} loading="lazy" src={selectedItem.gallery_content[0].label_img_src} />
+                                                    <img id="" alt={selectedItem.name} className=" lazyloaded" data-cy="" data-src={selectedItem.image} loading="lazy" src={selectedItem.image} />
                                                 </picture>
                                             </a>
                                             <div>
-                                                <span className="featured-puppy__name">{selectedItem.puppy_name}</span>,
-                                                <span className="featured-puppy__gender">{selectedItem.puppy_gender}</span>
+                                                <span className="featured-puppy__name">{selectedItem.name}</span>,
+                                                <span className="featured-puppy__gender">{selectedItem.sex}</span>
                                             </div>
                                             <div>
                                                 <div className="featured-puppy__breed">{selectedItem.breed}</div>,
-                                                <div className="featured-puppy__age"> {selectedItem.puppy_age} Week{selectedItem.puppy_age > 1 ? 's' : ''}</div>
+                                                <div className="featured-puppy__age"> {selectedItem.age} Week{Number(selectedItem.age) > 1 ? 's' : ''}</div>
                                             </div>
                                         </div>
                                         :

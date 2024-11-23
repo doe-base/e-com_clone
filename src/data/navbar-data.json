@@ -1,5 +1,4 @@
 {
-  "buttonLink": "https://www.puppyspot.com/puppies-for-sale",
   "breedList": [
     {
       "id": 334,
@@ -397,6 +396,7 @@
       "slug": "cane-corso"
     }
   ],
+  
   "breedCollections": {
     "0": {
       "id": 2,
@@ -429,6 +429,7 @@
       "slug": "active-dogs"
     }
   },
+
   "activePurebredBreeds": [
     {
       "id": 209,
@@ -911,6 +912,7 @@
       "mediumCardImageUrl": "https://photos.puppyspot.com/breeds/249/card/500427607_medium.jpg"
     }
   ],
+
   "activeDesignerBreeds": [
     {
       "id": 522,
@@ -1223,6 +1225,7 @@
       "mediumCardImageUrl": "https://www.puppyspot.com/assets/puppyspot-minimal/img/generic.png"
     }
   ],
+
   "top10breed": [
     {
       "id": 390,
@@ -1269,12 +1272,5 @@
       "name": "French Bulldog",
       "slug": "french-bulldog"
     }
-  ],
-
-
-
-  "phoneLink": "+18886710518",
-  "phoneFormatted": "(888) 671-0518",
-  "isLoggedIn": false,
-  "baseUrl": "https://www.puppyspot.com"
+  ]
 }

@@ -1593,3 +1593,17 @@ li .selectr-tag-remove {
 }
 
 
+.puppies-for-sale__no-results {
+  margin: 0 auto 3rem;
+  max-width: 36rem;
+}
+.puppies-for-sale__no-results h3 {
+  font-size: 1.5rem;
+  line-height: 1.4em;
+  margin: 0 0 .5rem;
+}
+.puppies-for-sale__no-results p {
+  font-size: 1.125rem;
+  line-height: 1.6em;
+  margin: 0 0 1.5rem;
+}

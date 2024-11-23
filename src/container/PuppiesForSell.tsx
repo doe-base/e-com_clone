@@ -7,6 +7,10 @@ import SmallFilterPopup from '../components/small-filter-popup/SmallFilterPopup'
 import MediumFilterSidebar from '../components/filter-sidebar/MediumFilterSidebar';
 import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componets/Siderbar';
 import FilterResult from '../components/puppies-for-sell-componets/FilterResult';
+import AllPuppies from '../data/puppy-data/all_puppies.json'
+import { useLocation } from "react-router-dom";
+
+
 
 interface BreedObject {
     name: string;
@@ -43,6 +47,12 @@ interface Props{
     setTravleFilter: React.Dispatch<React.SetStateAction<string>>;
 
     resetFilters: ()=> void;
+    colors: any[]; 
+    varieties: any[];
+    characters: any[];
+    filterArray: any[];
+    sortOption: string; 
+    setSortOption: React.Dispatch<React.SetStateAction<string>>;
 }
 const PuppiesForSellContainer: React.FC<Props> = ({
     breedQuery, 
@@ -68,15 +78,23 @@ const PuppiesForSellContainer: React.FC<Props> = ({
     setSelectedColorFilter,
     travleFilter,
     setTravleFilter,
-    resetFilters
+    resetFilters,
+    colors, 
+    varieties,
+    characters,
+    filterArray,
+    sortOption,
+    setSortOption,
 }) => {
-    
+    const location = useLocation();
     const [query, setQuery] = useState('');
     const [results, setResults] = useState<any>(breedsArr);
     const [emptyQuery, setEmptyQuery] = useState(true)
     const [readMore, setReadMore] = useState(true)
     const filterDropButton = useRef<HTMLButtonElement>(null);
     const dropDownRef = useRef<HTMLDivElement>(null);
+    const dropDownContainerRef = useRef<HTMLDivElement>(null);
+
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
 
@@ -105,6 +123,33 @@ const PuppiesForSellContainer: React.FC<Props> = ({
             btnEl.classList.toggle('up2')
         }
     }
+
+    // Close dropdown when clicking outside
+    const handleFilterClickClose =()=>{
+        const el = document.getElementById("tippy-tooltip-dropdown_xzdk")
+        const btnEl = document.getElementById("arrow_up2-toggle_up2")
+        if(el && btnEl){
+            el.classList.add('opec_z_index_hidden')
+            btnEl.classList.remove('up2')
+        }
+    }
+    useEffect(() => {
+        const handleOutsideClick = (event: MouseEvent) => {
+            if (
+                dropDownContainerRef.current &&
+                !dropDownContainerRef.current.contains(event.target as Node)
+            ) {
+                handleFilterClickClose();
+            }
+        };
+
+        document.addEventListener("click", handleOutsideClick);
+        return () => document.removeEventListener("click", handleOutsideClick);
+    }, []);
+    useEffect(() => {
+        handleFilterClickClose();
+      }, [location]);
+
     const handleOpenSidebar =()=>{
         const el = document.getElementById('FilterSidebar-responsive_1024')
         const el2 = document.getElementById('SmallFilterPopup-responsive_768')
@@ -137,13 +182,6 @@ const PuppiesForSellContainer: React.FC<Props> = ({
                 : breed
             )
           );
-
-
-        
-        
-        
-          // Work on gender filter from small nav here  
-          console.log(genderQuery)
     }, [])
 
   return (
@@ -159,30 +197,6 @@ const PuppiesForSellContainer: React.FC<Props> = ({
                         / 
                         </span>
                         <span className="ps-breadcrumbs-small__item"> Puppies for Sale</span>
-                            {/* <script type="application/ld+json">
-                                {
-                                    "@context": "https://schema.org",
-                                    "@type": "BreadcrumbList",
-                                    "itemListElement": [
-                                                                            {
-                                                "@type": "ListItem",
-                                                "position": 1,
-                                                "item": {
-                                                    "@id": "https://www.puppyspot.com",
-                                                    "name": "PuppySpot"
-                                                }
-                                            },
-                                                            {
-                                                "@type": "ListItem",
-                                                "position": 2,
-                                                "item": {
-                                                    "@id": "https://www.puppyspot.com/puppies-for-sale",
-                                                    "name": "Puppies for Sale"
-                                                }
-                                            }
-                                                    ]
-                                }
-                            </script> */}
                     </div>
                 </div>
                 <div className="puppies-for-sale-header__content">
@@ -226,12 +240,22 @@ const PuppiesForSellContainer: React.FC<Props> = ({
             </section>
 
             <section className="puppies-for-sale__filter-nav">
-                <div className="dog-count"><span className="js-dog-count bold">2887</span><span className="js-dog-result-label"> Available Puppies</span></div>
+                <div className="dog-count">
+                    {
+                        filterArray.length <= 0
+                        ?
+                        <span className="js-dog-count bold">{AllPuppies.length}</span>
+                        :
+                        <span className="js-dog-count bold">{filterArray.length}</span>
+                    }
+                    <span className="js-dog-result-label"> Available Puppies</span>
+                    
+                </div>
                 <button onClick={handleOpenSidebar} className="js-open-filters puppies-for-sale__filter-open text-tangerine mobile-green-filter">
                     <img src="/svg/filter-icon.svg" />
                     Filters
                 </button>
-                <div style={{ position: 'relative', display: 'inline-block' }}>
+                <div ref={dropDownContainerRef} style={{ position: 'relative', display: 'inline-block' }}>
                     <button 
                         ref={filterDropButton} 
                         className="js-open-sort puppies-for-sale__filter-nav-sort text-tangerine ab-sorting" 
@@ -242,7 +266,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({
                         Sort by <span className="js-sort-label text-black" data-cy="filter-sort">Featured</span>
                         </span>
                     </button>
-                    <DropDown x={x} y={y} dropDownRef={dropDownRef}/>
+                    <DropDown x={x} y={y} dropDownRef={dropDownRef} sortOption={sortOption} setSortOption={setSortOption}/>
                 </div>
 
             </section>
@@ -275,12 +299,17 @@ const PuppiesForSellContainer: React.FC<Props> = ({
                 setTravleFilter={setTravleFilter}
 
                 resetFilters={resetFilters}
+                colors={colors}
+                varieties={varieties}
+                characters={characters}
+                filterArray={filterArray}
             />
 
             <FilterResult 
                 paginationPage={paginationPage} 
                 totalPages={totalPages} 
                 puppySinglePageArr={puppySinglePageArr}
+                filterArray={filterArray}
             />
 
         </div>

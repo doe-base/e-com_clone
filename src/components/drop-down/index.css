@@ -111,3 +111,8 @@ input[type="radio"] + label::before {
   opacity: 0;
   z-index: -5;
 }
+
+
+#sort-puppies input[type="checkbox"]:checked + label::before, #sort-puppies input[type="radio"]:checked + label::before {
+  border: 5px solid #219653;
+}

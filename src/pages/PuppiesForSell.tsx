@@ -3,8 +3,8 @@ import Footer from '../components/footer';
 import PuppiesForSellContainer from '../container/PuppiesForSell';
 import AuthenticationPopup from '../components/authentication-popups/AuthenticationPopup';
 import AllPuppies from '../data/puppy-data/all_puppies.json'
-import allBreed from '../data/all-breeds.json'
-import { useLocation } from 'react-router-dom';
+import allBreed from '../data/transformed_breeds.json'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
  
 const colorsArr =[
   {value: "6", label: 'Agouti & White'}, 
@@ -358,17 +358,30 @@ const charactersArr =[
   { id: "6", label: "Doodle Puppies" },
 ]
 function getItemsByPage<T>(page: number, array: T[]): T[] {
-  if (typeof page !== 'number' || Number.isNaN(page)) { page = 1 }
-  page === 0 && (page = 1)
+  if (typeof page !== 'number' || Number.isNaN(page)) {
+    page = 1;
+  }
+  page === 0 && (page = 1);
+
   const itemsPerPage = 35;
+  const totalItems = array.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  if (page > totalPages) {
+    // If the page exceeds the total number of pages, return the last set of items
+    page = totalPages;
+  }
+
   const startIndex = (page - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
   return array.slice(startIndex, endIndex);
 }
+
 interface Props{}
 const PuppiesForSell: React.FC<Props> = ({}) => {
     const location = useLocation();
+    const navigate = useNavigate();
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
     const page = Number(params.get('page') || '1');
@@ -411,7 +424,7 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
     })
     const [allPuppies, setAllPuppies] = useState(AllPuppies)
     const [sortOption, setSortOption] = useState('Featured')
-    const [breedsArr, setBreedsArr] = useState(allBreed.breedList)
+    const [breedsArr, setBreedsArr] = useState(allBreed)
     const [filterArray, setFilterArray] = useState(allPuppies)
     const [puppySinglePageArr, setPuppySinglePageArr] = useState(getItemsByPage(page, filterArray))
     const [totalPages, setTotalPages] = useState(Math.floor(filterArray.length / 35))
@@ -436,6 +449,29 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
       document.title = "Puppies for Sale | Dogs for sale | PuppySpot";
       document.body.classList.add('gray-background')
   }, []);
+
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  useEffect(() => {
+        if (searchParams.has("page")) {
+            // Clone the current search parameters
+            const updatedParams = new URLSearchParams(searchParams.toString());
+            updatedParams.delete("page"); // Remove the "page" parameter
+
+            // Update the URL without reloading the page
+            navigate(`?${updatedParams.toString()}`, { replace: true });
+        }
+    }, [
+      genderFilter,
+      selectedBreedCheck,
+      selectedCharacteristicsFilter,
+      selectedVarietyFilter,
+      selectedSizeFilter,
+      ageFilter,
+      selectedColorFilter,
+      travleFilter,
+  ]);
+
 
   useEffect(() => {
     // Create a dynamic color array from the filter array

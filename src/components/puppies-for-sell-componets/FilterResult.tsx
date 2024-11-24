@@ -102,10 +102,15 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
                 }                                                       
 
         </div>
-
-        <div className="js-puppy-pagination-container puppies-for-sale__pagination">
-                <PaginationBar currentPage={paginationPage} totalPages={totalPages}/>
-        </div>
+        {
+            totalPages <= 0 
+            ?
+            null
+            :
+            <div className="js-puppy-pagination-container puppies-for-sale__pagination">
+                    <PaginationBar currentPage={paginationPage} totalPages={totalPages}/>
+            </div>
+        }
     </div>
 
   );

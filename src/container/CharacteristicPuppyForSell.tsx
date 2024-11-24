@@ -8,18 +8,98 @@ import FilterSidebar from '../components/filter-sidebar/MediumFilterSidebar';
 import FilterResult from '../components/puppies-for-sell-componets/FilterResult';
 import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componets/Siderbar';
 import { pages } from '../contants/routes'; 
+import { useLocation } from 'react-router-dom';
+import AllPuppies from '../data/puppy-data/all_puppies.json'
 
+
+interface BreedObject {
+    name: string;
+    slug: string;
+    isSelected: boolean;
+    description: string;
+    id: number;
+    characterID: number;
+}
 interface Charater {
     title: string;
     text: string;
 }
 interface Props{
     characteristic: Charater;
-}
-const CharacteristicPuppyForSellContainer: React.FC<Props> = ({characteristic}) => {
 
-    const [breedsArr, setBreedsArr] = useState(allBreed.breedList)
-    const [selectedBreedCheck, setSelectedBreedCheck] = useState<any[]>([]);
+    breedObj: BreedObject | undefined;
+    breedQuery: string | null;
+    genderQuery: string | null;
+    paginationPage: number;
+    puppySinglePageArr: any[];
+    totalPages: number;
+    breedsArr: BreedObject[];
+    setBreedsArr: React.Dispatch<React.SetStateAction<BreedObject[]>>
+
+    genderFilter: string;
+    setGenderFilter: React.Dispatch<React.SetStateAction<string>>;
+    selectedBreedCheck: any[]; 
+    setSelectedBreedCheck: React.Dispatch<React.SetStateAction<any[]>>;
+    selectedCharacteristicsFilter: any[]; 
+    setSelectedCharacteristicsFilter: React.Dispatch<React.SetStateAction<any[]>>;
+    selectedVarietyFilter: any[]; 
+    setSelectedVarietyFilter: React.Dispatch<React.SetStateAction<any[]>>;
+    selectedSizeFilter: any[];
+    setSelectedSizeFilter: React.Dispatch<React.SetStateAction<any[]>>;
+    ageFilter: string;
+    setAgeFilter: React.Dispatch<React.SetStateAction<string>>;
+    selectedColorFilter: any[]; 
+    setSelectedColorFilter: React.Dispatch<React.SetStateAction<any[]>>;
+    travleFilter: string;
+    setTravleFilter: React.Dispatch<React.SetStateAction<string>>;
+
+    resetFilters: ()=> void;
+    colors: any[]; 
+    varieties: any[];
+    characters: any[];
+    filterArray: any[];
+    sortOption: string; 
+    setSortOption: React.Dispatch<React.SetStateAction<string>>;
+}
+const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
+    characteristic,
+
+    breedObj,
+    breedQuery, 
+    genderQuery, 
+    paginationPage, 
+    puppySinglePageArr, 
+    totalPages,
+    breedsArr, 
+    setBreedsArr,
+    genderFilter,
+    setGenderFilter,
+    selectedBreedCheck,
+    setSelectedBreedCheck,
+    selectedCharacteristicsFilter,
+    setSelectedCharacteristicsFilter,
+    selectedVarietyFilter,
+    selectedSizeFilter, 
+    setSelectedSizeFilter,
+    setSelectedVarietyFilter,
+    ageFilter,
+    setAgeFilter,
+    selectedColorFilter,
+    setSelectedColorFilter,
+    travleFilter,
+    setTravleFilter,
+    resetFilters,
+    colors, 
+    varieties,
+    characters,
+    filterArray,
+    sortOption,
+    setSortOption,
+}) => {
+    const location = useLocation();
+    const [query, setQuery] = useState('');
+    const [results, setResults] = useState<any>(breedsArr);
+    const [emptyQuery, setEmptyQuery] = useState(true)
     const [readMore, setReadMore] = useState(true)
 
     const handleReadMore =()=>{
@@ -43,6 +123,7 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({characteristic}) 
 
     const filterDropButton = useRef<HTMLButtonElement>(null);
     const dropDownRef = useRef<HTMLDivElement>(null);
+    const dropDownContainerRef = useRef<HTMLDivElement>(null);
     const [x, setX] = useState(0)
     const [y, setY] = useState(0)
     useEffect(() => {
@@ -77,6 +158,46 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({characteristic}) 
             el2.classList.remove('hidden')
         }
     }
+
+    // Close dropdown when clicking outside
+    const handleFilterClickClose =()=>{
+        const el = document.getElementById("tippy-tooltip-dropdown_xzdk")
+        const btnEl = document.getElementById("arrow_up2-toggle_up2")
+        if(el && btnEl){
+            el.classList.add('opec_z_index_hidden')
+            btnEl.classList.remove('up2')
+        }
+    }
+    useEffect(() => {
+        const handleOutsideClick = (event: MouseEvent) => {
+            if (
+                dropDownContainerRef.current &&
+                !dropDownContainerRef.current.contains(event.target as Node)
+            ) {
+                handleFilterClickClose();
+            }
+        };
+
+        document.addEventListener("click", handleOutsideClick);
+        return () => document.removeEventListener("click", handleOutsideClick);
+    }, []);
+    useEffect(() => {
+        handleFilterClickClose();
+      }, [location]);
+    useEffect(() => {
+        const buttonElement = filterDropButton.current;
+        const dropDownElement = dropDownRef.current;
+    
+        if (buttonElement && dropDownElement) {
+          // Get the button's position and size
+          const buttonRect = buttonElement.getBoundingClientRect();
+    
+          // Calculate the position of the dropdown using the button's position
+          setX(buttonRect.left + dropDownElement.getBoundingClientRect().left);
+          setY(buttonRect.bottom + dropDownElement.getBoundingClientRect().height);
+        }
+    }, []);
+
 
   return (
     <>
@@ -135,12 +256,21 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({characteristic}) 
             </section>
 
             <section className="puppies-for-sale__filter-nav">
-                <div className="dog-count"><span className="js-dog-count bold">2887</span><span className="js-dog-result-label"> Available Puppies</span></div>
+                <div className="dog-count">
+                    {
+                        filterArray.length <= 0
+                        ?
+                        <span className="js-dog-count bold">{AllPuppies.length}</span>
+                        :
+                        <span className="js-dog-count bold">{filterArray.length}</span>
+                    }
+                    <span className="js-dog-result-label"> Available Puppies</span>
+                </div>
                 <button onClick={handleOpenSidebar} className="js-open-filters puppies-for-sale__filter-open text-tangerine mobile-green-filter">
                     <img src="/svg/filter-icon.svg" />
                     Filters
                 </button>
-                <div style={{ position: 'relative', display: 'inline-block' }}>
+                <div ref={dropDownContainerRef} style={{ position: 'relative', display: 'inline-block' }}>
                     <button 
                         ref={filterDropButton} 
                         className="js-open-sort puppies-for-sale__filter-nav-sort text-tangerine ab-sorting" 
@@ -151,19 +281,51 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({characteristic}) 
                         Sort by <span className="js-sort-label text-black" data-cy="filter-sort">Featured</span>
                         </span>
                     </button>
-    {/* <DropDown x={x} y={y} dropDownRef={dropDownRef}/> */}
+                    <DropDown x={x} y={y} dropDownRef={dropDownRef} sortOption={sortOption} setSortOption={setSortOption}/>
                 </div>
 
             </section>
 
-            {/* <PuppiesForSellFilterSidebar 
-                selectedBreedCheck={selectedBreedCheck} 
-                setSelectedBreedCheck={setSelectedBreedCheck}
+            <PuppiesForSellFilterSidebar 
                 breedsArr={breedsArr} 
-                setBreedsArr={setBreedsArr}
-            /> */}
+                setBreedsArr={setBreedsArr} 
+                query={query}
+                setQuery={setQuery}
+                results={results}
+                setResults={setResults}
+                emptyQuery={emptyQuery}
+                setEmptyQuery={setEmptyQuery}
+                
+                selectedBreedCheck={selectedBreedCheck}
+                setSelectedBreedCheck={setSelectedBreedCheck}
+                genderFilter={genderFilter}
+                setGenderFilter={setGenderFilter}
+                selectedCharacteristicsFilter={selectedCharacteristicsFilter}
+                setSelectedCharacteristicsFilter={setSelectedCharacteristicsFilter}
+                selectedVarietyFilter={selectedVarietyFilter}
+                setSelectedVarietyFilter={setSelectedVarietyFilter}
+                selectedSizeFilter={selectedSizeFilter}
+                setSelectedSizeFilter={setSelectedSizeFilter}
+                ageFilter={ageFilter}
+                setAgeFilter={setAgeFilter}
+                selectedColorFilter={selectedColorFilter}
+                setSelectedColorFilter={setSelectedColorFilter}
+                travleFilter={travleFilter}
+                setTravleFilter={setTravleFilter}
 
-            {/* <FilterResult /> */}
+                resetFilters={resetFilters}
+                colors={colors}
+                varieties={varieties}
+                characters={characters}
+                filterArray={filterArray}
+            />
+
+            <FilterResult 
+                paginationPage={paginationPage} 
+                totalPages={totalPages} 
+                puppySinglePageArr={puppySinglePageArr}
+                filterArray={filterArray}
+            />
 
         </div>
         {/* <SmallFilterPopup /> */}

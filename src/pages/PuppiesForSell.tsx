@@ -427,7 +427,7 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
     const [breedsArr, setBreedsArr] = useState(allBreed)
     const [filterArray, setFilterArray] = useState(allPuppies)
     const [puppySinglePageArr, setPuppySinglePageArr] = useState(getItemsByPage(page, filterArray))
-    const [totalPages, setTotalPages] = useState(Math.floor(filterArray.length / 35))
+    const [totalPages, setTotalPages] = useState(Math.ceil(filterArray.length / 35))
 
     // Dynamic Checkbox
     const [colors, setColors] = useState(colorsArr)
@@ -474,15 +474,25 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
 
 
   useEffect(() => {
-    // Create a dynamic color array from the filter array
-    const dynamicColors = colorsArr.filter((color) =>
-      filterArray.some(
-        (item) => item.puppy_info_details?.Color?.toLowerCase() === color.label.toLowerCase()
-      )
-    );
-    setColors(dynamicColors);
-  }, [filterArray]);
+    if (selectedBreedCheck.length === 0) {
+      setColors(colorsArr); // Reset to show all colors if no breed is selected
+      return;
+    }
+  
+      // Create a dynamic color array from the filter array
+      const dynamicColors = colorsArr.filter((color) =>
+        filterArray.some(
+          (item) => item.puppy_info_details?.Color?.toLowerCase() === color.label.toLowerCase()
+        )
+      );
+      setColors(dynamicColors);
+  }, [filterArray, selectedBreedCheck]);  
   useEffect(() => {
+    if (selectedBreedCheck.length === 0) {
+      setVarieties(varietiesArr); // Reset to show all varieties if no breed is selected
+      return;
+    }
+  
     // Filter varietiesArr to include only varieties that are present in filterArray
     const dynamicVarieties = varietiesArr.filter((variety) =>
       filterArray.some(
@@ -492,8 +502,13 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
       )
     );
     setVarieties(dynamicVarieties);
-  }, [filterArray]);
+  }, [filterArray, selectedBreedCheck]);
   useEffect(() => {
+    if (selectedBreedCheck.length === 0) {
+      setCharacters(charactersArr); // Reset to show all characters if no breed is selected
+      return;
+    }
+  
     // Filter charactersArr to include only those in filterArray
     const dynamicCharacters = charactersArr.filter((character) =>
       filterArray.some(
@@ -501,8 +516,8 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
       )
     );
     setCharacters(dynamicCharacters);
-  }, [filterArray]);
-
+  }, [filterArray, selectedBreedCheck]);
+  
 
   useEffect(()=> {
     setBreedsArr((prevBreedsArr) =>
@@ -545,11 +560,11 @@ const PuppiesForSell: React.FC<Props> = ({}) => {
 
       if(filterArray.length <= 0){
         setPuppySinglePageArr(getItemsByPage(page, allPuppies))
-        setTotalPages(Math.floor(allPuppies.length / 35))
+        setTotalPages(Math.ceil(allPuppies.length / 35))
 
       }else{
         setPuppySinglePageArr(getItemsByPage(page, filterArray))
-        setTotalPages(Math.floor(filterArray.length / 35))
+        setTotalPages(Math.ceil(filterArray.length / 35))
       }
       
 

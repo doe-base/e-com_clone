@@ -33,7 +33,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/akita/overview"
+                  // href="/puppies-for-sale/breed/akita/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -73,7 +73,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/american-corgi/overview"
+                  // href="/puppies-for-sale/breed/american-corgi/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -110,7 +110,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/aussiedoodle/overview"
+                  // href="/puppies-for-sale/breed/aussiedoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -150,7 +150,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/australian-mountain-doodle/overview"
+                  // href="/puppies-for-sale/breed/australian-mountain-doodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -190,7 +190,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/australian-shepherd/overview"
+                  // href="/puppies-for-sale/breed/australian-shepherd/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -230,7 +230,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/basset-hound/overview"
+                  // href="/puppies-for-sale/breed/basset-hound/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -264,7 +264,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/beagle/overview"
+                  // href="/puppies-for-sale/breed/beagle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -301,7 +301,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/bernedoodle/overview"
+                  // href="/puppies-for-sale/breed/bernedoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -341,7 +341,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/bernese-mountain-dog/overview"
+                  // href="/puppies-for-sale/breed/bernese-mountain-dog/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -378,7 +378,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/bichon-frise/overview"
+                  // href="/puppies-for-sale/breed/bichon-frise/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -412,7 +412,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/bichonpoo/overview"
+                  // href="/puppies-for-sale/breed/bichonpoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -452,7 +452,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/boston-terrier/overview"
+                  // href="/puppies-for-sale/breed/boston-terrier/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -486,7 +486,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/boxer/overview"
+                  // href="/puppies-for-sale/breed/boxer/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -520,7 +520,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/bulldog/overview"
+                  // href="/puppies-for-sale/breed/bulldog/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -563,7 +563,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cairn-terrier/overview"
+                  // href="/puppies-for-sale/breed/cairn-terrier/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -600,7 +600,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cane-corso/overview"
+                  // href="/puppies-for-sale/breed/cane-corso/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -634,7 +634,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cavachon/overview"
+                  // href="/puppies-for-sale/breed/cavachon/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -674,7 +674,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/overview"
+                  // href="/puppies-for-sale/breed/cavalier-king-charles-spaniel/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -708,7 +708,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cavapoo/overview"
+                  // href="/puppies-for-sale/breed/cavapoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -742,7 +742,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/chihuahua/overview"
+                  // href="/puppies-for-sale/breed/chihuahua/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -776,7 +776,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cockapoo/overview"
+                  // href="/puppies-for-sale/breed/cockapoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -816,7 +816,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/cocker-spaniel/overview"
+                  // href="/puppies-for-sale/breed/cocker-spaniel/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -850,7 +850,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/collie/overview"
+                  // href="/puppies-for-sale/breed/collie/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -860,7 +860,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
           </div>
         </div>
 
-        {/* <div className="breed-card__container js-breed-card designer">
+        <div className="breed-card__container js-breed-card designer">
           <div className="breed-card">
             <a href="/puppies-for-sale/breed/corgipoo" title="Corgipoo">
               <picture className="">
@@ -884,7 +884,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/corgipoo/overview"
+                  // href="/puppies-for-sale/breed/corgipoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -924,7 +924,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/coton-de-tulear/overview"
+                  // href="/puppies-for-sale/breed/coton-de-tulear/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -961,7 +961,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/dachshund/overview"
+                  // href="/puppies-for-sale/breed/dachshund/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1001,7 +1001,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/doberman-pinscher/overview"
+                  // href="/puppies-for-sale/breed/doberman-pinscher/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1041,7 +1041,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/dogue-de-bordeaux/overview"
+                  // href="/puppies-for-sale/breed/dogue-de-bordeaux/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1084,7 +1084,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/french-bulldog/overview"
+                  // href="/puppies-for-sale/breed/french-bulldog/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1118,7 +1118,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/frenchton/overview"
+                  // href="/puppies-for-sale/breed/frenchton/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1161,7 +1161,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/german-shepherd-dog/overview"
+                  // href="/puppies-for-sale/breed/german-shepherd-dog/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1201,7 +1201,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/golden-retriever/overview"
+                  // href="/puppies-for-sale/breed/golden-retriever/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1238,7 +1238,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/goldendoodle/overview"
+                  // href="/puppies-for-sale/breed/goldendoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1275,7 +1275,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/great-dane/overview"
+                  // href="/puppies-for-sale/breed/great-dane/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1312,7 +1312,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/havachon/overview"
+                  // href="/puppies-for-sale/breed/havachon/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1346,7 +1346,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/havamalt/overview"
+                  // href="/puppies-for-sale/breed/havamalt/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1354,9 +1354,15 @@ const BreedsContainer: React.FC<Props> = ({}) => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
 
-        {/* <div className="breed-card__container js-breed-card purebred">
+
+
+
+
+
+
+        <div className="breed-card__container js-breed-card purebred">
           <div className="breed-card">
             <a href="/puppies-for-sale/breed/havanese" title="Havanese">
               <picture className="">
@@ -1380,7 +1386,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/havanese/overview"
+                  // href="/puppies-for-sale/breed/havanese/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1414,7 +1420,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/havapoo/overview"
+                  // href="/puppies-for-sale/breed/havapoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1457,7 +1463,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/russell-terrier/overview"
+                  // href="/puppies-for-sale/breed/russell-terrier/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1494,7 +1500,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/keeshond/overview"
+                  // href="/puppies-for-sale/breed/keeshond/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1534,7 +1540,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/labradoodle/overview"
+                  // href="/puppies-for-sale/breed/labradoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1574,7 +1580,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/labrador-retriever/overview"
+                  // href="/puppies-for-sale/breed/labrador-retriever/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1611,7 +1617,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/maltese/overview"
+                  // href="/puppies-for-sale/breed/maltese/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1645,7 +1651,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/maltipoo/overview"
+                  // href="/puppies-for-sale/breed/maltipoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1685,7 +1691,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/miniature-american-shepherd/overview"
+                  // href="/puppies-for-sale/breed/miniature-american-shepherd/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1725,7 +1731,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/miniature-pinscher/overview"
+                  // href="/puppies-for-sale/breed/miniature-pinscher/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1765,7 +1771,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/miniature-schnauzer/overview"
+                  // href="/puppies-for-sale/breed/miniature-schnauzer/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1799,7 +1805,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/morkie/overview"
+                  // href="/puppies-for-sale/breed/morkie/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1839,7 +1845,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/newfoundland/overview"
+                  // href="/puppies-for-sale/breed/newfoundland/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1882,7 +1888,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/old-english-sheepdog/overview"
+                  // href="/puppies-for-sale/breed/old-english-sheepdog/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1919,7 +1925,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/papillon/overview"
+                  // href="/puppies-for-sale/breed/papillon/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1953,7 +1959,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/pekingese/overview"
+                  // href="/puppies-for-sale/breed/pekingese/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -1993,7 +1999,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/pembroke-welsh-corgi/overview"
+                  // href="/puppies-for-sale/breed/pembroke-welsh-corgi/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2027,7 +2033,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/pomapoo/overview"
+                  // href="/puppies-for-sale/breed/pomapoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2064,7 +2070,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/pomeranian/overview"
+                  // href="/puppies-for-sale/breed/pomeranian/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2098,7 +2104,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/pomsky/overview"
+                  // href="/puppies-for-sale/breed/pomsky/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2132,7 +2138,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/poodle/overview"
+                  // href="/puppies-for-sale/breed/poodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2172,7 +2178,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/portuguese-water-dog/overview"
+                  // href="/puppies-for-sale/breed/portuguese-water-dog/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2206,7 +2212,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/pug/overview"
+                  // href="/puppies-for-sale/breed/pug/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2240,7 +2246,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/puggle/overview"
+                  // href="/puppies-for-sale/breed/puggle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2280,7 +2286,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/rottweiler/overview"
+                  // href="/puppies-for-sale/breed/rottweiler/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2323,7 +2329,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/saint-berdoodle/overview"
+                  // href="/puppies-for-sale/breed/saint-berdoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2363,7 +2369,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/saint-bernard/overview"
+                  // href="/puppies-for-sale/breed/saint-bernard/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2397,7 +2403,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/samoyed/overview"
+                  // href="/puppies-for-sale/breed/samoyed/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2431,7 +2437,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/schnoodle/overview"
+                  // href="/puppies-for-sale/breed/schnoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2471,7 +2477,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/scottish-terrier/overview"
+                  // href="/puppies-for-sale/breed/scottish-terrier/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2508,7 +2514,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/sheepadoodle/overview"
+                  // href="/puppies-for-sale/breed/sheepadoodle/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2542,7 +2548,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/shiba-inu/overview"
+                  // href="/puppies-for-sale/breed/shiba-inu/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2576,7 +2582,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/shichon/overview"
+                  // href="/puppies-for-sale/breed/shichon/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2610,7 +2616,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/shih-tzu/overview"
+                  // href="/puppies-for-sale/breed/shih-tzu/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2644,7 +2650,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/shihpoo/overview"
+                  // href="/puppies-for-sale/breed/shihpoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2678,7 +2684,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/shorkie/overview"
+                  // href="/puppies-for-sale/breed/shorkie/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2718,7 +2724,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/siberian-husky/overview"
+                  // href="/puppies-for-sale/breed/siberian-husky/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2755,7 +2761,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/vizsla/overview"
+                  // href="/puppies-for-sale/breed/vizsla/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2798,7 +2804,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/west-highland-white-terrier/overview"
+                  // href="/puppies-for-sale/breed/west-highland-white-terrier/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2835,7 +2841,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/yorkiepoo/overview"
+                  // href="/puppies-for-sale/breed/yorkiepoo/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2875,7 +2881,7 @@ const BreedsContainer: React.FC<Props> = ({}) => {
                   </a>
                 </div>
                 <a
-                  href="/puppies-for-sale/breed/yorkshire-terrier/overview"
+                  // href="/puppies-for-sale/breed/yorkshire-terrier/overview"
                   className="breed-card__ctas-overview"
                 >
                   Learn More
@@ -2883,9 +2889,9 @@ const BreedsContainer: React.FC<Props> = ({}) => {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
-      <div className="all-breeds__scrolltop js-back-to-top">Back to Top</div>
+      {/* <div className="all-breeds__scrolltop js-back-to-top">Back to Top</div> */}
     </div>
   );
 };

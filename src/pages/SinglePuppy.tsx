@@ -3,7 +3,7 @@ import '../styles/single-puppy.css'
 import SinglePuppyContainer from '../container/SinglePuppy';
 import Footer from '../components/footer';
 import { useParams } from 'react-router-dom';
-import allIndivialPuppies from '../data/individual-puppy-data/individual_puppy1.json'
+import allIndivialPuppies from '../data/individual-puppy-data/all_individual_puppy.json'
 
 
 function getObjectById(array: any[], id: string | undefined): any | undefined {

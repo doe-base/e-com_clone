@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface PaginationProps {
@@ -7,126 +7,94 @@ interface PaginationProps {
 }
 
 const PaginationBar: React.FC<PaginationProps> = ({ totalPages, currentPage }) => {
-    const location = useLocation();
-    const navigate = useNavigate();
-    // const [currentPage, setCurrentPage] = useState(1)
-    const [isAtStart, setIsAtStart] = useState(true)
-    const [isAtEnd, setIsAtEnd] = useState(false)
-    const [isInBetween, setIsInBetween] = useState(true)
-    const [arrayOfNumber, setArrayOfNumber] = useState([2, 3, 4, 5, 6])
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [pages, setPages] = useState<number[]>([]);
 
+  // Utility to generate the pagination array
+  const generatePaginationArray = (current: number, total: number): number[] => {
+    if (total <= 7) {
+      // If total pages are less than or equal to 7, show all pages
+      return Array.from({ length: total }, (_, i) => i + 1);
+    }
 
-    function getCenteredArray(center: number, max: number): number[] {
-        const result = [];
-        const start = Math.max(center - 2, 2); // Ensure starting number is at least 2
-        const end = Math.min(start + 4, max); // Ensure the end doesn't exceed max
-      
-        // Adjust the start if the end is at the max boundary
-        const adjustedStart = Math.max(end - 4, 2);
-      
-        for (let i = adjustedStart; i <= end; i++) {
-          result.push(i);
-        }
-      
-        return result;
-      }
+    const result: number[] = [1]; // Always include the first page
 
-    useEffect(()=>{
-        if(currentPage < 5){
-            setIsAtStart(true)
-            setIsInBetween(false)
-        }else{
-            setIsAtStart(false)
-            setIsInBetween(true)
-        }
+    if (current > 4) result.push(-1); // Add ellipsis if necessary
 
-        if(currentPage > (totalPages - 4)){
-            setIsAtEnd(true)
-            setIsInBetween(false)
-        }else{
-            setIsAtEnd(false)
-            setIsInBetween(true)
-        }
-    }, [currentPage])
+    const start = Math.max(2, current - 2); // Ensure we don't go below 2
+    const end = Math.min(current + 2, total - 1); // Ensure we don't go above totalPages - 1
 
-    useEffect(()=>{
-        setArrayOfNumber(getCenteredArray(currentPage, totalPages - 1))
-    }, [currentPage])
+    for (let i = start; i <= end; i++) {
+      result.push(i);
+    }
 
+    if (current < total - 3) result.push(-1); // Add ellipsis if necessary
 
-    
-    
-    
-    const handleClick = (page: any) => {
-        // Get the current query parameters
-        const queryParams = new URLSearchParams(location.search);
-        // Update the page parameter
-        queryParams.set("page", page.toString());
-        // Create the updated URL
-        const updatedSearch = `?${queryParams.toString()}`;
-        navigate(`${location.pathname}${updatedSearch}`);
-    };
+    result.push(total); // Always include the last page
 
+    return result;
+  };
+
+  useEffect(() => {
+    setPages(generatePaginationArray(currentPage, totalPages));
+  }, [currentPage, totalPages]);
+
+  const handleClick = (page: number) => {
+    if (page < 1 || page > totalPages) return; // Prevent navigation outside valid page range
+    const queryParams = new URLSearchParams(location.search);
+    queryParams.set("page", page.toString());
+    const updatedSearch = `?${queryParams.toString()}`;
+    navigate(`${location.pathname}${updatedSearch}`);
+  };
 
   return (
-        <ul className="pagination-pagebar">
-            {   isAtStart 
-                ? 
-                    null 
-                : 
-                <li className="">
-                    <a href="javascript:void(0)" onClick={()=>handleClick(currentPage - 1)} rel="prev" className="arrow pagination--back" data-page={currentPage - 1}></a>
-                </li>
-            }
-                <li className={`${ currentPage === 1 && "current pagination-pagenumber" }`}>
-                    <a href="javascript:void(0)" onClick={()=>handleClick(1)} data-page="1" data-is-current={`${ currentPage === 1 && "true" }`}>
-                        1
-                    </a>
-                </li>
-                { isAtStart ? null : <>...</>}
+    <ul className="pagination-pagebar">
+      {/* Previous Button */}
+      <li>
+        <a
+          href="javascript:void(0)"
+          onClick={() => handleClick(currentPage - 1)}
+          className={`arrow pagination--back ${currentPage === 1 ? "hidden" : ""}`}
+          rel="prev"
+        >
+          {/* &laquo; */}
+        </a>
+      </li>
 
-                {
-                    arrayOfNumber.map((item, index) => {
-                        return(
-                            <li key={index} className=" pagination-pagenumber">
-                                <a 
-                                    href="javascript:void(0)" 
-                                    onClick={()=>handleClick(item)}
-                                    data-page={item} 
-                                    data-is-current={`${ currentPage === item ? "true" : 'false' }`}
-                                    // onClick={()=> setCurrentPage(item)}
-                                >
-                                    {item}
-                                </a>
-                            </li>
-                        )
-                    })
-                }
+      {/* Page Numbers */}
+      {pages.map((page, index) =>
+        page === -1 ? (
+          // Render ellipsis for "-1"
+          <li key={index} className="pagination-ellipsis">
+            ...
+          </li>
+        ) : (
+          <li key={index} className={`${page === currentPage ? "current pagination-pagenumber" : "pagination-pagenumber"}`}>
+            <a
+              href="javascript:void(0)"
+              onClick={() => handleClick(page)}
+              data-page={page}
+              data-is-current={page === currentPage ? "true" : "false"}
+            >
+              {page}
+            </a>
+          </li>
+        )
+      )}
 
-
-                { isAtEnd ? null : <>...</>}
-                <li className={`${ currentPage === totalPages && "current pagination-pagenumber" }`}>
-                    <a href="javascript:void(0)" onClick={()=>handleClick(totalPages)} data-page={totalPages} data-is-current={`${ currentPage === totalPages && "true" }`}>
-                        {totalPages}
-                    </a>
-                </li>
-
-                {   
-                    isAtEnd 
-                    ? 
-                        null 
-                    : 
-                    <li className="">
-                        <a 
-                            href="javascript:void(0)"
-                            onClick={()=>handleClick(currentPage + 1)}
-                            className="arrow pagination" 
-                            rel="next" 
-                            data-page={currentPage + 1}
-                        ></a>
-                    </li>
-                }
-        </ul>
+      {/* Next Button */}
+      <li>
+        <a
+          href="javascript:void(0)"
+          onClick={() => handleClick(currentPage + 1)}
+          className={`arrow pagination ${currentPage === totalPages ? "hidden" : ""}`}
+          rel="next"
+        >
+          {/* &raquo; */}
+        </a>
+      </li>
+    </ul>
   );
 };
 

@@ -3,22 +3,48 @@ import '../styles/single-puppy.css'
 import SinglePuppyContainer from '../container/SinglePuppy';
 import Footer from '../components/footer';
 import { useParams } from 'react-router-dom';
-import allIndivialPuppies from '../data/individual-puppy-data/all_individual_puppy.json'
+import allIndivialPuppies1 from '../data/individual-puppy-data/_split_restructured_puppies-data1.json'
+import allIndivialPuppies2 from '../data/individual-puppy-data/_split_restructured_puppies-data2.json'
+import allIndivialPuppies3 from '../data/individual-puppy-data/_split_restructured_puppies-data3.json'
+import allIndivialPuppies4 from '../data/individual-puppy-data/_split_restructured_puppies-data4.json'
+import allIndivialPuppies5 from '../data/individual-puppy-data/_split_restructured_puppies-data5.json'
+import allIndivialPuppies6 from '../data/individual-puppy-data/_split_restructured_puppies-data6.json'
 
 
-function getObjectById(array: any[], id: string | undefined): any | undefined {
-  return array.find(item => item.puppy_id === id);
+const allPuppies = [
+  allIndivialPuppies1,
+  allIndivialPuppies2,
+  allIndivialPuppies3,
+  allIndivialPuppies4,
+  allIndivialPuppies5,
+  allIndivialPuppies6,
+];
+
+
+function findItemById<T extends { puppy_id: string }>(
+  arrays: T[][],
+  id: string | undefined
+): T | undefined {
+  for (const array of arrays) {
+    const found = array.find(item => item.puppy_id === id);
+    if (found) {
+      return found;
+    }
+  }
+  return undefined;
 }
+
 
 interface Props{};
 const SinglePuppy: React.FC<Props> = ({}) => {
     const { puppyId } = useParams();
-    const [ puppyInfo, setPuppyInfo ] = useState(getObjectById(allIndivialPuppies, puppyId))
+    const [ puppyInfo, setPuppyInfo ] = useState(findItemById(allPuppies, puppyId))
+
     useEffect(() =>{
-        document.title = `${puppyInfo.puppy_name && puppyInfo.puppy_name}, a ${puppyInfo.puppy_info_details.Color && puppyInfo.puppy_info_details.Color} ${puppyInfo.sex && puppyInfo.sex} ${puppyInfo.breed && puppyInfo.breed} | PuppySpot`;
+        if(puppyInfo){
+          document.title = `${puppyInfo.puppy_name && puppyInfo.puppy_name}, a ${puppyInfo.puppy_info_details.Color && puppyInfo.puppy_info_details.Color} ${puppyInfo.sex && puppyInfo.sex} ${puppyInfo.breed && puppyInfo.breed} | PuppySpot`;
+        }
     }, []);
-
-
 
     const saveToRecentlyViewed = (dogId: string | undefined) => {
       const key = "recently-viewed";
@@ -48,7 +74,11 @@ const SinglePuppy: React.FC<Props> = ({}) => {
 
   return (
     <>
-        <SinglePuppyContainer puppyInfo={puppyInfo} />
+        {
+          puppyInfo
+          &&
+          <SinglePuppyContainer puppyInfo={puppyInfo} />
+        }
         <Footer />
     </>
   );

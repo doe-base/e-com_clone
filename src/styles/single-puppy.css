@@ -111,6 +111,8 @@ input[type="radio"] + label {
   border-radius: 8px;
   height: auto;
   width: 100%;
+
+  margin-bottom: 0.45rem;
 }
 .gallery img {
   overflow: hidden;
@@ -436,6 +438,10 @@ h1.strong {
   min-width: 50px;
   width: 50px;
   z-index: 5;
+}
+.favorite-puppy-circle.favorited {
+  background-image: url(/public/img/favorite-heart-filled-green.svg);
+  background-size: 18px;
 }
 @media (hover: hover) {
   .favorite-puppy-circle:hover {

@@ -4,6 +4,9 @@ import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import useStyles from '../../../styles/checkout';
 import axios from 'axios';
 import { Oval } from 'react-loader-spinner';
+import AlertPopup from '../../../components/alert-popup/AlertPopup';
+import { pages } from '../../../contants/routes';
+
 
 
 interface Props{
@@ -11,6 +14,7 @@ interface Props{
   subTotal: string;
   puppyId: string | undefined;
   paymentID: string | undefined;
+  subTotalInNumber: number;
 }
   function startTimer(stateFunction: React.Dispatch<React.SetStateAction<boolean>>) {
     setTimeout(() => {
@@ -19,10 +23,12 @@ interface Props{
   }
  
 
-const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID}) => {
+const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID, subTotalInNumber}) => {
     const classes = useStyles()
     const paypalAddRef = useRef<HTMLHeadingElement>(null)
     const [cpActive2, setcpActie2] = useState(false)
+    const [cpActive5, setcpActie5] = useState(false)
+    const bitcoinPriceRef = useRef<HTMLHeadingElement>(null)
 
     const copyToClipboard2 = () => {
         const textToCopy = paypalAddRef.current?.innerText
@@ -37,11 +43,27 @@ const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID}) =
         });
         }
     };
+    const copyToClipboard5 = () => {
+      const textToCopy = bitcoinPriceRef.current?.innerText
+      if(textToCopy){
+        navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+          setcpActie5(true)
+          startTimer(setcpActie5)
+        })
+        .catch((err) => {
+          alert("Failed to copy text:");
+        });
+      }
+  };
 
     const [Loading, setLoading] = useState(false)
     const [Failure, setFailure] = useState(false)
     const [GfImage, setGfImage] = useState<any>(null)
     const [paypalField, setPaypalField] = useState(false)
+    const [alerts, setAlerts] = useState(false)
+    const [alertMessage, setAlertMessage] = useState('')
+    const [alertMode, setAlertMode] = useState<boolean>(false)
     const defaultBlob = new Blob(["default content"], { type: 'text/plain' });
 
     useEffect(()=>{
@@ -75,22 +97,32 @@ const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID}) =
         onUploadProgress: (ProgressEvent)=>{  }
       })
       .then(response => {
-        console.log(response)
         if(response.data.success == false){
             setLoading(false)
             setFailure(true)
+
+            setAlerts(true)
+            setAlertMessage('Something went wrong!')
+            setAlertMode(false)
         }else{
             setLoading(false)
             setFailure(false)
 
-            // const newURL = "https://stargamingstore.shop/success-payment";
-            // window.location.replace(newURL);
+            setAlerts(true)
+            setAlertMessage('Success!')
+            setAlertMode(true)
+
+            const newURL = pages.PUPPIES_FOR_SELL;
+            window.location.replace(newURL);
         }
       })
       .catch(error => {
-          console.log(error)
           setLoading(false)
           setFailure(true)
+
+          setAlerts(true)
+          setAlertMessage('Something went wrong!')
+          setAlertMode(false)
       });
     }
 
@@ -126,6 +158,21 @@ const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID}) =
                     <div style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
                 } 
                 </div>
+            </div>
+
+            <div className={classes.cryptocurrencyaddressholder}>
+              <span className={classes.cryptocurrencyaddressholdertitle}>Amount to transfer:</span>
+
+              <div style={{display: 'flex'}} onClick={copyToClipboard5}>
+                  <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{subTotalInNumber}</h2></div>
+                  {
+                      cpActive5
+                      ?
+                      <div><DoneAllIcon style={{ color:'green' }}  /></div>
+                      :
+                      <div style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                  } 
+              </div>
             </div>
         
 
@@ -193,6 +240,15 @@ const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID}) =
             </button>
             {Failure ? <p style={{fontSize: '0.85rem', color: 'red'}}>Internal error. Please try again</p> : null}
             </div>
+
+            <AlertPopup 
+                alert={alerts} 
+                setAlert={setAlerts} 
+                alertMessage={alertMessage} 
+                setAlertMessage={setAlertMessage} 
+                alertMode={alertMode} 
+                setAlertMode={setAlertMode} 
+            />
         </>
                   
   );

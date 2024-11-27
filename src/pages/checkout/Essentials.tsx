@@ -7,7 +7,7 @@ import OrderSummarySmall from '../../components/checkout-components/order-summar
 import EssentialsSection from '../../components/checkout-components/essentials-page';
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
 import { useParams } from 'react-router-dom';
-import allIndivialPuppies from '../../data/individual-puppy-data/individual_puppy1.json'
+import allIndivialPuppies from '../../data/individual-puppy-data/_split_restructured_puppies-data1.json'
 import { FirebaseContext } from '../../context/firebase';
 import FullScreenLoader from '../../components/loader/FullScreenLoader';
 

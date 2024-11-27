@@ -34,7 +34,9 @@ export const pages = {
     PRIVACY_POLICY: '/privacy',
     TERMS_OR_SERVICE: '/terms-of-use',
     SITE_MAP: '/sitemap',
-    BBB: 'https://www.bbb.org/us/fl/fort-lauderdale/profile/pet-services/puppyspot-group-llc-0633-22003405'
+    BBB: 'https://www.bbb.org/us/fl/fort-lauderdale/profile/pet-services/puppyspot-group-llc-0633-22003405',
+
+    FINANCING: '/financing'
 }
 
 export const breeds_pages = {

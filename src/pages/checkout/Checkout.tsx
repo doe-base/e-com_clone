@@ -5,7 +5,7 @@ import PrcessTracker from '../../components/checkout-components/process-tracker/
 import OrderSummarySmall from '../../components/checkout-components/order-summary-small/OrderSummarySmall';
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
 import { useParams } from 'react-router-dom';
-import allIndivialPuppies from '../../data/individual-puppy-data/individual_puppy1.json'
+import allIndivialPuppies from '../../data/individual-puppy-data/_split_restructured_puppies-data1.json'
 import CheckoutContainer from '../../container/CheckoutContainer';
 import "../../styles/checkout.css"
 import { FirebaseContext } from '../../context/firebase';
@@ -21,6 +21,10 @@ function formatNumberWithCommas(number: number) {
   }
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+const convertCurrencyStringToNumber = (currency: string): number => {
+  // Remove the dollar sign and commas, then convert to a number
+  return Number(currency.replace(/[\$,]/g, ''));
+};
 interface Props{
 }
 const Checkout: React.FC<Props> = ({}) => {
@@ -32,8 +36,9 @@ const Checkout: React.FC<Props> = ({}) => {
   const [shippingPrice, setShippingPrice] = useState(0)
   const [loading, setLoading] = useState(false)
   const [ paymentInfo, setPaymentInfo ] = useState<any>(null)
-  const [subTotal, setSubTotal] = useState(formatNumberWithCommas( Number(puppyInfo.price.slice(1)) + shippingPrice ))
-  const [subTotalInNumber, setSubTotalInNumber] = useState(Number(puppyInfo.price.slice(1)) + shippingPrice)
+  const numberValue = convertCurrencyStringToNumber(puppyInfo.price);
+  const [subTotal, setSubTotal] = useState(formatNumberWithCommas( numberValue + shippingPrice ))
+  const [subTotalInNumber, setSubTotalInNumber] = useState(numberValue + shippingPrice)
 
     useEffect(() =>{
         document.title = "Find the Right Puppy for Your Family | PuppySpot | PuppySpot";
@@ -86,8 +91,8 @@ const Checkout: React.FC<Props> = ({}) => {
     }, [paymentInfo])
 
     useEffect(()=>{
-      setSubTotal(formatNumberWithCommas( Number(puppyInfo.price.slice(1)) + shippingPrice ))
-      setSubTotalInNumber(Number(puppyInfo.price.slice(1)) + shippingPrice)
+      setSubTotal(formatNumberWithCommas( numberValue + shippingPrice ))
+      setSubTotalInNumber(numberValue + shippingPrice)
     }, [shippingPrice])
 
   return (

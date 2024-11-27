@@ -3,6 +3,7 @@ import { Grid } from '@mui/material';
 import { navbar } from '../contants/routes';
 import Paypal from '../components/checkout-components/checkout-page-components/Paypal';
 import CryptoCurrency from '../components/checkout-components/checkout-page-components/Cryptcurrentcy';
+import BankTransfer from '../components/checkout-components/checkout-page-components/BankTransfer';
 
 
 interface Props{
@@ -163,7 +164,7 @@ const CheckoutContainer: React.FC<Props> = ({puppyInfo, paymentInfo, subTotal, p
                 {
                   paymentOption === 'paypal'
                   ?
-                    <Paypal paymentInfo={paymentInfo} subTotal={subTotal} puppyId={puppyId} paymentID={paymentID} />
+                    <Paypal paymentInfo={paymentInfo} subTotal={subTotal} puppyId={puppyId} paymentID={paymentID} subTotalInNumber={subTotalInNumber}/>
                   :
                   paymentOption === 'crypto-currency'
                   ?
@@ -171,7 +172,7 @@ const CheckoutContainer: React.FC<Props> = ({puppyInfo, paymentInfo, subTotal, p
                   :
                   paymentOption === 'bank-transfer'
                   ?
-                    <></>
+                    <BankTransfer paymentInfo={paymentInfo} subTotal={subTotal} puppyId={puppyId} paymentID={paymentID} subTotalInNumber={subTotalInNumber}/>
                   :
                   null
                   

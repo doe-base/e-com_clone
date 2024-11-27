@@ -15,6 +15,11 @@ function formatNumberWithCommas(number: number) {
     }
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+const convertCurrencyStringToNumber = (currency: string): number => {
+    // Remove the dollar sign and commas, then convert to a number
+    return Number(currency.replace(/[\$,]/g, ''));
+};
   
 interface Props{
     puppyInfo: any;
@@ -23,8 +28,9 @@ interface Props{
 }
 const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice, passedEssentials}) => {
     const price = extractAndFormatNumber(puppyInfo.price)
+    const numberValue = convertCurrencyStringToNumber(puppyInfo.price);
     const shippingPriceVar = formatNumberWithCommas(shippingPrice)
-    const subTotal = formatNumberWithCommas( Number(puppyInfo.price.slice(1)) + shippingPrice )
+    const subTotal = formatNumberWithCommas( numberValue + shippingPrice )
   return (
     <div className="tw-flex tw-flex-col">
     <div className="tw-hidden lg:tw-block tw-w-[400px] tw-min-w-[400px] tw-border tw-rounded-3xl">
@@ -33,7 +39,7 @@ const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice, passedEssentia
         <div className="tw-flex tw-gap-4 tw-items-start">
             <a className="" href="/puppy/768727" target="_blank">
             {/* <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} srcSet="/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=128&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75 2x" src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75"/> */}
-            <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} src={puppyInfo.gallery_content[0].urls.medium}/>
+            <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} src={puppyInfo.gallery_content[0].urls['300w']}/>
             </a>
             <div className="tw-flex tw-flex-col">
             
@@ -61,7 +67,7 @@ const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice, passedEssentia
             <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
             <div className="tw-flex tw-justify-between"><span className="tw-font-inter tw-text-gray-01">Subtotal</span><span className="tw-font-inter tw-text-gray-01">{shippingPriceVar == '0' ? '--' : `$${subTotal}.00`}</span></div>
             <div>
-                <div className="tw-flex tw-justify-between"><span className="tw-font-inter tw-text-gray-01">Tax</span><span className="tw-font-inter tw-text-gray-01">{passedEssentials ? 'Free' : '--'}</span>
+                <div className="tw-flex tw-justify-between"><span className="tw-font-inter tw-text-gray-01">Tax</span><span className="tw-font-inter tw-text-gray-01">{passedEssentials ? 'Covered' : '--'}</span>
                 </div>
                 <p className="tw-font-inter tw-text-xs tw-text-gray-02 tw-w-64">Calculated once essentials are confirmed</p>
             </div>

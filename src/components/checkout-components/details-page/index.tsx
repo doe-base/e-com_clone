@@ -172,7 +172,7 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo }) => {
                     //     /_next/image?url=${puppyInfo.gallery_content[0].urls.small}&amp;w=256&amp;q=75 1x, 
                     //     /_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75 2x`} 
                     // src={`https://www.puppyspot.com/_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75`}
-                    src={puppyInfo.gallery_content[0].urls.medium}
+                    src={puppyInfo.gallery_content[0].urls['300w']}
                 />
                 {/* <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"/> */}
                 <div className="tw-flex tw-flex-col tw-items-center"><span>

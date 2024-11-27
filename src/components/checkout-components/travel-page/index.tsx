@@ -276,7 +276,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                 //     /_next/image?url=${puppyInfo.gallery_content[0].urls.small}&amp;w=256&amp;q=75 1x, 
                 //     /_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75 2x`} 
                 // src={`https://www.puppyspot.com/_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75`}
-                src={puppyInfo.gallery_content[0].urls.medium}
+                src={puppyInfo.gallery_content[0].urls['300w']}
             />
         <div className="tw-flex tw-flex-col tw-items-center"><span>
             <p className="tw-font-nunito tw-text-[32px] tw-font-black tw-leading-10 tw-text-black tw-text-center"><strong className="tw-capitalize">{puppyInfo.puppy_name}</strong> is in {puppyInfo.puppy_location} Currently</p></span><span className=" tw-font-nunito tw-text-gray-01 tw-flex tw-items-center tw-gap-3 lg:tw-hidden tw-text-base">Show summary: <span className="tw-font-bold tw-underline tw-cursor-pointer">${price}.00</span>
@@ -319,10 +319,9 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
         <div className="tw-mt-4 ">
             <div className="tw-flex tw-flex-col tw-gap-[30px] tw-mt-7 tw-mb-10 initial-scroll">
                 <div className="tw-px-6 sm:tw-px-0">
-                    <h3 className="tw-text-green-01 tw-text-[22px] tw-font-nunito tw-font-extrabold">Delivery details</h3>
-                    <p className="tw-font-inter tw-text-sm tw-text-gray-02">Tell us your preferred way for <span className="tw-capitalize">{puppyInfo.puppy_name}</span> to get to you. Your current state is <strong style={{color: '#219653'}}>{paymentInfo.state}</strong> (<a href={changeStateLink} style={{fontWeight: 'normal', textDecoration: 'underline'}}>change</a>) </p></div>
+                    <h3 className="tw-text-green-01 tw-text-[22px] tw-font-nunito tw-font-extrabold">Deliver Near You</h3>
+                    <p className="tw-font-inter tw-text-sm tw-text-gray-02">Pickup <span className="tw-capitalize">{puppyInfo.puppy_name}</span> from our USDA-licensed travel partner at a location near to your home. Your current state is <strong style={{color: '#219653'}}>{paymentInfo.state}</strong> (<a href={changeStateLink} style={{fontWeight: 'normal', textDecoration: 'underline'}}>change</a>) </p></div>
                 <div style={{"--divider-color":"var(--green-01)", "--divider-size":"var(--divider-size-lg)"} as React.CSSProperties } className="tw-rounded m_3eebeb36 mantine-Divider-root" data-size="lg" data-orientation="horizontal" role="separator"></div>
-                
                 <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled"><legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Shipping method</legend>
                     <div></div>
                     <div className="m_46b77525 mantine-InputWrapper-root mantine-RadioGroup-root" data-path="age">

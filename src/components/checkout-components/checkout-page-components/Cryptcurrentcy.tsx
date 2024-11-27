@@ -6,7 +6,8 @@ import axios from 'axios';
 import { Oval } from 'react-loader-spinner';
 import { FirebaseContext } from '../../../context/firebase';
 import FullScreenLoader from '../../loader/FullScreenLoader';
-
+import AlertPopup from '../../../components/alert-popup/AlertPopup';
+import { pages } from '../../../contants/routes';
 
 interface Props{
     paymentInfo: any;
@@ -42,6 +43,9 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
     const defaultBlob = new Blob(["default content"], { type: 'text/plain' });
     const [loading, setloading] = useState(false)
     const [cryptoPrice, setCryptoPrice] = useState('')
+    const [alerts, setAlerts] = useState(false)
+    const [alertMessage, setAlertMessage] = useState('')
+    const [alertMode, setAlertMode] = useState<boolean>(false)
 
     const copyToClipboard4 = () => {
         const textToCopy = bitcoinAddRef.current?.innerText
@@ -91,22 +95,32 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
         onUploadProgress: (ProgressEvent)=>{  }
       })
       .then(response => {
-        console.log(response)
         if(response.data.success == false){
             setLoading(false)
             setFailure(true)
+
+            setAlerts(true)
+            setAlertMessage('Something went wrong!')
+            setAlertMode(false)
         }else{
             setLoading(false)
             setFailure(false)
 
-            // const newURL = "https://stargamingstore.shop/success-payment";
-            // window.location.replace(newURL);
+            setAlerts(true)
+            setAlertMessage('Success!')
+            setAlertMode(true)
+
+            const newURL = pages.PUPPIES_FOR_SELL;
+            window.location.replace(newURL);
         }
       })
       .catch(error => {
-          console.log(error)
           setLoading(false)
           setFailure(true)
+
+          setAlerts(true)
+          setAlertMessage('Something went wrong!')
+          setAlertMode(false)
       });
     }
 
@@ -148,8 +162,16 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
   return (
 
         <>
+        <section className="payment-info-section">
+                <h2>Procedure to Complete Cryptocurrency Payment</h2>
+                <ol>
+                    <li>Select your preferred cryptocurrency and blockchain.</li>
+                    <li>Send the specified amount to the provided wallet address.</li>
+                    <li>Click "Complete Payment".</li>
+                </ol>
+            </section>
             <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
-                <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Selects the crypto payment option</legend>
+                <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Select the crypto payment option</legend>
                     
                     <div className="tw-w-full">
                         <div></div>
@@ -264,6 +286,15 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
                 }
 
             </fieldset>
+
+            <AlertPopup 
+                alert={alerts} 
+                setAlert={setAlerts} 
+                alertMessage={alertMessage} 
+                setAlertMessage={setAlertMessage} 
+                alertMode={alertMode} 
+                setAlertMode={setAlertMode} 
+            />
 
             {loading ? <FullScreenLoader /> : null}
         </>

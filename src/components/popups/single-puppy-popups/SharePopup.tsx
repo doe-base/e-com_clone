@@ -4,8 +4,23 @@ import "../../../styles/popup/share-popup.css";
 interface Props {
   sharePopup: boolean;
   setSharePopup: React.Dispatch<React.SetStateAction<boolean>>;
+  galleryContent: string;
+  name: string; 
+  breed: string; 
+  color: string;
+  sex: string;
+  age: string;
 }
-const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
+const SharePopup: React.FC<Props> = ({ 
+  sharePopup, 
+  setSharePopup,
+  galleryContent,
+  name, 
+  breed,
+  color,
+  sex,
+  age,
+}) => {
 
       const title = encodeURIComponent(document.title) 
       const text = encodeURIComponent("Wanted to share this with you ")
@@ -75,74 +90,85 @@ const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
           aria-modal="true"
         >
           <button className="styles-module__closeIcon--m4RIB" onClick={()=> setSharePopup(false)}>
-            <img src="https://www.puppyspot.com/preact/./img/close-icon.svg" />
+            <img src="/img/close-icon.svg" />
           </button>
           <div className="styles-module__modalContainer--Ros6J">
             <div className="styles-module__puppyDetail--gApxF">
               <img
                 className="styles-module__img--YLJYM"
-                src="https://photos.puppyspot.com/7/listing/768727/photo/503051080_medium.JPG"
+                src={galleryContent}
                 draggable="false"
               />
               <div className="styles-module__infoContainer--3DuTp">
-                <p className="styles-module__puppyTitle--K6pRx">Ellis</p>
+                <p className="styles-module__puppyTitle--K6pRx">{name}</p>
                 <p className="styles-module__puppyDescription--IHf9s" style={{margin: '1rem 0'}}>
-                  Cocker Spaniel
+                  {breed}
                 </p>
                 <div className="styles-module__puppyInformation--YVTOY">
                   <div>
-                    <img
-                      className="styles-module__icon--NFMMT"
-                      src="https://www.puppyspot.com/preact/./img/gender-icon.svg"
-                    />
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                      <img
+                        className="styles-module__icon--NFMMT"
+                        src="/img/gender-icon.svg"
+                      />
+                    </div>
                     <div className="styles-module__informationType--GUSIX">
                       Gender
                     </div>
                     <div className="styles-module__informationTitle--pkJLt">
-                      Male
+                      {sex}
                     </div>
                   </div>
                   <div>
-                    <img
-                      className="styles-module__icon--NFMMT"
-                      src="https://www.puppyspot.com/preact/./img/color-icon.svg"
-                    />
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                      <img
+                        className="styles-module__icon--NFMMT"
+                        src="/img/color-icon.svg"
+                      />
+                    </div>
                     <div className="styles-module__informationType--GUSIX">
                       Color
                     </div>
                     <div className="styles-module__informationTitle--pkJLt">
-                      Buff &amp; White
+                      {color}
                     </div>
                   </div>
                   <div>
-                    <img
-                      className="styles-module__icon--NFMMT"
-                      src="https://www.puppyspot.com/preact/./img/age-icon.svg"
-                    />
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                      <img
+                        className="styles-module__icon--NFMMT"
+                        src="/img/age-icon.svg"
+                      />
+                    </div>
                     <div className="styles-module__informationType--GUSIX">
                       Age
                     </div>
                     <div className="styles-module__informationTitle--pkJLt">
-                      22 Weeks
+                      {age} Week{Number(age) > 1 && "s"}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div className="styles-module__shareContainerModal--ZzyQ-">
-              <img
-                className="styles-module__shareIconModal--5mZjy"
-                src="https://www.puppyspot.com/preact/./img/share-icon-modal.svg"
-              />
+
+              <div style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+                <img
+                  className="styles-module__shareIconModal--5mZjy"
+                  src="/img/share-icon-modal.svg"
+                />
+              </div>
+
+
               <p className="styles-module__title--qJJ-e">
-                Share Ellis With Friends
+                Share {name} With Friends
               </p>
               <div>
                 <div className="styles-module__buttonWrapper--0ndoe">
                   <button onClick={handleCopy} className="shareButtonHandler">
                     <img
                       className="styles-module__buttonIcon--c12+Y"
-                      src="https://www.puppyspot.com/preact/./img/copy-link.svg"
+                      src="/img/copy-link.svg"
                       alt="Copy Link Icon"
                     />
                     {buttonText}
@@ -162,7 +188,7 @@ const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
                   >
                     <img
                       className="styles-module__buttonIcon--c12+Y"
-                      src="https://www.puppyspot.com/preact/./img/email-share.svg"
+                      src="/img/email-share.svg"
                     />
                     Email
                   </button>
@@ -183,7 +209,7 @@ const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
                   >
                     <img
                       className="styles-module__buttonIcon--c12+Y"
-                      src="https://www.puppyspot.com/preact/./img/twitter.svg"
+                      src="/img/twitter.svg"
                     />
                     Twitter
                   </button>
@@ -202,7 +228,7 @@ const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
                   >
                     <img
                       className="styles-module__buttonIcon--c12+Y"
-                      src="https://www.puppyspot.com/preact/./img/whatsaap.svg"
+                      src="/img/whatsaap.svg"
                     />
                     Whatsapp
                   </button>
@@ -223,7 +249,7 @@ const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
                   >
                     <img
                       className="styles-module__buttonIcon--c12+Y"
-                      src="https://www.puppyspot.com/preact/./img/facebook.svg"
+                      src="/img/facebook.svg"
                     />
                     Facebook
                   </button>
@@ -242,7 +268,7 @@ const SharePopup: React.FC<Props> = ({ sharePopup, setSharePopup }) => {
                   >
                     <img
                       className="styles-module__buttonIcon--c12+Y"
-                      src="https://www.puppyspot.com/preact/./img/pinterest.svg"
+                      src="/img/pinterest.svg"
                     />
                     Pinterest
                   </button>

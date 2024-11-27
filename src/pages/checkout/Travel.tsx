@@ -5,7 +5,7 @@ import PrcessTracker from '../../components/checkout-components/process-tracker/
 import TravelSection from '../../components/checkout-components/travel-page';
 import OrderSummarySmall from '../../components/checkout-components/order-summary-small/OrderSummarySmall';
 import { useParams } from 'react-router-dom';
-import allIndivialPuppies from '../../data/individual-puppy-data/individual_puppy1.json'
+import allIndivialPuppies from '../../data/individual-puppy-data/_split_restructured_puppies-data1.json'
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
 import { FirebaseContext } from '../../context/firebase';
 import FullScreenLoader from '../../components/loader/FullScreenLoader';

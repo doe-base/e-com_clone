@@ -313,7 +313,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({
             />
 
         </div>
-        {/* <SmallFilterPopup 
+        <SmallFilterPopup 
             breedsArr={breedsArr} 
             setBreedsArr={setBreedsArr} 
             query={query}
@@ -322,10 +322,31 @@ const PuppiesForSellContainer: React.FC<Props> = ({
             setResults={setResults}
             emptyQuery={emptyQuery}
             setEmptyQuery={setEmptyQuery}
+            
             selectedBreedCheck={selectedBreedCheck}
             setSelectedBreedCheck={setSelectedBreedCheck}
-        /> */}
-        {/* <MediumFilterSidebar 
+            genderFilter={genderFilter}
+            setGenderFilter={setGenderFilter}
+            selectedCharacteristicsFilter={selectedCharacteristicsFilter}
+            setSelectedCharacteristicsFilter={setSelectedCharacteristicsFilter}
+            selectedVarietyFilter={selectedVarietyFilter}
+            setSelectedVarietyFilter={setSelectedVarietyFilter}
+            selectedSizeFilter={selectedSizeFilter}
+            setSelectedSizeFilter={setSelectedSizeFilter}
+            ageFilter={ageFilter}
+            setAgeFilter={setAgeFilter}
+            selectedColorFilter={selectedColorFilter}
+            setSelectedColorFilter={setSelectedColorFilter}
+            travleFilter={travleFilter}
+            setTravleFilter={setTravleFilter}
+
+            resetFilters={resetFilters}
+            colors={colors}
+            varieties={varieties}
+            characters={characters}
+            filterArray={filterArray}
+        />
+        <MediumFilterSidebar 
             breedsArr={breedsArr} 
             setBreedsArr={setBreedsArr} 
             query={query}
@@ -334,9 +355,30 @@ const PuppiesForSellContainer: React.FC<Props> = ({
             setResults={setResults}
             emptyQuery={emptyQuery}
             setEmptyQuery={setEmptyQuery}
+            
             selectedBreedCheck={selectedBreedCheck}
             setSelectedBreedCheck={setSelectedBreedCheck}
-        /> */}
+            genderFilter={genderFilter}
+            setGenderFilter={setGenderFilter}
+            selectedCharacteristicsFilter={selectedCharacteristicsFilter}
+            setSelectedCharacteristicsFilter={setSelectedCharacteristicsFilter}
+            selectedVarietyFilter={selectedVarietyFilter}
+            setSelectedVarietyFilter={setSelectedVarietyFilter}
+            selectedSizeFilter={selectedSizeFilter}
+            setSelectedSizeFilter={setSelectedSizeFilter}
+            ageFilter={ageFilter}
+            setAgeFilter={setAgeFilter}
+            selectedColorFilter={selectedColorFilter}
+            setSelectedColorFilter={setSelectedColorFilter}
+            travleFilter={travleFilter}
+            setTravleFilter={setTravleFilter}
+
+            resetFilters={resetFilters}
+            colors={colors}
+            varieties={varieties}
+            characters={characters}
+            filterArray={filterArray}
+        />
     </>
   );
 }

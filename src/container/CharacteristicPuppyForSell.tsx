@@ -4,7 +4,7 @@ import Loading from '../components/loading/Loading';
 import allBreed from '../data/all-breeds.json'
 import DropDown from '../components/drop-down/DropDown';
 import SmallFilterPopup from '../components/small-filter-popup/SmallFilterPopup';
-import FilterSidebar from '../components/filter-sidebar/MediumFilterSidebar';
+import MediumFilterSidebar from '../components/filter-sidebar/MediumFilterSidebar';
 import FilterResult from '../components/puppies-for-sell-componets/FilterResult';
 import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componets/Siderbar';
 import { pages } from '../contants/routes'; 
@@ -328,8 +328,72 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
             />
 
         </div>
-        {/* <SmallFilterPopup /> */}
-        {/* <FilterSidebar /> */}
+        <SmallFilterPopup 
+            breedsArr={breedsArr} 
+            setBreedsArr={setBreedsArr} 
+            query={query}
+            setQuery={setQuery}
+            results={results}
+            setResults={setResults}
+            emptyQuery={emptyQuery}
+            setEmptyQuery={setEmptyQuery}
+            
+            selectedBreedCheck={selectedBreedCheck}
+            setSelectedBreedCheck={setSelectedBreedCheck}
+            genderFilter={genderFilter}
+            setGenderFilter={setGenderFilter}
+            selectedCharacteristicsFilter={selectedCharacteristicsFilter}
+            setSelectedCharacteristicsFilter={setSelectedCharacteristicsFilter}
+            selectedVarietyFilter={selectedVarietyFilter}
+            setSelectedVarietyFilter={setSelectedVarietyFilter}
+            selectedSizeFilter={selectedSizeFilter}
+            setSelectedSizeFilter={setSelectedSizeFilter}
+            ageFilter={ageFilter}
+            setAgeFilter={setAgeFilter}
+            selectedColorFilter={selectedColorFilter}
+            setSelectedColorFilter={setSelectedColorFilter}
+            travleFilter={travleFilter}
+            setTravleFilter={setTravleFilter}
+
+            resetFilters={resetFilters}
+            colors={colors}
+            varieties={varieties}
+            characters={characters}
+            filterArray={filterArray}
+        />
+        <MediumFilterSidebar 
+            breedsArr={breedsArr} 
+            setBreedsArr={setBreedsArr} 
+            query={query}
+            setQuery={setQuery}
+            results={results}
+            setResults={setResults}
+            emptyQuery={emptyQuery}
+            setEmptyQuery={setEmptyQuery}
+            
+            selectedBreedCheck={selectedBreedCheck}
+            setSelectedBreedCheck={setSelectedBreedCheck}
+            genderFilter={genderFilter}
+            setGenderFilter={setGenderFilter}
+            selectedCharacteristicsFilter={selectedCharacteristicsFilter}
+            setSelectedCharacteristicsFilter={setSelectedCharacteristicsFilter}
+            selectedVarietyFilter={selectedVarietyFilter}
+            setSelectedVarietyFilter={setSelectedVarietyFilter}
+            selectedSizeFilter={selectedSizeFilter}
+            setSelectedSizeFilter={setSelectedSizeFilter}
+            ageFilter={ageFilter}
+            setAgeFilter={setAgeFilter}
+            selectedColorFilter={selectedColorFilter}
+            setSelectedColorFilter={setSelectedColorFilter}
+            travleFilter={travleFilter}
+            setTravleFilter={setTravleFilter}
+
+            resetFilters={resetFilters}
+            colors={colors}
+            varieties={varieties}
+            characters={characters}
+            filterArray={filterArray}
+        />
     </>
   );
 }

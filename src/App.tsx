@@ -25,11 +25,15 @@ import MyAccount from './pages/account/MyAccount';
 import useAuthListener from './hooks/use-auth-listener';
 import puppyCharacterArr from './data/puppy-characteristics';
 import ForgotPassword from './pages/ForgetPassword';
+import MyAccountContainer from './container/MyAccountContainer';
+import Favorites from './pages/account/Favourite';
+import OrderHistory from './pages/account/OrderHistory';
 
 
 
 function App() {
   const {user} = useAuthListener();
+  const [isVerified, setIsVerified] = useState(!user ? '' :  user.emailVerified)
   const location = window.location.pathname;
 
   const [navHeight, setNavHeight] = useState<number>(0)
@@ -83,7 +87,7 @@ function App() {
             <Route path="/puppies-for-sale/breed/:breedSlug/puppy/:puppyId" element={<SinglePuppy />} />
 
             <Route path="/breed" element={<Breed pureordesigner={''} />} />
-            <Route path="/puppies-for-sale/breed/:breedSlug/overview" element={<BreedOverview />} />
+            {/* <Route path="/puppies-for-sale/breed/:breedSlug/overview" element={<BreedOverview />} /> */}
             <Route path="/breed/purebred-breeds" element={<Breed pureordesigner={'pure'} />} />
             <Route path="/breed/designer-breeds" element={<Breed pureordesigner={'designer'}/>} />
             {
@@ -107,7 +111,26 @@ function App() {
             <Route path="/shop/checkout/:paymentID/:puppyId/:paymentOption" element={<Checkout />} />
 
             {/* Has to be authenticated */}
-            <Route path="/my-account" element={<MyAccount />} />
+            {
+              !user
+              ?
+              null
+              :
+              <>
+                <Route
+                  path="/my-account"
+                  element={!isVerified ? <MyAccountContainer page={"my-account"} userEmail={!user ? '' : user.email}/> : <MyAccount page={"my-account"} />}
+                />
+                <Route
+                  path="/my-account/favorite-puppies"
+                  element={!isVerified ? <MyAccountContainer page={"favorite-puppies"} userEmail={!user ? '' : user.email}/> : <Favorites page={"favorite-puppies"}/>}
+                />
+                <Route
+                  path="/my-account/order-history"
+                  element={!isVerified ? <MyAccountContainer page={"order-history"} userEmail={!user ? '' : user.email}/> : <OrderHistory page={"order-history"} userEmail={!user ? '' : user.email} />}
+                />
+              </>
+            }
           </Routes>
         </Router>
       </div>

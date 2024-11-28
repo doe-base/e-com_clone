@@ -164,11 +164,16 @@ h1 {
     width: auto;
   }
 }
+.puppies-for-sale__filter-open {
+  display: flex;
+  align-items: center;
+}
 @media screen and (min-width: 1024px) {
   .puppies-for-sale__filter-open {
     display: none;
   }
 }
+
 .puppies-for-sale__filter-nav .mobile-green-filter {
   background-color: #219653;
   border-radius: 4px;

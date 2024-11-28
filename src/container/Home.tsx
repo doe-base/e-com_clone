@@ -85,7 +85,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
       const handleSearchPuppy = (puppySlug: string) => {
         if (puppySlug) {
             // https://example.com/search?query=puppies&sort=asc
-            window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+            window.location.href = `/puppies-for-sale?breed_slug=${puppySlug}`;
         }
       };
 

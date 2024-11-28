@@ -119,7 +119,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   const handleSearchPuppy = (puppySlug: string) => {
     if (puppySlug) {
         // https://example.com/search?query=puppies&sort=asc
-        window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+        window.location.href = `/puppies-for-sale?breed_slug=${puppySlug}`;
     }
   };
   const handleNavigateToBreedPuppy =(puppySlug: string) => {
@@ -275,6 +275,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO" onClick={showAboutUs}>
                         <button className="drawer-searchbar-menu-module__listLink--Mrxwr">About Us<i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i></button>
                     </li>
+                    
                     <li>
                         <div className="drawer-links-auth-container">
                             <a className="drawer-hyperlink-small" href={pages.LOGIN}>Log In</a>

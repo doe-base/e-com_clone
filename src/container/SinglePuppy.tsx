@@ -72,7 +72,7 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
 
   const {user} = useAuthListener();
   const [showMore, setShowMore] = useState(false);
-  const [sliderCount, setSliderCount] = useState(1);
+  const [sliderCount, setSliderCount] = useState(0);
   const [askAboutMePopup, setAskAboutMePopup] = useState(false);
   const [loginPopup, setLoginPopup] = useState(false);
   const [likePuppyListID, setLikePuppyListID] = useState(JSON.parse(localStorage.getItem("liked-puppies-id") || '[]'))
@@ -1185,12 +1185,9 @@ const handleLike =(puppyId: string)=>{
             </div>
 
             <ol className="profile-reviews__indicator">
-              <li
-                data-index="review-0"
-                className={`js-indicator-dots ${sliderCount === 1 ? 'active' : ''}`}
-              ></li>
-              <li data-index="review-1" className={`js-indicator-dots ${sliderCount === 2 ? 'active' : ''}`}></li>
-              <li data-index="review-2" className={`js-indicator-dots ${sliderCount === 3 ? 'active' : ''}`}></li>
+              <li data-index="review-0" className={`js-indicator-dots ${sliderCount === 0 ? 'active' : ''}`}></li>
+              <li data-index="review-1" className={`js-indicator-dots ${sliderCount === 1 ? 'active' : ''}`}></li>
+              <li data-index="review-2" className={`js-indicator-dots ${sliderCount === 2 ? 'active' : ''}`}></li>
             </ol>
           </div>
           

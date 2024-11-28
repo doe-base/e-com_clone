@@ -6,6 +6,7 @@ import allPuppies from '../../../data/puppy-data/all_puppies.json'
 import Fuse from 'fuse.js';
 import { account, breeds_pages, navbar, pages } from '../../../contants/routes';
 import { FirebaseContext } from '../../../context/firebase';
+import { accordionSummaryClasses } from '@mui/material';
 
   
 interface Props{
@@ -118,7 +119,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
     const handleSearchPuppy = (puppySlug: string) => {
         if (puppySlug) {
             // https://example.com/search?query=puppies&sort=asc
-            window.location.href = `/puppies-for-sale?query=${puppySlug}`;
+            window.location.href = `/puppies-for-sale?breed_slug=${puppySlug}`;
         }
     };
     const Logout = () =>{
@@ -188,8 +189,8 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
   return (
     <>
         <ul id="nav-bar" className={`header-nav__content noauth puppy-site ${isPuppiesForSale ? 'header-nav__content-no_boarder' : ''}`} style={{ display: `${smallNavOpen ? 'none' : 'flex'}`}} onMouseEnter={() => setIsNavbarHover(true)} onMouseLeave={() => setIsNavbarHover(false)}>
-            <li className="header-control-hamburger" onClick={()=> setSmallNavOpen(true)}>
-                <a className="mobile-open js-hamburger">
+            <li className="header-control-hamburger">
+                <a className="mobile-open js-hamburger" onClick={()=> setSmallNavOpen(true)}>
                     <svg className="icon" width="23px" height="19px" viewBox="0 0 24 20" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <g id="Symbols" stroke="none" stroke-width="0" fill-rule="evenodd">
                         <g id="mobile" transform="translate(-336.000000, -19.000000)" fill="#000000">
@@ -311,10 +312,6 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                         :
                                         <li><a href={pages.COLLECTIONS} className="hyperlink menu-item header-nav__menu-item top_nav_family_dogs">View All Characteristics</a></li>
                                     }
-
-
-
-
 
                                 </ul>
                             </section>
@@ -638,10 +635,31 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             </div>
                         </a>
                     </li>
+                    {
+                        !user?.email
+                        ?
+                        <li className="auth" style={{marginTop: '-3px'}}>
+                            <a className="hyperlink" href={pages.LOGIN}>Log In</a>
+                        </li>
+                        :
+                        <>
+                            <li className="user" onMouseEnter={() => setIsAccountDropdown(true)} onMouseLeave={() => setIsAccountDropdown(false)}>
+                                <a href={account.ACCOUNT} data-toggle-menu=".js-account-submenu" className="">
+                                    <picture className="">
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-account.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-account.svg" />
+                                    </picture>
+                                </a>
 
-                    <li className="auth" style={{marginTop: '-3px'}}>
-                        <a className="hyperlink" href={pages.LOGIN}>Log In</a>
-                    </li>
+                            </li>
+                            <li className="my-wishlist">
+                                <a href={account.ACCOUNT_FAVORITE_PUPPIES} className="header-nav__links-my-wishlist">
+                                    <picture className="">
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" />
+                                    </picture>
+                                </a>
+                            </li>
+                        </>
+                    }
                 </ul>
             </li>
         </ul>

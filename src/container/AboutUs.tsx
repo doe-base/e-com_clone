@@ -330,7 +330,7 @@ const AboutUsContainer: React.FC<Props> = ({}) => {
             </div>
             <p className="about-us__coverage-read-more js-show-next-article hyperlink">Read More</p>
             <p className="about-us__coverage-read-more js-show-less-article hidden hyperlink">Read Less</p>
-            <p className="about-us__coverage-inquiries">Please direct all press inquiries to <a className="hyperlink" href="mailto:press@puppyspot.com">press@puppyspot.com</a></p>
+            <p className="about-us__coverage-inquiries">Please direct all press inquiries to <a className="hyperlink" href="mailto:support@puppyspotadoption.shop">support@puppyspotadoption.shop</a></p>
         </section>
     </div>
   );

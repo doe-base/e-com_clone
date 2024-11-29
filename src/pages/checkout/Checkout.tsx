@@ -107,9 +107,11 @@ const Checkout: React.FC<Props> = ({}) => {
               puppyInfo && paymentInfo
               ?
               <>
-              <CheckoutContainer puppyInfo={puppyInfo} paymentInfo={paymentInfo} subTotal={subTotal} puppyId={puppyId} paymentID={paymentID} paymentOption={paymentOption} subTotalInNumber={subTotalInNumber} />
+                <CheckoutContainer puppyInfo={puppyInfo} paymentInfo={paymentInfo} subTotal={subTotal} puppyId={puppyId} paymentID={paymentID} paymentOption={paymentOption} subTotalInNumber={subTotalInNumber} />
 
-              <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={paymentInfo.passedEssentials}/>
+                <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={paymentInfo.passedEssentials}/>
+
+                <OrderSummarySmall puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={false}/>
               </>
               :
               null
@@ -120,7 +122,6 @@ const Checkout: React.FC<Props> = ({}) => {
       </section>
       {loading ? <FullScreenLoader /> : null}
       <CheckoutFooter />
-      <OrderSummarySmall/>
     </>
   );
 }

@@ -258,7 +258,7 @@ const AKCContainer: React.FC<Props> = ({}) => {
         </div>
       </article>
       <div className="cta-white mb30 mt30">
-        <a href="https://www.puppyspot.com/puppies-for-sale">
+        <a href="/puppies-for-sale">
           Let's find you a puppy!
         </a>
       </div>

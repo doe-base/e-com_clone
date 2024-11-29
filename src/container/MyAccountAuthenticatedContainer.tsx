@@ -279,7 +279,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </a>
                                         <div className="loading cta invisible">
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
                                         </div>
                                     </div>
@@ -318,7 +318,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </button>
                                         <div className={`loading cta ${loading || 'invisible'}`}>
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
 
                                         </div>
@@ -350,7 +350,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </button>
                                         <div className="loading cta invisible">
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
                                         </div>
                                     </div>
@@ -370,7 +370,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                             </a>
                                             <div className="loading cta invisible">
                                                 <picture className="">
-                                                    <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                    <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                                 </picture>
                                             </div>
                                     </div>
@@ -404,7 +404,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </button>
                                         <div className={`loading cta ${loadingPhone || 'invisible'}`}>
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
 
                                         </div>
@@ -425,7 +425,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                             </a>
                                             <div className="loading cta invisible">
                                                 <picture className="">
-                                                    <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                    <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                                 </picture>
                                             </div>
                                     </div>
@@ -483,7 +483,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </button>
                                         <div className={`loading cta ${loadingPassword || 'invisible'}`}>
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
                                         </div>
                                     </div>
@@ -503,7 +503,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </a>
                                         <div className="loading cta invisible">
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
                                         </div>
                                     </div>
@@ -599,7 +599,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                                         </button>
                                         <div className={`loading cta ${loadingAddress || 'invisible'}`}>
                                             <picture className="">
-                                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/components/loader-cta.svg" />
+                                                <img loading="lazy" alt="" id="" className="" src="/img/components/loader-cta.svg" />
                                             </picture>
                                         </div>
                                     </div>
@@ -617,7 +617,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                     <div className="white-modal__close">
                                         <a className="js-close-modal">
                                 <picture className="">
-                                        <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/puppy-listings/menu-close.svg" />
+                                        <img loading="lazy" alt="" id="" className="" src="/img/puppy-listings/menu-close.svg" />
                     </picture>
 
                             </a>
@@ -643,7 +643,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
                     <div className="white-modal__close">
                         <a className="js-close-modal">
                             <picture className="">
-                                <img loading="lazy" alt="" id="" className="" src="https://www.puppyspot.com/assets/img/puppy-listings/menu-close.svg" />
+                                <img loading="lazy" alt="" id="" className="" src="/img/puppy-listings/menu-close.svg" />
                             </picture>
                         </a>
                     </div>

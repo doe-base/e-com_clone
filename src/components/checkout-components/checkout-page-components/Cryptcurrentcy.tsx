@@ -31,6 +31,9 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
     const classes = useStyles()
     const { firebase } = useContext(FirebaseContext)
     const bitcoinAddress = process.env.REACT_APP_BITCOIN_ADDRESS
+    const usdtSolAddress = process.env.REACT_APP_USDT_SOL_ADDRESS
+    const usdtTRC20Address = process.env.REACT_APP_USDT_TRC20_ADDRESS
+
 
     const [blockChain, setBlockChain] = useState('')
     const [stateEmpty, setStateEmpty] = useState(false)
@@ -75,7 +78,7 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
     };
 
 
-    const onCryptocurrencySubmit = ( e: any ) =>{
+    const onCryptocurrencySubmit = ( e: any, coin: string ) =>{
       e.preventDefault()
       
       setLoading(true)
@@ -88,7 +91,7 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
       newFormData.append('payerEmail', paymentInfo.emailInput)
       newFormData.append('blockChain', blockChain)
       newFormData.append('cryptoPrice', cryptoPrice)
-      newFormData.append('paymentMethod', 'crypto')
+      newFormData.append('paymentMethod', coin)
 
       const url = process.env.REACT_APP_CRYPTOCURRENCY || ''
       axios.post(url, newFormData, {
@@ -145,15 +148,18 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
 
     const handleSelectChain = async (selected: string) => {
        const rates = await getDocumentById('crypto-rates', 'P0rkUhkWrcAxPpxTfIf0')
+
        if(rates){
         selected === 'Bitcoin (BTC)' && setCryptoPrice(convertPrice(subTotalInNumber, rates.bitcoin))
-        selected === 'USDT (Tron -TRX)' && setCryptoPrice(convertPrice(subTotalInNumber, rates.usdt))
+        selected === 'USDT (TRC20)' && setCryptoPrice(convertPrice(subTotalInNumber, rates.usdt))
+        selected === 'USDT (Solana -SOL)' && setCryptoPrice(convertPrice(subTotalInNumber, rates.usdt))
        }else{
             const bitcoinRate = process.env.REACT_APP_BITCOIN_RATE || 0
             const usdtRate = process.env.REACT_APP_USDT_RATE || 0
 
             selected === 'Bitcoin (BTC)' && setCryptoPrice(convertPrice(subTotalInNumber, Number(bitcoinRate)))
-            selected === 'USDT (Tron -TRX)' && setCryptoPrice(convertPrice(subTotalInNumber, Number(usdtRate)))
+            selected === 'USDT (TRC20)' && setCryptoPrice(convertPrice(subTotalInNumber, Number(usdtRate)))
+            selected === 'USDT (Solana -SOL)' && setCryptoPrice(convertPrice(subTotalInNumber, Number(usdtRate)))
        }
        setBlockChain(selected)
 
@@ -193,7 +199,7 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
                                 >
                                         <option value="" disabled selected>--Select Blockchain--</option>
                                         <option className="tw-font-inter tw-text-gray-03 !tw-text-sm tw-font-normal tw-p-3 data-[combobox-selected]:tw-bg-gray-06 hover:tw-bg-gray-06 m_92253aa5 mantine-Select-option m_390b5f4" data-combobox-option="true" data-value="bitcoin" aria-selected="false" id=":r68o:" role="option"><span>Bitcoin (BTC)</span></option>
-                                        <option className="tw-font-inter tw-text-gray-03 !tw-text-sm tw-font-normal tw-p-3 data-[combobox-selected]:tw-bg-gray-06 hover:tw-bg-gray-06 m_92253aa5 mantine-Select-option m_390b5f4" data-combobox-option="true" data-value="usdt-1" aria-selected="false" id=":r68q:" role="option"><span>USDT (Tron -TRX)</span></option>
+                                        <option className="tw-font-inter tw-text-gray-03 !tw-text-sm tw-font-normal tw-p-3 data-[combobox-selected]:tw-bg-gray-06 hover:tw-bg-gray-06 m_92253aa5 mantine-Select-option m_390b5f4" data-combobox-option="true" data-value="usdt-1" aria-selected="false" id=":r68q:" role="option"><span>USDT (TRC20)</span></option>
                                         <option className="tw-font-inter tw-text-gray-03 !tw-text-sm tw-font-normal tw-p-3 data-[combobox-selected]:tw-bg-gray-06 hover:tw-bg-gray-06 m_92253aa5 mantine-Select-option m_390b5f4" data-combobox-option="true" data-value="usdt-2" aria-selected="false" id=":r68q:" role="option"><span>USDT (Solana -SOL)</span></option>
                                 </select>
                                 
@@ -216,7 +222,7 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
                     <>
                         <div className={classes.cryptocurrencyaddressholder}>
 
-                            <span className={classes.cryptocurrencyaddressholdertitle}>Bitcoin wallet address:</span>
+                            <span className={classes.cryptocurrencyaddressholdertitle}>Bitcoin (BTC) wallet address:</span>
 
                             <div style={{display: 'flex'}} onClick={copyToClipboard4}>
                                 <div><h2 ref={bitcoinAddRef} className={classes.selectField2Text2}>{bitcoinAddress}</h2></div>
@@ -255,7 +261,149 @@ const CryptoCurrency: React.FC<Props> = ({paymentInfo, subTotal, puppyId, paymen
                                     lg:tw-max-w-[400px]
                                 tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" 
                                 type="button"
-                                onClick={onCryptocurrencySubmit}
+                                onClick={(e)=>onCryptocurrencySubmit(e, 'Bitcoin (BTC)')}
+                            >
+                                <span className="m_80f1301b mantine-Button-inner">
+                                    <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">
+                                    Complete Payment
+                                    {
+                                        Loading
+                                        ?
+                                        <Oval
+                                            visible={true}
+                                            height="30"
+                                            width="30"
+                                            color="#ffffff"
+                                            ariaLabel="oval-loading"
+                                            wrapperStyle={{marginLeft: '0.3rem'}}
+                                            wrapperClass=""
+                                        />
+                                        :
+                                        null
+                                    }
+                                    </span>
+                                </span>
+                            </button>
+                            {Failure ? <p style={{fontSize: '0.85rem', color: 'red'}}>Internal error. Please try again</p> : null}
+                        </div>
+                    </>
+                    :
+                    blockChain === 'USDT (TRC20)'
+                    ?
+                    <>
+                        <div className={classes.cryptocurrencyaddressholder}>
+
+                            <span className={classes.cryptocurrencyaddressholdertitle}>USDT (TRC20) wallet address:</span>
+
+                            <div style={{display: 'flex'}} onClick={copyToClipboard4}>
+                                <div><h2 ref={bitcoinAddRef} className={classes.selectField2Text2}>{usdtTRC20Address}</h2></div>
+
+                                {
+                                    cpActive4
+                                    ?
+                                    <div><DoneAllIcon style={{ color:'green' }}  /></div>
+                                    :
+                                    <div style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                                } 
+                            </div>
+                        </div>
+
+                        <div className={classes.cryptocurrencyaddressholder}>
+                            <span className={classes.cryptocurrencyaddressholdertitle}>Equivalent <span style={{fontWeight: 'bold'}}>Bitcoin</span> amount for wire transfer:</span>
+
+                            <div style={{display: 'flex'}} onClick={copyToClipboard5}>
+                                <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{cryptoPrice}</h2></div>
+                                {
+                                    cpActive5
+                                    ?
+                                    <div><DoneAllIcon style={{ color:'green' }}  /></div>
+                                    :
+                                    <div style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                                } 
+                            </div>
+                        </div>
+
+                        <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
+                        <div className="tw-px-6 sm:tw-px-0">
+                            <button style={{"--button-color":"var(--mantine-color-white)"} as React.CSSProperties } className="mantine-focus-auto mantine-active 
+                                    tw-px-6 tw-py-4 tw-h-[52px] tw-rounded-full tw-w-full tw-bg-blue-01
+                                    hover:tw-bg-blue-02
+                                    data-[disabled]:tw-bg-gray-05 disabled:tw-bg-gray-05
+                                    lg:tw-max-w-[400px]
+                                tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" 
+                                type="button"
+                                onClick={(e)=>onCryptocurrencySubmit(e, 'USDT (TRC20)')}
+                            >
+                                <span className="m_80f1301b mantine-Button-inner">
+                                    <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">
+                                    Complete Payment
+                                    {
+                                        Loading
+                                        ?
+                                        <Oval
+                                            visible={true}
+                                            height="30"
+                                            width="30"
+                                            color="#ffffff"
+                                            ariaLabel="oval-loading"
+                                            wrapperStyle={{marginLeft: '0.3rem'}}
+                                            wrapperClass=""
+                                        />
+                                        :
+                                        null
+                                    }
+                                    </span>
+                                </span>
+                            </button>
+                            {Failure ? <p style={{fontSize: '0.85rem', color: 'red'}}>Internal error. Please try again</p> : null}
+                        </div>
+                    </>
+                    :
+                    blockChain === 'USDT (Solana -SOL)'
+                    ?
+                    <>
+                        <div className={classes.cryptocurrencyaddressholder}>
+
+                            <span className={classes.cryptocurrencyaddressholdertitle}>USDT (Solana -SOL) wallet address:</span>
+
+                            <div style={{display: 'flex'}} onClick={copyToClipboard4}>
+                                <div><h2 ref={bitcoinAddRef} className={classes.selectField2Text2}>{usdtSolAddress}</h2></div>
+
+                                {
+                                    cpActive4
+                                    ?
+                                    <div><DoneAllIcon style={{ color:'green' }}  /></div>
+                                    :
+                                    <div style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                                } 
+                            </div>
+                        </div>
+
+                        <div className={classes.cryptocurrencyaddressholder}>
+                            <span className={classes.cryptocurrencyaddressholdertitle}>Equivalent <span style={{fontWeight: 'bold'}}>Bitcoin</span> amount for wire transfer:</span>
+
+                            <div style={{display: 'flex'}} onClick={copyToClipboard5}>
+                                <div><h2 style={{color: "#333", marginRight: '0.3rem'}} ref={bitcoinPriceRef}>{cryptoPrice}</h2></div>
+                                {
+                                    cpActive5
+                                    ?
+                                    <div><DoneAllIcon style={{ color:'green' }}  /></div>
+                                    :
+                                    <div style={{cursor: 'pointer'}}><ContentCopyIcon /></div>
+                                } 
+                            </div>
+                        </div>
+
+                        <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
+                        <div className="tw-px-6 sm:tw-px-0">
+                            <button style={{"--button-color":"var(--mantine-color-white)"} as React.CSSProperties } className="mantine-focus-auto mantine-active 
+                                    tw-px-6 tw-py-4 tw-h-[52px] tw-rounded-full tw-w-full tw-bg-blue-01
+                                    hover:tw-bg-blue-02
+                                    data-[disabled]:tw-bg-gray-05 disabled:tw-bg-gray-05
+                                    lg:tw-max-w-[400px]
+                                tw-mx-auto m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" 
+                                type="button"
+                                onClick={(e)=>onCryptocurrencySubmit(e, 'USDT (Solana -SOL)')}
                             >
                                 <span className="m_80f1301b mantine-Button-inner">
                                     <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">

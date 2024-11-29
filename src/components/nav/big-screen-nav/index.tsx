@@ -565,7 +565,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             <li className="user" onMouseEnter={() => setIsAccountDropdown(true)} onMouseLeave={() => setIsAccountDropdown(false)}>
                                 <a href="#" data-toggle-menu=".js-account-submenu" className="">
                                     <picture className="">
-                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-account.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-account.svg" />
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="/header/my-account.svg" loading="lazy" src="/img/header/my-account.svg" />
                                     </picture>
                                 </a>
 
@@ -601,7 +601,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                                     <div className="header-nav__submenu-footer">
                                         <a className="button ghost account__button-log-in" onClick={Logout}>
                                             <picture className="">
-                                                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/log-out.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/log-out.svg" />
+                                                    <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/header/log-out.svg" loading="lazy" src="/img/header/log-out.svg" />
                                             </picture>
                                             Log out
                                         </a>
@@ -612,7 +612,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             <li className="my-wishlist">
                                 <a href={account.ACCOUNT_FAVORITE_PUPPIES} className="header-nav__links-my-wishlist">
                                     <picture className="">
-                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" />
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="/img/header/my-wishlist.svg" loading="lazy" src="/img/header/my-wishlist.svg" />
                                     </picture>
                                 </a>
                             </li>
@@ -646,7 +646,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             <li className="user" onMouseEnter={() => setIsAccountDropdown(true)} onMouseLeave={() => setIsAccountDropdown(false)}>
                                 <a href={account.ACCOUNT} data-toggle-menu=".js-account-submenu" className="">
                                     <picture className="">
-                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-account.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-account.svg" />
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="/img/header/my-account.svg" loading="lazy" src="/img/header/my-account.svg" />
                                     </picture>
                                 </a>
 
@@ -654,7 +654,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
                             <li className="my-wishlist">
                                 <a href={account.ACCOUNT_FAVORITE_PUPPIES} className="header-nav__links-my-wishlist">
                                     <picture className="">
-                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/my-wishlist.svg" />
+                                        <img id="" alt="" className="icon ls-is-cached lazyloaded" data-cy="" data-src="/img/header/my-wishlist.svg" loading="lazy" src="/img/header/my-wishlist.svg" />
                                     </picture>
                                 </a>
                             </li>
@@ -668,7 +668,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
         <div id="root-hideable-header" style={{transition: 'all 0.3s linear', display: `${isPuppiesForSale ? 'block' : 'none'}`}} >
             <div className="hideable-header-module__wrapper--wa3zr ">
                 <div className="style-module__wrapper--7jJ94 style-module__open--k2jZl">
-                    <link rel="preload" as="image" type="image/svg+xml" href="https://www.puppyspot.com/preact/./img/dots-loader.svg" />
+                    <link rel="preload" as="image" type="image/svg+xml" href="/img/dots-loader.svg" />
                     <div className="style-module__content--UlhVY ">
                         <div className="style-module__reducerWrapper--UVMF-">
                             <div className="style-module__reducer--higDU">

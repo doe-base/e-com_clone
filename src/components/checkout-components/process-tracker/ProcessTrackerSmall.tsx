@@ -14,15 +14,20 @@ import React, { useEffect } from "react";
 interface Props {
   page: string;
 }
-const PrcessTracker: React.FC<Props> = ({ page }) => {
+const ProcessTrackerSmall: React.FC<Props> = ({ page }) => {
   return (
-    <div className="tw-w-full tw-max-w-[816px] tw-px-6 tw-hidden tw-mx-auto tw-mt-3 sm:tw-block m_cbb4ea7e mantine-Stepper-root">
+    <div className="tw-w-full tw-max-w-[816px] tw-px-6 tw-mx-auto  tw-mt-3 sm:tw-mt-5 sm:tw-hidden m_cbb4ea7e mantine-Stepper-root">
       <div
         className="m_aaf89d0b mantine-Stepper-steps"
         data-orientation="horizontal"
         data-icon-position="left"
         data-wrap="true"
       >
+
+
+
+
+      
         <button
           className="mantine-focus-auto m_f56b1e2c tw-flex-col tw-group tw-relative m_cbb57068 mantine-Stepper-step m_87cf2631 mantine-UnstyledButton-root"
           data-icon-position="left"
@@ -572,4 +577,4 @@ const PrcessTracker: React.FC<Props> = ({ page }) => {
   );
 };
 
-export default PrcessTracker;
+export default ProcessTrackerSmall;

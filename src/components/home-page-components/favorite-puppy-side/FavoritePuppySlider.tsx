@@ -95,7 +95,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Goldendoodle.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Goldendoodle</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -103,7 +103,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Cavapoo.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Cavapoo</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -111,7 +111,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Poodle.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Poodle</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -119,7 +119,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Bernedoodle.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Bernedoodle</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -127,7 +127,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Labrador Retiever.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Golden Retriever</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -135,7 +135,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Dachshund.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Dachshund</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -143,7 +143,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/French Bulldog.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">French Bulldog</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -151,7 +151,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Cavalier King Charles Spaniel.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Cavalier King Charles Spaniel</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -159,7 +159,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Havanese.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Havanese</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
 
@@ -167,7 +167,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                             <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Labrador choco 3.webp" draggable="false" loading="lazy"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Labrador Retriever</span>
-                                <img src="https://www.puppyspot.com/preact/./img/caret.svg"/>
+                                <img src="/img/caret.svg"/>
                             </div>
                         </a>
                 </div>

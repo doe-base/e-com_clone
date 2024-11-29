@@ -13,7 +13,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 alt=""
                 id=""
                 className=""
-                src="https://www.puppyspot.com/assets/img/puppy-listings/menu-close.svg"
+                src="/img/puppy-listings/menu-close.svg"
               />
             </picture>
           </a>
@@ -21,7 +21,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
         <div className="white-modal__content">
           <form
             className="js-form-validate js-auth-modal-sign-up"
-            action="https://www.puppyspot.com/sign-up"
             method="POST"
             data-action="sign-up"
             data-post-action="showSuccess"
@@ -30,7 +29,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
             <div className="authentication__social">
               <a
                 className="button ghost"
-                href="https://www.puppyspot.com/auth/google"
               >
                 <svg>
                 </svg>
@@ -38,9 +36,8 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
               </a>
               <a
                 className="button blue-facebook"
-                href="https://www.puppyspot.com/auth/facebook"
               >
-                <img src="https://www.puppyspot.com/assets/img/facebook-icon-white.svg" />
+                <img src="/img/facebook-icon-white.svg" />
                 <span>Continue with Facebook</span>
               </a>
             </div>
@@ -129,7 +126,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 <a
                   className="hyperlink"
                   target="_blank"
-                  href="https://www.puppyspot.com/terms-of-use"
+                  href="/terms-of-use"
                   rel="noopener noreferrer"
                 >
                   Terms of Use
@@ -138,7 +135,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                 <a
                   className="hyperlink"
                   target="_blank"
-                  href="https://www.puppyspot.com/privacy"
+                  href="/privacy"
                   rel="noopener noreferrer"
                 >
                   Privacy Policy
@@ -154,7 +151,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                     alt=""
                     className="lazyload "
                     data-cy=""
-                    data-src="https://www.puppyspot.com/assets/img/components/loader-cta.svg"
+                    data-src="/img/components/loader-cta.svg"
                     loading="lazy"
                   />
                 </picture>
@@ -179,7 +176,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
           </form>
           <form
             className="js-form-validate js-auth-modal-log-in hidden"
-            action="https://www.puppyspot.com/log-in"
+            action="/log-in"
             method="POST"
             data-action="log-in"
           >
@@ -196,7 +193,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
             <div className="authentication__social">
               <a
                 className="button ghost"
-                href="https://www.puppyspot.com/auth/google"
               >
                 <svg>
                 </svg>
@@ -204,9 +200,8 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
               </a>
               <a
                 className="button blue-facebook"
-                href="https://www.puppyspot.com/auth/facebook"
               >
-                <img src="https://www.puppyspot.com/assets/img/facebook-icon-white.svg" />
+                <img src="/img/facebook-icon-white.svg" />
                 <span>Continue with Facebook</span>
               </a>
             </div>
@@ -262,7 +257,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
               </div>
               <a
                 className="hyperlink"
-                href="https://www.puppyspot.com/forgot-password"
+                href="/forgot-password"
               >
                 Forgot password?
               </a>
@@ -275,7 +270,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                     alt=""
                     className="lazyload "
                     data-cy=""
-                    data-src="https://www.puppyspot.com/assets/img/components/loader-cta.svg"
+                    data-src="/img/components/loader-cta.svg"
                     loading="lazy"
                   />
                 </picture>
@@ -302,7 +297,6 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
           </form>
           <form
             className="save-account js-form-validate js-auth-modal-save-account hidden"
-            action="https://www.puppyspot.com/sign-up"
             method="POST"
             data-action="sign-up"
           >
@@ -398,7 +392,7 @@ const AuthenticationPopup: React.FC<Props> = ({}) => {
                       alt=""
                       className="lazyload "
                       data-cy=""
-                      data-src="https://www.puppyspot.com/assets/img/components/loader-cta.svg"
+                      data-src="/img/components/loader-cta.svg"
                       loading="lazy"
                     />
                   </picture>

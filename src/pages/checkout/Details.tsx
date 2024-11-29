@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../../styles/checkout/detail.css'
 import '../../styles/checkout/detail2.css'
 import '../../styles/checkout/detail3.css'
+// import '../../styles/checkout/detail4.css' This file way suppose to add fixed functionality but didn't work
 import CheckoutNav from '../../components/checkout-components/nav/Nav';
 import OrderSummary from '../../components/checkout-components/order-summary-bar/OrderSummary';
 import PrcessTracker from '../../components/checkout-components/process-tracker/ProcessTracker';
@@ -15,6 +16,7 @@ import allIndivialPuppies4 from '../../data/individual-puppy-data/_split_restruc
 import allIndivialPuppies5 from '../../data/individual-puppy-data/_split_restructured_puppies-data5.json'
 import allIndivialPuppies6 from '../../data/individual-puppy-data/_split_restructured_puppies-data6.json'
 import FullScreenLoader from '../../components/loader/FullScreenLoader';
+import OrderSummarySmall from '../../components/checkout-components/order-summary-small/OrderSummarySmall';
 
 
 const allPuppies = [
@@ -73,21 +75,19 @@ const CheckoutDetail: React.FC<Props> = ({}) => {
               puppyInfo
               ?
               <>
-                <DetailsSection puppyInfo={puppyInfo}/>
+                <DetailsSection puppyInfo={puppyInfo} shippingPrice={shippingPrice}/>
                 <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={false}/>
+                <OrderSummarySmall puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={false}/>
               </>
               :
               null
             }
-
-
 
            </div>
 
 
       </section>
       <CheckoutFooter />
-      {/* <OrderSummary/> */}
       {/* <FullScreenLoader /> */}
     </>
   );

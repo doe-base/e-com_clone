@@ -150,8 +150,12 @@ const useStyles = makeStyles((theme: Theme)=>{
             fontWeight: '700',
             border: 'none !important',
 
+              wordBreak: 'break-word', /* For modern browsers */
+              overflowWrap: 'break-word', /* Ensures compatibility */
+              whiteSpace: 'normal', /* Allows text wrapping */
+
             [theme.breakpoints.down('sm')]: {
-                fontSize: '0.8rem',
+                fontSize: '1rem',
             },
 
         }, 

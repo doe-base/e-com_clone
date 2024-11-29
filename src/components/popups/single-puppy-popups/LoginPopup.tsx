@@ -168,7 +168,7 @@ const LoginPopup: React.FC<Props> = ({
 
             {/* <form
               className="js-form-validate js-auth-modal-sign-up hidden"
-              action="https://www.puppyspot.com/sign-up"
+              action="/sign-up"
               method="POST"
               data-action="sign-up"
               data-post-action="showSuccess"

@@ -20,7 +20,7 @@ const AccountSidebar: React.FC<Props> = ({page}) => {
                 window.location.replace(pages.LOGIN);
             })
             .catch((error) => {
-                console.error("Error signing out:", error);
+                // console.error("Error signing out:", error);
             });
     }
   return (
@@ -89,7 +89,7 @@ const AccountSidebar: React.FC<Props> = ({page}) => {
                                 <div className="header-nav__submenu-footer">
                                     <a className="button ghost account__button-log-in" onClick={Logout}>
                                         <picture className="">
-                                                <img id="" alt="" className=" lazyloaded" data-cy="" data-src="https://www.puppyspot.com/assets/img/header/log-out.svg" loading="lazy" src="https://www.puppyspot.com/assets/img/header/log-out.svg" />
+                                                <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/header/log-out.svg" loading="lazy" src="/img/header/log-out.svg" />
                                         </picture>
                                         Log out
                                     </a>

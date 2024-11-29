@@ -481,12 +481,13 @@
     height:1.3em;
     top:2.7em
   }
-  input[type=checkbox] {
+  /* Affecting another element */
+  /* input[type=checkbox] {
     border:none;
     border-radius:3px;
     height:15px;
     width:150px
-  }
+  } */
   input[type=checkbox]+label:before {
     border-radius:3px;
     content:"";

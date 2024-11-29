@@ -1,13 +1,25 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ScrollContainer from 'react-indiana-drag-scroll';
 import { FirebaseContext } from '../../../context/firebase';
 import { Oval } from 'react-loader-spinner';
+import ProcessTrackerSmall from '../../../components/checkout-components/process-tracker/ProcessTrackerSmall';
 
 interface Props{
     puppyInfo: any;
     paymentID: string | undefined;
+    shippingPrice: number
 }
-const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID}) => {
+function formatNumberWithCommas(number: number) {
+    if (typeof number !== 'number') {
+      return 'Input must be a number';
+    }
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+}
+const convertCurrencyStringToNumber = (currency: string): number => {
+    // Remove the dollar sign and commas, then convert to a number
+    return Number(currency.replace(/[\$,]/g, ''));
+};
+const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID, shippingPrice}) => {
     const { firebase } = useContext(FirebaseContext)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
@@ -25,7 +37,6 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID}) => {
             el2.style.transform = 'translateY(0%)';
         }
     }
-
     async function updateItem(documentId: any) {
         if (!firebase) return;
         setError('');
@@ -56,48 +67,117 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID}) => {
         } catch (error) {
           setLoading(false);
           setError('An unexpected error occurred');
-          console.error('Error updating document:', error);
+          // console.error('Error updating document:', error);
         }
     }
 
+    const [isPastThreshold, setIsPastThreshold] = useState(false);
+
+    useEffect(() => {
+      const handleScrollAndResize = () => {
+        const isViewportNarrow = window.innerWidth < 1024;
+        const isScrolledPast = window.scrollY > 300;
+  
+        setIsPastThreshold(isViewportNarrow && isScrolledPast);
+      };
+  
+      // Check on scroll and resize
+      window.addEventListener('scroll', handleScrollAndResize);
+      window.addEventListener('resize', handleScrollAndResize);
+  
+      // Run the check on initial render
+      handleScrollAndResize();
+  
+      // Cleanup listeners on component unmount
+      return () => {
+        window.removeEventListener('scroll', handleScrollAndResize);
+        window.removeEventListener('resize', handleScrollAndResize);
+      };
+    }, []);
+    const numberValue = convertCurrencyStringToNumber(puppyInfo.price);
+    const subTotal = formatNumberWithCommas( numberValue + shippingPrice )
+
+
   return (
     <div className='tw-flex tw-flex-col tw-w-full lg:tw-max-w-[711px]'>
-        <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
-            <img 
-                    alt={`Bring ${puppyInfo.puppy_name} home`} 
-                    loading="lazy" 
-                    width="150" 
-                    height="150" 
-                    decoding="async" 
-                    data-nimg="1" 
-                    className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" 
-                    style={{color:"transparent"}} 
-                    // srcSet={`
-                    //     /_next/image?url=${puppyInfo.gallery_content[0].urls.small}&amp;w=256&amp;q=75 1x, 
-                    //     /_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75 2x`} 
-                    // src={`https://www.puppyspot.com/_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75`}
-                    src={puppyInfo.gallery_content[0].urls['300w']}
-                />
-                {/* <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"/> */}
-            <div className="tw-flex tw-flex-col tw-items-center"><span>
-                <p className="tw-font-nunito tw-text-[32px] tw-font-black tw-leading-10 tw-text-black tw-text-center">Let's bring <strong className="tw-capitalize">{puppyInfo.puppy_name}</strong> home!</p></span><span className=" tw-font-nunito tw-text-gray-01 tw-flex tw-items-center tw-gap-3 lg:tw-hidden tw-text-base">Show summary: <span className="tw-font-bold tw-underline tw-cursor-pointer">$2,292.00</span>
-                <button 
-                onClick={openOrderSummarySmall}
-                style={{
-                '--button-height': 'var(--button-height-xs)',
-                '--button-padding-x': 'var(--button-padding-x-xs)',
-                '--button-fz': 'var(--mantine-font-size-xs)',
-                '--button-bg': 'var(--mantine-color-default)',
-                '--button-hover': 'var(--mantine-color-default-hover)',
-                '--button-color': 'var(--mantine-color-default-color)',
-                '--button-bd': `calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border)`,
-                } as React.CSSProperties} 
-                className="mantine-focus-auto mantine-active tw-p-0 tw-w-[30px] tw-h-[30px] tw-bg-white/90 m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" data-variant="default" data-size="xs" type="button"><span className="m_80f1301b mantine-Button-inner"><span className="m_811560b9 mantine-Button-label"><svg width="15" height="15" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.29167 4.125L5.50001 7.33334L8.70834 4.125" stroke="black" stroke-width="0.870833" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></button></span>
-            </div>
-            <div className="tw-h-4"></div>
-        </div>
         
-        <div className="tw-w-full tw-max-w-[816px] tw-px-6 tw-mx-auto  tw-mt-3 sm:tw-mt-5 sm:tw-hidden m_cbb4ea7e mantine-Stepper-root"><div className="m_aaf89d0b mantine-Stepper-steps" data-orientation="horizontal" data-icon-position="left" data-wrap="true"><button className="mantine-focus-auto m_f56b1e2c tw-flex-col tw-group tw-relative m_cbb57068 mantine-Stepper-step m_87cf2631 mantine-UnstyledButton-root" data-icon-position="left" data-allow-click="true" type="button" data-progress="true" disabled={true} tabIndex={0}><span className="m_818e70b mantine-Stepper-stepWrapper"><span className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon" data-progress="true"><svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.2506 11.3556C34.2734 4.79272 22.5008 4.92505 14.5283 8.00131C6.55583 11.0776 4.29612 11.7138 4.49606 17.5743C4.69599 23.4348 1.12881 32.7388 14.2103 33.0215C27.2919 33.3041 25.9985 31.5414 32.7334 26.5269C39.4683 21.5123 34.2278 17.9185 34.2506 11.3556Z" fill="#A9E2C1"></path><g clip-path="url(#clip0_4308_5518)"><path d="M13 23L7 23C6.46957 23 5.96086 22.7893 5.58579 22.4142C5.21071 22.0391 5 21.5304 5 21L5 13L5 9C5 7.89543 5.89543 7 7 7L11 7L23 7C23.5304 7 24.0391 7.21071 24.4142 7.58579C24.7893 7.96086 25 8.46957 25 9L25 12" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 13H9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 15H9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 17H9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="20.8334" cy="15.3334" r="3.33342" fill="#333333"></circle><path d="M15.841 20.3724C16.4677 19.6019 17.0321 19.2311 18.0065 19.0389C19.1912 18.8053 19.7991 19.7871 21.0065 19.7871C22.214 19.7871 22.8242 18.7937 24.0065 19.0389C24.9621 19.2371 25.4999 19.6188 26.1199 20.3724C26.8757 21.2913 27.1075 22.1016 27.0065 23.2871C26.936 24.1156 26.7698 24.6158 26.2818 25.2891C25.0257 27.022 23.1031 26.2714 21.0065 26.2871C18.8236 26.3034 16.5976 27.1042 15.5065 25.2891C15.0914 24.5984 15.0338 24.0925 15.0065 23.2871C14.9665 22.1038 15.0939 21.2909 15.841 20.3724Z" fill="#333333"></path></g><defs><clipPath id="clip0_4308_5518"><rect width="24" height="24" fill="white" transform="translate(3 3)"></rect></clipPath></defs></svg></span></span><span className="tw-m-0 tw-absolute -tw-bottom-4 m_1956aa2a mantine-Stepper-stepBody" data-orientation="horizontal" data-icon-position="left"><span className="
+        {
+                !isPastThreshold
+                ?
+                <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
+                    <img 
+                            alt={`Bring ${puppyInfo.puppy_name} home`} 
+                            loading="lazy" 
+                            width="150" 
+                            height="150" 
+                            decoding="async" 
+                            data-nimg="1" 
+                            className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" 
+                            style={{color:"transparent"}} 
+                            // srcSet={`
+                            //     /_next/image?url=${puppyInfo.gallery_content[0].urls.small}&amp;w=256&amp;q=75 1x, 
+                            //     /_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75 2x`} 
+                            // src={`https://www.puppyspot.com/_next/image?url=${puppyInfo.gallery_content[0].urls.medium}&amp;w=384&amp;q=75`}
+                            src={puppyInfo.gallery_content[0].urls['300w']}
+                        />
+                        {/* <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"/> */}
+                    <div className="tw-flex tw-flex-col tw-items-center"><span>
+                        <p className="tw-font-nunito tw-text-[32px] tw-font-black tw-leading-10 tw-text-black tw-text-center">Let's bring <strong className="tw-capitalize">{puppyInfo.puppy_name}</strong> home!</p></span><span className=" tw-font-nunito tw-text-gray-01 tw-flex tw-items-center tw-gap-3 lg:tw-hidden tw-text-base">Show summary: <span className="tw-font-bold tw-underline tw-cursor-pointer">${subTotal}.00</span>
+                        <button 
+                        onClick={openOrderSummarySmall}
+                        style={{
+                        '--button-height': 'var(--button-height-xs)',
+                        '--button-padding-x': 'var(--button-padding-x-xs)',
+                        '--button-fz': 'var(--mantine-font-size-xs)',
+                        '--button-bg': 'var(--mantine-color-default)',
+                        '--button-hover': 'var(--mantine-color-default-hover)',
+                        '--button-color': 'var(--mantine-color-default-color)',
+                        '--button-bd': `calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border)`,
+                        } as React.CSSProperties} 
+                        className="mantine-focus-auto mantine-active tw-p-0 tw-w-[30px] tw-h-[30px] tw-bg-white/90 m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" data-variant="default" data-size="xs" type="button"><span className="m_80f1301b mantine-Button-inner"><span className="m_811560b9 mantine-Button-label"><svg width="15" height="15" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.29167 4.125L5.50001 7.33334L8.70834 4.125" stroke="black" stroke-width="0.870833" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></span></button></span>
+                    </div>
+                    <div className="tw-h-4"></div>
+                </div>
+                :
+                <div style={{"background-position-y": '0px', "background-size": 'cover', "background-image": 'url(&quot;/_next/static/media/checkout-spot-sticky.ed3ea4b598d71a7989468dedb13038cc.svg&quot;)'} as React.CSSProperties} className="
+                    tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110]
+                    tw-h-[100px] tw-flex-row tw-py-[10px] tw-gap-3 tw-z-10 tw-absolute tw-left-0 lg:tw-hidden !tw-fixed tw-top-0
+                    m_2ce0de02 mantine-BackgroundImage-root"
+                >
+                    <img 
+                        alt={`Bring ${puppyInfo.puppy_name} home`}
+                        loading="lazy" 
+                        width="80" 
+                        height="80" 
+                        decoding="async" 
+                        data-nimg="1" 
+                        className="tw-rounded-xl tw-object-cover tw-h-20 tw-w-20 tw-max-h-[80px] tw-max-w-[80px] m_9e117634 mantine-Image-root" 
+                        style={{color:"transparent"}} 
+                        // srcSet="/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F2%2Flisting%2F775752%2Fphoto%2F503139380.jpg&amp;w=96&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F2%2Flisting%2F775752%2Fphoto%2F503139380.jpg&amp;w=256&amp;q=75 2x" 
+                        // src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F2%2Flisting%2F775752%2Fphoto%2F503139380.jpg&amp;w=256&amp;q=75"
+                        src={puppyInfo.gallery_content[0].urls['300w']}
+                    />
+                    <div className="tw-flex tw-flex-col tw-items-start">
+                        <span>
+                            <strong className="tw-text-gray-01 tw-font-black tw-font-nunito tw-capitalize tw-text-lg">{puppyInfo.puppy_name}</strong>
+                        </span>
+                        <span className="tw-font-nunito tw-text-gray-01 tw-flex tw-items-center tw-gap-3 lg:tw-hidden tw-text-sm">Show summary: <span className="tw-font-bold tw-underline tw-cursor-pointer">${subTotal}.00</span>
+                            <button onClick={openOrderSummarySmall} style={{"--button-height":'var(--button-height-xs)', "--button-padding-x":'var(--button-padding-x-xs)',"--button-fz":'var(--mantine-font-size-xs)',"--button-bg":'var(--mantine-color-default)',"--button-hover":'var(--mantine-color-default-hover)',"--button-color":'var(--mantine-color-default-color)',"--button-bd":'calc(0.0625rem * var(--mantine-scale)) solid var(--mantine-color-default-border)'} as React.CSSProperties} className="mantine-focus-auto mantine-active tw-p-0 tw-w-[30px] tw-h-[30px] tw-bg-white/90 m_77c9d27d mantine-Button-root m_87cf2631 mantine-UnstyledButton-root" data-variant="default" data-size="xs" type="button">
+                                <span className="m_80f1301b mantine-Button-inner">
+                                    <span className="m_811560b9 mantine-Button-label">
+                                        <svg width="15" height="15" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.29167 4.125L5.50001 7.33334L8.70834 4.125" stroke="black" stroke-width="0.870833" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                                    </span>
+                                </span>
+                            </button>
+                        </span>
+                    </div>
+                    <div className="tw-h-4"></div>
+                </div>
+            }
+
+
+        
+        {/*<div className="tw-w-full tw-max-w-[816px] tw-px-6 tw-mx-auto  tw-mt-3 sm:tw-mt-5 sm:tw-hidden m_cbb4ea7e mantine-Stepper-root"><div className="m_aaf89d0b mantine-Stepper-steps" data-orientation="horizontal" data-icon-position="left" data-wrap="true"><button className="mantine-focus-auto m_f56b1e2c tw-flex-col tw-group tw-relative m_cbb57068 mantine-Stepper-step m_87cf2631 mantine-UnstyledButton-root" data-icon-position="left" data-allow-click="true" type="button" data-progress="true" disabled={true} tabIndex={0}><span className="m_818e70b mantine-Stepper-stepWrapper"><span className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon" data-progress="true"><svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M34.2506 11.3556C34.2734 4.79272 22.5008 4.92505 14.5283 8.00131C6.55583 11.0776 4.29612 11.7138 4.49606 17.5743C4.69599 23.4348 1.12881 32.7388 14.2103 33.0215C27.2919 33.3041 25.9985 31.5414 32.7334 26.5269C39.4683 21.5123 34.2278 17.9185 34.2506 11.3556Z" fill="#A9E2C1"></path><g clip-path="url(#clip0_4308_5518)"><path d="M13 23L7 23C6.46957 23 5.96086 22.7893 5.58579 22.4142C5.21071 22.0391 5 21.5304 5 21L5 13L5 9C5 7.89543 5.89543 7 7 7L11 7L23 7C23.5304 7 24.0391 7.21071 24.4142 7.58579C24.7893 7.96086 25 8.46957 25 9L25 12" stroke="#333333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 13H9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 15H9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M14 17H9" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="20.8334" cy="15.3334" r="3.33342" fill="#333333"></circle><path d="M15.841 20.3724C16.4677 19.6019 17.0321 19.2311 18.0065 19.0389C19.1912 18.8053 19.7991 19.7871 21.0065 19.7871C22.214 19.7871 22.8242 18.7937 24.0065 19.0389C24.9621 19.2371 25.4999 19.6188 26.1199 20.3724C26.8757 21.2913 27.1075 22.1016 27.0065 23.2871C26.936 24.1156 26.7698 24.6158 26.2818 25.2891C25.0257 27.022 23.1031 26.2714 21.0065 26.2871C18.8236 26.3034 16.5976 27.1042 15.5065 25.2891C15.0914 24.5984 15.0338 24.0925 15.0065 23.2871C14.9665 22.1038 15.0939 21.2909 15.841 20.3724Z" fill="#333333"></path></g><defs><clipPath id="clip0_4308_5518"><rect width="24" height="24" fill="white" transform="translate(3 3)"></rect></clipPath></defs></svg></span></span><span className="tw-m-0 tw-absolute -tw-bottom-4 m_1956aa2a mantine-Stepper-stepBody" data-orientation="horizontal" data-icon-position="left"><span className="
         tw-font-nunito tw-text-sm tw-text-gray-03
         group-data-[completed]:tw-text-gray-01 group-data-[completed]:tw-font-bold group-data-[completed]:tw-underline
         group-data-[progress]:tw-text-gray-01 group-data-[progress]:tw-font-bold
@@ -114,7 +194,8 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID}) => {
         group-data-[completed]:tw-text-gray-01 group-data-[completed]:tw-font-bold group-data-[completed]:tw-underline
         group-data-[progress]:tw-text-gray-01 group-data-[progress]:tw-font-bold
         m_12051f6c mantine-Stepper-stepLabel">Payment</span></span></button></div>
-        </div>
+        </div>*/}
+            <ProcessTrackerSmall page='essentials'/>
 
         
         <div className="tw-mt-4 ">

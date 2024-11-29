@@ -15,7 +15,6 @@ function formatNumberWithCommas(number: number) {
     }
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
-
 const convertCurrencyStringToNumber = (currency: string): number => {
     // Remove the dollar sign and commas, then convert to a number
     return Number(currency.replace(/[\$,]/g, ''));
@@ -37,16 +36,15 @@ const OrderSummary: React.FC<Props> = ({puppyInfo, shippingPrice, passedEssentia
         <h2 className="tw-font-nunito tw-font-bold tw-py-5 tw-px-6 tw-border-b tw-border-b-[#E0E0E0] undefined">Summary</h2>
         <div className="tw-px-6 tw-pt-5 tw-pb-8">
         <div className="tw-flex tw-gap-4 tw-items-start">
-            <a className="" href="/puppy/768727" target="_blank">
-            {/* <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} srcSet="/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=128&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75 2x" src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75"/> */}
-            <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} src={puppyInfo.gallery_content[0].urls['300w']}/>
+            <a className="">
+                {/* <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} srcSet="/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=128&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75 2x" src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75"/> */}
+                <img alt={`Bring ${puppyInfo.puppy_name} home`} loading="lazy" width="100" height="100" decoding="async" data-nimg="1" className="tw-rounded-xl tw-h-[100px] tw-w-[100px] tw-object-cover m_9e117634 mantine-Image-root" style={{color:"transparent"}} src={puppyInfo.gallery_content[0].urls['300w']}/>
             </a>
             <div className="tw-flex tw-flex-col">
-            
-            <a className="tw-font-bold tw-capitalize tw-font-nunito tw-text-lg " href="/puppy/768727" target="_blank">{puppyInfo.puppy_name}</a>
-            <p className="tw-font-inter tw-text-neutral-600">{puppyInfo.sex_and_age}</p>
-            <p className="tw-font-inter tw-text-neutral-600 tw-capitalize">{puppyInfo.breed}</p>
-            <p className="tw-font-inter tw-text-neutral-600">ID # {puppyInfo.puppy_id}</p>
+                <a className="tw-font-bold tw-capitalize tw-font-nunito tw-text-lg ">{puppyInfo.puppy_name}</a>
+                <p className="tw-font-inter tw-text-neutral-600">{puppyInfo.sex_and_age}</p>
+                <p className="tw-font-inter tw-text-neutral-600 tw-capitalize">{puppyInfo.breed}</p>
+                <p className="tw-font-inter tw-text-neutral-600">ID # {puppyInfo.puppy_id}</p>
             </div>
         </div>
         <div style={{

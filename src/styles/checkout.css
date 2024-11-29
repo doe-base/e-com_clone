@@ -119,3 +119,11 @@
     list-style-type: decimal;
     font-size: 0.9rem;
 }
+
+
+
+@media screen and (max-width: 646px){
+    .responsive-button-text-span{
+        display: none;
+    }
+}

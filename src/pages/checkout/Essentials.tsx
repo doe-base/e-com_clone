@@ -88,9 +88,11 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
               puppyInfo && paymentInfo
               ?
               <>
-                <EssentialsSection puppyInfo={puppyInfo} paymentID={paymentID}/>
+                <EssentialsSection puppyInfo={puppyInfo} paymentID={paymentID} shippingPrice={shippingPrice}/>
 
                 <OrderSummary puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={paymentInfo.passedEssentials}/>
+                
+                <OrderSummarySmall puppyInfo={puppyInfo} shippingPrice={shippingPrice} passedEssentials={false}/>
               </>
               :
               null
@@ -101,7 +103,6 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
       </section>
       {loading ? <FullScreenLoader /> : null}
       <CheckoutFooter />
-      <OrderSummarySmall/>
     </>
   );
 }

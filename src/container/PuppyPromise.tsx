@@ -22,12 +22,12 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
         </article>
 
         <article className="about-navigation">
-            <a className="active" href="https://www.puppyspot.com/promise">PuppySpot Promise</a>
-            <a className="" href="https://www.puppyspot.com/reviews">Customer Reviews</a>
-            <a className="" href="https://www.puppyspot.com/puppyspot-standards">Breeder Standards</a>
-            <a className="" href="https://www.puppyspot.com/health-check">Health Check</a>
-            <a className="" href="https://www.puppyspot.com/dog-travel">Travel Options</a>
-            <a className="" href="https://www.puppyspot.com/gives-back">PuppySpot Gives Back</a>
+            <a className="active" href="/promise">PuppySpot Promise</a>
+            <a className="" href="/reviews">Customer Reviews</a>
+            <a className="" href="/puppyspot-standards">Breeder Standards</a>
+            <a className="" href="/health-check">Health Check</a>
+            <a className="" href="/dog-travel">Travel Options</a>
+            <a className="" href="/gives-back">PuppySpot Gives Back</a>
         </article>
 
         <article className="template-image-copy image-left overlapped puppyspot-promise__reviews" id="reviews">
@@ -45,7 +45,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
                         </li>
                     </ul>
                     <div className="cta-white">
-                        <a href="https://www.puppyspot.com/reviews">Read Reviews</a>
+                        <a href="/reviews">Read Reviews</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
                 </li>
             </ul>
             <div className="cta-white">
-                <a href="https://www.puppyspot.com/puppyspot-standards">Learn More</a>
+                <a href="/puppyspot-standards">Learn More</a>
             </div>
         </article>
 
@@ -97,7 +97,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
                         </li>
                     </ul>
                     <div className="cta-white">
-                        <a href="https://www.puppyspot.com/health-check">Learn More</a>
+                        <a href="/health-check">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
                             </li>
                         </ul>
                         <div className="cta-white">
-                        <a href="https://www.puppyspot.com/dog-travel">Learn More</a>
+                        <a href="/dog-travel">Learn More</a>
                         </div>
                     </div>
             </div>
@@ -147,7 +147,7 @@ const PuppyPromiseContainer: React.FC<Props> = ({}) => {
                 </li>
             </ul>
             <div className="cta-white">
-                <a href="https://www.puppyspot.com/gives-back">Learn More</a>
+                <a href="/gives-back">Learn More</a>
             </div>
         </article>
 

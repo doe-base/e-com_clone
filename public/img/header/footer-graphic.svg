@@ -1,0 +1,9 @@
+<svg width="16" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <html id="simulator">
+    <head>
+      <style>html { background: white !important; overflow: hidden !important; } html#simulator &gt; body &gt; *:not(#app) { display: none; }</style>
+    </head>
+    <body>
+      <div id="app" data-js="simulator-extension"/>
+    </body>
+  </html><path d="M6.4 1H1.2v16h5.2m4.461-11.863 3.69 3.69-3.69 3.688m3.417-3.689H5.2" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>

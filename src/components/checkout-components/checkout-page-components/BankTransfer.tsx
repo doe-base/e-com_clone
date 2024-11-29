@@ -179,14 +179,14 @@ const BankTransfer: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, payment
   return (
     
         <>
-            {/* <section className="payment-info-section">
+             <section className="payment-info-section">
                 <h2>Procedure to pay with Bank Transfer</h2>
                 <ol>
-                    <li>Transfer the specify payment amount to the account below. (<span style={{fontWeight: 'bold'}}> ${subTotal}.00 </span>)</li>
-                    <li>Save the receipt (or screenshot).</li>
+                    <li>Transfer the specify payment amount to the account below.</li>
+                    <li>Save the receipt (or take a screenshot).</li>
                     <li>Fill the form & upload receipt verification</li>
                 </ol>
-            </section> */}
+            </section> 
             <Grid container>
                 <Grid item xs={12} md={6} lg={4}> 
                     <div className={classes.cryptocurrencyaddressholder}>

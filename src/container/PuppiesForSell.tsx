@@ -192,7 +192,7 @@ const PuppiesForSellContainer: React.FC<Props> = ({
             <section className="puppies-for-sale-header">
                 <div className="breadcrumbs-full">
                     <div className="ps-breadcrumbs-small column">
-                        <span className="ps-breadcrumbs-small__item truncate"><a href="https://www.puppyspot.com">PuppySpot </a></span>
+                        <span className="ps-breadcrumbs-small__item truncate"><a href="/">PuppySpot </a></span>
                         <span className="ps-breadcrumbs-small__separator">
                         / 
                         </span>

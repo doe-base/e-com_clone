@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Grid } from '@mui/material';
 import { navbar } from '../contants/routes';
 import Paypal from '../components/checkout-components/checkout-page-components/Paypal';
@@ -31,36 +31,36 @@ const CheckoutContainer: React.FC<Props> = ({puppyInfo, paymentInfo, subTotal, p
             el2.style.transform = 'translateY(0%)';
         }
     }
+
     const [isPastThreshold, setIsPastThreshold] = useState(false);
+    const fullHeroRef = useRef<HTMLDivElement | null>(null)
+    const [fullHeroHeight, setFullHeroHeight] = useState<any>()
+
+      useEffect(() => {
+        if (fullHeroRef.current) {
+          setFullHeroHeight(fullHeroRef.current.offsetHeight);
+        }
+      }, []);
 
     useEffect(() => {
-      var isViewportNarrow = false
-      var isScrolledPast = false
-      const handleResize =()=>{
-        isViewportNarrow = window.innerWidth < 1024;
-
-        setIsPastThreshold(isViewportNarrow && isScrolledPast)
-      }
-      const handleScroll = () => {
-        isScrolledPast = window.scrollY > 200;
-
-          setIsPastThreshold(isViewportNarrow && isScrolledPast)
-          
-        }
-      
+      const handleScrollAndResize = () => {
+        const isViewportNarrow = window.innerWidth < 1024;
+        const isScrolledPast = window.scrollY > 300;
+  
+        setIsPastThreshold(isViewportNarrow && isScrolledPast);
+      };
   
       // Check on scroll and resize
-      window.addEventListener('scroll', handleScroll);
-      window.addEventListener('resize', handleResize);
+      window.addEventListener('scroll', handleScrollAndResize);
+      window.addEventListener('resize', handleScrollAndResize);
   
       // Run the check on initial render
-      handleScroll();
-      handleResize();
+      handleScrollAndResize();
   
       // Cleanup listeners on component unmount
       return () => {
-        window.removeEventListener('scroll', handleScroll);
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener('scroll', handleScrollAndResize);
+        window.removeEventListener('resize', handleScrollAndResize);
       };
     }, []);
   return (
@@ -87,10 +87,19 @@ const CheckoutContainer: React.FC<Props> = ({puppyInfo, paymentInfo, subTotal, p
             </div>
             <div className="tw-h-4"></div>
         </div> */}
-        {
+            
+            {
+                    
                 !isPastThreshold
                 ?
-                <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" 
+                null
+                :
+                <div style={{height: fullHeroHeight}}></div>
+            } 
+            {
+                !isPastThreshold
+                ?
+                <div ref={fullHeroRef} style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" 
                     tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] 
                     tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
                     

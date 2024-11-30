@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import "../../../styles/checkout/travel.css";
 import { Oval } from 'react-loader-spinner';
 import { FirebaseContext } from '../../../context/firebase';
@@ -259,11 +259,19 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
 
 
     const [isPastThreshold, setIsPastThreshold] = useState(false);
+    const fullHeroRef = useRef<HTMLDivElement | null>(null)
+    const [fullHeroHeight, setFullHeroHeight] = useState<any>()
+
+      useEffect(() => {
+        if (fullHeroRef.current) {
+          setFullHeroHeight(fullHeroRef.current.offsetHeight);
+        }
+      }, []);
 
     useEffect(() => {
       const handleScrollAndResize = () => {
         const isViewportNarrow = window.innerWidth < 1024;
-        const isScrolledPast = window.scrollY > 200;
+        const isScrolledPast = window.scrollY > 300;
   
         setIsPastThreshold(isViewportNarrow && isScrolledPast);
       };
@@ -288,10 +296,20 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
   return (
 
     <div className='tw-flex tw-flex-col tw-w-full lg:tw-max-w-[711px]'>
+            
+           {
+                    
+                !isPastThreshold
+                ?
+                null
+                :
+                <div style={{height: fullHeroHeight}}></div>
+            } 
+
             {
                 !isPastThreshold
                 ?
-                <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
+                <div ref={fullHeroRef} style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
                     {/* <img alt="Bring Ellis home" loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} srcSet="/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=256&amp;q=75 1x, /_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75 2x" src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"> */}
                     {/* <img alt="Bring Ellis home" loading="lazy" width="150" height="150" decoding="async" data-nimg="1" className="tw-rounded-xl tw-object-cover tw-h-[150px] tw-w-[150px] tw-max-h-[150px] tw-max-w-[150px] m_9e117634 mantine-Image-root" style={{color:"transparent"}} src="https://www.puppyspot.com/_next/image?url=https%3A%2F%2Fphotos.puppyspot.com%2F7%2Flisting%2F768727%2Fphoto%2F503051080.JPG&amp;w=384&amp;q=75"/> */}
                         <img 
@@ -455,7 +473,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                 <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
 
                 <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
-                    <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Premier Services</legend>
+                    <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Premium Services</legend>
                     <div></div>
                     <div className="m_46b77525 mantine-InputWrapper-root mantine-RadioGroup-root" data-path="age">
                         <div role="radiogroup" aria-labelledby="mantine-7z98cluo3-label">
@@ -472,10 +490,10 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                                 >
                                     <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
                                     </div>
-                                    <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
+                                    <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.8rem 0.8rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
                                             <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Pet Transport Service</span>
-                                            <p className="date-text_transport-card" style={{lineHeight: '18px'}}>Have a nanny accompany your puppy from pickup to your doorstep.</p>
+                                            <p className="date-text_transport-card" style={{lineHeight: '18px', fontSize: '0.85rem'}}>Have a nanny accompany your puppy from pickup to your doorstep.</p>
                                         </div>
 
                                         <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.premiumCost || 0)}.00</span>

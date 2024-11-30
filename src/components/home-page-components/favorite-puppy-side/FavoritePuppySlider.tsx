@@ -92,7 +92,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                     
 
                         <a href="/puppies-for-sale/breed/goldendoodle" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Goldendoodle.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Goldendoodle.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Goldendoodle</span>
                                 <img src="/img/caret.svg"/>
@@ -100,7 +100,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/cavapoo" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Cavapoo.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Cavapoo.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Cavapoo</span>
                                 <img src="/img/caret.svg"/>
@@ -108,7 +108,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/Poodle" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Poodle.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Poodle.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Poodle</span>
                                 <img src="/img/caret.svg"/>
@@ -116,7 +116,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/bernedoodle" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Bernedoodle.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Bernedoodle.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Bernedoodle</span>
                                 <img src="/img/caret.svg"/>
@@ -124,7 +124,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/golden-retriever" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Labrador Retiever.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Labrador Retiever.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Golden Retriever</span>
                                 <img src="/img/caret.svg"/>
@@ -132,7 +132,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/dachshund" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Dachshund.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Dachshund.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Dachshund</span>
                                 <img src="/img/caret.svg"/>
@@ -140,7 +140,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/french-bulldog" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/French Bulldog.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/French Bulldog.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">French Bulldog</span>
                                 <img src="/img/caret.svg"/>
@@ -148,7 +148,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/cavalier-king-charles-spaniel" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Cavalier King Charles Spaniel.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Cavalier King Charles Spaniel.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Cavalier King Charles Spaniel</span>
                                 <img src="/img/caret.svg"/>
@@ -156,7 +156,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/havanese" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Havanese.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Havanese.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Havanese</span>
                                 <img src="/img/caret.svg"/>
@@ -164,7 +164,7 @@ const FavouritePuppySlider: React.FC<Props> = ({}) => {
                         </a>
 
                         <a href="/puppies-for-sale/breed/labrador-retriever" className="favorite-breeds-module__pointer--cun1c" draggable="false">
-                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Labrador choco 3.webp" draggable="false" loading="lazy"/>
+                            <img className="favorite-breeds-module__image--GygMi" src="/img/favourite-dogs/Labrador choco 3.webp" draggable="false"/>
                             <div className="favorite-breeds-module__nameWrapper--1IRCA">
                                 <span className="favorite-breeds-module__name--kGVJp favorite-breeds-module__pointer--cun1c">Labrador Retriever</span>
                                 <img src="/img/caret.svg"/>

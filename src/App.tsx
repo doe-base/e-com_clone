@@ -28,7 +28,12 @@ import ForgotPassword from './pages/ForgetPassword';
 import MyAccountContainer from './container/MyAccountContainer';
 import Favorites from './pages/account/Favourite';
 import OrderHistory from './pages/account/OrderHistory';
-
+import Privacy from './pages/legals/Privacy';
+import TermsOfUse from './pages/legals/TermsOfUse';
+import Sitemap from './pages/legals/Sitemap';
+import TermsAndConditionsOfCommitment from './pages/legals/TermsAndConditionsOfCommitment';
+import TermsAndConditionsOfSale from './pages/legals/TermsAndConditionsOfSale';
+import Reviews from './pages/Reviews';
 
 
 function App() {
@@ -103,12 +108,22 @@ function App() {
             <Route path="/careers" element={<Career />} />
             <Route path="/dog-registration" element={<DogRegistration />} />
             <Route path="/akc" element={<AKC />} />
+            <Route path="/reviews" element={<Reviews />} />
+
 
             {/* This path sould contain a uniqe session code after payment is register */}
             <Route path="/shop/checkout/details/:puppyId" element={<CheckoutDetail />} />
             <Route path="/shop/checkout/travel/:paymentID/:puppyId" element={<CheckoutTravel />} />
             <Route path="/shop/checkout/essentials/:paymentID/:puppyId" element={<CheckoutEssentials />} />
             <Route path="/shop/checkout/:paymentID/:puppyId/:paymentOption" element={<Checkout />} />
+
+            {/* Legals */}
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms-of-use" element={<TermsOfUse />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/terms-and-conditions-of-commitment" element={<TermsAndConditionsOfCommitment />} />
+            <Route path="/terms-and-conditions-of-sale" element={<TermsAndConditionsOfSale />} />
+
 
             {/* Has to be authenticated */}
             {

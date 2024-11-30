@@ -124,8 +124,8 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
                                                     alt={`${item.breed} puppy for sale Snoopy, dog for sale`} 
                                                     width="163" 
                                                     height="163" 
-                                                    // src={item.image}
-                                                    src='/img/503060929_medium.jpg'
+                                                    src={item.image}
+                                                    // src='/img/503060929_medium.jpg'
                                                 />
                                                 {
                                                     item.banner_text === 'N/A'

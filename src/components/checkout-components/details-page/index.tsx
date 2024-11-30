@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useRef } from 'react';
 import { FirebaseContext } from '../../../context/firebase';
 import { Oval } from 'react-loader-spinner';
 import ProcessTrackerSmall from '../../../components/checkout-components/process-tracker/ProcessTrackerSmall';
@@ -166,6 +166,14 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo, shippingPrice }) => {
 
 
     const [isPastThreshold, setIsPastThreshold] = useState(false);
+    const fullHeroRef = useRef<HTMLDivElement | null>(null)
+    const [fullHeroHeight, setFullHeroHeight] = useState<any>()
+
+      useEffect(() => {
+        if (fullHeroRef.current) {
+          setFullHeroHeight(fullHeroRef.current.offsetHeight);
+        }
+      }, []);
 
     useEffect(() => {
       const handleScrollAndResize = () => {
@@ -195,11 +203,20 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo, shippingPrice }) => {
   return (
     <>
         <div className='tw-flex tw-flex-col tw-w-full lg:tw-max-w-[711px]'>
+
+            {
+                
+                !isPastThreshold
+                ?
+                null
+                :
+                <div style={{height: fullHeroHeight}}></div>
+            }
             
             {
                 !isPastThreshold
                 ?
-                <div style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" 
+                <div ref={fullHeroRef} style={{backgroundPositionY:'0', backgroundSize:'contain', backgroundImage: 'url(/img/patter-bg.svg)'}} className=" 
                     tw-bg-green-04 tw-w-full tw-flex tw-justify-center tw-items-center tw-px-6 tw-gap-2 tw-bg-no-repeat tw-z-[110] 
                     tw-rounded-b-[20px] tw-flex-col tw-pt-6 tw-pb-2 sm:tw-rounded-t-[20px] m_2ce0de02 mantine-BackgroundImage-root">
                     

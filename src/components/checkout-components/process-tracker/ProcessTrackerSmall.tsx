@@ -33,7 +33,7 @@ const ProcessTrackerSmall: React.FC<Props> = ({ page }) => {
           data-icon-position="left"
           data-allow-click="true"
           type="button"
-          data-progress="true"
+          data-progress={page === 'detail' ? "true" : ""}
           disabled={true}
           tabIndex={0}
           style={{cursor: 'default'}}
@@ -41,7 +41,7 @@ const ProcessTrackerSmall: React.FC<Props> = ({ page }) => {
           <span className="m_818e70b mantine-Stepper-stepWrapper">
             <span
               className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon"
-              data-progress="true"
+              data-progress={page === 'detail' ? "true" : ""}
             >
               {
                 page === 'detail'
@@ -201,9 +201,13 @@ const ProcessTrackerSmall: React.FC<Props> = ({ page }) => {
           disabled={true}
           tabIndex={0}
           style={{cursor: 'default'}}
+          data-progress={page === 'travel' ? "true" : ""}
         >
           <span className="m_818e70b mantine-Stepper-stepWrapper">
-            <span className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon">
+            <span 
+              className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon"
+              data-progress={page === 'travel' ? "true" : ""}
+            >
               { 
                 page === 'travel'
                 ?
@@ -350,9 +354,13 @@ const ProcessTrackerSmall: React.FC<Props> = ({ page }) => {
           disabled={true}
           tabIndex={0}
           style={{cursor: 'default'}}
+          data-progress={page === 'essentials' ? "true" : ""}
         >
           <span className="m_818e70b mantine-Stepper-stepWrapper">
-            <span className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon">
+            <span 
+              className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon"
+              data-progress={page === 'essentials' ? "true" : ""}
+            >
               
             { 
                 page === 'essentials'
@@ -487,9 +495,13 @@ const ProcessTrackerSmall: React.FC<Props> = ({ page }) => {
           disabled={true}
           tabIndex={0}
           style={{cursor: 'default'}}
+          data-progress={page === 'checkout' ? "true" : ""}
         >
           <span className="m_818e70b mantine-Stepper-stepWrapper">
-            <span className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon">
+            <span 
+              className="tw-border-none tw-bg-transparent m_1959ad01 mantine-Stepper-stepIcon"
+              data-progress={page === 'checkout' ? "true" : ""}
+            >
             { 
                 page === 'checkout'
                 ?

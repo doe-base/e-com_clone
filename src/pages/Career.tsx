@@ -8,7 +8,7 @@ interface Props{
 const Career: React.FC<Props> = ({}) => {
 
     useEffect(() =>{
-        document.title = "Careers | PuppySpot";
+        document.title = "Career | PuppySpot";
     }, []);
 
 

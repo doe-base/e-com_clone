@@ -1779,12 +1779,12 @@
   .template-circle-header__content-copy {
     padding:1em
   }
-  .template-circle-header__content-copy p {
+  /* .template-circle-header__content-copy p {
     font-family:Inter,sans-serif;
     font-size:24px;
     font-weight:400;
     line-height:33px
-  }
+  } */
   @media screen and (min-width:600px) {
     .template-circle-header__content {
       text-align:center
@@ -5772,4 +5772,3 @@
       margin-top:0
     }
   }
-  

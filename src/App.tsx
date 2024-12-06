@@ -34,6 +34,7 @@ import Sitemap from './pages/legals/Sitemap';
 import TermsAndConditionsOfCommitment from './pages/legals/TermsAndConditionsOfCommitment';
 import TermsAndConditionsOfSale from './pages/legals/TermsAndConditionsOfSale';
 import Reviews from './pages/Reviews';
+import ResourceCenter from './pages/ResourceCenter';
 
 
 function App() {
@@ -50,7 +51,7 @@ function App() {
   let theme = createTheme({
     breakpoints: {
       values: {
-        xs: 0, 
+        xs: 0,
         sm: 600,
         md: 1000,
         lg: 1200,
@@ -109,6 +110,9 @@ function App() {
             <Route path="/dog-registration" element={<DogRegistration />} />
             <Route path="/akc" element={<AKC />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/resource-center" element={<ResourceCenter />} />
+
+
 
 
             {/* This path sould contain a uniqe session code after payment is register */}

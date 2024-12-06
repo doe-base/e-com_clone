@@ -35,6 +35,9 @@ import TermsAndConditionsOfCommitment from './pages/legals/TermsAndConditionsOfC
 import TermsAndConditionsOfSale from './pages/legals/TermsAndConditionsOfSale';
 import Reviews from './pages/Reviews';
 import ResourceCenter from './pages/ResourceCenter';
+import ContactUs from './pages/Contact'
+import BreederStandards from './pages/BreederStandards'
+
 
 
 function App() {
@@ -111,6 +114,10 @@ function App() {
             <Route path="/akc" element={<AKC />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/resource-center" element={<ResourceCenter />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/puppyspot-standards" element={<BreederStandards />} />
+
+
 
 
 

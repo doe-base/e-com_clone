@@ -132,7 +132,7 @@ const Navbar: React.FC<Props> = ({smallNavOpen, setSmallNavOpen, isPuppiesForSal
             window.location.replace(pages.LOGIN);
         })
         .catch((error) => {
-            console.error("Error signing out:", error);
+            // console.error("Error signing out:", error);
         });
     }
 

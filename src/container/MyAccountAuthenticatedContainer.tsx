@@ -59,7 +59,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
         } catch (error) {
           setLoading(false);
           setError('An unexpected error occurred');
-          console.error('Error updating document:', error);
+          // console.error('Error updating document:', error);
         }
     }
 
@@ -118,7 +118,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
         } catch (error) {
           setLoadingPhone(false);
           setErrorPhone('An unexpected error occurred');
-          console.error('Error updating document:', error);
+          // console.error('Error updating document:', error);
         }
     }
 
@@ -153,7 +153,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
             window.location.replace(pages.LOGIN);
         })
         .catch((error) => {
-            console.error("Error signing out:", error);
+            // console.error("Error signing out:", error);
         });
     }
 
@@ -175,7 +175,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
             // Update the password
             await updatePassword(user, newPassword);
 
-            console.log('Password updated successfully');
+            // console.log('Password updated successfully');
             Logout()
             setLoadingPassword(false)
        
@@ -227,7 +227,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
             setErrorAddress('Document not found');
             return;
           }
-          console.log(address1, address2, city, state, zip, country)
+          // console.log(address1, address2, city, state, zip, country)
           // Update each document that matches the query
           for (const doc of querySnapshot.docs) {
             await doc.ref.update({
@@ -253,7 +253,7 @@ const MyAccountAuthenticatedContainer: React.FC<Props> = ({}) => {
         } catch (error) {
           setLoadingAddress(false);
           setErrorAddress('An unexpected error occurred');
-          console.error('Error updating document:', error);
+          // console.error('Error updating document:', error);
         }
     }
 

@@ -132,9 +132,9 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
           //   }),
           // ], // Optional: include an image file if available on device
         });
-        console.log("Content shared successfully!");
+        // console.log("Content shared successfully!");
       } catch (error) {
-        console.error("Error sharing:", error);
+        // console.error("Error sharing:", error);
       }
     } else {
       // alert("Web Share API is not supported on this browser.");
@@ -177,9 +177,9 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
       // Save the updated array back to localStorage
       localStorage.setItem('liked-puppies-id', JSON.stringify(likedPuppies));
   
-      console.log(`Puppy ID ${puppyId} added to liked puppies.`);
+      // console.log(`Puppy ID ${puppyId} added to liked puppies.`);
     } else {
-      console.log(`Puppy ID ${puppyId} is already liked.`);
+      // console.log(`Puppy ID ${puppyId} is already liked.`);
     }
 };
 const handleUnlikePuppy = (puppyId: string) => {
@@ -197,9 +197,9 @@ const handleUnlikePuppy = (puppyId: string) => {
         // Save the updated array back to localStorage
         localStorage.setItem('liked-puppies-id', JSON.stringify(updatedPuppies));
 
-        console.log(`Puppy ID ${puppyId} removed from liked puppies.`);
+        // console.log(`Puppy ID ${puppyId} removed from liked puppies.`);
     } else {
-        console.log(`Puppy ID ${puppyId} is not in the liked puppies list.`);
+        // console.log(`Puppy ID ${puppyId} is not in the liked puppies list.`);
     }
 };
 const handleLike =(puppyId: string)=>{

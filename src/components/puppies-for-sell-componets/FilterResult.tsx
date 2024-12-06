@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AlertPopup from '../../components/alert-message/AlertMessage';
 import PaginationBar from '../../components/puppies-for-sell-componets/PaginationPagebar';
 import useAuthListener from '../../hooks/use-auth-listener';
 import LoginPopup from "../popups/single-puppy-popups/LoginPopup";
-
+import Loading from "../loading/Loading"
 
 interface Props{
     paginationPage: number;
@@ -22,18 +22,18 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
     const handleLikePuppy = (puppyId: string) => {
         // Retrieve the current liked puppies from localStorage
         const likedPuppiesString = localStorage.getItem('liked-puppies-id');
-        
+
         // Parse the retrieved value or default to an empty array
         const likedPuppies: string[] = likedPuppiesString ? JSON.parse(likedPuppiesString) : [];
-      
+
         // Check if the puppy ID is already in the array
         if (!likedPuppies.includes(puppyId)) {
           // Add the new puppy ID to the array
           likedPuppies.push(puppyId);
-      
+
           // Save the updated array back to localStorage
           localStorage.setItem('liked-puppies-id', JSON.stringify(likedPuppies));
-      
+
         //   console.log(`Puppy ID ${puppyId} added to liked puppies.`);
         } else {
         //   console.log(`Puppy ID ${puppyId} is already liked.`);
@@ -42,25 +42,23 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
     const handleUnlikePuppy = (puppyId: string) => {
         // Retrieve the current liked puppies from localStorage
         const likedPuppiesString = localStorage.getItem('liked-puppies-id');
-    
+
         // Parse the retrieved value or default to an empty array
         const likedPuppies: string[] = likedPuppiesString ? JSON.parse(likedPuppiesString) : [];
-    
+
         // Check if the puppy ID exists in the array
         if (likedPuppies.includes(puppyId)) {
             // Remove the puppy ID from the array
             const updatedPuppies = likedPuppies.filter(id => id !== puppyId);
-    
+
             // Save the updated array back to localStorage
             localStorage.setItem('liked-puppies-id', JSON.stringify(updatedPuppies));
-    
+
             // console.log(`Puppy ID ${puppyId} removed from liked puppies.`);
         } else {
             // console.log(`Puppy ID ${puppyId} is not in the liked puppies list.`);
         }
     };
-    
-      
     const handleLike =(e: React.MouseEvent<HTMLDivElement, MouseEvent>, puppyId: string)=>{
         e.preventDefault();
         e.stopPropagation();
@@ -73,12 +71,26 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
             }else{
                 handleLikePuppy(puppyId)
             }
-            
+
             setLikePuppyListID(JSON.parse(localStorage.getItem("liked-puppies-id") || '[]'))
             //In Future Hanlde OPTIMISTICAL like
         }
-                        
+
     }
+
+    const [loading, setLoading] = useState(false);
+
+    const fetchNextPage = async () => {
+      setLoading(true); // Start loader
+      // Simulate fetching new data (replace with your actual data fetching logic)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setLoading(false); // Stop loader
+    };
+
+    useEffect(() => {
+      fetchNextPage();
+    }, [puppySinglePageArr]);
+
   return (
     <>
         <div className="puppies-for-sale__results">
@@ -109,21 +121,21 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
                                                 ?
                                                 <></>
                                                 :
-                                                <img 
-                                                    className="card__video-icon" 
-                                                    alt="Puppy with video" 
-                                                    width="30" 
-                                                    height="30" 
+                                                <img
+                                                    className="card__video-icon"
+                                                    alt="Puppy with video"
+                                                    width="30"
+                                                    height="30"
                                                     src={item.video_icon}
                                                 />
                                             }
-                                                <img 
-                                                    className="card__image ls-is-cached lazyloaded" 
-                                                    data-cy="puppy-card-image" 
+                                                <img
+                                                    className="card__image ls-is-cached lazyloaded"
+                                                    data-cy="puppy-card-image"
                                                     data-src={item.image}
-                                                    alt={`${item.breed} puppy for sale Snoopy, dog for sale`} 
-                                                    width="163" 
-                                                    height="163" 
+                                                    alt={`${item.breed} puppy for sale Snoopy, dog for sale`}
+                                                    width="163"
+                                                    height="163"
                                                     src={item.image}
                                                     // src='/img/503060929_medium.jpg'
                                                 />
@@ -154,7 +166,7 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
                                     </div>
                                 </a>
 
-                                {index === randomIndex && 
+                                {index === randomIndex &&
                                 <div style={{padding: "0 4px 4px 0"}} id="container-puppies-for-sale-trust-card">
                                     <div className="card card--small pd-1  bg-cover bg-no-repeat bg-center bg-[#FFFFFF]" style={{backgroundImage: "url(/img/season.webp)"}}>
                                         <div className="w-full h-full flex-col gap-4 flex items-center justify-center "></div>
@@ -164,11 +176,11 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
                             </React.Fragment>
                         )
                     })
-                    }                                                       
+                    }
 
             </div>
             {
-                totalPages <= 0 
+                totalPages <= 0
                 ?
                 null
                 :
@@ -178,6 +190,7 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
             }
         </div>
 
+        <Loading loading={loading}/>
         <LoginPopup loginPopup={loginPopup}  setLoingPopup={setLoginPopup}/>
     </>
 

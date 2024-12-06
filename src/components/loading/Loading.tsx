@@ -1,10 +1,12 @@
 import React from "react";
 import "./index.css";
 
-interface Props {}
-const Loading: React.FC<Props> = ({}) => {
+interface Props {
+  loading: boolean;
+}
+const Loading: React.FC<Props> = ({loading}) => {
   return (
-    <div className="loading page hidden">
+    <div className={`loading page ${loading ? '' : 'hidden'}`}>
         <picture className="">
             <img id="" alt="" className=" lazyloaded" data-cy="" data-src="/img/components/loader-page.svg" loading="lazy" src="/img/components/loader-page.svg" />
         </picture>

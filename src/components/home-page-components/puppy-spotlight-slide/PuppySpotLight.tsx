@@ -114,9 +114,9 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
           // Save the updated array back to localStorage
           localStorage.setItem('liked-puppies-id', JSON.stringify(likedPuppies));
       
-          console.log(`Puppy ID ${puppyId} added to liked puppies.`);
+          // console.log(`Puppy ID ${puppyId} added to liked puppies.`);
         } else {
-          console.log(`Puppy ID ${puppyId} is already liked.`);
+          // console.log(`Puppy ID ${puppyId} is already liked.`);
         }
     };
     const handleUnlikePuppy = (puppyId: string) => {
@@ -134,9 +134,9 @@ const PuppySpotLight: React.FC<Props> = ({}) => {
             // Save the updated array back to localStorage
             localStorage.setItem('liked-puppies-id', JSON.stringify(updatedPuppies));
     
-            console.log(`Puppy ID ${puppyId} removed from liked puppies.`);
+            // console.log(`Puppy ID ${puppyId} removed from liked puppies.`);
         } else {
-            console.log(`Puppy ID ${puppyId} is not in the liked puppies list.`);
+            // console.log(`Puppy ID ${puppyId} is not in the liked puppies list.`);
         }
     };
     

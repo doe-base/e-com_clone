@@ -109,6 +109,7 @@ input[type="radio"] + label::before {
 
 .opec_z_index_hidden {
   opacity: 0;
+  display: none;
   z-index: -5;
 }
 

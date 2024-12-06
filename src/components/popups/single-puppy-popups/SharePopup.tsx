@@ -50,7 +50,7 @@ const SharePopup: React.FC<Props> = ({
     
           setTimeout(() => setButtonText("Copy Link"), 3000);
         } catch (error) {
-          console.error("Failed to copy:", error);
+          // console.error("Failed to copy:", error);
         }
       };
     

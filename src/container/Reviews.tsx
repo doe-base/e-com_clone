@@ -31,6 +31,14 @@ const ReviewsContainer: React.FC<Props> = ({ reviewsArray, setCurrentPage }) => 
 	  setCurrentPage(newPage);
 	  scrollToTopOfReview()
 	}
+
+	function stringToSlug(str: string): string {
+	  return str
+	    .toLowerCase() // Convert to lowercase
+	    .trim() // Remove leading and trailing whitespace
+	    .replace(/[\s\W-]+/g, '-') // Replace spaces and non-word characters with hyphens
+	    .replace(/^-+|-+$/g, ''); // Remove leading or trailing hyphens
+	}
   return (
   	<div className="customer-reviews template">
   		<article className="template-circle-header customer-reviews__header template-circle-header--secondary">
@@ -49,12 +57,12 @@ const ReviewsContainer: React.FC<Props> = ({ reviewsArray, setCurrentPage }) => 
 		</article>
 
 		<article className="about-navigation">
-		    <a className="" href="https://www.puppyspot.com/promise">PuppySpot Promise</a>
-		    <a className="active" href="https://www.puppyspot.com/reviews">Customer Reviews</a>
-		    <a className="" href="https://www.puppyspot.com/puppyspot-standards">Breeder Standards</a>
-		    <a className="" href="https://www.puppyspot.com/health-check">Health Check</a>
-		    <a className="" href="https://www.puppyspot.com/dog-travel">Travel Options</a>
-		    <a className="" href="https://www.puppyspot.com/gives-back">PuppySpot Gives Back</a>
+		    <a className="" href="/promise">PuppySpot Promise</a>
+		    <a className="active" href="/reviews">Customer Reviews</a>
+		    <a className="" href="/puppyspot-standards">Breeder Standards</a>
+		    <a className="" href="/health-check">Health Check</a>
+		    <a className="" href="/dog-travel">Travel Options</a>
+		    <a className="" href="/gives-back">PuppySpot Gives Back</a>
 		</article>
 
 		<hgroup className="customer-reviews__title">
@@ -68,11 +76,11 @@ const ReviewsContainer: React.FC<Props> = ({ reviewsArray, setCurrentPage }) => 
                     / 5
                 </div>
                 <ul className="stars">
-                    <li><img src="https://www.puppyspot.com/assets/svg/full-star.svg" /></li>
-            		<li><img src="https://www.puppyspot.com/assets/svg/full-star.svg" /></li>
-		            <li><img src="https://www.puppyspot.com/assets/svg/full-star.svg" /></li>
-		            <li><img src="https://www.puppyspot.com/assets/svg/full-star.svg" /></li>
-		            <li><img src="https://www.puppyspot.com/assets/svg/half-star.svg" /></li>
+                    <li><img src="/svg/full-star.svg" /></li>
+            		<li><img src="/svg/full-star.svg" /></li>
+		            <li><img src="/svg/full-star.svg" /></li>
+		            <li><img src="/svg/full-star.svg" /></li>
+		            <li><img src="/svg/half-star.svg" /></li>
                 </ul>
                 <div className="reviews-list__verified-reviews">Based
                     on 16,584 verified reviews
@@ -171,7 +179,7 @@ const ReviewsContainer: React.FC<Props> = ({ reviewsArray, setCurrentPage }) => 
 							                            <span>  </span>|<span>  </span>
 							                            <span className="review__breed">
 							                                Breed:<span>  </span>
-							                                <a className="breed-name" href="https://www.puppyspot.com/puppies-for-sale/breed/pembroke-welsh-corgi">
+							                                <a className="breed-name" href={`/puppies-for-sale/breed/${stringToSlug(reviews.breed)}`}>
 							                                     {reviews.breed}
 							                                </a>
 							                            </span>

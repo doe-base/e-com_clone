@@ -7,7 +7,7 @@ import SmallFilterPopup from '../components/small-filter-popup/SmallFilterPopup'
 import MediumFilterSidebar from '../components/filter-sidebar/MediumFilterSidebar';
 import FilterResult from '../components/puppies-for-sell-componets/FilterResult';
 import PuppiesForSellFilterSidebar from '../components/puppies-for-sell-componets/Siderbar';
-import { pages } from '../contants/routes'; 
+import { pages } from '../contants/routes';
 import { useLocation } from 'react-router-dom';
 import AllPuppies from '../data/puppy-data/all_puppies.json'
 
@@ -38,39 +38,39 @@ interface Props{
 
     genderFilter: string;
     setGenderFilter: React.Dispatch<React.SetStateAction<string>>;
-    selectedBreedCheck: any[]; 
+    selectedBreedCheck: any[];
     setSelectedBreedCheck: React.Dispatch<React.SetStateAction<any[]>>;
-    selectedCharacteristicsFilter: any[]; 
+    selectedCharacteristicsFilter: any[];
     setSelectedCharacteristicsFilter: React.Dispatch<React.SetStateAction<any[]>>;
-    selectedVarietyFilter: any[]; 
+    selectedVarietyFilter: any[];
     setSelectedVarietyFilter: React.Dispatch<React.SetStateAction<any[]>>;
     selectedSizeFilter: any[];
     setSelectedSizeFilter: React.Dispatch<React.SetStateAction<any[]>>;
     ageFilter: string;
     setAgeFilter: React.Dispatch<React.SetStateAction<string>>;
-    selectedColorFilter: any[]; 
+    selectedColorFilter: any[];
     setSelectedColorFilter: React.Dispatch<React.SetStateAction<any[]>>;
     travleFilter: string;
     setTravleFilter: React.Dispatch<React.SetStateAction<string>>;
 
     resetFilters: ()=> void;
-    colors: any[]; 
+    colors: any[];
     varieties: any[];
     characters: any[];
     filterArray: any[];
-    sortOption: string; 
+    sortOption: string;
     setSortOption: React.Dispatch<React.SetStateAction<string>>;
 }
 const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
     characteristic,
 
     breedObj,
-    breedQuery, 
-    genderQuery, 
-    paginationPage, 
-    puppySinglePageArr, 
+    breedQuery,
+    genderQuery,
+    paginationPage,
+    puppySinglePageArr,
     totalPages,
-    breedsArr, 
+    breedsArr,
     setBreedsArr,
     genderFilter,
     setGenderFilter,
@@ -79,7 +79,7 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
     selectedCharacteristicsFilter,
     setSelectedCharacteristicsFilter,
     selectedVarietyFilter,
-    selectedSizeFilter, 
+    selectedSizeFilter,
     setSelectedSizeFilter,
     setSelectedVarietyFilter,
     ageFilter,
@@ -89,7 +89,7 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
     travleFilter,
     setTravleFilter,
     resetFilters,
-    colors, 
+    colors,
     varieties,
     characters,
     filterArray,
@@ -129,11 +129,11 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
     useEffect(() => {
       const buttonElement = filterDropButton.current;
       const dropDownElement = dropDownRef.current;
-  
+
       if (buttonElement && dropDownElement) {
         // Get the button's position and size
         const buttonRect = buttonElement.getBoundingClientRect();
-  
+
         // Calculate the position of the dropdown using the button's position
         setX(buttonRect.left + dropDownElement.getBoundingClientRect().left);
         setY(buttonRect.bottom + dropDownElement.getBoundingClientRect().height);
@@ -187,11 +187,11 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
     useEffect(() => {
         const buttonElement = filterDropButton.current;
         const dropDownElement = dropDownRef.current;
-    
+
         if (buttonElement && dropDownElement) {
           // Get the button's position and size
           const buttonRect = buttonElement.getBoundingClientRect();
-    
+
           // Calculate the position of the dropdown using the button's position
           setX(buttonRect.left + dropDownElement.getBoundingClientRect().left);
           setY(buttonRect.bottom + dropDownElement.getBoundingClientRect().height);
@@ -202,7 +202,7 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
   return (
     <>
         <div id="puppies-for-sale" className="puppies-for-sale js-puppies-for-sale">
-            <Loading />
+            {/**<Loading /> **/}
 
             <section className="puppies-for-sale-header">
                 <div className="breadcrumbs-full">
@@ -234,7 +234,7 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
                                 <div className="js-seo-readmore mobile-read-more-text-ellipsis enabled">
                                     {/* <p>Welcome to PuppySpot! Take a moment to browse our incredible selection<span className={`dots-delete ${readMore ? '' : 'hidden'}`}>...</span> <span className={`read-more-real-target ${readMore ? 'hidden' : ''}`}>adorable, ready for love puppies. {breedObj?.discription} We only work with the country’s top breeders, offer three handle with care delivery options and a 10-year health commitment. So wherever you live we can deliver your perfect puppy! Complimentary consultations with one of our Puppy Concierges are available when you’re ready.</span> <span onClick={handleReadMore} className="seo-breed-content-read-more js-readmore-trigger" data-target="js-seo-readmore">Read {`${readMore ? 'More' : 'Less'}`}</span></p> */}
                                     <p>{characteristic.text}</p>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -271,9 +271,9 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
                     Filters
                 </button>
                 <div ref={dropDownContainerRef} style={{ position: 'relative', display: 'inline-block' }}>
-                    <button 
-                        ref={filterDropButton} 
-                        className="js-open-sort puppies-for-sale__filter-nav-sort text-tangerine ab-sorting" 
+                    <button
+                        ref={filterDropButton}
+                        className="js-open-sort puppies-for-sale__filter-nav-sort text-tangerine ab-sorting"
                         data-tippy=""
                         onClick={handleFilterClick}
                     >
@@ -286,16 +286,16 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
 
             </section>
 
-            <PuppiesForSellFilterSidebar 
-                breedsArr={breedsArr} 
-                setBreedsArr={setBreedsArr} 
+            <PuppiesForSellFilterSidebar
+                breedsArr={breedsArr}
+                setBreedsArr={setBreedsArr}
                 query={query}
                 setQuery={setQuery}
                 results={results}
                 setResults={setResults}
                 emptyQuery={emptyQuery}
                 setEmptyQuery={setEmptyQuery}
-                
+
                 selectedBreedCheck={selectedBreedCheck}
                 setSelectedBreedCheck={setSelectedBreedCheck}
                 genderFilter={genderFilter}
@@ -320,24 +320,24 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
                 filterArray={filterArray}
             />
 
-            <FilterResult 
-                paginationPage={paginationPage} 
-                totalPages={totalPages} 
+            <FilterResult
+                paginationPage={paginationPage}
+                totalPages={totalPages}
                 puppySinglePageArr={puppySinglePageArr}
                 filterArray={filterArray}
             />
 
         </div>
-        <SmallFilterPopup 
-            breedsArr={breedsArr} 
-            setBreedsArr={setBreedsArr} 
+        <SmallFilterPopup
+            breedsArr={breedsArr}
+            setBreedsArr={setBreedsArr}
             query={query}
             setQuery={setQuery}
             results={results}
             setResults={setResults}
             emptyQuery={emptyQuery}
             setEmptyQuery={setEmptyQuery}
-            
+
             selectedBreedCheck={selectedBreedCheck}
             setSelectedBreedCheck={setSelectedBreedCheck}
             genderFilter={genderFilter}
@@ -361,16 +361,16 @@ const CharacteristicPuppyForSellContainer: React.FC<Props> = ({
             characters={characters}
             filterArray={filterArray}
         />
-        <MediumFilterSidebar 
-            breedsArr={breedsArr} 
-            setBreedsArr={setBreedsArr} 
+        <MediumFilterSidebar
+            breedsArr={breedsArr}
+            setBreedsArr={setBreedsArr}
             query={query}
             setQuery={setQuery}
             results={results}
             setResults={setResults}
             emptyQuery={emptyQuery}
             setEmptyQuery={setEmptyQuery}
-            
+
             selectedBreedCheck={selectedBreedCheck}
             setSelectedBreedCheck={setSelectedBreedCheck}
             genderFilter={genderFilter}

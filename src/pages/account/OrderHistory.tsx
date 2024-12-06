@@ -47,7 +47,7 @@ const OrderHistory: React.FC<Props> = ({page, userEmail}) => {
       
              setPuppyList(Array.from(puppyIds)); // Convert the Set to an array
         } catch (error) {
-          console.error("Error fetching puppy IDs:", error);
+          // console.error("Error fetching puppy IDs:", error);
         }
       }
       useEffect(()=>{

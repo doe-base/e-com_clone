@@ -40,6 +40,7 @@ import BreederStandards from './pages/BreederStandards'
 import PuppyTravel from './pages/PuppyTravel'
 import HealthCheck from './pages/HealthCheck'
 import GivesBack from './pages/GivesBack'
+import Collection from './pages/Collection'
 
 
 function App() {
@@ -106,6 +107,7 @@ function App() {
                 return <Route path={`/breed/collections/${item.slug}`} element={<CharacteristicPuppyForSell charater={item} />} />
               })
             }
+            <Route path="/collections" element={<Collection />} />
             <Route path="/log-in" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />

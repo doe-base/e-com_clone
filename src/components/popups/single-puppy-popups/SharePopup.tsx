@@ -5,26 +5,29 @@ interface Props {
   sharePopup: boolean;
   setSharePopup: React.Dispatch<React.SetStateAction<boolean>>;
   galleryContent: string;
-  name: string; 
-  breed: string; 
+  name: string;
+  breed: string;
   color: string;
   sex: string;
   age: string;
+  pageTitle: string;
 }
-const SharePopup: React.FC<Props> = ({ 
-  sharePopup, 
+const SharePopup: React.FC<Props> = ({
+  sharePopup,
   setSharePopup,
   galleryContent,
-  name, 
+  name,
   breed,
   color,
   sex,
   age,
+  pageTitle
 }) => {
 
-      const title = encodeURIComponent(document.title) 
+      const title = encodeURIComponent(pageTitle)
       const text = encodeURIComponent("Wanted to share this with you ")
       const  url = encodeURI(window.location.href)
+      const image =   galleryContent
 
       const handleShare = (shareUrl: string) => {
         window.open(
@@ -38,22 +41,22 @@ const SharePopup: React.FC<Props> = ({
       const twitterURL = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
       const whatsappURL = `https://api.whatsapp.com/send?text=${encodeURIComponent("Check out this article: " + url)}`;
       const facebookURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
-      const pinterestURL = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent("IMAGE_URL")}&description=${encodeURIComponent(title)}`;
-        
+      const pinterestURL = `https://pinterest.com/pin/create/button/?url=${encodeURIComponent(url)}&media=${encodeURIComponent(image)}&description=${encodeURIComponent(title)}`;
+
 
       const [buttonText, setButtonText] = useState("Copy Link");
       const handleCopy = async () => {
         try {
           await navigator.clipboard.writeText(window.location.href);
-          
+
           setButtonText("Copied!");
-    
+
           setTimeout(() => setButtonText("Copy Link"), 3000);
         } catch (error) {
           // console.error("Failed to copy:", error);
         }
       };
-    
+
   return (
     <div className={`ReactModalPortal ${
       sharePopup ? "" : "hidden"

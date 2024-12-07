@@ -15,6 +15,7 @@ import useAuthListener from "../hooks/use-auth-listener";
 
 interface Props {
   puppyInfo: any;
+  pageTitle: string;
 }
 
 
@@ -52,21 +53,21 @@ const getPuppiesByBreed = (
   return shuffledPuppies.slice(0, 15);
 };
 
-const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
+const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo, pageTitle }) => {
   const {
-    gallery_content, 
-    slug, 
-    breed, 
-    puppy_id, 
-    puppy_name, 
-    people_intrested, 
-    sex, 
-    age, 
-    price, 
-    puppy_info_details, 
-    about, 
-    vaccinations_info, 
-    siblings, 
+    gallery_content,
+    slug,
+    breed,
+    puppy_id,
+    puppy_name,
+    people_intrested,
+    sex,
+    age,
+    price,
+    puppy_info_details,
+    about,
+    vaccinations_info,
+    siblings,
     breed_info
   } = puppyInfo
 
@@ -119,12 +120,12 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
 
 // Work on Share puppy
   const handleShare = async () => {
-    if (navigator.share) { 
+    if (navigator.share) {
       try {
         await navigator.share({
-          title: document.title,      
-          text: "Wanted to share this with you",   
-          url: window.location.href,      
+          title: document.title,
+          text: "Wanted to share this with you",
+          url: window.location.href,
           // files: [
           //   new File([""], "image.jpg", {
           //     type: "image/jpeg",
@@ -151,7 +152,7 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
   const next = () => {
     setCurrentCount((prevCount) => (prevCount + 1) % numberOfImages); // Wraps to 0 after the last image
   };
-  
+
   const prev = () => {
     setCurrentCount((prevCount) => (prevCount - 1 + numberOfImages) % numberOfImages); // Wraps to the last image if it goes below 0
   };
@@ -165,18 +166,18 @@ const SinglePuppyContainer: React.FC<Props> = ({ puppyInfo }) => {
   const handleLikePuppy = (puppyId: string) => {
     // Retrieve the current liked puppies from localStorage
     const likedPuppiesString = localStorage.getItem('liked-puppies-id');
-    
+
     // Parse the retrieved value or default to an empty array
     const likedPuppies: string[] = likedPuppiesString ? JSON.parse(likedPuppiesString) : [];
-  
+
     // Check if the puppy ID is already in the array
     if (!likedPuppies.includes(puppyId)) {
       // Add the new puppy ID to the array
       likedPuppies.push(puppyId);
-  
+
       // Save the updated array back to localStorage
       localStorage.setItem('liked-puppies-id', JSON.stringify(likedPuppies));
-  
+
       // console.log(`Puppy ID ${puppyId} added to liked puppies.`);
     } else {
       // console.log(`Puppy ID ${puppyId} is already liked.`);
@@ -215,14 +216,14 @@ const handleLike =(puppyId: string)=>{
         setLikePuppyListID(JSON.parse(localStorage.getItem("liked-puppies-id") || '[]'))
         //In Future Hanlde OPTIMISTICAL like
     }
-                    
+
 }
 
   return (
     <>
-     <AskAboutMePopup 
-        askAboutMePopup={askAboutMePopup} 
-        setAskAboutMePopup={setAskAboutMePopup} 
+     <AskAboutMePopup
+        askAboutMePopup={askAboutMePopup}
+        setAskAboutMePopup={setAskAboutMePopup}
         puppyId={puppy_id}
         peopleIntrested={people_intrested}
         name={puppy_name}
@@ -233,15 +234,16 @@ const handleLike =(puppyId: string)=>{
         galleryContent={gallery_content[0]['urls']['300w']}
       />
      <LoginPopup loginPopup={loginPopup} setLoingPopup={setLoginPopup}/>
-     <SharePopup 
-      sharePopup={sharePopup} 
-      setSharePopup={setSharePopup} 
-      galleryContent={gallery_content[0]['urls']['300w']} 
-      name={puppy_name} 
+     <SharePopup
+      sharePopup={sharePopup}
+      setSharePopup={setSharePopup}
+      galleryContent={gallery_content[0]['urls']['300w']}
+      name={puppy_name}
       breed={breed}
       color={puppy_info_details["Color"]}
       sex={sex}
       age={age}
+      pageTitle={pageTitle}
     />
 
 
@@ -391,7 +393,7 @@ const handleLike =(puppyId: string)=>{
                     </>
                   )
                 }
-              
+
               })
             }
 
@@ -673,7 +675,7 @@ const handleLike =(puppyId: string)=>{
                         )
                       })
                     }
-                    
+
                   </div>
                   {
                     siblings.length < 3
@@ -811,7 +813,7 @@ const handleLike =(puppyId: string)=>{
               </div>
             </div>
           </section>
-          {/* 
+          {/*
           <section
             id="root-parents"
             className="puppy-profile__parents hidden"
@@ -1181,7 +1183,7 @@ const handleLike =(puppyId: string)=>{
               )
             })
           }
-              
+
             </div>
 
             <ol className="profile-reviews__indicator">
@@ -1190,7 +1192,7 @@ const handleLike =(puppyId: string)=>{
               <li data-index="review-2" className={`js-indicator-dots ${sliderCount === 2 ? 'active' : ''}`}></li>
             </ol>
           </div>
-          
+
           <div className="cta-white">
             <a href={pages.CUSTOMER_REVIEW}>Read More Reviews</a>
           </div>

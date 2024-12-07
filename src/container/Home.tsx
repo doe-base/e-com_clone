@@ -31,7 +31,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
         const searchQuery = e.target.value;
         setSearchBreed(searchQuery)
         setQuery(searchQuery);
-    
+
         if (searchQuery.trim()) {
         const fuseResults = fuse.search(searchQuery);
             setResults(fuseResults.map((result: any) => result.item));
@@ -58,7 +58,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
       useEffect(() => {
         const handleResize = () => {
           setScreenWidth(window.innerWidth);
-    
+
           // Change the text when width is below 800px
           const element = document.getElementById('root-why-puppyspot-h3');
           if (element) {
@@ -69,13 +69,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
             }
           }
         };
-    
+
         // Add event listener
         window.addEventListener('resize', handleResize);
-    
+
         // Initial check when component mounts
         handleResize();
-    
+
         // Cleanup on unmount
         return () => {
           window.removeEventListener('resize', handleResize);
@@ -107,13 +107,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
                             className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo track_browse_all_home hero-module__heroCta--8TpOf"
                             href={pages.PUPPIES_FOR_SELL}
                             >Browse All Puppies</a>
-                
+
                         </div>
 
                         <div className="hero-module__searchbarWrapper--Z0IvD search-order max-w-[clamp(0px,calc(100vw_-_20px),1070px)]">
                             <div className="style-module__wrapper--7jJ94 style-module__open--k2jZl" data-cy="hero-searchbar">
                             <div className="style-module__content--UlhVY style-module__noBorder--b9CgM">
-                                
+
                                 <div className="style-module__reducerWrapper--UVMF-">
                                     <div className="style-module__reducer--higDU">
                                         <form autoComplete="off" className="style-module__controlWrapper--Cak4k" action="." >
@@ -123,9 +123,9 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                             className="style-module__input--8Dj0T"
                                             placeholder="Search for Breeds"
                                             autoComplete="off"
-                                            onChange={(e)=> handleSearch(e)} 
+                                            onChange={(e)=> handleSearch(e)}
                                             onFocus={() => setIsFocused(true)}
-                                            onBlur={() => setIsFocused(false)} 
+                                            onBlur={() => setIsFocused(false)}
                                         />
                                         </form>
                                     </div>
@@ -134,7 +134,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                 <button className="style-module__button--uk1Kx" data-cy="submit-button">
                                 <i className="style-module__searchIcon--De0gi"></i>
                                 </button>
-                                
+
                             </div>
                                 {/* DropDown */}
                                 <div data-cy="filter-results" className={`style-module__menu--Xf2XU  ${isFocused ? '' : 'hidden'}`}>
@@ -222,7 +222,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
         <div id="root-why-puppyspot">
             <div className="styles-module__container--CCD9B styles-module__smallPadding--Jh4ha">
                 <h3 id='root-why-puppyspot-h3' className="styles-module__title--lW8PU">Why we’re the leading puppy adoption service in America</h3>
-                
+
                 <div id='big-screen-why-us' className="styles-module__cardsContainer--NzIp7">
                     <div>
                         <div className="styles-module__card--D5UVp"><img className="styles-module__buttonIcon--aT7sj" src="/img/your-perfect-puppy.svg" alt="Your Perfect Puppy"/>
@@ -271,7 +271,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 </div>
 
                 <div id="small-screen-why-us">
-                    <Slider {...settings} 
+                    <Slider {...settings}
                      beforeChange={(oldIndex, newIndex) => setCurrentSlide(newIndex)}
                      customPaging={(i) => (
                          <div
@@ -333,7 +333,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     </Slider>
                 </div>
 
-                
+
             </div>
         </div>
 {/* Review Section */}
@@ -365,7 +365,7 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                 <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo" href={pages.REVIEWS}>
                                 Read more reviews
                                 </a>
-                
+
                             </div>
                             <div className="trusted-by-community-module__flexItem--InltY">
                                 <a
@@ -373,13 +373,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
                                 href={pages.PUPPIES_FOR_SELL}>
                                 Browse all puppies
                                 </a>
-                
+
                             </div>
                         </div>
                     </div>
                 </div>
 
-                
+
                 <div className="trusted-by-community-module__middleSection--kXg9e">
                     <div className="trusted-by-community-module__middleSectionMask--ao9Kc"></div>
                 </div>
@@ -390,11 +390,11 @@ const HomeContainer: React.FC<Props> = ({}) => {
                     <div className="trusted-by-community-module__flexRow--EOUTG">
                         <div className="trusted-by-community-module__flexItem--InltY">
                             <a className="button-module__wrapper--jJ7g9 button-module__contained--zXwYo  " href={pages.REVIEWS}>Read more reviews </a>
-                
+
                         </div>
                         <div className="trusted-by-community-module__flexItem--InltY">
                             <a className="button-module__wrapper--jJ7g9 button-module__outlined--dnOJw  " href={pages.PUPPIES_FOR_SELL}>Browse all puppies </a>
-                
+
                         </div>
                     </div>
                 </div>
@@ -410,14 +410,14 @@ const HomeContainer: React.FC<Props> = ({}) => {
                 <div className="long-module__copy">
                     <p>Need help finding you new best friend? Start with our&nbsp;<strong>Breed Match Quiz</strong></p>
                 </div>
-                <a href={pages.BREED_QUIZ} className="button main long-module__button">Take Quiz</a>
+                <a className="button main long-module__button">Take Quiz</a>
             </div>
 
         </section>
 {/* Puppy Spotlight */}
         <div className="featured-puppies-module__wrapper--c1np1">
             <h3 className="featured-puppies-module__title--3vIaM">Puppy Spotlight</h3>
-            
+
             {/* <div className="carousel-module__content--qDPHs  false featured-puppies-module__carouselContent--5fzAU"></div> */}
             <PuppySpotLight />
         </div>

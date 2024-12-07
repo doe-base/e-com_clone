@@ -41,7 +41,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   const backByBreed =()=>{
     document.getElementById('main-navigation-options')?.classList.remove('hidden')
     document.getElementById('navigation-options-by-breed')?.classList.add('hidden')
-  } 
+  }
 
   const showByCharacteristics =()=>{
     document.getElementById('main-navigation-options')?.classList.add('hidden')
@@ -50,7 +50,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   const backByCharacteristics =()=>{
     document.getElementById('main-navigation-options')?.classList.remove('hidden')
     document.getElementById('navigation-options-by-characteristics')?.classList.add('hidden')
-  } 
+  }
 
   const showByGender =()=>{
     document.getElementById('main-navigation-options')?.classList.add('hidden')
@@ -59,7 +59,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   const backByGender =()=>{
     document.getElementById('main-navigation-options')?.classList.remove('hidden')
     document.getElementById('navigation-options-by-gender')?.classList.add('hidden')
-  } 
+  }
 
   const showOurPromise =()=>{
     document.getElementById('main-navigation-options')?.classList.add('hidden')
@@ -68,7 +68,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   const backOurPromise =()=>{
     document.getElementById('main-navigation-options')?.classList.remove('hidden')
     document.getElementById('navigation-options-our-promise')?.classList.add('hidden')
-  } 
+  }
 
   const showAboutUs =()=>{
     document.getElementById('main-navigation-options')?.classList.add('hidden')
@@ -77,7 +77,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
   const backAboutUs =()=>{
     document.getElementById('main-navigation-options')?.classList.remove('hidden')
     document.getElementById('navigation-options-about-us')?.classList.add('hidden')
-  } 
+  }
 
 
   const showTop10Breed =()=>{
@@ -142,7 +142,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         window.location.href = `${link}`;
     }
   }
-  
+
 
   return (
     <div id="nav-bar-drawer" style={{ display: `${smallNavOpen ? 'block' : 'none'}`}}>
@@ -185,7 +185,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
             </li>
         </ul>
 
-        
+
         <div className="drawer-header-nav__mobile banner-visible" style={{overflow: 'scroll'}}>
 
             <li id="drawer-searchbar-header-modile" className="drawer-search">
@@ -195,15 +195,15 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                             <div className="drawer-style-module__reducerWrapper--UVMF-">
                                 <div className="drawer-style-module__reducer--higDU">
                                     <form autoComplete="off" className="drawer-style-module__controlWrapper--Cak4k" action=".">
-                                        <input 
-                                            type="search" 
-                                            name="search" 
-                                            className="drawer-style-module__input--8Dj0T" 
-                                            placeholder="Search for Breeds" 
-                                            autoComplete="off" 
-                                            onChange={(e)=> handleSearch(e)} 
+                                        <input
+                                            type="search"
+                                            name="search"
+                                            className="drawer-style-module__input--8Dj0T"
+                                            placeholder="Search for Breeds"
+                                            autoComplete="off"
+                                            onChange={(e)=> handleSearch(e)}
                                             onFocus={() => setIsFocused(true)}
-                                            onBlur={() => setIsFocused(false)} 
+                                            onBlur={() => setIsFocused(false)}
                                         />
                                     </form>
                                 </div>
@@ -257,7 +257,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
 
             <div id="main-navigation-options" className="drawer-mobile-menu-container">
                 <a href={pages.PUPPIES_FOR_SELL} className="drawer-searchbar-menu-module__circularButtonContainer--Xgw0D"><button type="button" className="drawer-button drawer-searchbar-menu-module__circularButton--rEiKP" tabIndex={11}>Browse All Puppies</button></a>
-                    
+
                 <div className="drawer-browse-puppies-container"><span>Available Puppies</span></div>
                 <ul className="drawer-searchbar-menu-module__listUl--Ed91Y">
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO" onClick={showByBreed}>
@@ -275,7 +275,7 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                     <li className="drawer-searchbar-menu-module__liUnderline--IzBMO" onClick={showAboutUs}>
                         <button className="drawer-searchbar-menu-module__listLink--Mrxwr">About Us<i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i></button>
                     </li>
-                    
+
                     <li>
                         <div className="drawer-links-auth-container">
                             <a className="drawer-hyperlink-small" href={pages.LOGIN}>Log In</a>
@@ -509,11 +509,11 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
                         </button>
                     </li>
-                    <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
-                        <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.FAQ)}>Frequently Asked Questions
-                            <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
-                        </button>
-                    </li>
+                    // <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
+                    //     <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.FAQ)}>Frequently Asked Questions
+                    //         <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
+                    //     </button>
+                    // </li>
                     {/* <li className="drawer-searchbar-menu-module__liUnderline--IzBMO">
                         <button className="drawer-searchbar-menu-module__listLink--Mrxwr" onClick={()=> handleNavigation(pages.PUPPYSPOT_GIVES_BACK)}>Shop Supplies
                             <i className="drawer-searchbar-menu-module__chevronRightIcon--EQrg7"></i>
@@ -524,15 +524,9 @@ const NavDrawer: React.FC<Props> = ({smallNavOpen, setSmallNavOpen}) => {
         </div>
       </div>
 
-    
+
     </div>
   );
 }
 
 export default NavDrawer;
-
-
-
-
-
-

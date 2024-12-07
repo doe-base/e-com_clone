@@ -37,7 +37,9 @@ import Reviews from './pages/Reviews';
 import ResourceCenter from './pages/ResourceCenter';
 import ContactUs from './pages/Contact'
 import BreederStandards from './pages/BreederStandards'
-
+import PuppyTravel from './pages/PuppyTravel'
+import HealthCheck from './pages/HealthCheck'
+import GivesBack from './pages/GivesBack'
 
 
 function App() {
@@ -116,8 +118,9 @@ function App() {
             <Route path="/resource-center" element={<ResourceCenter />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/puppyspot-standards" element={<BreederStandards />} />
-
-
+            <Route path="/dog-travel" element={<PuppyTravel />} />
+            <Route path="/health-check" element={<HealthCheck />} />
+            <Route path="/gives-back" element={<GivesBack />} />
 
 
 

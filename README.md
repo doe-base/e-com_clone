@@ -60,10 +60,7 @@ This project demonstrates my ability to:
 - Solve technical challenges with creative solutions.
 
 ### Live Demo
-[https://puppy-spot-clone.vercel.app/] (Include URL if available)
-
-### Source Code
-[https://github.com/doe-base/e-com_clone] (Include URL if available)
+[Live Demo](https://puppy-spot-clone.vercel.app/){:target="_blank"}
 
 ### Conclusion
 The PuppySpot Clone is a fully responsive e-commerce website that highlights my expertise in frontend and backend development. By integrating React, TypeScript, Golang, and Firebase, it serves as a strong addition to my portfolio, showcasing my ability to build user-centric and secure web applications.

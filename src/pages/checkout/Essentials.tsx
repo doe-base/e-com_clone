@@ -7,21 +7,46 @@ import OrderSummarySmall from '../../components/checkout-components/order-summar
 import EssentialsSection from '../../components/checkout-components/essentials-page';
 import CheckoutFooter from '../../components/checkout-components/footer/Footer';
 import { useParams } from 'react-router-dom';
-import allIndivialPuppies from '../../data/individual-puppy-data/_split_restructured_puppies-data1.json'
+import allIndivialPuppies1 from '../../data/individual-puppy-data/_split_restructured_puppies-data1.json'
+import allIndivialPuppies2 from '../../data/individual-puppy-data/_split_restructured_puppies-data2.json'
+import allIndivialPuppies3 from '../../data/individual-puppy-data/_split_restructured_puppies-data3.json'
+import allIndivialPuppies4 from '../../data/individual-puppy-data/_split_restructured_puppies-data4.json'
+import allIndivialPuppies5 from '../../data/individual-puppy-data/_split_restructured_puppies-data5.json'
+import allIndivialPuppies6 from '../../data/individual-puppy-data/_split_restructured_puppies-data6.json'
 import { FirebaseContext } from '../../context/firebase';
 import FullScreenLoader from '../../components/loader/FullScreenLoader';
 
 
-function getObjectById(array: any[], id: string | undefined): any | undefined {
-  return array.find(item => item.puppy_id === id);
+const allPuppies = [
+  allIndivialPuppies1,
+  allIndivialPuppies2,
+  allIndivialPuppies3,
+  allIndivialPuppies4,
+  allIndivialPuppies5,
+  allIndivialPuppies6,
+];
+
+function findItemById<T extends { puppy_id: string }>(
+  arrays: T[][],
+  id: string | undefined
+): T | undefined {
+  for (const array of arrays) {
+    const found = array.find(item => item.puppy_id === id);
+    if (found) {
+      return found;
+    }
+  }
+  return undefined;
 }
+
+
 interface Props{
 }
 const CheckoutEssentials: React.FC<Props> = ({}) => {
   const { firebase } = useContext(FirebaseContext)
   const { puppyId } = useParams();
   const { paymentID } = useParams();
-  const [ puppyInfo, setPuppyInfo ] = useState(getObjectById(allIndivialPuppies, puppyId))
+  const [ puppyInfo, setPuppyInfo ] = useState(findItemById(allPuppies, puppyId))
   const [shippingPrice, setShippingPrice] = useState(0)
   const [loading, setLoading] = useState(false)
   const [ paymentInfo, setPaymentInfo ] = useState<any>(null)
@@ -31,7 +56,7 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
         document.title = "Find the Right Puppy for Your Family | PuppySpot | PuppySpot";
     }, []);
     useEffect(()=> {
-      const puppy = getObjectById(allIndivialPuppies, puppyId)
+      const puppy = findItemById(allPuppies, puppyId)
       if (puppy){
         setPuppyInfo(puppy)
       }else{

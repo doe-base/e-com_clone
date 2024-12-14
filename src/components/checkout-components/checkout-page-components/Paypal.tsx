@@ -117,6 +117,8 @@ const Paypal: React.FC<Props> = ({ paymentInfo, subTotal, puppyId, paymentID, su
         }
       })
       .catch(error => {
+        console.log(error)
+
           setLoading(false)
           setFailure(true)
 

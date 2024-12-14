@@ -88,52 +88,52 @@ import ProcessTrackerSmall from '../../../components/checkout-components/process
 
         // Set delivery costs based on regions
         if(state1 === state2) {
-            // flightCost = 750 * multipier;
-            // groundCost = 300 * multipier;
+            // flightCost = 550 * multipier;
+            // groundCost = 100 * multipier;
         }
         if (region1 === region2) {
-            flightCost = 750 * multipier; // Same region flight cost
-            groundCost = 300 * multipier; // Same region ground cost
+            flightCost = 550 * multipier; // Same region flight cost
+            groundCost = 100 * multipier; // Same region ground cost
 
         }else if(region1 == 'Northeast' && region2 === 'Midwest'){
-            flightCost = 1050 * multipier;
-            groundCost = 600 * multipier;
+            flightCost = 850 * multipier;
+            groundCost = 120 * multipier;
         }else if(region1 == 'Northeast' && region2 === 'South'){
-            flightCost = 1750 * multipier;
-            groundCost = 950 * multipier;
+            flightCost = 1550 * multipier;
+            groundCost = 150 * multipier;
         }else if(region1 == 'Northeast' && region2 === 'West'){
-            flightCost = 2550 * multipier;
-            groundCost = 1500 * multipier;
+            flightCost = 1550 * multipier;
+            groundCost = 180 * multipier;
 
         }else if(region1 == 'Midwest' && region2 === 'Northeast'){
-            flightCost = 1050 * multipier;
-            groundCost = 600 * multipier;
+            flightCost = 850 * multipier;
+            groundCost = 120 * multipier;
         }else if(region1 == 'Midwest' && region2 === 'South'){
-            flightCost = 1050 * multipier;
-            groundCost = 600 * multipier;
+            flightCost = 850 * multipier;
+            groundCost = 120 * multipier;
         }else if(region1 == 'Midwest' && region2 === 'West'){
-            flightCost = 1050 * multipier;
-            groundCost = 600 * multipier;
+            flightCost = 850 * multipier;
+            groundCost = 120 * multipier;
 
         }else if(region1 == 'South' && region2 === 'Northeast'){
-            flightCost = 1750 * multipier;
-            groundCost = 950 * multipier;
+            flightCost = 1550 * multipier;
+            groundCost = 150 * multipier;
         }else if(region1 == 'South' && region2 === 'Midwest'){
-            flightCost = 1050 * multipier;
-            groundCost = 600 * multipier;
+            flightCost = 850 * multipier;
+            groundCost = 120 * multipier;
         }else if(region1 == 'South' && region2 === 'West'){
-            flightCost = 1750 * multipier;
-            groundCost = 950 * multipier;
+            flightCost = 1550 * multipier;
+            groundCost = 150 * multipier;
 
         }else if(region1 == 'West' && region2 === 'Northeast'){
-            flightCost = 2550 * multipier;
-            groundCost = 1500 * multipier;
+            flightCost = 1550 * multipier;
+            groundCost = 180 * multipier;
         }else if(region1 == 'West' && region2 === 'Midwest'){
-            flightCost = 1050 * multipier;
-            groundCost = 600 * multipier;
+            flightCost = 850 * multipier;
+            groundCost = 120 * multipier;
         }else if(region1 == 'West' && region2 === 'South'){
-            flightCost = 1750 * multipier;
-            groundCost = 950 * multipier;
+            flightCost = 1550 * multipier;
+            groundCost = 150 * multipier;
         }
         
         if(flightCost){
@@ -188,7 +188,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
     const price = extractAndFormatNumber(puppyInfo.price)
     const [deliveryCost, setDeleveryCost] = useState(calculateDeliveryCost(paymentInfo.state, puppyInfo.puppy_location, 1))
     const changeStateLink = `/shop/checkout/details/${puppyInfo.puppy_id}`
-    const [deliveryMethod, setDeliveryMethod] = useState('air')
+    const [deliveryMethod, setDeliveryMethod] = useState('ground')
     const [premiumSerivce, setPremiumSerivce] = useState(false)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)

@@ -286,12 +286,12 @@ const CheckoutContainer: React.FC<Props> = ({puppyInfo, paymentInfo, subTotal, p
 
                 <Grid container style={{alignItems: 'center', justifyContent: 'space-evenly'}}>
                   
-                  {/* <Grid item md={4} style={{justifyContent: 'center', alignItems: 'center', display: 'flex', marginBottom: '0.5rem'}}>
+                  <Grid item md={4} style={{justifyContent: 'center', alignItems: 'center', display: 'flex', marginBottom: '0.5rem'}}>
                     <a href={`/shop/checkout/${paymentID}/${puppyId}/paypal`} className="paypal-button" style={{width: '98%'}}>
                         <img src="/img/bank-logos/pp.png" alt="PayPal Logo" className="paypal-logo" />
                         <span className="responsive-button-text-span">Pay with PayPal</span>
                     </a>
-                  </Grid> */}
+                  </Grid>
                   <Grid item md={4} style={{justifyContent: 'center', alignItems: 'center', display: 'flex', marginBottom: '0.5rem'}}>
                     <a href={`/shop/checkout/${paymentID}/${puppyId}/crypto-currency`} className="crypto-button" style={{width: '98%'}}>
                         <img src="/img/bank-logos/Bitcoin.svg" alt="Crypto Logo" className="crypto-logo" />

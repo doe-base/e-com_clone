@@ -63,7 +63,7 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID, shippingPrice
           }
       
           setLoading(false);
-          window.location.replace(`/shop/checkout/${paymentID}/${puppyInfo.puppy_id}/bank-transfer`);
+          window.location.replace(`/shop/checkout/${paymentID}/${puppyInfo.puppy_id}/paypal`);
         } catch (error) {
           setLoading(false);
           setError('An unexpected error occurred');

@@ -10,7 +10,7 @@ import { navbar, pages, socials, sub_domain } from "../../contants/routes";
 interface Props {}
 const Footer: React.FC<Props> = ({}) => {
   return (
-    <footer className="footer-nav">
+    <footer className="footer-nav" style={{display: 'block'}}>
       <div className="footer-nav__container">
         <div className="footer-nav__top">
           <ul>

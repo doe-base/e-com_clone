@@ -5,6 +5,7 @@ import AllPuppies from '../data/puppy-data/all_puppies.json';
 import useAuthListener from '../hooks/use-auth-listener';
 import AlertPopup from '../components/alert-message/AlertMessage';
 import LoginPopup from "../components/popups/single-puppy-popups/LoginPopup";
+import AllReviews from "../data/all-reviews.json"
 
 interface Props{
     state: any;
@@ -57,12 +58,28 @@ function getPuppies( puppies: any, location: any, breed: any): any {
 
     return result;
 }
+function getReviews( reviews: any, state: any ): any {
+    // Filter reviews by state and 5 stars, prioritizing those with images
+    const reviewsWithImages = reviews.filter(
+        (review: any) => review.state === state && review.stars === 5 && review.images.length > 0
+    );
+
+    const reviewsWithoutImages = reviews.filter(
+        (review: any) => review.state === state && review.stars === 5 && review.images.length === 0
+    );
+
+    // Combine reviews with and without images, prioritizing those with images
+    const result = [...reviewsWithImages, ...reviewsWithoutImages].slice(0, 3);
+
+    return result;
+}
 const BreedStateContainer: React.FC<Props> = ({ state }) => {
     const {user} = useAuthListener();
     const [readMore, setReadMore] = useState(true)
     const handleReadMore =()=>{
         setReadMore(prevReadMore => !prevReadMore)
     }
+    const [ReviewsArray, setReivewsArray] = useState(getReviews(AllReviews, state))
     const [PoodleArray, setPoodleArray] = useState(getPuppies(AllPuppies, state, 'Poodle'))
     const [GoldendoodleArray, setGoldendoodleArray] = useState(getPuppies(AllPuppies, state, 'Goldendoodle'))
     const [CavapooArray, setCavapooArray] = useState(getPuppies(AllPuppies, state, 'Cavapoo'))
@@ -527,30 +544,46 @@ const BreedStateContainer: React.FC<Props> = ({ state }) => {
                 <div id="location__reviews-block">
                     <div className="reviews-component js-reviews-component white">
                         <div className="reviews-component__control">
-                            <div className="reviews-component__prev js-review-control prev"></div>
+                                {/* <div className="reviews-component__prev js-review-control prev"></div> */}
                                 <h2 className="breed-location__heading-h2">Our {state} Customers Are Ecstatic About Their Puppies! Read Their Reviews</h2>
-                                <div className="reviews-component__next js-review-control next"></div>
+                                {/* <div className="reviews-component__next js-review-control next"></div> */}
                         </div>
 
+                    {
+                        ReviewsArray
+                        ?
                         <div className="reviews-component__container">
-                            <div className="reviews-component__review active js-review" id="review-0">
-                                <div className="reviews-component__review-container"><picture className="reviews-component__thumb-picture"><img src="https://cdn-yotpo-images-production.yotpo.com/Review/644130149/626050976/square.jpg?1730300926" loading="lazy" className="lazyloaded reviews-component__thumb" /></picture>
-                                    <div className="reviews-component__content"><p className="reviews-component__name">Brisky</p><p className="reviews-component__date">04/09/2024</p><p className="reviews-component__breed">Pomsky</p><ul className="reviews-component__stars"><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg></ul><p className="reviews-component__review">Process was easy, no issues, plenty of information to give to a local vet. Sweet dog, couldn't be happier.</p></div>
-                                </div>
-                            </div>
-                            <div className="reviews-component__review js-review hidden" id="review-1">
-                                <div className="reviews-component__review-container"><picture className="reviews-component__thumb-picture"><img src="https://cdn-yotpo-images-production.yotpo.com/Review/665115373/647908418/square.jpg?1735938363" loading="lazy" className="lazyloaded reviews-component__thumb" /></picture>
-                                    <div className="reviews-component__content"><p className="reviews-component__name">Claus</p><p className="reviews-component__date">17/11/2024</p><p className="reviews-component__breed">Pomeranian</p><ul className="reviews-component__stars"><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg></ul><p className="reviews-component__review">PuppySpot has been there to walk me through my puppy adoption from the beginning to the end- at the time of adoption, to the time I brought my pups home, and PuppySpot continues to be there post-adoption to assist with the life-long care, health, and Love of your new furry family member!</p></div>
-                                </div>
-                            </div>
-
-                            <div className="reviews-component__review js-review hidden" id="review-2">
-                                <div className="reviews-component__review-container"><picture className="reviews-component__thumb-picture"><img src="https://cdn-yotpo-images-production.yotpo.com/Review/668311122/650921189/square.jpg?1736613142" loading="lazy" className="lazyloaded reviews-component__thumb" /></picture>
-                                    <div className="reviews-component__content"><p className="reviews-component__name">Love</p><p className="reviews-component__date">29/11/2024</p><p className="reviews-component__breed">Bichon Frise</p><ul className="reviews-component__stars"><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg></ul><p className="reviews-component__review">The communication, updates and delivery was seem less. The puppy arrived happy and healthy. Thank you.</p></div>
-                                </div>
-                            </div>
+                            {
+                                ReviewsArray.map((item: any)=>{
+                                    return(
+                                        <div className="reviews-component__review active js-review" id="review-0">
+                                            <div className="reviews-component__review-container">
+                                                {
+                                                    item.images
+                                                    ?
+                                                    <picture className="reviews-component__thumb-picture">
+                                                        <img src={item.images[0].big_url} loading="lazy" className="lazyloaded reviews-component__thumb" />
+                                                    </picture>
+                                                    :
+                                                    null
+                                                }
+                                                <div className="reviews-component__content">
+                                                    <p className="reviews-component__name">{item.name}</p>
+                                                    <p className="reviews-component__date">{item.date}</p>
+                                                    <p className="reviews-component__breed">{item.breed}</p>
+                                                    <ul className="reviews-component__stars"><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg><svg className="text-star-active" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16" stroke="currentColor" width="16" height="16"><path stroke-width="1" d="M8 12L3.29772 14.4721L4.19577 9.23607L0.391548 5.52786L5.64886 4.76393L8 0L10.3511 4.76393L15.6085 5.52786L11.8042 9.23607L12.7023 14.4721L8 12Z"></path></svg></ul>
+                                                    <p className="reviews-component__review">{item.message}</p></div>
+                                            </div>
+                                        </div>
+                                    )
+                                })
+                            }
                         </div>
-                        <ol className="reviews-component__indicator"><li data-index="review-0" className="js-indicator-dots active"></li><li data-index="review-1" className="js-indicator-dots "></li><li data-index="review-2" className="js-indicator-dots "></li></ol>
+                        :
+                        null
+                    }
+
+                        {/* <ol className="reviews-component__indicator"><li data-index="review-0" className="js-indicator-dots active"></li><li data-index="review-1" className="js-indicator-dots "></li><li data-index="review-2" className="js-indicator-dots "></li></ol> */}
                         <div className="cta-white" style={{marginTop: "20px"}}><a href="/reviews">Read More Reviews</a></div>
                     </div>
                 </div>

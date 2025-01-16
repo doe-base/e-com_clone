@@ -1,0 +1,778 @@
+.breed-location .ps-breadcrumbs {
+    margin:1rem 0;
+    text-align:left
+  }
+  @media screen and (min-width:1024px) {
+    .breed-location .ps-breadcrumbs {
+      margin:0 auto 1em;
+      max-width:1355px;
+      padding-left:0
+    }
+  }
+  .breed-location .trust-banner {
+    margin:4rem auto
+  }
+  @media screen and (max-width:767px) {
+    .breed-location .trust-banner {
+      margin-left:1em;
+      margin-right:1em;
+      width:auto
+    }
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .trust-banner {
+      margin:3rem 1rem
+    }
+  }
+  @media screen and (min-width:1024px) {
+    .breed-location .trust-banner {
+      margin:3rem auto;
+      width:69rem
+    }
+  }
+  @media screen and (max-width:767px) {
+    .breed-location .button {
+      width:100%
+    }
+  }
+  .breed-location section {
+    color:#333;
+    padding:0 1rem
+  }
+  .breed-location section p {
+    background:0 0!important;
+    font-family:Inter,sans-serif;
+    font-size:1rem;
+    line-height:1.75rem;
+    margin:0 0 1.5rem
+  }
+  .breed-location section .button {
+    font-size:1rem;
+    line-height:1.375em
+  }
+  .breed-location .reviews-component h3,
+  .breed-location section h2 {
+    font-family:Nunito,sans-serif;
+    font-size:1.75rem;
+    line-height:2.75rem;
+    margin:0;
+    text-align:center
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .reviews-component h3,
+    .breed-location section h2 {
+      font-size:2.25rem;
+      line-height:3rem
+    }
+  }
+  .breed-location .breed-location__heading-h1 {
+    font-size:1.75rem;
+    line-height:1.75rem
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .breed-location__heading-h1 {
+      font-size:2rem;
+      line-height:2rem
+    }
+  }
+  .breed-location .breed-location__heading-h2 {
+    font-size:1.5rem;
+    line-height:1.75rem
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .breed-location__heading-h2 {
+      font-size:1.75rem;
+      line-height:2rem
+    }
+  }
+  @media screen and (max-width:767px) {
+    .breed-location .breed-location__heading-h2 {
+      margin-top:1rem
+    }
+  }
+  .breed-location .breed-location__heading-h2.mx {
+    margin:1.5em 0 .5em
+  }
+  .breed-location .breed-location__heading-h3 {
+    font-size:1.25rem;
+    line-height:1.75rem;
+    margin-bottom:0
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .breed-location__heading-h3 {
+      font-size:1.5rem;
+      line-height:2rem
+    }
+  }
+  .breed-location .reviews-component__control {
+    margin-bottom:1rem
+  }
+  @media screen and (max-width:767px) {
+    .breed-location section:first-of-type h2 {
+      font-size:1.25rem;
+      line-height:2rem
+    }
+  }
+  .breed-location section:nth-child(odd):not(:last-child) {
+    background-color:#f7f7f7
+  }
+  .breed-location section.breed-location__breed .button {
+    margin-top:1.5rem
+  }
+  .breed-location section.breed-location__breed h4 {
+    font-family:Nunito,sans-serif;
+    font-size:1.125rem;
+    font-weight:700;
+    margin-top:1em
+  }
+  .breed-location section.breed-location__breed p:first-of-type {
+    text-align:left
+  }
+  @media screen and (min-width:768px) {
+    .breed-location section.breed-location__breed p:first-of-type {
+      text-align:center
+    }
+  }
+  .breed-location section.breed-location__cards {
+    background-color:#f7f7f7;
+    padding-left:0;
+    padding-right:0
+  }
+  .breed-location section.breed-location__cards .available-puppies {
+    margin-bottom:0
+  }
+  .breed-location section.breed-location__cards .puppies-for-sale__puppy-list {
+    padding:1.5rem 0
+  }
+  .breed-location section.breed-location__cards .content-wrapper {
+    padding-top:1rem
+  }
+  .breed-location div.block-hero-container {
+    background-color:#eaf9ff;
+    padding:3rem 1rem 1rem;
+    width:100%
+  }
+  .breed-location section.breed-location__cards.breed-location__cards--empty {
+    background-color:#eaf9ff
+  }
+  .breed-location section.breed-location__cards.breed-location__cards--empty .content-wrapper>picture img {
+    display:block;
+    margin:0 auto .75rem;
+    width:4rem
+  }
+  .breed-location section.breed-location__cards.breed-location__cards--empty .content-wrapper>span {
+    display:block;
+    font-size:1rem;
+    line-height:1.75rem;
+    margin-bottom:.5rem
+  }
+  .breed-location section.breed-location__cards.breed-location__cards--empty .content-wrapper>h2 {
+    font-size:1.5rem;
+    line-height:2.25rem;
+    margin:0
+  }
+  .breed-location .breed-states {
+    background-color:#eaf9ff;
+    margin:2rem 0;
+    padding-bottom:2rem;
+    padding-top:2rem
+  }
+  @media screen and (min-width:1024px) {
+    .breed-location .puppies-for-sale__puppy-list {
+      margin:0 auto;
+      max-width:56rem
+    }
+    .breed-location .puppies-for-sale__puppy-list.bigger {
+      margin:0 auto;
+      max-width:63rem
+    }
+    .breed-location .puppies-for-sale__puppy-list.three-items {
+      margin:0 auto;
+      max-width:48rem
+    }
+    .breed-location .puppies-for-sale__puppy-list.two-item {
+      margin:0 auto;
+      max-width:30rem
+    }
+  }
+  .breed-location .puppies-for-sale__puppy-list.one-item {
+    display:inline-block;
+    margin:0 auto;
+    max-width:15rem
+  }
+  .breed-location .recommended-breeds__breed-list .breed-location__breed-link {
+    margin:0 auto;
+    max-width:56rem
+  }
+  .breed-location section:last-child {
+    padding-bottom:1em
+  }
+  .breed-location section:last-child .content-wrapper {
+    background-color:#f5ffef;
+    text-align:center
+  }
+  .breed-location section:last-child .content-wrapper h3 {
+    font-size:36px;
+    line-height:1
+  }
+  .breed-location .content-wrapper {
+    margin:0 auto;
+    max-width:1126px;
+    padding:0 1rem 1.5rem
+  }
+  .breed-location .content-wrapper .collections img {
+    margin-right:1rem;
+    max-width:80px
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .content-wrapper .collections img {
+      margin-bottom:1.5rem;
+      margin-right:0
+    }
+    .breed-location .content-wrapper .collections .arrow {
+      position:absolute;
+      right:0;
+      top:3.5rem
+    }
+  }
+  .breed-location #location__breadcrumbs .content-wrapper {
+    padding-bottom:0;
+    padding-top:0
+  }
+  .breed-location .fast-facts,
+  .breed-location .fast-facts__holder {
+    background-color:#fff;
+    width:100%
+  }
+  .breed-location .fast-facts {
+    border-radius:0;
+    height:auto;
+    margin:1rem auto
+  }
+  .breed-location .collections,
+  .breed-location .fast-facts {
+    max-width:548px
+  }
+  .breed-location .fast-facts__container {
+    height:62px
+  }
+  .breed-location .collections h4,
+  .breed-location .fast-facts h3 {
+    font-size:1.125rem;
+    line-height:2.1em;
+    margin-top:0;
+    text-align:left
+  }
+  .breed-location .collections {
+    border-top:1px solid #ceebbd;
+    margin:0 auto 2.5rem;
+    padding-top:2rem;
+    position:relative
+  }
+  .breed-location .collections ul {
+    display:flex;
+    flex-direction:column
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .collections ul {
+      align-items:flex-end;
+      flex-direction:row;
+      justify-content:space-between
+    }
+  }
+  .breed-location .collections li {
+    margin:1rem .5rem
+  }
+  .breed-location .collections li a {
+    align-items:center;
+    display:flex
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .collections li a {
+      flex-direction:column;
+      justify-content:center
+    }
+  }
+  .breed-location .collections .arrow--forward {
+    display:block;
+    margin-top:1.5rem;
+    text-align:left
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .collections .arrow--forward {
+      position:absolute;
+      right:0;
+      top:1rem
+    }
+  }
+  .breed-location .available-puppies,
+  .breed-location .card-slider {
+    width:100%
+  }
+  .breed-location .available-puppies {
+    padding:0
+  }
+  .breed-location .available-puppies h1 {
+    font-size:1.25rem;
+    line-height:2rem;
+    margin:0
+  }
+  @media screen and (min-width:768px) {
+    .breed-location .available-puppies h1 {
+      font-size:2.25rem;
+      line-height:2.75rem;
+      margin:1rem
+    }
+  }
+  .breed-location .available-puppies~p {
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.75em;
+    margin:1.5rem 0
+  }
+  .breed-location .available-puppies~.button {
+    line-height:2.25em
+  }
+  .breed-location .card__details p {
+    margin:0
+  }
+  .breed-location .reviews-component {
+    margin-top:2.5rem
+  }
+  .breed-location #location__state-faq a {
+    font-weight:500;
+    text-decoration:underline
+  }
+  @media only screen and (max-width:480px) {
+    .breed-location .js-readmore {
+      margin-bottom:15px
+    }
+  }
+  .block-hero {
+    background-color:#fff;
+    border-radius:.5rem;
+    box-shadow:0 0 12px rgba(0,0,0,.15);
+    color:#333;
+    display:flex;
+    flex-direction:column;
+    margin:0 auto 1rem;
+    max-width:800px;
+    padding:1rem
+  }
+  @media screen and (min-width:768px) {
+    .block-hero {
+      align-items:stretch;
+      flex-direction:row;
+      margin-bottom:2rem
+    }
+  }
+  .block-hero img {
+    border-radius:4px;
+    -o-object-fit:cover;
+    object-fit:cover;
+    -o-object-position:center;
+    object-position:center;
+    width:100%
+  }
+  @media screen and (min-width:768px) {
+    .block-hero img {
+      margin-right:1.5rem;
+      max-width:50%;
+      width:auto
+    }
+  }
+  .block-hero h2 {
+    font-size:24px;
+    line-height:2.5rem;
+    margin:0
+  }
+  .block-hero p {
+    font-family:Inter,sans-serif;
+    font-size:18px;
+    font-weight:400;
+    line-height:2rem;
+    margin:1rem 0
+  }
+  .block-hero .template {
+    width:100%
+  }
+  @media screen and (min-width:1440px) {
+    .block-hero .template {
+      width:50%
+    }
+  }
+  .block-hero .button {
+    margin:1rem 0
+  }
+  .block-hero .template-list {
+    width:100%
+  }
+  .block-hero .template-list li {
+    padding-bottom:.5em
+  }
+  .block-hero .template-list li.green-check:before {
+    margin-top:.1em
+  }
+  .breed-states {
+    align-items:center;
+    background-color:#eaf9ff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:3rem 1rem;
+    width:100%
+  }
+  .breed-states img {
+    margin:1rem auto;
+    max-width:264px;
+    min-width:184px
+  }
+  .breed-states p {
+    font-size:1.25rem;
+    line-height:1.6em;
+    margin:0 0 1rem
+  }
+  .breed-states__title {
+    font-family:Nunito,sans-serif;
+    font-size:2.25rem;
+    font-weight:700;
+    line-height:1.36em;
+    margin:0
+  }
+  .breed-states__items {
+    display:flex;
+    flex-direction:column
+  }
+  @media screen and (min-width:768px) {
+    .breed-states__items {
+      flex-direction:row
+    }
+  }
+  .breed-states__items ul {
+    margin:0;
+    padding:0;
+    text-align:center
+  }
+  .breed-states__items ul li {
+    display:block;
+    list-style:none
+  }
+  .breed-states__items ul li a {
+    color:#000;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.6em
+  }
+  .breed-states__items ul li a:hover {
+    text-decoration:underline
+  }
+  .breed-states__items li.disabled {
+    opacity:.5;
+    pointer-events:none
+  }
+  .breed-states .collapsible-panel__container {
+    border:1px solid #71d0ff;
+    border-radius:4px;
+    margin:1rem;
+    min-width:260px;
+    padding:0 1rem
+  }
+  @media screen and (min-width:768px) and (max-width:1023px) {
+    .breed-states .collapsible-panel__container {
+      margin:.5rem;
+      padding:0 .5rem
+    }
+  }
+  @media screen and (min-width:768px) {
+    .breed-states .collapsible-panel__container {
+      min-width:0
+    }
+  }
+  @media screen and (min-width:1440px) {
+    .breed-states .collapsible-panel__container {
+      min-width:240px
+    }
+  }
+  .breed-states .collapsible-panel__handle {
+    text-align:center
+  }
+  .breed-states .collapsible-panel__handle span,
+  .breed-states .collapsible-panel__handle:before {
+    border-color:#000!important;
+    color:#000!important;
+    font-size:1rem;
+    text-transform:uppercase
+  }
+  .breed-states .collapsible-panel__handle span {
+    margin-right:.5rem
+  }
+  @media screen and (min-width:768px) {
+    .breed-states .collapsible-panel__handle,
+    .breed-states .collapsible-panel__handle:before {
+      pointer-events:none
+    }
+    .breed-states .collapsible-panel__handle:before {
+      display:none
+    }
+  }
+  .breed-states__items.breed-states__items--cities ul {
+    border:1px solid #71d0ff;
+    border-radius:4px;
+    display:grid;
+    gap:1rem;
+    grid-template-columns:1fr;
+    padding:2rem
+  }
+  @media screen and (min-width:768px) {
+    .breed-states__items.breed-states__items--cities ul {
+      grid-template-columns:repeat(3,1fr)
+    }
+  }
+  @media screen and (min-width:1440px) {
+    .breed-states__items.breed-states__items--cities ul {
+      grid-template-columns:repeat(5,1fr)
+    }
+  }
+  .breed-states__items.breed-states__items--cities ul li {
+    min-width:200px
+  }
+  .puppies-for-sale {
+    overflow-anchor:none;
+    padding:.5em .5em 3em
+  }
+  @supports (display:grid) {
+    .puppies-for-sale__puppy-list {
+      grid-gap:1rem;
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(min(12rem,100%),1fr))
+    }
+    @media screen and (max-width:1023px) {
+      .puppies-for-sale__puppy-list {
+        grid-template-columns:repeat(auto-fill,minmax(min(16rem,100%),1fr))
+      }
+    }
+    @media screen and (max-width:767px) {
+      .puppies-for-sale__puppy-list {
+        grid-template-columns:repeat(auto-fill,minmax(min(12rem,100%),1fr))
+      }
+    }
+    @media screen and (max-width:599px) {
+      .puppies-for-sale__puppy-list {
+        grid-template-columns:repeat(auto-fill,minmax(min(12rem,100%),1fr))
+      }
+    }
+    @media screen and (max-width:479px) {
+      .puppies-for-sale__puppy-list {
+        grid-template-columns:repeat(auto-fill,minmax(min(10rem,100%),1fr))
+      }
+    }
+  }
+  .puppies-for-sale__puppy-list.no-grid {
+    display:block!important
+  }
+  @media screen and (min-width:1024px) {
+    .puppies-for-sale__puppy-list.no-grid {
+      background-color:#fff;
+      border-radius:8px;
+      box-shadow:2px 2px 4px 4px rgba(0,0,0,.05);
+      padding:2em 0
+    }
+  }
+  .puppies-for-sale__related>div {
+    background-color:#fff;
+    border-radius:8px;
+    box-shadow:2px 2px 4px 4px rgba(0,0,0,.05);
+    margin-bottom:1.5em;
+    margin-left:1rem;
+    margin-right:1rem;
+    padding:1rem
+  }
+  @media screen and (min-width:1024px) {
+    .puppies-for-sale__related>div {
+      margin:1rem 0
+    }
+  }
+  .puppies-for-sale__related-filters {
+    display:none
+  }
+  @media screen and (min-width:600px) {
+    .puppies-for-sale__related-body {
+      display:grid;
+      grid-template-columns:repeat(2,1fr)
+    }
+  }
+  @media screen and (min-width:1024px) {
+    .puppies-for-sale__related-body {
+      display:none
+    }
+    .puppies-for-sale__related-filters {
+      display:block;
+      margin-top:1em
+    }
+  }
+  .puppies-for-sale__related .recent-articles {
+    margin-top:0
+  }
+  .puppies-for-sale__full-width {
+    background-color:#fff
+  }
+  @media screen and (min-width:1024px) {
+    .puppies-for-sale {
+      margin:0 auto;
+      max-width:72rem;
+      overflow:hidden;
+      padding-top:1em
+    }
+    @supports (display:grid) {
+      .puppies-for-sale {
+        grid-gap:0 1rem;
+        display:grid;
+        grid-template-areas:"header header" "unique-value-prop bring-puppy-home" "filter-nav filter-nav" "sidebar results" "sidebar pagination";
+        grid-template-columns:250px auto
+      }
+      .puppies-for-sale__sidebar {
+        grid-area:sidebar;
+        height:-moz-max-content;
+        height:max-content
+      }
+      .puppies-for-sale__results {
+        grid-area:results
+      }
+      .puppies-for-sale__pagination {
+        grid-area:pagination
+      }
+    }
+    .puppies-for-sale .puppy-results.no-border {
+      grid-column:1/-1
+    }
+  }
+  @media screen and (min-width:1440px) {
+    .puppies-for-sale {
+      padding:0
+    }
+  }
+  .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card {
+    height:100%;
+    min-height:320px;
+    padding:0!important;
+    width:100%
+  }
+  .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card img,
+  .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card svg {
+    transform:scale(1.3)!important
+  }
+  .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card .card__title {
+    font-size:18px!important
+  }
+  .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card .card__subtitle {
+    font-size:20px!important
+  }
+  .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card .card--small {
+    gap:18px!important
+  }
+  @media screen and (max-width:430px) {
+    .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card {
+      min-height:430px
+    }
+    .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card .card__title {
+      font-size:20px!important
+    }
+    .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card .card__subtitle {
+      font-size:22px!important
+    }
+    .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card .card--small {
+      gap:20px!important
+    }
+  }
+  @media screen and (max-width:390px) {
+    .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card {
+      padding:0 16px!important
+    }
+  }
+  @media screen and (max-width:380px) {
+    .puppies-for-sale.large-grid #container-puppies-for-sale-trust-card {
+      padding:0 8px!important
+    }
+  }
+  .puppies-for-sale.large-grid .puppies-for-sale__puppy-list {
+    grid-gap:16px!important
+  }
+  @media screen and (min-width:480px) and (max-width:1439px) {
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list {
+      grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr))!important
+    }
+  }
+  @media screen and (max-width:599px) {
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list {
+      grid-template-columns:repeat(auto-fill,minmax(min(220px,100%),1fr))!important
+    }
+  }
+  @media screen and (max-width:479px) {
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list {
+      grid-template-columns:repeat(auto-fill,minmax(min(205px,100%),1fr))!important
+    }
+  }
+  @media screen and (max-width:430px) {
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card {
+      min-width:370px!important
+    }
+  }
+  .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card__details_container {
+    padding:8px 0 8px 8px
+  }
+  .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card__details_container .card__details p.name {
+    font-size:24px!important
+  }
+  .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card__details_container .card__details p.age,
+  .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card__details_container .card__details p.breed {
+    font-size:14px
+  }
+  .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card__image {
+    min-height:16rem
+  }
+  @media screen and (max-width:390px) {
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list {
+      grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr))!important;
+      place-items:center
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card {
+      gap:8px;
+      min-width:340px!important
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card .card__display {
+      max-height:326px;
+      max-width:324px
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card .card__display img {
+      height:326px
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card .card__display .card__banner {
+      bottom:3px
+    }
+  }
+  @media screen and (min-width:1440px) {
+    .puppies-for-sale.large-grid {
+      max-width:74.5rem!important
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(296px,1fr))!important
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card {
+      gap:8px;
+      max-width:296px!important
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card .card__display {
+      max-height:280px;
+      max-width:280px
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card .card__display img {
+      height:280px
+    }
+    .puppies-for-sale.large-grid .puppies-for-sale__puppy-list .card .card__display .card__banner {
+      bottom:3px
+    }
+  }
+  .puppy-list-small-gap {
+    grid-gap:.2rem
+  }

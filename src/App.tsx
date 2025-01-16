@@ -41,6 +41,7 @@ import PuppyTravel from './pages/PuppyTravel'
 import HealthCheck from './pages/HealthCheck'
 import GivesBack from './pages/GivesBack'
 import Collection from './pages/Collection'
+import BreedState from './pages/BreedState';
 
 
 function App() {
@@ -107,6 +108,8 @@ function App() {
                 return <Route path={`/breed/collections/${item.slug}`} element={<CharacteristicPuppyForSell charater={item} />} />
               })
             }
+            <Route path="/find-puppies/:state" element={<BreedState />} />
+
             <Route path="/collections" element={<Collection />} />
             <Route path="/log-in" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />

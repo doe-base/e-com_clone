@@ -156,7 +156,7 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
                                                 </p>
 
                                                 <p className="breed">{item.breed}</p>
-                                                <p className="age">{item.age} weeks<span className="hidden">old</span></p>
+                                                <p className="age">{item.sex} . {item.age} weeks<span className="hidden">old</span></p>
                                             </div>
                                             <div className="card__actions" onClick={(e) =>handleLike(e, item.puppy_id)}>
                                                 <button className={`favorite-puppy-circle js-favorite-puppy ${likePuppyListID.includes(item.puppy_id) ? 'favorited' : ''}`} data-puppy={item.puppy_id}></button>

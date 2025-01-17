@@ -1179,3 +1179,25 @@ element {
   align-items: center;
   justify-content: center;
 }
+
+/* New for val banner */
+
+.mt-\[50px\] {
+  margin-top: 50px !important;
+}
+
+@media not all and (min-width:1280px) {
+  .max-xl\:hidden {
+    display:none!important
+  }
+}
+@media not all and (min-width:640px) {
+  .max-sm\:hidden {
+    display:none!important
+  }
+}
+@media (min-width:640px) {
+  .sm\:hidden {
+    display:none!important
+  }
+}

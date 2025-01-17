@@ -168,7 +168,7 @@ const FilterResult: React.FC<Props> = ({paginationPage, totalPages, puppySingleP
 
                                 {index === randomIndex &&
                                 <div style={{padding: "0 4px 4px 0"}} id="container-puppies-for-sale-trust-card">
-                                    <div className="card card--small pd-1  bg-cover bg-no-repeat bg-center bg-[#FFFFFF]" style={{backgroundImage: "url(/img/season.webp)"}}>
+                                    <div className="card card--small pd-1  bg-cover bg-no-repeat bg-center bg-[#FFFFFF]" style={{backgroundImage: "url(/img/val-season.webp)"}}>
                                         <div className="w-full h-full flex-col gap-4 flex items-center justify-center "></div>
                                     </div>
                                 </div>

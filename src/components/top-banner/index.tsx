@@ -22,7 +22,7 @@ function TopBanner() {
         </a>
       ) : (
         <a href={pages.PUPPIES_FOR_SELL} className="phone">
-          Puppy Love - Reserve Now For The Holidays!
+          Adopt Now For Valentine's Day Delivery 
         </a>
       )}
     </div>

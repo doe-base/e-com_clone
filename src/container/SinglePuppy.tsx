@@ -471,9 +471,10 @@ const handleLike =(puppyId: string)=>{
             </article>
           </section>
           <section className="puppy-profile__sub-details ">
-            <p>
+            {/*Birth date does not match age*/}
+            {/*<p>
               <span>Birthday</span>{puppy_info_details["Birthday"]}
-            </p>
+            </p>*/}
             <p>
               <span>Available</span>I'm ready today!
             </p>

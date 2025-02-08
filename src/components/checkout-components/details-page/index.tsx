@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext, useRef } from 'react';
 import { FirebaseContext } from '../../../context/firebase';
 import { Oval } from 'react-loader-spinner';
 import ProcessTrackerSmall from '../../../components/checkout-components/process-tracker/ProcessTrackerSmall';
-
+import axios from 'axios';
 
 function isValidEmail(email:string) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -70,6 +70,7 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo, shippingPrice }) => {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
+
     const onSubmit =()=>{
         setEmailEmpty(emailInput === '' || !isValidEmail(emailInput))
         setFirstNameEmpty(firstNameInput === '')
@@ -84,33 +85,41 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo, shippingPrice }) => {
         if(emailEmpty || firstNameEmpty || lastEmpty || phoneEmpty || homeAddresEmpty || cityEmpty || zipEmpty || stateEmpty || areYou18 != 'yes'){
             return
         }else{
-            localStorage.setItem('userFormData', JSON.stringify({phone_number: phoneNumber, home_address: homeAddress, apartment_unit: apartmentUnit, city: city, zip_code: zipCode, state: state}))
-            const paymentID = generateRandomString()
-            if(!firebase){return}
-            setLoading(true)
-            firebase.firestore().collection('puppy_orders').add({
-                puppyId: puppyInfo.puppy_id,
-                paymentId: paymentID,
-                emailInput: emailInput,
-                firstNameInput: firstNameInput,
-                lastNameInput: lastNameInput,
-                phoneNumber: phoneNumber,
-                shouldCallCheck: shouldCallCheck,
-                homeAddress: homeAddress,
-                apartmentUnit: apartmentUnit,
-                city: city,
-                zipCode: zipCode,
-                state: state,
-                areYou18: areYou18
-            })
-            .then(() => {
-                setLoading(false)
-                window.location.replace(`/shop/checkout/travel/${paymentID}/${puppyInfo.puppy_id}`);
-            })
-            .catch((error: any) =>{
-                setLoading(false)
-                setError(error.message)
-            })
+
+            console.log(puppyInfo.puppy_id, emailInput, firstNameInput, lastNameInput, phoneNumber, shouldCallCheck, homeAddress, apartmentUnit, city, zipCode, state, areYou18)
+
+            if(puppyInfo.puppy_id && emailInput && firstNameInput && lastNameInput && phoneNumber && homeAddress && apartmentUnit && city && zipCode && state){
+                localStorage.setItem('userFormData', JSON.stringify({phone_number: phoneNumber, home_address: homeAddress, apartment_unit: apartmentUnit, city: city, zip_code: zipCode, state: state}))
+                const paymentID = generateRandomString()
+                if(!firebase){return}
+                setLoading(true)
+                firebase.firestore().collection('puppy_orders').add({
+                    puppyId: puppyInfo.puppy_id,
+                    paymentId: paymentID,
+                    emailInput: emailInput,
+                    firstNameInput: firstNameInput,
+                    lastNameInput: lastNameInput,
+                    phoneNumber: phoneNumber,
+                    shouldCallCheck: shouldCallCheck,
+                    homeAddress: homeAddress,
+                    apartmentUnit: apartmentUnit,
+                    city: city,
+                    zipCode: zipCode,
+                    state: state,
+                    areYou18: areYou18,
+                    date: new Date().toISOString().split('T')[0]
+                })
+                .then((docRef) => {
+                    setLoading(false)
+                    window.location.replace(`/shop/checkout/travel/${paymentID}/${puppyInfo.puppy_id}`);
+                })
+                .catch((error: any) =>{
+                    setLoading(false)
+                    setError(error.message)
+                })
+            }else{
+                return
+            }
         }
     }
 

@@ -17,6 +17,7 @@ import CheckoutDetail from './pages/checkout/Details';
 import CheckoutTravel from './pages/checkout/Travel';
 import CheckoutEssentials from './pages/checkout/Essentials';
 import Checkout from './pages/checkout/Checkout';
+import ProceedWithAgent from './pages/checkout/ProceedWithAgent'
 import BreedPuppiesForSell from './pages/BreedPuppiesForSell';
 import Breed from './pages/Breeds';
 import BreedOverview from './pages/BreedsOverview';
@@ -44,6 +45,7 @@ import Collection from './pages/Collection'
 import BreedState from './pages/BreedState';
 
 
+
 function App() {
   const {user} = useAuthListener();
   const [isVerified, setIsVerified] = useState(!user ? '' :  user.emailVerified)
@@ -53,7 +55,7 @@ function App() {
   const [isPuppiesForSale, setIsPuppiesForSale] = useState(false);
 
   const pathSegments = location.split('/').filter(segment => segment);
-  const hideNavPaths = ["/shop/checkout"];
+  const hideNavPaths = ["/shop/checkout", "/shop/review"];
 
   let theme = createTheme({
     breakpoints: {
@@ -134,7 +136,9 @@ function App() {
             <Route path="/shop/checkout/details/:puppyId" element={<CheckoutDetail />} />
             <Route path="/shop/checkout/travel/:paymentID/:puppyId" element={<CheckoutTravel />} />
             <Route path="/shop/checkout/essentials/:paymentID/:puppyId" element={<CheckoutEssentials />} />
-            <Route path="/shop/checkout/:paymentID/:puppyId/:paymentOption" element={<Checkout />} />
+            {/*<Route path="/shop/checkout/:paymentID/:puppyId/:paymentOption" element={<Checkout />} />*/}
+            <Route path="/shop/review/:paymentID/:puppyId" element={<ProceedWithAgent />} />
+            
 
             {/* Legals */}
             <Route path="/privacy" element={<Privacy />} />

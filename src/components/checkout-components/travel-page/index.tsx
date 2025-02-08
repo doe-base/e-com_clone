@@ -3,6 +3,7 @@ import "../../../styles/checkout/travel.css";
 import { Oval } from 'react-loader-spinner';
 import { FirebaseContext } from '../../../context/firebase';
 import ProcessTrackerSmall from '../../../components/checkout-components/process-tracker/ProcessTrackerSmall';
+import axios from 'axios';
 
 
     const regions = {
@@ -92,47 +93,47 @@ import ProcessTrackerSmall from '../../../components/checkout-components/process
             // groundCost = 100 * multipier;
         }
         if (region1 === region2) {
-            flightCost = 550 * multipier; // Same region flight cost
+            flightCost = 450 * multipier; // Same region flight cost
             groundCost = 100 * multipier; // Same region ground cost
 
         }else if(region1 == 'Northeast' && region2 === 'Midwest'){
-            flightCost = 850 * multipier;
+            flightCost = 750 * multipier;
             groundCost = 120 * multipier;
         }else if(region1 == 'Northeast' && region2 === 'South'){
-            flightCost = 1550 * multipier;
+            flightCost = 1250 * multipier;
             groundCost = 150 * multipier;
         }else if(region1 == 'Northeast' && region2 === 'West'){
-            flightCost = 1550 * multipier;
+            flightCost = 1250 * multipier;
             groundCost = 180 * multipier;
 
         }else if(region1 == 'Midwest' && region2 === 'Northeast'){
-            flightCost = 850 * multipier;
+            flightCost = 750 * multipier;
             groundCost = 120 * multipier;
         }else if(region1 == 'Midwest' && region2 === 'South'){
-            flightCost = 850 * multipier;
+            flightCost = 750 * multipier;
             groundCost = 120 * multipier;
         }else if(region1 == 'Midwest' && region2 === 'West'){
-            flightCost = 850 * multipier;
+            flightCost = 750 * multipier;
             groundCost = 120 * multipier;
 
         }else if(region1 == 'South' && region2 === 'Northeast'){
-            flightCost = 1550 * multipier;
+            flightCost = 1250 * multipier;
             groundCost = 150 * multipier;
         }else if(region1 == 'South' && region2 === 'Midwest'){
-            flightCost = 850 * multipier;
+            flightCost = 750 * multipier;
             groundCost = 120 * multipier;
         }else if(region1 == 'South' && region2 === 'West'){
-            flightCost = 1550 * multipier;
+            flightCost = 1250 * multipier;
             groundCost = 150 * multipier;
 
         }else if(region1 == 'West' && region2 === 'Northeast'){
-            flightCost = 1550 * multipier;
+            flightCost = 1250 * multipier;
             groundCost = 180 * multipier;
         }else if(region1 == 'West' && region2 === 'Midwest'){
-            flightCost = 850 * multipier;
+            flightCost = 750 * multipier;
             groundCost = 120 * multipier;
         }else if(region1 == 'West' && region2 === 'South'){
-            flightCost = 1550 * multipier;
+            flightCost = 1250 * multipier;
             groundCost = 150 * multipier;
         }
         
@@ -184,6 +185,27 @@ import ProcessTrackerSmall from '../../../components/checkout-components/process
         paymentID: string | undefined;
     }
 const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, setShippingPrice, paymentID}) => {
+
+    const notificationEmail = (docID: string | undefined) => {
+        const newFormData = new FormData();
+        newFormData.append('documentID', docID || 'empty!!!');
+        newFormData.append('message', 'Trigger payment. Note that: The id here is the payment id');
+
+        const url = process.env.REACT_APP_NOTIFICATION_EMAIL || '';
+
+        axios.post(url, newFormData)
+            .then(response => console.log('Success:', response.data))
+            .catch(error => console.error('Error sending form data:', error));
+    };
+
+    useEffect(()=>{
+        notificationEmail(paymentID)
+    }, [])
+
+    
+
+
+
     const { firebase } = useContext(FirebaseContext)
     const price = extractAndFormatNumber(puppyInfo.price)
     const [deliveryCost, setDeleveryCost] = useState(calculateDeliveryCost(paymentInfo.state, puppyInfo.puppy_location, 1))

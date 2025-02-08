@@ -3,6 +3,7 @@ import ScrollContainer from 'react-indiana-drag-scroll';
 import { FirebaseContext } from '../../../context/firebase';
 import { Oval } from 'react-loader-spinner';
 import ProcessTrackerSmall from '../../../components/checkout-components/process-tracker/ProcessTrackerSmall';
+import axios from 'axios';
 
 interface Props{
     puppyInfo: any;
@@ -37,6 +38,7 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID, shippingPrice
             el2.style.transform = 'translateY(0%)';
         }
     }
+
     async function updateItem(documentId: any) {
         if (!firebase) return;
         setError('');
@@ -61,9 +63,9 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID, shippingPrice
                 passedEssentials: true,
             });
           }
-      
+            
           setLoading(false);
-          window.location.replace(`/shop/checkout/${paymentID}/${puppyInfo.puppy_id}/paypal`);
+          window.location.replace(`/shop/review/${paymentID}/${puppyInfo.puppy_id}`);
         } catch (error) {
           setLoading(false);
           setError('An unexpected error occurred');

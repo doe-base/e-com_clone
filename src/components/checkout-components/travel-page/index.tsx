@@ -138,7 +138,7 @@ import axios from 'axios';
         }
         
         if(flightCost){
-            premiumCost = flightCost - 550
+            premiumCost = groundCost * 2.2
         }
         return {flightCost,groundCost, premiumCost};
     };

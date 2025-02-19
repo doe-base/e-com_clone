@@ -137,7 +137,7 @@ import axios from 'axios';
             groundCost = 150 * multipier;
         }
         
-        if(flightCost){
+        if(groundCost){
             premiumCost = groundCost * 2.2
         }
         return {flightCost,groundCost, premiumCost};

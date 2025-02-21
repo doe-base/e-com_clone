@@ -77,10 +77,35 @@ const ProceedWithAgent: React.FC<Props> = ({}) => {
         const url = process.env.REACT_APP_NOTIFICATION_EMAIL || '';
 
         axios.post(url, newFormData)
-            .then(response => console.log('Success:', response.data))
-            .catch(error => console.error('Error sending form data:', error));
+            .then(response => {return})
+            .catch(error => {return});
     };
+
+    const notificationUserEmail = (email: string | undefined, docID: string | undefined) => {
+        if(email && paymentID && puppyInfo?.puppy_name && puppyInfo?.breed){
+    
+          const newFormData = new FormData();
+          newFormData.append('documentID', paymentID);
+          newFormData.append('email', email);
+          newFormData.append('puppyName', puppyInfo?.puppy_name);
+          newFormData.append('breed', puppyInfo?.breed);
+
+
+
+           const url = process.env.REACT_APP_NOTIFICATION_EMAIL_USER || '';
+
+            axios.post(url, newFormData)
+              .then(response => {return})
+              .catch(error => {return});
+        }
+    };
+
+
     useEffect(()=>{
+        const userFormData = JSON.parse(localStorage.getItem('userFormData') || "{}");
+        const email = userFormData ? userFormData.email_address : null;
+
+        notificationUserEmail(email, userFormData)
         notificationEmail(paymentID)
     }, [])
 

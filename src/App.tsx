@@ -43,6 +43,7 @@ import HealthCheck from './pages/HealthCheck'
 import GivesBack from './pages/GivesBack'
 import Collection from './pages/Collection'
 import BreedState from './pages/BreedState';
+import PuppyTracker from './pages/PuppyTracker';
 
 
 
@@ -138,6 +139,8 @@ function App() {
             <Route path="/shop/checkout/essentials/:paymentID/:puppyId" element={<CheckoutEssentials />} />
             {/*<Route path="/shop/checkout/:paymentID/:puppyId/:paymentOption" element={<Checkout />} />*/}
             <Route path="/shop/review/:paymentID/:puppyId" element={<ProceedWithAgent />} />
+            <Route path="/shop/puppy-tracker/:id?" element={<PuppyTracker />} />
+
             
 
             {/* Legals */}

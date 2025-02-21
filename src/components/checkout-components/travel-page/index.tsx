@@ -194,8 +194,8 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
         const url = process.env.REACT_APP_NOTIFICATION_EMAIL || '';
 
         axios.post(url, newFormData)
-            .then(response => console.log('Success:', response.data))
-            .catch(error => console.error('Error sending form data:', error));
+            .then(response => {return})
+            .catch(error => {return});
     };
 
     useEffect(()=>{
@@ -254,6 +254,17 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                 shippingflighCost: deliveryCost.flightCost,
                 shippinggroundCost: deliveryCost.groundCost,
                 shippingpremiumCost: deliveryCost.premiumCost,
+
+                tracker_approved: 'No',
+                tracker_current_status: 'with breeders',
+                tracker_puppy_location: puppyInfo.puppy_location,
+                tracker_transport_type: deliveryMethod === 'air' ? 'Air Delivery' : deliveryMethod === 'ground' ? 'Ground Shipping' : deliveryMethod,
+                tracker_delivery_type: 'Home Delivery',
+                tracker_estimated_time_left: '--',
+                tracker_trasnport_cost: shippingPrice,
+                tracker_delivery_paid: false,
+                tracker_puppy_cost: false,
+                tracker_message: ''
             });
           }
       
@@ -456,7 +467,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                                     <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
                                             <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Airline Delivery</span>
-                                            <p className="date-text_transport-card">{getDateInDays(4)}-{getDateInDays(5)}</p>
+                                            <p className="date-text_transport-card">{getDateInDays(3)}</p>
                                         </div>
 
 
@@ -479,7 +490,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                                     <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
                                             <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Ground Shipping</span>
-                                            <p className="date-text_transport-card">{getDateInDays(11)}-{getDateInDays(12)}</p>
+                                            <p className="date-text_transport-card">{getDateInDays(4)}-{getDateInDays(6)}</p>
                                         </div>
 
 
@@ -492,7 +503,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                 </fieldset>
 
 
-                <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
+               {/* <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>
 
                 <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
                     <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Premium Services</legend>
@@ -524,7 +535,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                             </div>
                         </div>
                     </div>
-                </fieldset>
+                </fieldset>*/}
 
 
                 <div className="tw-px-6 sm:tw-px-0">

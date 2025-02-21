@@ -193,7 +193,7 @@ const ProceedWithAgentContainer: React.FC<Props> = ({puppyInfo, paymentInfo, sub
                 <div style={{padding: '0 0.5rem'}}>
                     <p className="tw-font-inter tw-text-lg tw-text-gray-01" style={{marginBottom: '1rem'}}>We’ve received your adoption request and will review it shortly. Our team carefully evaluates your application to ensure our puppies find the best homes.</p>
 
-                    <p className="tw-font-inter tw-text-lg tw-text-gray-01" style={{marginBottom: '1rem'}}>You’ll receive an update via email once your application is approved. If approved, we’ll provide the next steps, including payment details.</p>
+                    <p className="tw-font-inter tw-text-lg tw-text-gray-01" style={{marginBottom: '1rem'}}>You’ll receive an update via email once your application is approved. You can always check your adoption status using this link: <br/> <a style={{color: 'blue'}} href={`/shop/puppy-tracker/${paymentID}`}>https://puppyspotadoption.shop/shop/puppy-tracker/{paymentID}</a>. </p>
 
                     <p className="tw-font-inter tw-text-lg tw-text-gray-01" style={{marginBottom: '1rem'}}>If you have any questions in the meantime, feel free to contact us.</p>
 

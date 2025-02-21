@@ -396,7 +396,7 @@ const EssentialsSection: React.FC<Props> = ({puppyInfo, paymentID, shippingPrice
                     onClick={()=>updateItem(paymentID)}>
                         <span className="m_80f1301b mantine-Button-inner">
                             <span className="tw-font-inter tw-font-bold tw-text-base tw-whitespace-normal tw-h-[52px] tw-overflow-visible tw-leading-normal m_811560b9 mantine-Button-label">
-                                Continue to payment
+                                Complete Application
 
                                 {
                                     loading

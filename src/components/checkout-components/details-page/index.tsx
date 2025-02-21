@@ -86,10 +86,10 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo, shippingPrice }) => {
             return
         }else{
 
-            console.log(puppyInfo.puppy_id, emailInput, firstNameInput, lastNameInput, phoneNumber, shouldCallCheck, homeAddress, apartmentUnit, city, zipCode, state, areYou18)
+            // console.log(puppyInfo.puppy_id, emailInput, firstNameInput, lastNameInput, phoneNumber, shouldCallCheck, homeAddress, apartmentUnit, city, zipCode, state, areYou18)
 
             if(puppyInfo.puppy_id && emailInput && firstNameInput && lastNameInput && phoneNumber && homeAddress && apartmentUnit && city && zipCode && state){
-                localStorage.setItem('userFormData', JSON.stringify({phone_number: phoneNumber, home_address: homeAddress, apartment_unit: apartmentUnit, city: city, zip_code: zipCode, state: state}))
+                localStorage.setItem('userFormData', JSON.stringify({phone_number: phoneNumber, email_address: emailInput, home_address: homeAddress, apartment_unit: apartmentUnit, city: city, zip_code: zipCode, state: state}))
                 const paymentID = generateRandomString()
                 if(!firebase){return}
                 setLoading(true)
@@ -107,7 +107,7 @@ const DetailsSection: React.FC<Props> = ({ puppyInfo, shippingPrice }) => {
                     zipCode: zipCode,
                     state: state,
                     areYou18: areYou18,
-                    date: new Date().toISOString().split('T')[0]
+                    date: new Date().toISOString().split('T')[0],
                 })
                 .then((docRef) => {
                     setLoading(false)

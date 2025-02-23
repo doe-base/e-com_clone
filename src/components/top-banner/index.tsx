@@ -21,8 +21,8 @@ function TopBanner() {
           Call our Puppy Concierges: 8AM-Midnight
         </a>
       ) : (
-        <a href={pages.PUPPIES_FOR_SELL} className="phone">
-          Adopt Now For Valentine's Day Delivery 
+        <a href={navbar.PHONE_WHATSAPP} className="phone">
+          Call our Puppy Concierges: 8AM-Midnight
         </a>
       )}
     </div>

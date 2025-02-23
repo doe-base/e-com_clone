@@ -211,13 +211,13 @@ const HomeContainer: React.FC<Props> = ({}) => {
         </div>
 
 {/* Banner */}
-    <div id="root-marketing-banner" className="flex justify-center items-center mt-[50px]">
+{/*    <div id="root-marketing-banner" className="flex justify-center items-center mt-[50px]">
         <picture>
             <source media="(min-width: 1280px)" srcSet="https://cdn.buttercms.com/uKFVI5WFQweHOpdv9Fsn" />
             <source media="(min-width: 640px)" srcSet="https://cdn.buttercms.com/Id60fDaTSwWR8ZVWCvrH" />
             <img src="https://cdn.buttercms.com/Id60fDaTSwWR8ZVWCvrH" alt="marketing mobile image" />
         </picture>
-    </div>
+    </div>*/}
 
 
 {/* Favorite Breeds */}

@@ -97,6 +97,7 @@ const CheckoutEssentials: React.FC<Props> = ({}) => {
       }
 
       if(paymentInfo.shippingpremiumSerivce === true) {totalCost += paymentInfo.shippingpremiumCost || 0}
+      if(paymentInfo.tracker_delivery_type === 'Home Delivery') {totalCost += 15 || 0}
 
       setShippingPrice(totalCost)
     }, [paymentInfo])

@@ -212,21 +212,38 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
     const changeStateLink = `/shop/checkout/details/${puppyInfo.puppy_id}`
     const [deliveryMethod, setDeliveryMethod] = useState('ground')
     const [premiumSerivce, setPremiumSerivce] = useState(false)
+    const [deliveryType, setDeliveryType] = useState('pickup')
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
-
+    const [theSameCity, setTheSameCity] = useState(puppyInfo.puppy_location === paymentInfo.state)
+ 
     useEffect(()=>{
         var totalCost = 0;
-        if(deliveryMethod === 'air'){
-            totalCost = deliveryCost.flightCost || 0;
-        }else if(deliveryMethod === 'ground'){
-            totalCost = deliveryCost.groundCost || 0;
+        var extra15 = 0
+
+        if(theSameCity == false){
+            if(deliveryMethod === 'air'){
+                totalCost = deliveryCost.flightCost || 0;
+            }else if(deliveryMethod === 'ground'){
+                totalCost = deliveryCost.groundCost || 0;
+            }
+
+            if(premiumSerivce === true) {totalCost += deliveryCost.premiumCost || 0}
+        }else{
+            setDeliveryMethod('')
         }
 
-        if(premiumSerivce === true) {totalCost += deliveryCost.premiumCost || 0}
 
-        setShippingPrice(totalCost)
-    }, [deliveryMethod, premiumSerivce])
+        if(deliveryType === 'home'){
+            extra15 = 15
+        }else{
+            extra15 = 0
+        }
+
+        setShippingPrice(totalCost + extra15)
+    }, [deliveryMethod, premiumSerivce, deliveryType])
+
+
     async function updateItem(documentId: any) {
         if (!firebase) return;
         setError('');
@@ -259,7 +276,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                 tracker_current_status: 'with breeders',
                 tracker_puppy_location: puppyInfo.puppy_location,
                 tracker_transport_type: deliveryMethod === 'air' ? 'Air Delivery' : deliveryMethod === 'ground' ? 'Ground Shipping' : deliveryMethod,
-                tracker_delivery_type: 'Home Delivery',
+                tracker_delivery_type: deliveryType === 'home' ? 'Home Delivery' : 'Pickup',
                 tracker_estimated_time_left: '--',
                 tracker_trasnport_cost: shippingPrice,
                 tracker_delivery_paid: false,
@@ -446,7 +463,79 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                     <h3 className="tw-text-green-01 tw-text-[22px] tw-font-nunito tw-font-extrabold">Deliver Near You</h3>
                     <p className="tw-font-inter tw-text-sm tw-text-gray-02">Pickup <span className="tw-capitalize">{puppyInfo.puppy_name}</span> from our USDA-licensed travel partner at a location near to your home. Your current state is <strong style={{color: '#219653'}}>{paymentInfo.state}</strong> (<a href={changeStateLink} style={{fontWeight: 'normal', textDecoration: 'underline'}}>change</a>) </p></div>
                 <div style={{"--divider-color":"var(--green-01)", "--divider-size":"var(--divider-size-lg)"} as React.CSSProperties } className="tw-rounded m_3eebeb36 mantine-Divider-root" data-size="lg" data-orientation="horizontal" role="separator"></div>
-                <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled"><legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Shipping method</legend>
+              
+
+                {
+                    
+                    !theSameCity
+                    ?
+                        <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled">
+
+                            <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Shipping Method (Choose how {puppyInfo.puppy_name} will be delivered to {paymentInfo.state}.)</legend>
+                            <div></div>
+
+                            <div className="m_46b77525 mantine-InputWrapper-root mantine-RadioGroup-root" data-path="age">
+                                <div role="radiogroup" aria-labelledby="mantine-7z98cluo3-label">
+                                    <div className="tw-flex tw-flex-col tw-gap-5">
+
+                                        <button 
+                                            style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } 
+                                            className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" 
+                                            data-with-border="true" 
+                                            type="button" role="radio" 
+                                            aria-checked="false" 
+                                            name="mantine-um6crajz4"
+                                            onClick={()=> setDeliveryMethod('ground')}
+                                            data-checked={deliveryMethod === 'ground' ? 'true' : ''}
+                                        >
+                                            <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
+                                            </div>
+                                            <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
+                                                <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
+                                                    <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Ground Shipping</span>
+                                                    <p className="date-text_transport-card">{getDateInDays(4)}-{getDateInDays(6)}</p>
+                                                </div>
+
+
+                                                <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.groundCost || 0)}.00</span>
+                                            </div>
+                                        </button>
+
+
+                                        <button 
+                                            style={{"--card-radius":"calc(0.75rem * var(--mantine-scale))", 'width': '100%'} as React.CSSProperties } 
+                                            className="mantine-focus-auto tw-min-h-[80px] tw-h-5 tw-min-w-[80px] tw-w-5 data-[checked=true]:tw-bg-green-04 data-[checked=true]:tw-border-green-01 data-[checked=true]:tw-border-2 tw-flex tw-justify-center tw-items-center m_9dc8ae12 mantine-RadioCard-card m_87cf2631 mantine-UnstyledButton-root" 
+                                            data-with-border="true" 
+                                            type="button" 
+                                            role="radio" 
+                                            aria-checked="false" 
+                                            name="mantine-um6crajz4" 
+                                            onClick={()=> setDeliveryMethod('air')}
+                                            data-checked={deliveryMethod === 'air' ? 'true' : ''}
+                                        >
+                                            <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
+                                            </div>
+                                            <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
+                                                <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
+                                                    <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Airline Delivery</span>
+                                                    <p className="date-text_transport-card">{getDateInDays(3)}</p>
+                                                </div>
+
+
+                                                <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.flightCost || 0)}.00</span>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    :
+                    null
+                }
+
+                <fieldset className="m_eda993d3 tw-px-6 sm:tw-px-0 tw-flex tw-flex-col tw-gap-5 m_e9408a47 mantine-Fieldset-root" data-variant="unstyled" style={{marginTop: '2rem'}}>
+
+                    <legend className="m_74ca27fe tw-font-nunito tw-text-lg tw-font-extrabold tw-text-gray-01 tw-mb-2 m_90794832 mantine-Fieldset-legend">Delivery Method (How would you like to receive {puppyInfo.puppy_name}?)</legend>
                     <div></div>
                     <div className="m_46b77525 mantine-InputWrapper-root mantine-RadioGroup-root" data-path="age">
                         <div role="radiogroup" aria-labelledby="mantine-7z98cluo3-label">
@@ -459,19 +548,19 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                                     role="radio" 
                                     aria-checked="false" 
                                     name="mantine-um6crajz4" 
-                                    onClick={()=> setDeliveryMethod('air')}
-                                    data-checked={deliveryMethod === 'air' ? 'true' : ''}
+                                    onClick={()=> setDeliveryType('pickup')}
+                                    data-checked={deliveryType === 'pickup' ? 'true' : ''}
                                 >
                                     <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
                                     </div>
                                     <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
-                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Airline Delivery</span>
-                                            <p className="date-text_transport-card">{getDateInDays(3)}</p>
+                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Pickup</span>
+                                            <p className="date-text_transport-card">Pickup {puppyInfo.puppy_name} from a location near your home.</p>
                                         </div>
 
 
-                                        <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.flightCost || 0)}.00</span>
+                                        <span translate="no" className="price-text_transport-card">Free</span>
                                     </div>
                                 </button>
 
@@ -482,25 +571,30 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                                     type="button" role="radio" 
                                     aria-checked="false" 
                                     name="mantine-um6crajz4"
-                                    onClick={()=> setDeliveryMethod('ground')}
-                                    data-checked={deliveryMethod === 'ground' ? 'true' : ''}
+                                    onClick={()=> setDeliveryType('home')}
+                                    data-checked={deliveryType === 'home' ? 'true' : ''}
                                 >
                                     <div style={{"--radio-color":"var(--mantine-color-blue-filled)"} as React.CSSProperties} className="tw-hidden m_717d7ff6 mantine-RadioIndicator-indicator"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 5 5" aria-hidden="true" className="m_3e4da632 mantine-RadioIndicator-icon"><circle cx="2.5" cy="2.5" r="2.5" fill="currentColor"></circle></svg>
                                     </div>
                                     <div className='tw-flex' style={{width: '100%', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 1rem'}}>
                                         <div className='tw-flex tw-flex-col' style={{textAlign: 'left'}}>
-                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Ground Shipping</span>
-                                            <p className="date-text_transport-card">{getDateInDays(4)}-{getDateInDays(6)}</p>
+                                            <span className="tw-font-nunito tw-text-lg tw-font-extrabold">Home Delivery</span>
+                                            <p className="date-text_transport-card">{puppyInfo.puppy_name} will be delivered to your doorstep.</p>
                                         </div>
 
 
-                                        <span translate="no" className="price-text_transport-card">${formatNumberWithCommas(deliveryCost.groundCost || 0)}.00</span>
+                                        <span translate="no" className="price-text_transport-card">$15.00</span>
                                     </div>
                                 </button>
                             </div>
                         </div>
                     </div>
                 </fieldset>
+
+                
+
+
+
 
 
                {/* <div className="m_3eebeb36 mantine-Divider-root" data-orientation="horizontal" role="separator"></div>

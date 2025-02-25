@@ -278,7 +278,7 @@ const TravelSection: React.FC<Props> = ({puppyInfo, paymentInfo, shippingPrice, 
                 tracker_transport_type: deliveryMethod === 'air' ? 'Air Delivery' : deliveryMethod === 'ground' ? 'Ground Shipping' : deliveryMethod,
                 tracker_delivery_type: deliveryType === 'home' ? 'Home Delivery' : 'Pickup',
                 tracker_estimated_time_left: '--',
-                tracker_trasnport_cost: shippingPrice,
+                tracker_trasnport_cost: `$${shippingPrice}`,
                 tracker_delivery_paid: false,
                 tracker_puppy_cost: false,
                 tracker_message: ''

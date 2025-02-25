@@ -81127,5 +81127,45 @@
         "size": 1,
         "price": "$670",
         "puppy_location": "West Virginia"
+    },
+
+    {
+        "name": "Bao",
+        "breed": "Chow Chow",
+        "age": "6",
+        "image": "https://photos.puppyspot.com/3/listing/777999/photo/503110999_medium.jpg",
+        "video_icon": "https://www.puppyspot.com/assets/img/video-icon.svg",
+        "banner_text": "N/A",
+        "link": "/puppies-for-sale/breed/chow-chow/puppy/777999",
+        "puppy_id": "777999",
+        "sex": "Male",
+        "breed_info": {
+            "trusted_breed_description": "Trusted Breeder. This breeder has been verified by PuppySpot for 8 years.",
+            "general_breed_info": [
+                {
+                    "Temperament": "Loyal, Independent, Protective"
+                },
+                {
+                    "Energy": "Moderate"
+                },
+                {
+                    "Breed Group": "Non-Sporting"
+                }
+            ]
+        },
+        "puppy_info_details": {
+            "Birthday": "October 8, 2024",
+            "Available": "December 3, 2024",
+            "Mom's Weight": "45 - 50 lbs",
+            "Dad's Weight": "50 - 55 lbs",
+            "Color": "Red",
+            "Registry": "AKC"
+        },
+        "characterID": 9,
+        "slug": "chow-chow",
+        "size": 3,
+        "price": "$689",
+        "puppy_location": "Texas"
     }
+
 ]

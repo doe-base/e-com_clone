@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import HomeContainer from '../container/Home';
 import Footer from '../components/footer';
+
 
 interface Props{
 }

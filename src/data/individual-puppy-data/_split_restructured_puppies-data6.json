@@ -41534,5 +41534,95 @@
         "puppy_location": "Utah",
         "slug": "shih-tzu",
         "age": "7"
+    },
+
+
+
+
+
+
+
+     {
+        "link": "https://www.puppyspot.com/puppies-for-sale/breed/chow-chow/puppy/777999",
+        "puppy_id": "777999",
+        "breed": "Chow Chow",
+        "puppy_name": "Bao",
+        "people_intrested": "N/A",
+        "sex_and_age": "Male\n                        \u2022\n                        6 weeks",
+        "price": "$689",
+        "about": "Hello! My name is Bao, and I can't wait to find my forever home! I'm a loyal and protective companion, ready to bring joy to your life. Whether it's playtime or cuddling, I'm up for it all. I come up to date on vaccinations and vet checks, ensuring I'm healthy and happy. Take me home today for a lifetime of love!",
+        "vaccinations_info": "Bao will be current on vaccinations & vet exams before going home.",
+        "puppy_info_details": {
+            "Birthday": "October 8, 2024",
+            "Available": "December 3, 2024",
+            "Mom's Weight": "45 - 50 lbs",
+            "Dad's Weight": "50 - 55 lbs",
+            "Color": "Red",
+            "Registry": "AKC"
+        },
+        "siblings": [
+            {
+                "name": "Luna",
+                "gender": "Female",
+                "link": "/puppies-for-sale/breed/chow-chow/puppy/778000",
+                "image": "https://photos.puppyspot.com/3/listing/778000/photo/503111000.jpg",
+                "found_home": "N/A"
+            },
+            {
+                "name": "Max",
+                "gender": "Male",
+                "link": "/puppies-for-sale/breed/chow-chow/puppy/778001",
+                "image": "https://photos.puppyspot.com/3/listing/778001/photo/503111001.jpg",
+                "found_home": "N/A"
+            }
+        ],
+        "breed_info": {
+            "trusted_breed_description": "Trusted Breeder. This breeder has been verified by PuppySpot for 8 years.",
+            "general_breed_info": {
+                "Temperament": "Loyal, Independent, Protective",
+                "Energy": "Moderate",
+                "Breed Group": "Non-Sporting"
+            }
+        },
+        "gallery_content": [
+            {
+                "label_img_src": "https://photos.puppyspot.com/3/listing/777999/photo/503110999_small.jpg",
+                "gallery_type": "image",
+                "urls": {
+                    "220w": "https://photos.puppyspot.com/3/listing/777999/photo/503110999_small.jpg",
+                    "300w": "https://photos.puppyspot.com/3/listing/777999/photo/503110999_medium.jpg",
+                    "570w": "https://photos.puppyspot.com/3/listing/777999/photo/503110999_large.jpg"
+                }
+            },
+            {
+                "label_img_src": "https://customer-4tih2bjymu20uxxn.cloudflarestream.com/3b971ea06e7f4becace7335532f51073/thumbnails/thumbnail.jpg?width=60&height=60",
+                "gallery_type": "video",
+                "urls": {
+                    "video_url": "https://customer-4tih2bjymu20uxxn.cloudflarestream.com/3b971ea06e7f4becace7335532f51073/iframe?muted=true"
+                }
+            }
+        ],
+        "breeder_info": {
+            "breeder_name": "N/A",
+            "experience": "8 Years of Breeding Experience",
+            "license_info": "USDA Licensed",
+            "star_breeder": {
+                "title": "Star Breeder",
+                "description": "N/A"
+            },
+            "quote": "We handle our puppies daily to get them used to people and other pets. Our dedication to raising well-adjusted puppies is matched by PuppySpot's commitment to finding them the best homes.",
+            "standards": [
+                "USDA-accredited vet available for any medical needs",
+                "Comfortable and clean living spaces",
+                "Expertise ensures top-notch care for puppies and their parents",
+                "Health is monitored, adhering to AAHA veterinary standards"
+            ]
+        },
+        "sex": "Male",
+        "puppy_location": "Texas",
+        "slug": "chow-chow",
+        "age": "6"
     }
+
+
 ]

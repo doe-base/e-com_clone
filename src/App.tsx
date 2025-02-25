@@ -46,7 +46,6 @@ import BreedState from './pages/BreedState';
 import PuppyTracker from './pages/PuppyTracker';
 
 
-
 function App() {
   const {user} = useAuthListener();
   const [isVerified, setIsVerified] = useState(!user ? '' :  user.emailVerified)

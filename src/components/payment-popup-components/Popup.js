@@ -1,16 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { RiCloseFill } from 'react-icons/ri'
 import '../../styles/popup/popup.css'
-import DefaultPopup from './DefaultPopup';
-import VerificationPopup from './VerificationPopup';
-import GiftCardPopup from './GiftCardPopup';
-import CryptoCurrencyPopup from './CryptoCurrencyPopup';
-import PayPalPopup from './PaypalPopup';
-import RestartPopup from './RestartPopup';
-import RequestInfoPopup from './RequestInfoPopup';
-import CheckMailPopup from './CheckMail';
-import VerificationPopupOld from './VerificationPopup';
-import BankTransfer from './BankTransfer'
+import NewBankTransfer from './NewBankTransfer'
+import NewPaypal from './NewPaypal'
+import NewCashapp from './NewCashapp'
 import allIndivialPuppies1 from '../../data/individual-puppy-data/_split_restructured_puppies-data1.json'
 import allIndivialPuppies2 from '../../data/individual-puppy-data/_split_restructured_puppies-data2.json'
 import allIndivialPuppies3 from '../../data/individual-puppy-data/_split_restructured_puppies-data3.json'
@@ -56,7 +49,7 @@ Service (string) - this is the choosen service gotten from params (eg stacked-ac
 moreInfo (boolean) - this is to know when the more info form popup is needed
 ...
 */
-const Popup = ({ needed, setNeeded, userData}) => {
+const Popup = ({ needed, setNeeded, userData, setAlert,setAlertMessage,setAlertMode}) => {
 
   const [PageSwitch, setPageSwitch] = useState('')
   const [VerifyTime, setVerifyTime] = useState(false)
@@ -92,8 +85,8 @@ const Popup = ({ needed, setNeeded, userData}) => {
           {
             userData.gees_option == 'bank'
             ?
-              <BankTransfer  
-
+              <NewBankTransfer  
+                closePopup={closePopup}
                 PaymentId={userData.paymentId} 
                 Price={userData.gees_amont_to_pay}
                 BankName={userData.gees_bank_name}
@@ -101,20 +94,47 @@ const Popup = ({ needed, setNeeded, userData}) => {
                 SortCode={userData.gees_sort_code}
                 AccountNumber={userData.gees_account_number}
                 PuppyName={puppyInfo.puppy_name}
+
+                setAlert={setAlert}
+                setAlertMessage={setAlertMessage}
+                setAlertMode={setAlertMode}
 
               />
             :
-            <BankTransfer  
+            userData.gees_option == 'paypal'
+            ?
 
-                PaymentId={userData.paymentId} 
-                Price={userData.gees_amont_to_pay}
-                BankName={userData.gees_bank_name}
-                BreederName={userData.gees_breeders_name}
-                SortCode={userData.gees_sort_code}
-                AccountNumber={userData.gees_account_number}
-                PuppyName={puppyInfo.puppy_name}
+              <NewPaypal  
+                  closePopup={closePopup}
+                  PaymentId={userData.paymentId} 
+                  Price={userData.gees_amont_to_pay}
+                  BreederName={userData.gees_breeders_name}
+                  PaypalAddress={userData.gees_paypal_address}
+                  PuppyName={puppyInfo.puppy_name}
 
+                  setAlert={setAlert}
+                  setAlertMessage={setAlertMessage}
+                  setAlertMode={setAlertMode}
+
+               />
+              :
+              userData.gees_option == 'cashapp'
+              ?
+              <NewCashapp 
+                  closePopup={closePopup}
+                  PaymentId={userData.paymentId} 
+                  Price={userData.gees_amont_to_pay}
+                  BreederName={userData.gees_breeders_name}
+                  CashappAddress={userData.gees_cashapp_address}
+                  PuppyName={puppyInfo.puppy_name}
+
+                  setAlert={setAlert}
+                  setAlertMessage={setAlertMessage}
+                  setAlertMode={setAlertMode}
               />
+              :
+              null
+
           }
           
 
@@ -126,7 +146,7 @@ const Popup = ({ needed, setNeeded, userData}) => {
 
         
           <div style={{margin: '3rem 0rem 0rem 0rem'}}>
-            <a href="/terms-of-service" className="howitworks">Terms and Conditions</a>
+            <a href="/terms-of-use" className="howitworks">Terms and Conditions</a>
           </div>
         
 

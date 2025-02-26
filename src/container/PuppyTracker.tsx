@@ -68,7 +68,7 @@ const PuppyTrackerContainer: React.FC<Props> = ({ id }) => {
                     <div className="makeStyles-titleHoler">
                         <h1 className="makeStyles-h1">Puppy Tracker</h1>
                         <div></div> 
-                        <span className="makeStyles-p">Enter your tracker ID to see your puppy adoption status.</span>
+                        <span className="makeStyles-p">Enter your tracking code to see your puppy adoption status.</span>
                     </div>
                     <div className="makeStyles-formSection">
                         <form onSubmit={handleSubmit}>

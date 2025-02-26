@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import "../styles/adoption-box.css";
-import Popup from '../components/payment-popup-components/Popup'
+import Popup from '../components/payment-popup-components/Popup';
+import AlertPopup from '../components/alert-popup/AlertPopup';
 import allIndivialPuppies1 from '../data/individual-puppy-data/_split_restructured_puppies-data1.json'
 import allIndivialPuppies2 from '../data/individual-puppy-data/_split_restructured_puppies-data2.json'
 import allIndivialPuppies3 from '../data/individual-puppy-data/_split_restructured_puppies-data3.json'
@@ -40,6 +41,11 @@ const AdoptionStatusBox: React.FC<AdoptionStatusBoxProps> = ({ userData }) => {
 
     const [ puppyInfo, setPuppyInfo ] = useState<any>({})
     const [needed, setNeeded] = useState(false)
+
+    const [alert, setAlert] = useState(false)
+    const [alertMessage, setAlertMessage] = useState('')
+    const [alertMode, setAlertMode] = useState(false)
+
     useEffect(()=>{
         if(userData.puppyId){
             setPuppyInfo(findItemById(allPuppies, userData.puppyId))
@@ -123,7 +129,20 @@ const AdoptionStatusBox: React.FC<AdoptionStatusBoxProps> = ({ userData }) => {
                 needed={needed}
                 setNeeded={setNeeded}
                 userData={userData}
+
+                setAlert={setAlert}
+                setAlertMessage={setAlertMessage}
+                setAlertMode={setAlertMode}
               />
+
+                <AlertPopup 
+                  alert={alert} 
+                  setAlert={setAlert} 
+                  alertMessage={alertMessage} 
+                  setAlertMessage={setAlertMessage} 
+                  alertMode={alertMode} 
+                  setAlertMode={setAlertMode} 
+                />
         </>
         
     );

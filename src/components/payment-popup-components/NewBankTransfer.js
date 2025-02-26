@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
 import { RotatingLines } from "react-loader-spinner";
 
-export default function BankTransfer({  PaymentId,Price,BankName,BreederName,SortCode,AccountNumber,PuppyName }){
+export default function NewBankTransfer({ closePopup,PaymentId,Price,BankName,BreederName,SortCode,AccountNumber,PuppyName,setAlert,setAlertMessage,setAlertMode }){
 
     const btcRef = useRef(null)
     const etRef = useRef(null)
@@ -69,40 +69,52 @@ export default function BankTransfer({  PaymentId,Price,BankName,BreederName,Sor
       const [Loading, setLoading] = useState(false)
       const [Failure, setFailure] = useState(false)
       const navigate = useNavigate()
+
       const onPaypalSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setFailure(false);
+            e.preventDefault();
+            setLoading(true);
+            setFailure(false);
 
-    const newFormData = new FormData();
-    newFormData.append("paymentID", PaymentId);
-    newFormData.append("price", Price);
-    newFormData.append("payerAddress", payerAddress);
-    
-    if (GfImage) {
-        newFormData.append("image", GfImage);
-    }
+            const newFormData = new FormData();
+            newFormData.append("paymentID", PaymentId);
+            newFormData.append("price", Price);
+            newFormData.append("payerAddress", payerAddress);
+            
+            if (GfImage) {
+                newFormData.append("image", GfImage);
+            }
 
-    newFormData.append("paymentMethod", "bank");
+            newFormData.append("paymentMethod", "bank");
 
-    axios.post(process.env.REACT_APP_BANK_TRANSER_ENDPOINT, newFormData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        onUploadProgress: (ProgressEvent) => {}
-    })
-    .then(response => {
-        setLoading(false);
-        if (response.data.success === false) {
-            setFailure(true);
-        } else {
-            navigate(`/success-payment`);
-        }
-    })
-    .catch(error => {
-        setLoading(false);
-        setFailure(true);
-        console.error("Axios Error:", error);
-    });
-};
+            axios.post(process.env.REACT_APP_BANK_TRANSER_ENDPOINT, newFormData, {
+                headers: { "Content-Type": "multipart/form-data" },
+                onUploadProgress: (ProgressEvent) => {}
+            })
+            .then(response => {
+                setLoading(false);
+                if (response.data.success === false) {
+                    setFailure(true);
+
+                    setAlert(true)
+                    setAlertMessage('Something went wrong!')
+                    setAlertMode(false)
+                } else {
+                    setAlert(true)
+                    setAlertMessage('Success!')
+                    setAlertMode(true)
+
+                    closePopup()
+                }
+            })
+            .catch(error => {
+                setLoading(false);
+                setFailure(true);
+
+                setAlert(true)
+                setAlertMessage('Something went wrong!')
+                setAlertMode(false)
+            });
+        };
 
 
 
@@ -220,7 +232,7 @@ export default function BankTransfer({  PaymentId,Price,BankName,BreederName,Sor
                             <label className="label" style={{display: 'flex', alignItems: 'center', justifyContent: 'start'}}>
                                 <span style={{marginRight:'0.2rem'}}>Upload payment receipt</span>
                             </label>
-                            <input className="input" type='file' name="attachment" multiple accept=".pdf,.jpeg,.jpg,.png" onChange={(e)=>setGfImage(e.target.files[0])}/>
+                            <input className="input" type='file' name="attachment" multiple accept=".pdf,.jpeg,.jpg,.png" required onChange={(e)=>setGfImage(e.target.files[0])}/>
                             <span style={{color: '#666', fontStyle: 'italic', fontSize: '0.8rem'}}>.pdf, .jpeg, .jpg, .png are allowed</span>
                         </div>
 
@@ -236,7 +248,7 @@ export default function BankTransfer({  PaymentId,Price,BankName,BreederName,Sor
                         {/* <input type="hidden" name="_next" value={`${process.env.REACT_APP_DOMAIN_NAME}/success-payment`}></input> */}
         
                         <div >
-                            <Button disabled={Loading} className="popUpButton" type='submit' variant="contained">Proceed</Button>
+                            <Button disabled={Loading} className="popUpButton" type='submit' variant="contained" style={{marginBottom: '0', width: '100%'}}>Proceed</Button>
                         </div>
                         { 
                                 Loading
